@@ -25,55 +25,91 @@
         /*导航栏上部分（首页）开始*/
         #menu_top{
             width:100%;
-            height:80px;
+            height:76px;
 			background-color: #4A4A4A;
 			color: #FFA500;
             display: flex;  /*不换行*/
         }
         #menuOrange{
             display: flex;  /*不换行*/
-            width:288px;
+            width:314px;
             position:relative;
-            top:8.5px;
+            top:7px;
             left:100px;
         }
-        #menuOrange:hover #orangeMusic{color:#FF8C00;}
         #orangeLogo{
-            width:66px;
-            height:62.4px;
+            width:64px;
+            height:60.4px;
             background-image:url("Imgs/round55.gif");
             background-size:100%;
         }
-        #orangeMusic,#menu_menu li a{color:#fdad02;}
+        #orangeMusic,#menu_menu li a,#LoginEnroll li a{
+            color:#fdad02;  /*菜单导航栏字体颜色（统一颜色）*/
+        }
         #orangeMusic{
-            font-size:40px;
-            font-weight:800;
+            font-size:39px;
+            font-weight:bolder;
             margin-left:8px;
             line-height:60px;
+        }
+        #orangeMusic span{
+            margin-left:9px;
+            transition:all 0.6s;
+        }
+        #menuOrange:hover #orangeMusic span{
+            margin-left:1px;    /*甜橙音乐网字体过渡效果*/
         }
         #menu_menu{
             display: flex;  /*不换行*/
             position:relative;
-            left:190px;
-            top:24px;
+            left:180px;
             font-size:24px;
+            line-height:75px;
         }
         #menu_menu li a{
-            padding:25px 40px;
+            padding:23px 36px;
         }
         #menu_menu li a:hover{
             background-color:#fdad02;
             color:#4A4A4A;
         }
+        #searchDiv{
+            position:relative;
+            top:24px;
+            left:226px;
+        }
         #searchBox{
             width:180px;
             height:26px;
-            border:1px solid #666666;
+            border:1px solid #fdad02;
             border-radius:13px;
-            position:relative;
-            top:26px;
-            left:220px;
             padding:0px 10px;
+        }
+        #searchBut{
+            width:29.6px;
+            height:29.4px;
+            border:0px;
+            border-radius:14px;
+            background-image:url("Imgs/round44.gif");
+            background-size:64px;
+        }
+        #searchBut:hover{
+            cursor:pointer;
+            background-position:0px 29px;
+        }
+        #LoginEnroll{
+            display: flex;  /*不换行*/
+            position:relative;
+            left:270px;
+        }
+        #LoginEnroll li a{
+            font-size:22px;
+            line-height:75.5px;
+            padding:24px 16px;
+        }
+        #LoginEnroll li a:hover{
+            background-color:#fdad02;
+            color:#4A4A4A;
         }
         /*导航栏上部分（首页）结束*/
         /*导航栏下部分（排行榜）开始*/
@@ -82,6 +118,20 @@
             height:40px;
             background-color:#fdad02;
 			color: #616161;
+        }
+        #menuOrder{
+            display: flex;  /*不换行*/
+            margin-left:100px;
+            line-height:39px;
+        }
+        #menuOrder li a{
+            color:#4A4A4A;
+            padding:8.5px 50px;
+            font-size:18px;
+        }
+        #menuOrder li a:hover{
+            background-color:#4A4A4A;
+            color:#fdad02;
         }
         /*导航栏下部分（排行榜）结束*/
         /*导航栏结束*/
@@ -95,18 +145,31 @@
             <div id="menu_top">
                 <a href="HomePage.aspx"><div id="menuOrange">
                     <div id="orangeLogo"></div>
-                    <div id="orangeMusic">甜橙音乐网</div>
+                    <div id="orangeMusic">
+                        <span>甜</span><span>橙</span><span>音</span><span>乐</span><span>网</span>
+                    </div>
                 </div></a>
                 <ul id="menu_menu">
                     <li><a href="HomePage.aspx">首页</a></li>
                     <li><a href="MyMusic.aspx">我的音乐</a></li>
                 </ul>
-                <asp:TextBox ID="searchBox" runat="server"></asp:TextBox>
+                <div id="searchDiv">
+                    <asp:TextBox ID="searchBox" runat="server"></asp:TextBox>
+                    <asp:Button ID="searchBut" runat="server"/>
+                </div>
+                <ul id="LoginEnroll">
+                    <li><a href="">登录</a></li>
+                    <li><a href="">注册</a></li>
+                </ul>
             </div>
             <%--导航栏上部分（首页）结束--%>
             <%--导航栏下部分（排行榜）开始--%>
             <div id="menu_down">
-                123哈哈哈
+                <ul id="menuOrder">
+                    <li><a href="OrderPage.aspx">排行榜</a></li>
+                    <li><a href="SingerPage.aspx">歌手</a></li>
+                    <li><a href="StylePage.aspx">风格</a></li>
+                </ul>
             </div>
             <%--导航栏下部分（排行榜）结束--%>
         </div>
