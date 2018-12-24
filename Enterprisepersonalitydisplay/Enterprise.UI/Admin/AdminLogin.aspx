@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Enterprise.UI.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminLogin.aspx.cs" Inherits="Enterprise.UI.Admin.AdminLogin" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,6 @@
 <body>
     <form id="form1" runat="server">
         <div>
-
         </div>
     </form>
 </body>

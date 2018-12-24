@@ -67,6 +67,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AddMusic.aspx" />
+    <Content Include="Admin\AddSinger.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="MyMusic.aspx" />
@@ -74,6 +76,7 @@
     <Content Include="packages.config" />
     <Content Include="SingerPage.aspx" />
     <Content Include="Site1.Master" />
+    <Content Include="Admin\AdminSite1.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -86,6 +89,27 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddMusic.aspx.cs">
+      <DependentUpon>AddMusic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddMusic.aspx.designer.cs">
+      <DependentUpon>AddMusic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddSinger.aspx.cs">
+      <DependentUpon>AddSinger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddSinger.aspx.designer.cs">
+      <DependentUpon>AddSinger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminSite1.Master.cs">
+      <DependentUpon>AdminSite1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminSite1.Master.designer.cs">
+      <DependentUpon>AdminSite1.Master</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
