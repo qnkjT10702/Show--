@@ -9,9 +9,9 @@ namespace DataSheet.Model
    public class UserCollect
     {
         //用户收藏表
-        public int CollectId { get; set; }
-        public int UserId { get; set; }
-        public int MicId { get; set; }
+        public int CollectId { get; set; } //收藏Id
+        public int UserId { get; set; } //用户Id外键
+        public int MicId { get; set; } //音乐Id外键
 
     }
 }

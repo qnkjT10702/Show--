@@ -9,15 +9,14 @@ namespace DataSheet.Model
    public class MusicInfo
     {
         //音乐信息表
-        public int MicId { get; set; }
-        public string MicName { get; set; }
-        public string MicImg { get; set;  }
-        public int  SingerId { get; set; }
-        public int StyleId { get; set; }
-        public string MicRegion { get; set; }
-        public int MicPlayCount { get; set; }
-        public string MicSignTime { get; set; }
-        public int CollectCount { get; set; }
-
+        public int MicId { get; set; }      //歌曲Id
+        public string MicName { get; set; } //歌曲名
+        public string MicImg { get; set; } //歌曲封面
+        public int  SingerId { get; set; } //歌手Id外键
+        public int StyleId { get; set; } //歌曲风格
+        public string MicRegion { get; set; }  //歌曲地区 
+        public int MicPlayCount { get; set; }  //音乐点击播放量
+        public string MicSignTime { get; set; }//上架时间
+        public int CollectCount { get; set; } //歌曲收藏量
     }
 }
