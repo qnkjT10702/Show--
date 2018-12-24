@@ -18,6 +18,7 @@ namespace DataSheet.Model
         public int MicPlayCount { get; set; }
         public string MicSignTime { get; set; }
         public int CollectCount { get; set; }
+        public int MicSRc { get; set; }
 
     }
 }
