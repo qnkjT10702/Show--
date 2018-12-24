@@ -9,8 +9,8 @@ namespace DataSheet.Model
    public class MusicStyleInfo
     {
         //音乐风格信息表
-        public int StyleId { get; set; }
-        public string StyleName { get; set; }
+        public int StyleId { get; set; } //音乐风格Id
+        public string StyleName { get; set; } //风格名
 
     }
 }
