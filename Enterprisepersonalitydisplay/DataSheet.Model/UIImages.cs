@@ -6,13 +6,27 @@ using System.Threading.Tasks;
 
 namespace DataSheet.Model
 {
-   public  class UIImages
+    /// <summary>
+    /// 前端页面图片存储名
+    /// </summary>
+    public class UIImages
     {
-        //前端页面图片存储名
+        /// <summary>
+        /// 图片Id
+        /// </summary>
         public int ImgId { get; set; }
+        /// <summary>
+        /// 图片名
+        /// </summary>
         public string ImgName { get; set; }
+        /// <summary>
+        /// 图片相对路径
+        /// </summary>
         public string ImgSrc { get; set; }
-        public string ImgFunc { get; set; }
+        /// <summary>
+        /// 图片功能分布描述
+        /// </summary>
+        public string ImgFunc { get; set; } 
 
     }
 }

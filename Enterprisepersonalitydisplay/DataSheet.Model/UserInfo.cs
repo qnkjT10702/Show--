@@ -6,15 +6,38 @@ using System.Threading.Tasks;
 
 namespace DataSheet.Model
 {
+    /// <summary>
+    /// 用户信息表
+    /// </summary>
     public class UserInfo
     {
-        //用户信息表
-        public int UserId { get; set; }        //用户id
-        public string UserName { get; set; }  //用户名
-        public string UserPwd { get; set;}  //用户密码
-        public int  UserAge { get; set;}    //用户年龄
-        public string UserSex { get; set; } //性别
-        public string UserEmall { get; set; } //qq邮箱
-        public string HeadImg { get; set; } //头像
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        public int UserId { get; set; }
+        /// <summary>
+        /// 用户名
+        /// </summary>
+        public string UserName { get; set; }
+        /// <summary>
+        /// 用户密码
+        /// </summary>
+        public string UserPwd { get; set;}
+        /// <summary>
+        /// 用户年龄
+        /// </summary>
+        public int  UserAge { get; set;}
+        /// <summary>
+        /// 性别
+        /// </summary>
+        public string UserSex { get; set; }
+        /// <summary>
+        /// qq邮箱
+        /// </summary>
+        public string UserEmall { get; set; }
+        /// <summary>
+        /// 头像
+        /// </summary>
+        public string HeadImg { get; set; } 
     }
 }

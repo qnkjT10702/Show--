@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace DataSheet.Model
 {
-   public class MusicStyleInfo
+    /// <summary>
+    /// 音乐风格信息表
+    /// </summary>
+    public class MusicStyleInfo
     {
-        //音乐风格信息表
+        /// <summary>
+        /// 音乐风格Id
+        /// </summary>
         public int StyleId { get; set; }
-        public string StyleName { get; set; }
+        /// <summary>
+        /// 风格名
+        /// </summary>
+        public string StyleName { get; set; } 
 
     }
 }
