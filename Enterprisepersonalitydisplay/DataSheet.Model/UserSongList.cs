@@ -7,25 +7,26 @@ using System.Threading.Tasks;
 namespace DataSheet.Model
 {
     /// <summary>
-    /// 管理员信息表
+    /// 用户歌单
     /// </summary>
-    public class AdminInfo
-    {     
+    public class UserSongList
+    {
         /// <summary>
-        /// 管理员Id
+        /// 用户歌单Id
         /// </summary>
-        public int AdminId { get; set; }
+        public int SongId { get; set; }
         /// <summary>
-        /// 管理员名
+        /// 用户姓名
         /// </summary>
-        public string AdminUser { get; set; }
+        public string songName { get; set; }
         /// <summary>
-        /// 管理员密码
+        /// 用户Id
         /// </summary>
-        public string AdminPwd { get; set; }
+        public int UserId { get; set; } 
         /// <summary>
-        /// 真实姓名
+        /// 
         /// </summary>
-        public string AdminName { get; set; }
+        public int MicId { get; set; } 
+
     }
 }
