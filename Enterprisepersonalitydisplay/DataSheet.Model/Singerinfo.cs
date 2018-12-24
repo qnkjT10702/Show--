@@ -6,13 +6,30 @@ using System.Threading.Tasks;
 
 namespace DataSheet.Model
 {
-   public class Singerinfo
+    /// <summary>
+    /// 歌手信息表
+    /// </summary>
+    public class Singerinfo
     {
-        //歌手信息表
-        public int SingerId { get; set; } //歌手Id
-        public string SingerName { get; set; } //歌手名字
-        public string SingerClass { get; set; } //歌手性别
-        public string SingerRegion { get; set; } //歌手属于的地区
-        public string HardImg { get; set; } //歌手头像
+        /// <summary>
+        /// 歌手Id
+        /// </summary>
+        public int SingerId { get; set; }
+        /// <summary>
+        /// 歌手名字
+        /// </summary>
+        public string SingerName { get; set; }
+        /// <summary>
+        /// 歌手性别
+        /// </summary>
+        public string SingerClass { get; set; }
+        /// <summary>
+        /// 歌手属于的地区
+        /// </summary>
+        public string SingerRegion { get; set; }
+        /// <summary>
+        /// 歌手头像
+        /// </summary>
+        public string HardImg { get; set; } 
     }
 }

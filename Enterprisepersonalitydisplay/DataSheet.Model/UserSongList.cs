@@ -6,13 +6,27 @@ using System.Threading.Tasks;
 
 namespace DataSheet.Model
 {
-   public class UserSongList
+    /// <summary>
+    /// 用户歌单
+    /// </summary>
+    public class UserSongList
     {
-        //用户歌单
-        public int SongId { get; set; } //用户歌单Id
-        public string songName { get; set; } //用户姓名
-        public int UserId { get; set; } //用户Id
-        public int MicId { get; set; } //
+        /// <summary>
+        /// 用户歌单Id
+        /// </summary>
+        public int SongId { get; set; }
+        /// <summary>
+        /// 用户姓名
+        /// </summary>
+        public string songName { get; set; }
+        /// <summary>
+        /// 用户Id
+        /// </summary>
+        public int UserId { get; set; } 
+        /// <summary>
+        /// 
+        /// </summary>
+        public int MicId { get; set; } 
 
     }
 }

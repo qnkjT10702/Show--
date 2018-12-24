@@ -6,12 +6,26 @@ using System.Threading.Tasks;
 
 namespace DataSheet.Model
 {
-   public  class AdminInfo
-    {
-        //管理员信息表
-       public int AdminId { get; set; }      //管理员Id
-       public string AdminUser { get; set; } //管理员名
-       public string AdminPwd { get; set; }  //管理员密码
-       public string AdminName { get; set; } //真实姓名
+    /// <summary>
+    /// 管理员信息表
+    /// </summary>
+    public class AdminInfo
+    {     
+        /// <summary>
+        /// 管理员Id
+        /// </summary>
+        public int AdminId { get; set; }
+        /// <summary>
+        /// 管理员名
+        /// </summary>
+        public string AdminUser { get; set; }
+        /// <summary>
+        /// 管理员密码
+        /// </summary>
+        public string AdminPwd { get; set; }
+        /// <summary>
+        /// 真实姓名
+        /// </summary>
+        public string AdminName { get; set; }
     }
 }
