@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="AdminInfo.cs" />
     <Compile Include="MusicInfo.cs" />
+    <Compile Include="MusicStyleInfo.cs" />
+    <Compile Include="UserCollect.cs" />
     <Compile Include="UserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
