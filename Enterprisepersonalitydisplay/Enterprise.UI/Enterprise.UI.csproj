@@ -74,6 +74,10 @@
     <Content Include="Admin\ManageUser.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="HomePage.aspx" />
+    <Content Include="Imgs\end1.png" />
+    <Content Include="Imgs\end2.png" />
+    <Content Include="Imgs\end3.png" />
+    <Content Include="Imgs\round55.gif" />
     <Content Include="MyMusic.aspx" />
     <Content Include="OrderPage.aspx" />
     <Content Include="packages.config" />
@@ -185,9 +189,7 @@
       <DependentUpon>StylePage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Imgs\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

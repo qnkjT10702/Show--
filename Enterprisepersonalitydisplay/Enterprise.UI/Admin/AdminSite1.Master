@@ -4,6 +4,81 @@
 
 <html>
 <head runat="server">
+    <style>
+          /* logo */
+          #heads{
+              width:100%;
+              height:100px;
+              background-color:#1f2326;
+          }
+          #heads>img{
+              width:64px;
+              height:60px;
+              margin-left:180px;
+              margin-top:20px;
+          }
+          #heads span{
+              margin-left:10px;
+              color:orange;
+              font-size: 32px;
+              position: relative;
+              left: 20px;
+              top: -16px;
+              font-family: 微软雅黑;
+          }
+
+          /*导航栏*/
+          #navigation{
+              width:100%;
+              height:50px;
+              background-color:#4A4A4A;
+              margin-top:-16px;
+              text-align:center;
+          }
+          #navigation ul li{
+              float: left;
+              margin-left:120px;
+              list-style:none;
+              width: 100px;
+              height: 50px;
+              color:black;
+              line-height: 50px;
+              text-align: center;
+              background-color: orange;
+              position: relative;
+              left: 210px;
+          }
+          #navigation ul li:hover{
+              background-color:#1f2326;
+              color:orange;
+          }
+
+          /* 尾部 */
+          #ending{
+              width:100%;
+              height:210px;
+              background-color:#28292d;
+              text-align:center;
+              font-size: 14px;
+          }
+          #ending span{
+              margin-left:50px;
+              color:gray;
+              text-align:center;
+              position:relative;
+              top:24px;
+          }
+          #ending div{
+              margin-top:13px;
+              color:gray;
+          }
+          #end-img img{
+              width:38px;
+              height:38px;
+              margin-top: 47px;
+              margin-left: 27px;
+          }
+    </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -12,6 +87,45 @@
 <body>
     <form id="form1" runat="server">
         <div>
+
+            <div id="heads">
+                <img src="../Imgs/round55.gif" />       
+                    <span>甜</span>
+                    <span>橙</span>
+                    <span>音</span>
+                    <span>乐</span>
+                    <span>网</span>
+            </div>
+
+            <div id="navigation">
+                <ul>
+                    <li>排行榜</li>
+                    <li>专辑</li>
+                    <li>艺人</li>
+                    <li>风格</li>
+                    <li>我</li>
+                </ul>
+            </div>
+
+            <div style="width:100%;height:565px;">123</div>
+
+            
+            <div id="ending">
+                <span>关于我们</span>
+                <span>新闻中心</span>
+                <span>联系我们</span>
+                <span>用户协议</span>
+                <span>网站地图</span>
+            <div id="end-img">
+                <img src="../Imgs/end1.png" />
+                <img src="../Imgs/end2.png" />
+                <img src="../Imgs/end3.png" />
+            </div>
+                <div>吉林长春市南关区卫星广场财富领域5A16室</div>
+                <div>Gopyright2016明日科技&nbsp;&nbsp;&nbsp;吉ICP备10002740号-2&nbsp;&nbsp;&nbsp;吉公安网备22010202000132号</div>
+            </div>
+
+
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
