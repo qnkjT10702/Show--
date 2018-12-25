@@ -24,6 +24,7 @@ namespace DataSheetDAL
 
         public static bool query(string condition)
         {
+            return false;
         }
 
         public static DataTable SelectSingerInfo()
