@@ -1,8 +1,5 @@
-﻿using DataSheet.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,39 +11,58 @@ using System.Data.SqlClient;
 namespace DataSheetDAL
 {
     public class MusicCRUD
-    { 
-     /// <summary>
-    /// 
-    /// </summary>
-    /// <returns>返回音乐风格表所有列</returns>
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>返回音乐风格表所有列</returns>
         public static DataTable SelectMicStyle()
         {
             string sql = "select * from MusicStyleInfo";
-             return  DBHelpe.SelectDB(sql, false);
+            return DBHelpe.SelectDB(sql, false);
+        }
+        public static DataTable SelectSingerInfo()
+        {
+            string sql = "select * from SingerInfo";
+            return DBHelpe.SelectDB(sql, false);
+        }
+        /// <summary>
+        /// 向数据库添加歌曲信息
+        /// </summary>
+        /// <param name="music">数据类型是音乐信息类</param>
+        /// <returns></returns>
+        public static bool AddMusic(MusicInfo music)
+        {
+            SqlParameter[] parameter = new SqlParameter[]
+            {
+                new SqlParameter("@MicName",music.MicName),
+                new SqlParameter("@MicRegion",music.MicRegion),
+                new SqlParameter("@StyleId",music.StyleId),
+                new SqlParameter("@SingerId",music.SingerId),
+                new SqlParameter("@MicSRc",music.MicSRc),
+                new SqlParameter("@MicImg",music.MicImg)
+            };
+            string sql = "insert into MusicInfo(MicName,MicImg,MicRegion,SingerId,StyleId,MicSRc)values(@MicName,@MicImg,@MicRegion,@SingerId,@StyleId,@MicSRc)";
+            return DBHelpe.ExecuteAdater(sql, false, parameter) == 1;
         }
 
 
         /// <summary>
-        /// 查询音乐信息表里的点播量,用于排行版页面的查询
+        /// 向数据库添加歌手信息
         /// </summary>
-        /// <param name="condition"></param>
-        public static bool query(string condition)
+        /// <param name="music">数据类型是歌手信息类</param>
+        /// <returns></returns>
+        public static bool AddSinger(Singerinfo singer)
         {
-            //音乐信息表对应的音乐信息类
-            MusicInfo MusicInfo = new MusicInfo();
-            //歌手信息表对应的歌手信息类
-            Singerinfo Singer = new Singerinfo();
-            //数量化查询
-            SqlParameter[] paras = new SqlParameter[]
+            SqlParameter[] parameter = new SqlParameter[]
             {
-                new SqlParameter ("@SingerId",MusicInfo.SingerId ),
-                new SqlParameter ("@MicName",MusicInfo.MicName),
-                new SqlParameter("@SingerName",Singer.SingerName)
+                new SqlParameter("@SingerName",singer.SingerName),
+                new SqlParameter("@SingerClass",singer.SingerClass),
+                new SqlParameter("@SingerRegion",singer.SingerRegion),
+                new SqlParameter("@HardImg",singer.HardImg)
             };
-            //暂时未写完
-            string sql = "";
-            return true;
+            string sql = "insert into SingerInfo values(@SingerName,@SingerClass,@SingerRegion,@HardImg)";
+            return DBHelpe.ExecuteAdater(sql, false, parameter) == 1;
         }
-        
     }
 }
