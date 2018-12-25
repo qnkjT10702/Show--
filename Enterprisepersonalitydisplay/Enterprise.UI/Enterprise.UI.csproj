@@ -201,6 +201,7 @@
   <ItemGroup />
 
   <ItemGroup>
+    <Folder Include="Imgs\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataSheet.Model\DataSheet.Model.csproj">
