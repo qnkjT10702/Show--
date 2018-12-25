@@ -57,9 +57,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -199,10 +199,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup />
-
-  <ItemGroup>
-    <Folder Include="Imgs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DataSheet.Model\DataSheet.Model.csproj">
       <Project>{68917492-a585-48ed-b932-7a1686a0f45d}</Project>
@@ -217,7 +214,6 @@
       <Name>ServiceLogic.BLL</Name>
     </ProjectReference>
   </ItemGroup>
-
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

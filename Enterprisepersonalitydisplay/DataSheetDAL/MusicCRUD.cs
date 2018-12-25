@@ -21,6 +21,12 @@ namespace DataSheetDAL
             string sql = "select * from MusicStyleInfo";
             return DBHelpe.SelectDB(sql, false);
         }
+
+        public static bool query(string condition)
+        {
+            throw new NotImplementedException();
+        }
+
         public static DataTable SelectSingerInfo()
         {
             string sql = "select * from SingerInfo";

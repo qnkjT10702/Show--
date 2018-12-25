@@ -15,7 +15,7 @@ namespace ServiceLogic.BLL
         /// <param name="condition">传过来的参数</param>
         public static bool query(string condition)
         {
-           return MusicCRUD_F.query(condition);
+           return MusicCRUD.query(condition);
         }
     }
 }
