@@ -40,5 +40,4 @@
             <br  runat="server"/>
             <br  runat="server"/>
             <asp:Button ID="BtnMicSubmit" runat="server" Text="添加" OnClick="BtnMicSubmit_Click" />
- 
 </asp:Content>
