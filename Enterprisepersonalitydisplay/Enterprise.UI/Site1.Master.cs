@@ -9,11 +9,19 @@ namespace Enterprise.UI
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
+        
+        public event Action<string> inquire;
         protected void Page_Load(object sender, EventArgs e)
         {
             
         }
 
-       
+        protected void searchBut_Click(object sender, EventArgs e)
+        {
+            if (inquire!= null)
+            {
+                inquire.Invoke(searchBox.Text);
+            }
+        }
     }
 }

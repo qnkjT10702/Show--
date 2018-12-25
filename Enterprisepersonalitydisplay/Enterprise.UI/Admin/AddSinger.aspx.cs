@@ -48,7 +48,7 @@ namespace Enterprise.UI.Admin
             FileHardImg.SaveAs(SigJuedui);
 
             /// <summary>
-            /// 歌手头像
+            /// 歌手头像4
             /// </summary>
             if (IsValid)
             {

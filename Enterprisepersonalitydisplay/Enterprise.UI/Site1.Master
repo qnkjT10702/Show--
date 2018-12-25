@@ -214,6 +214,10 @@
             text-align:center;
             margin-top:16px;
         }
+        ContentPlaceHolder1{
+            position:absolute;
+            top:200px;
+        }
         /*合作链接结束*/
         /*尾部结束*/
     </style>
@@ -236,7 +240,7 @@
                 </ul>
                 <div id="searchDiv">
                     <asp:TextBox ID="searchBox" runat="server"></asp:TextBox>
-                    <asp:Button ID="searchBut" runat="server"/>
+                    <asp:Button ID="searchBut" OnClick="searchBut_Click" runat="server"/>
                 </div>
                 <ul id="LoginEnroll">
                     <li><a href="">登录</a></li>

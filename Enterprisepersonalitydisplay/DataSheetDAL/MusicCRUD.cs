@@ -11,16 +11,21 @@ using System.Data.SqlClient;
 namespace DataSheetDAL
 {
     public class MusicCRUD
-    { 
-     /// <summary>
-    /// 
-    /// </summary>
-    /// <returns>返回音乐风格表所有列</returns>
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>返回音乐风格表所有列</returns>
         public static DataTable SelectMicStyle()
         {
             string sql = "select * from MusicStyleInfo";
             return DBHelpe.SelectDB(sql, false);
         }
+
+        public static bool query(string condition)
+        {
+        }
+
         public static DataTable SelectSingerInfo()
         {
             string sql = "select * from SingerInfo";
@@ -43,7 +48,7 @@ namespace DataSheetDAL
                 new SqlParameter("@MicImg",music.MicImg)
             };
             string sql = "insert into MusicInfo(MicName,MicImg,MicRegion,SingerId,StyleId,MicSRc)values(@MicName,@MicImg,@MicRegion,@SingerId,@StyleId,@MicSRc)";
-          return  DBHelpe.ExecuteAdater(sql,false,parameter)==1;
+            return DBHelpe.ExecuteAdater(sql, false, parameter) == 1;
         }
 
 

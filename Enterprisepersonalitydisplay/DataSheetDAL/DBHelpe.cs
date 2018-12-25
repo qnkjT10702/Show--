@@ -63,7 +63,6 @@ namespace DataSheetDAL
                 cmd.Connection.Open();
                 da.Fill(table);
                 return table;
-
             }
             catch (Exception ex)
             {
