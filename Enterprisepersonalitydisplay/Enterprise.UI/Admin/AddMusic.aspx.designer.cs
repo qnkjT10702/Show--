@@ -31,6 +31,15 @@ namespace Enterprise.UI.Admin {
         protected global::System.Web.UI.WebControls.TextBox TxtMicName;
         
         /// <summary>
+        /// RequiredFieldValidator1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
         /// LebMicImg 控件。
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace Enterprise.UI.Admin {
         protected global::System.Web.UI.WebControls.FileUpload FileMicImg;
         
         /// <summary>
+        /// RequiredFieldValidator2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        
+        /// <summary>
         /// LebSingerId 控件。
         /// </summary>
         /// <remarks>
@@ -58,13 +76,22 @@ namespace Enterprise.UI.Admin {
         protected global::System.Web.UI.WebControls.Label LebSingerId;
         
         /// <summary>
-        /// TxtSingerId 控件。
+        /// ListStyleId 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtSingerId;
+        protected global::System.Web.UI.WebControls.ListBox ListStyleId;
+        
+        /// <summary>
+        /// RequiredFieldValidator3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
         /// LebStyleId 控件。
@@ -76,13 +103,22 @@ namespace Enterprise.UI.Admin {
         protected global::System.Web.UI.WebControls.Label LebStyleId;
         
         /// <summary>
-        /// TxtStyleId 控件。
+        /// ListSingerId 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtStyleId;
+        protected global::System.Web.UI.WebControls.ListBox ListSingerId;
+        
+        /// <summary>
+        /// RequiredFieldValidator4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
         /// LebMicRegion 控件。
@@ -94,67 +130,22 @@ namespace Enterprise.UI.Admin {
         protected global::System.Web.UI.WebControls.Label LebMicRegion;
         
         /// <summary>
-        /// TxtMicRegion 控件。
+        /// ListMicRegion 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtMicRegion;
+        protected global::System.Web.UI.WebControls.ListBox ListMicRegion;
         
         /// <summary>
-        /// LebMicPlayCount 控件。
+        /// RequiredFieldValidator5 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LebMicPlayCount;
-        
-        /// <summary>
-        /// TxtMicPlayCount 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtMicPlayCount;
-        
-        /// <summary>
-        /// LebMicSignTime 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LebMicSignTime;
-        
-        /// <summary>
-        /// TxtMicSignTime 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtMicSignTime;
-        
-        /// <summary>
-        /// LebCollectCount 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LebCollectCount;
-        
-        /// <summary>
-        /// TxtCollectCount 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtCollectCount;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
         
         /// <summary>
         /// Label1 控件。
@@ -173,6 +164,15 @@ namespace Enterprise.UI.Admin {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileMicSRc;
+        
+        /// <summary>
+        /// RequiredFieldValidator6 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
         
         /// <summary>
         /// BtnMicSubmit 控件。

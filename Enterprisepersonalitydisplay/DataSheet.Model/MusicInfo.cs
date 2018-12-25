@@ -47,7 +47,10 @@ namespace DataSheet.Model
         /// <summary>
         /// 歌曲收藏量
         /// </summary>
-        public int CollectCount { get; set; } 
-
+        public int CollectCount { get; set; }
+        /// <summary>
+        /// 歌曲路径
+        /// </summary>
+        public string  MicSRc { get; set; }
     }
 }
