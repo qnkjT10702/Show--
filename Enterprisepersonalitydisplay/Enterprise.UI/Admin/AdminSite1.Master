@@ -5,6 +5,10 @@
 <html>
 <head runat="server">
     <style>
+          *{
+              padding:0px;
+              margin:0px;
+          }
           /* logo */
           #heads{
               width:100%;
@@ -15,7 +19,7 @@
               width:64px;
               height:60px;
               margin-left:180px;
-              margin-top:20px;
+              margin-top:20px;            
           }
           #heads span{
               margin-left:10px;
@@ -26,7 +30,16 @@
               top: -16px;
               font-family: 微软雅黑;
           }
-
+          #heads>div{
+              width:200px;
+              height:200px;
+              background-color:black;
+              position:relative;
+              left:20px;
+              top:40px;
+              font-size:14px;
+              color:gray;
+          }
           /*导航栏*/
           #navigation{
               width:100%;
@@ -99,11 +112,11 @@
 
             <div id="navigation">
                 <ul>
-                    <li>排行榜</li>
-                    <li>专辑</li>
-                    <li>艺人</li>
-                    <li>风格</li>
-                    <li>我</li>
+                    <li>用户管理</li>
+                    <li>添加歌曲</li>
+                    <li>添加艺人</li>
+                    <li>动态管理</li>
+                    <li>动态栏目管理</li>
                 </ul>
             </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
