@@ -214,6 +214,10 @@
             text-align:center;
             margin-top:16px;
         }
+        ContentPlaceHolder1{
+            position:absolute;
+            top:200px;
+        }
         /*合作链接结束*/
         /*尾部结束*/
     </style>
