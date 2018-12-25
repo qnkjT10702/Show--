@@ -8,6 +8,7 @@
           *{
               padding:0px;
               margin:0px;
+              overflow-x:hidden;
           }
           /* logo */
           #heads{
@@ -50,7 +51,7 @@
           }
           #navigation ul li{
               float: left;
-              margin-left:120px;
+              margin-left:65px;
               list-style:none;
               width: 100px;
               height: 50px;
@@ -90,7 +91,8 @@
               height:38px;
               margin-top: 47px;
               margin-left: 27px;
-          }
+              
+          }    
     </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>

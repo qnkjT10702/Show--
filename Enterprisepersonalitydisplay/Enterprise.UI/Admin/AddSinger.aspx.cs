@@ -15,6 +15,9 @@ namespace Enterprise.UI.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Bigbox.Style.Add("position", "relative");
+            Bigbox.Style.Add("left", "488px");
+            Bigbox.Style.Add("top", "100px");
             if (!IsPostBack)
             {
                 List<string> SingerClass = new List<string>();
