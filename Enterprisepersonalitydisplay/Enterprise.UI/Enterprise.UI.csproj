@@ -206,6 +206,10 @@
       <Project>{a52eb846-4820-4300-8538-e564a357419d}</Project>
       <Name>DataSheetDAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ServiceLogic.BLL\ServiceLogic.BLL.csproj">
+      <Project>{5c8da1a7-fb70-4201-9801-e078d4280820}</Project>
+      <Name>ServiceLogic.BLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

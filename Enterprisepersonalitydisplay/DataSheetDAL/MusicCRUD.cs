@@ -6,15 +6,19 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using DataSheet.Model;
+using System.Data.SqlClient;
+
 
 namespace DataSheetDAL
 {
     public class MusicCRUD
-    {
-        /// <summary>
-        /// 查询音乐风格表里面的所有列
-        /// </summary>
-        /// <returns>返回值：是DataTable类型</returns>
+    { 
+     /// <summary>
+    /// 
+    /// </summary>
+    /// <returns>返回音乐风格表所有列</returns>
         public static DataTable SelectMicStyle()
         {
             string sql = "select * from MusicStyleInfo";
