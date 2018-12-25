@@ -8,16 +8,15 @@
             <br  runat="server"/>
              <br  runat="server"/>
             <asp:Label ID="LebMicImg" runat="server" Text="Label">歌曲封面:</asp:Label>
-            <asp:FileUpload ID="FileUpload1" runat="server" />
             <asp:FileUpload ID="FileMicImg" runat="server" />
              <br  runat="server"/>
               <br  runat="server"/>
              <asp:Label ID="LebSingerId" runat="server" Text="Label">歌手ID:</asp:Label>
-             <asp:TextBox ID="TxtSingerId" runat="server"></asp:TextBox>
+            <asp:ListBox ID="ListSingerId" runat="server"></asp:ListBox>
              <br />
              <br />
              <asp:Label ID="LebStyleId" runat="server" Text="Label">歌曲风格:</asp:Label>
-            <asp:TextBox ID="TxtStyleId" runat="server"></asp:TextBox>
+            <asp:ListBox ID="ListStyleId" runat="server"></asp:ListBox>
             <br  runat="server"/>
             <br  runat="server"/>
             <asp:Label ID="LebMicRegion" runat="server" Text="Label">歌曲地区:</asp:Label>

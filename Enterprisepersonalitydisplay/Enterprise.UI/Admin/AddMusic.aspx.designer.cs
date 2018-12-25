@@ -58,13 +58,13 @@ namespace Enterprise.UI.Admin {
         protected global::System.Web.UI.WebControls.Label LebSingerId;
         
         /// <summary>
-        /// TxtSingerId 控件。
+        /// ListSingerId 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtSingerId;
+        protected global::System.Web.UI.WebControls.ListBox ListSingerId;
         
         /// <summary>
         /// LebStyleId 控件。
@@ -76,13 +76,13 @@ namespace Enterprise.UI.Admin {
         protected global::System.Web.UI.WebControls.Label LebStyleId;
         
         /// <summary>
-        /// TxtStyleId 控件。
+        /// ListStyleId 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtStyleId;
+        protected global::System.Web.UI.WebControls.ListBox ListStyleId;
         
         /// <summary>
         /// LebMicRegion 控件。
