@@ -78,6 +78,7 @@
     <Content Include="Imgs\end2.png" />
     <Content Include="Imgs\end3.png" />
     <Content Include="Imgs\round55.gif" />
+    <Content Include="MusicMenu.ascx" />
     <Content Include="MyMusic.aspx" />
     <Content Include="OrderPage.aspx" />
     <Content Include="packages.config" />
@@ -160,6 +161,13 @@
     </Compile>
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MusicMenu.ascx.cs">
+      <DependentUpon>MusicMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MusicMenu.ascx.designer.cs">
+      <DependentUpon>MusicMenu.ascx</DependentUpon>
     </Compile>
     <Compile Include="MyMusic.aspx.cs">
       <DependentUpon>MyMusic.aspx</DependentUpon>

@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        
+        <div id="Bigbox" style="position:relative;left:488px; top:50px; width:500px;height:792px; overflow-y:hidden;">
             <asp:Label ID="LebMicName" runat="server" Text="Label">歌曲名字:</asp:Label>
             <asp:TextBox ID="TxtMicName" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="#ff3300" ControlToValidate="TxtMicName" ErrorMessage="歌曲名字不可以为空" EnableClientScript="false"></asp:RequiredFieldValidator>
@@ -35,4 +35,6 @@
             <br  runat="server"/>
             <br  runat="server"/>
             <asp:Button ID="BtnMicSubmit" runat="server" Text="添加" OnClick="BtnMicSubmit_Click" />
+        </div>
+            
 </asp:Content>

@@ -13,6 +13,15 @@ namespace Enterprise.UI.Admin {
     public partial class AddSinger {
         
         /// <summary>
+        /// Bigbox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Bigbox;
+        
+        /// <summary>
         /// LebSingerName 控件。
         /// </summary>
         /// <remarks>
