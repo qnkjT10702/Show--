@@ -81,9 +81,18 @@
     <Content Include="MyMusic.aspx" />
     <Content Include="OrderPage.aspx" />
     <Content Include="packages.config" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <None Include="scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="scripts\jquery-3.3.1.js" />
+    <Content Include="scripts\jquery-3.3.1.min.js" />
+    <Content Include="scripts\jquery-3.3.1.slim.js" />
+    <Content Include="scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="SingerPage.aspx" />
     <Content Include="Site1.Master" />
     <Content Include="Admin\AdminSite1.Master" />
+    <Content Include="scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="scripts\jquery-3.3.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -190,6 +199,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup />
+
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataSheet.Model\DataSheet.Model.csproj">
+      <Project>{68917492-a585-48ed-b932-7a1686a0f45d}</Project>
+      <Name>DataSheet.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceLogic.BLL\ServiceLogic.BLL.csproj">
+      <Project>{5c8da1a7-fb70-4201-9801-e078d4280820}</Project>
+      <Name>ServiceLogic.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

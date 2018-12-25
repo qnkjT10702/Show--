@@ -7,25 +7,26 @@ using System.Threading.Tasks;
 namespace DataSheet.Model
 {
     /// <summary>
-    /// 管理员信息表
+    /// 前端页面图片存储名
     /// </summary>
-    public class AdminInfo
-    {     
+    public class UIImages
+    {
         /// <summary>
-        /// 管理员Id
+        /// 图片Id
         /// </summary>
-        public int AdminId { get; set; }
+        public int ImgId { get; set; }
         /// <summary>
-        /// 管理员名
+        /// 图片名
         /// </summary>
-        public string AdminUser { get; set; }
+        public string ImgName { get; set; }
         /// <summary>
-        /// 管理员密码
+        /// 图片相对路径
         /// </summary>
-        public string AdminPwd { get; set; }
+        public string ImgSrc { get; set; }
         /// <summary>
-        /// 真实姓名
+        /// 图片功能分布描述
         /// </summary>
-        public string AdminName { get; set; }
+        public string ImgFunc { get; set; } 
+
     }
 }

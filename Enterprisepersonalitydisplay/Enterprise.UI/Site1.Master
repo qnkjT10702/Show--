@@ -13,7 +13,13 @@
             padding:0px;
             margin:0px;
 			font-family: "微软雅黑";
+            -moz-user-select: none;
+	       -webkit-user-select: none;
+	       -ms-user-select: none;
+	       -khtml-user-select: none;
+	       user-select: none;
         }
+        body{overflow-x:hidden;}
         a{text-decoration:none;}
         ul{list-style-type:none;}
         /*导航栏开始*/
@@ -86,8 +92,8 @@
             padding:0px 10px;
         }
         #searchBut{
-            width:29.6px;
-            height:29.4px;
+            width:29.2px;
+            height:29.3px;
             border:0px;
             border-radius:14px;
             background-image:url("Imgs/round44.gif");
@@ -135,6 +141,81 @@
         }
         /*导航栏下部分（排行榜）结束*/
         /*导航栏结束*/
+        
+        /*尾部开始*/
+        #end{
+            width:100%;
+            height:300px;
+            background-color:#333333;
+            padding:40px 100px;
+            position:relative;
+            box-sizing:border-box;
+        }
+        #end a{
+            color:#999999;
+        }
+        .end_end{
+            width:580px;
+            height:164px;
+        }
+        /*下载甜橙音乐客户端开始*/
+        #downloadIcom{
+            display: flex;  /*不换行*/
+            width:100%;
+            justify-content: space-between;
+            padding:0px 40px;
+            box-sizing:border-box;
+            margin-top:20px;
+        }
+        .icon{
+            width:50px;
+            height:50px;
+            background-image:url("Imgs/footer.gif");
+            background-size:1250%;
+            margin-left:16px;
+        }
+        #icon1{background-position:3px 0px;}
+        #icon2{background-position:-94px 0px;}
+        #icon3{background-position:-190px 0px;}
+        #icon4{background-position:-280px 0px;}
+        #downloadIcom a:hover #icon1{background-position:3px 48px;}
+        #downloadIcom a:hover #icon2{background-position:-94px 48px;}
+        #downloadIcom a:hover #icon3{background-position:-190px 48px;}
+        #downloadIcom a:hover #icon4{background-position:-280px 48px;}
+        .downloadFont{
+            width:80px;
+            text-align:center;
+            font-size:15px;
+        }
+        #downloadIcom a:hover .downloadFont{
+			color: #fdad02;
+        }
+        /*下载甜橙音乐客户端结束*/
+        /*合作链接开始*/
+        #link{
+            position:absolute;
+            top:40px;
+            left:680px;
+        }
+        #linkTable{
+            width:100%;
+            font-size:15px;
+            text-align:center;
+        }
+        #linkTable tr{
+            height:30px;
+        }
+        #linkTable tr td a:hover{
+            color: #fdad02;
+        }
+        p{
+            font-size:15px;
+            color:#999999;
+            text-align:center;
+            margin-top:16px;
+        }
+        /*合作链接结束*/
+        /*尾部结束*/
     </style>
 </head>
 <body>
@@ -150,8 +231,8 @@
                     </div>
                 </div></a>
                 <ul id="menu_menu">
-                    <li><a href="HomePage.aspx">首页</a></li>
-                    <li><a href="MyMusic.aspx">我的音乐</a></li>
+                    <li><a href="HomePage.aspx" id="AppBar4">首页</a></li>
+                    <li><a href="MyMusic.aspx" id="AppBar5">我的音乐</a></li>
                 </ul>
                 <div id="searchDiv">
                     <asp:TextBox ID="searchBox" runat="server"></asp:TextBox>
@@ -166,9 +247,9 @@
             <%--导航栏下部分（排行榜）开始--%>
             <div id="menu_down">
                 <ul id="menuOrder">
-                    <li><a href="OrderPage.aspx">排行榜</a></li>
-                    <li><a href="SingerPage.aspx">歌手</a></li>
-                    <li><a href="StylePage.aspx">风格</a></li>
+                    <li><a href="OrderPage.aspx"  runat="server" id="AppBar1">排行榜</a></li>
+                    <li><a href="SingerPage.aspx" runat="server" id="AppBar2">歌手</a></li>
+                    <li><a href="StylePage.aspx" runat="server" id="AppBar3">风格</a></li>
                 </ul>
             </div>
             <%--导航栏下部分（排行榜）结束--%>
@@ -182,6 +263,69 @@
 
 
 
+        <%--尾部开始--%>
+        <div id="end">
+            <div class="end_end" id="download">
+                <h3 style="font-weight:100;color:#999999;">下载甜橙音乐客户端</h3>
+                <div id="downloadIcom">
+                    <a href="">
+                        <div id="icon1" class="icon"></div>
+                        <div class="downloadFont">PC版</div>
+                    </a>
+                    <a href="">
+                        <div id="icon2" class="icon"></div>
+                        <div class="downloadFont">Mac版</div>
+                    </a>
+                    <a href="">
+                        <div id="icon3" class="icon"></div>
+                        <div class="downloadFont">Android版</div>
+                    </a>
+                    <a href="">
+                        <div id="icon4" class="icon"></div>
+                        <div class="downloadFont">iPhone版</div>
+                    </a>
+                </div>
+            </div>
+            <div class="end_end" id="link">
+                <table id="linkTable">
+                    <tr>
+                        <td><a href="">开放平台</a></td>
+                        <td><a href="">联系我们</a></td>
+                        <td><a href="">在线客服</a></td>
+                        <td><a href="">站长统计</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">版权声明</a></td>
+                        <td><a href="">商务合作</a></td>
+                        <td><a href="">关于我们</a></td>
+                        <td><a href="">合作伙伴</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">行销中心</a></td>
+                        <td><a href="">廉政举报</a></td>
+                        <td><a href="">法律声明</a></td>
+                        <td><a href="">诚招英才</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">开放平台</a></td>
+                        <td><a href="">商务合作</a></td>
+                        <td><a href="">服务条款</a></td>
+                        <td><a href="">交友安全</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">意见反馈</a></td>
+                        <td><a href="">帮助中心</a></td>
+                    </tr>
+                </table>
+            </div>
+            <p>湖南省衡阳市雁峰区衡山科学城B2栋T107</p>
+            <p>
+                <span>Copyright2018甜橙音乐</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span>湘ICP备10002740号-2</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span>湘公安网备 220102020181224</span>
+            </p>
+        </div>
+        <%--尾部结束--%>
 
     </div>
     </form>

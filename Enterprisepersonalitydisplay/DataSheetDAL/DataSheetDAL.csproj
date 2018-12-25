@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{68917492-A585-48ED-B932-7A1686A0F45D}</ProjectGuid>
+    <ProjectGuid>{A52EB846-4820-4300-8538-E564A357419D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataSheet.Model</RootNamespace>
-    <AssemblyName>DataSheet.Model</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>DataSheetDAL</RootNamespace>
+    <AssemblyName>DataSheetDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,22 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminInfo.cs" />
-    <Compile Include="MusicInfo.cs" />
-    <Compile Include="MusicStyleInfo.cs" />
-    <Compile Include="Singerinfo.cs" />
-    <Compile Include="UIImages.cs" />
-    <Compile Include="UserCollect.cs" />
-    <Compile Include="UserInfo.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="DBHelpe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserSongList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataSheet.Model\DataSheet.Model.csproj">
+      <Project>{68917492-a585-48ed-b932-7a1686a0f45d}</Project>
+      <Name>DataSheet.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
