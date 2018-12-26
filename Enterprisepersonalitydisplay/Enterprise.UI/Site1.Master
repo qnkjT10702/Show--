@@ -63,12 +63,12 @@
         #menu_menu{
             display: flex;  /*不换行*/
             position:relative;
-            left:180px;
-            font-size:24px;
-            line-height:75px;
+            left:170px;
+            font-size:22px;
+            line-height:76px;
         }
         #menu_menu li a{
-            padding:23px 36px;
+            padding:24px 36px;
         }
         #menu_menu li a:hover{
             background-color:#fdad02;
@@ -77,7 +77,7 @@
         #searchDiv{
             position:relative;
             top:24px;
-            left:226px;
+            left:220px;
         }
         #searchBox{
             width:180px;
@@ -104,13 +104,30 @@
             left:270px;
         }
         #LoginEnroll li a{
-            font-size:22px;
+            font-size:18px;
             line-height:75.5px;
-            padding:24px 16px;
+            padding:26px 16px;
         }
         #LoginEnroll li a:hover{
             background-color:#fdad02;
             color:#4A4A4A;
+        }
+        /*登录后显示头像和昵称，点击可跳转我的音乐界面*/
+        #loginOK{
+            position:absolute;
+            left:1100px;
+            padding:10px 0px;
+            box-sizing:border-box;
+            border:1px solid red;
+            display:none;
+        }
+        #UserImg{
+            width:40px;
+            height:40px;
+            border:1px solid red;
+        }
+        #UserName{
+            color:#fdad02;
         }
         /*导航栏上部分（首页）结束*/
         /*导航栏下部分（排行榜）开始*/
@@ -198,7 +215,7 @@
             text-align:center;
         }
         #linkTable tr{
-            height:30px;
+            height:28px;
         }
         #linkTable tr td a:hover{
             color: #fdad02;
@@ -237,6 +254,11 @@
                     <li><a href="">登录</a></li>
                     <li><a href="">注册</a></li>
                 </ul>
+                <%--登录后显示头像和昵称，点击可跳转我的音乐界面--%>
+                <ul id="loginOK">
+                  <li><a href="MyMusic.aspx"><asp:Image ID="UserImg" runat="server" /></a></li>
+                  <li><a href="MyMusic.aspx"><asp:Label ID="UserName" runat="server" Text="Label"></asp:Label></a></li>
+                </ul>
             </div>
             <%--导航栏上部分（首页）结束--%>
             <%--导航栏下部分（排行榜）开始--%>
@@ -249,6 +271,7 @@
             </div>
             <%--导航栏下部分（排行榜）结束--%>
         </div>
+
 
 
 
