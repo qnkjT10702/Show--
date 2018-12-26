@@ -74,6 +74,7 @@
     <Content Include="Admin\ManageUser.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="HomePage.aspx" />
+    <Content Include="Imgs\body1.jpg" />
     <Content Include="Imgs\end1.png" />
     <Content Include="Imgs\end2.png" />
     <Content Include="Imgs\end3.png" />
