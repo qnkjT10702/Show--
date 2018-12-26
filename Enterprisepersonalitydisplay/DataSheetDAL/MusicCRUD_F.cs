@@ -12,7 +12,7 @@ namespace DataSheetDAL
 {
     public class MusicCRUD_F
     {
-        public static List<ViewMiicSuger> query(string condition)
+        public static List<ViewMicSuger> query(string condition)
         {
             //音乐信息表对应的音乐信息类
            
