@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataSheet.Model
 {
-    public class ViewMiicSuger:Singerinfo
+    public class ViewMiicSuger: Singerinfo
     {
             /// <summary>
             /// 歌曲Id
@@ -55,7 +55,7 @@ namespace DataSheet.Model
             /// <summary>
             /// 歌手名字
             /// </summary>
-            public string SingerName { get; set; }
+            public string  SingerName { get; set; }
             /// <summary>
             /// 歌手性别
             /// </summary>
