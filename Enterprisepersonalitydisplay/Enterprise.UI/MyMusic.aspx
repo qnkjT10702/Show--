@@ -9,6 +9,81 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div>MyMusic我的页面</div>
+    <style>
+        #MyMusic{
+            width:100%;
+            height:240px;
+            background-image:url("Imgs/backImg4.jpg");
+            background-size:44%;
+            opacity:0.7;
+        }
+        #MyInfo{
+            width:100%;
+            height:140px;
+            position:absolute;
+            top:166px;
+        }
+        #UImg{
+            width:106px;
+            height:106px;
+            border-radius:50%;
+            border:3px solid white;
+            margin:0px auto;
+        }
+        #UName{
+            text-align:center;
+            font-size:28px;
+            color:#333333;
+        }
+        #myLove{
+            width:100%;
+            padding:20px 100px;
+            border:1px solid red
+        }
+        h2{
+            color:#333333;
+        }
+        #likeSong{
+            border:1px solid red;
+            margin-top:20px;
+        }
+        #likeSong tr:nth-child(1){
+            color:#999999;
+        }
+        #likeSong td{
+            padding:12px 10px;
+        }
+        #likeSong td a{
+            color:#4a4a4a;
+        }
+        #likeSong td a:hover{
+            color:#fdad02;
+        }
+    </style>
+
+    <div id="MyMusic"></div>
+    <div id="MyInfo">
+        <div id="UImg"><asp:Image ID="UserImg" runat="server" /></div>
+        <div id="UName"><asp:Label ID="UserName" runat="server" Text="Label"></asp:Label></div>
+    </div>
+    <div id="myLove">
+        <h2><span>我的收藏</span></h2>
+        <div id="likeSong">
+          <table style="width:1150px;border:3px solid #333333;" rules="all">
+            <tr>
+                <td style="width:56%;">歌曲</td>
+                <td style="width:16%;">歌手</td>
+                <td style="width:10%;">风格</td>
+                <td>编辑</td>
+            </tr>
+            <tr>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+            </tr>
+          </table>
+        </div>
+    </div>
 
 </asp:Content>

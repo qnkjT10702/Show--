@@ -14,21 +14,20 @@
     /*背景图部分	开始*/
         #middle-img img{
 	        width: 100%;
-	        height: 400px;	
         }
         .font-1{
             width:100%;
             text-align:center;
-	        font-size: 55px;
+	        font-size: 48px;
 	        color: white;
             position:absolute;
-            top:230px;
+            top:200px;
         }
         .font-2{
 	        font-size: 25px;
 	        color: #e3e3e3;
 	        position:absolute;
-            top:320px;
+            top:276px;
             width:100%;
             text-align:center;
         }
@@ -40,7 +39,7 @@
 	        width: 1200px;
 	        height: 230px;
 	        position: relative;
-	        left: 270px;
+	        left: 100px;
         }
         #list a{
 	        margin-left: 25px;
@@ -72,7 +71,7 @@
 	        width: 1200px;
 	        height: 540px;
 	        position: relative;
-	        left: 280px;
+	        left: 100px;
 	        display: flex;	 /*不换行*/
 	        justify-content: space-between;	/*各行之间留有空白*/
 	        flex-wrap: wrap;	/*自动换行*/
