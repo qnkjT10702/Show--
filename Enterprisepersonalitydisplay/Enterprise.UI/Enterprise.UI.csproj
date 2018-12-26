@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Enterprise.UI</RootNamespace>
     <AssemblyName>Enterprise.UI</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -25,6 +25,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <Use64BitIISExpress />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,22 +50,21 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AddMusic.aspx" />
@@ -74,12 +74,29 @@
     <Content Include="Admin\ManageUser.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="HomePage.aspx" />
+    <Content Include="Imgs\end1.png" />
+    <Content Include="Imgs\end2.png" />
+    <Content Include="Imgs\end3.png" />
+    <Content Include="Imgs\round55.gif" />
+    <Content Include="MusicMenu.ascx" />
     <Content Include="MyMusic.aspx" />
     <Content Include="OrderPage.aspx" />
     <Content Include="packages.config" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <None Include="scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="scripts\jquery-3.3.1.js" />
+    <Content Include="scripts\jquery-3.3.1.min.js" />
+    <Content Include="scripts\jquery-3.3.1.slim.js" />
+    <Content Include="scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="scripts\jquery.min.js" />
+    <Content Include="scripts\player.js" />
+    <Content Include="scripts\utill.js" />
     <Content Include="SingerPage.aspx" />
     <Content Include="Site1.Master" />
     <Content Include="Admin\AdminSite1.Master" />
+    <Content Include="scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="scripts\jquery-3.3.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -149,6 +166,13 @@
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MusicMenu.ascx.cs">
+      <DependentUpon>MusicMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MusicMenu.ascx.designer.cs">
+      <DependentUpon>MusicMenu.ascx</DependentUpon>
+    </Compile>
     <Compile Include="MyMusic.aspx.cs">
       <DependentUpon>MyMusic.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -194,7 +218,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Imgs\" />
+    <Folder Include="css\" />
+    <Folder Include="fonts\" />
+    <Folder Include="images\" />
+    <Folder Include="js\" />
+    <Folder Include="songs\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DataSheet.Model\DataSheet.Model.csproj">
+      <Project>{68917492-a585-48ed-b932-7a1686a0f45d}</Project>
+      <Name>DataSheet.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataSheetDAL\DataSheetDAL.csproj">
+      <Project>{a52eb846-4820-4300-8538-e564a357419d}</Project>
+      <Name>DataSheetDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceLogic.BLL\ServiceLogic.BLL.csproj">
+      <Project>{5c8da1a7-fb70-4201-9801-e078d4280820}</Project>
+      <Name>ServiceLogic.BLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
