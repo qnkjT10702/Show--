@@ -5,12 +5,14 @@
 	<!-- 播放器主体 -->
 	<div class="music-player__main">
 		<!-- 模糊背景 -->
-		<div class="music-player__blur"></div>
+      <%--  4.--%>
+		<div class="music-player__blur" id="MusicPlayDisc" runat="server"></div>
 		<!-- 唱片 -->
 		<div class="music-player__disc">
 			<!-- 唱片图片 -->
-			<div class="music-player__image">
-				<img style="width:100px;" src="" alt=""/>
+            <%--3.img--%>
+			<div class="music-player__image" runat="server">
+				<img style="width:100px;" src="" alt="" runat="server" id="micImg"/>
 			</div>
 			<!-- 指针 -->
 			<div class="music-player__pointer"><img style="width:100%;" src="./images/cd_tou.png" alt="" runat="server"/></div>
@@ -19,8 +21,9 @@
 		<div class="music-player__controls">
 			<!-- 歌曲信息 -->
 			<div class="music__info">
-				<h3 class="music__info--title">...</h3>
-				<p class="music__info--singer">...</p>
+               <%-- 1.2.--%>
+				<h3 class="music__info--title" id="MicName" runat="server">...</h3>
+				<p class="music__info--singer" id="SingerName" runat="server">...</p>
 			</div>
 			<!-- 控件... -->
 			<div class="player-control">
@@ -43,17 +46,13 @@
 					<div class="player__song--timeProgess nowTime">00:00</div>
 					<div class="player__song--timeProgess totalTime">00:00</div>
 				</div>
-
 			</div>
-
 		</div>
 	</div>
 	<!-- 歌曲列表 -->
-	<div class="music-player__list">
-		<ul class="music__list_content">
-			<!-- <li class="music__list__item play">123</li>
-			<li class="music__list__item">123</li>
-			<li class="music__list__item">123</li> -->
+	<div class="music-player__list" runat="server">
+		<ul class="music__list_content" runat="server">
+			
 		</ul>
 	</div>
 </div>
