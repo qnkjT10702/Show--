@@ -28,6 +28,10 @@ namespace DataSheet.Model
         /// </summary>
         public int  SingerId { get; set; }
         /// <summary>
+        /// 歌手名字
+        /// </summary>
+        public string SingerName { get; set; }
+        /// <summary>
         /// 歌曲风格
         /// </summary>
         public int StyleId { get; set; }

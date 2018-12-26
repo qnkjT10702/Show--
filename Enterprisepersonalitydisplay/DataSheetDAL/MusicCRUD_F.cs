@@ -24,7 +24,7 @@ namespace DataSheetDAL
             };
 
 
-            string sql = "select m.MicId,m.MicImg,m.MicName,m.MIcPlayCount,m.MicRegion,m.MicSignTime,m.MicSRc,ms.StyleName,s.SingerName   from MusicInfo m,SingerInfo s,MusicStyleInfo ms where m.SingerId = s.SingerId and m.StyleId = ms.StyleId and m.MicName like '%'+@MicName+'%' or s.SingerName like '%'+@SingerName+'%'";
+            string sql = "select m.MicId,m.MicImg,m.MicName,m.MIcPlayCount,m.MicRegion,m.MicSignTime,m.MicSRc,ms.StyleName,s.SingerName   from MusicInfo m,SingerInfo s,MusicStyleInfo ms where m.SingerId = s.SingerId and m.StyleId = ms.StyleId and (m.MicName like '%'+@MicName+'%' or s.SingerName like '%'+@SingerName+'%')";
             DataTable table = DBHelpe.SelectDB(sql, false,paras);
             List<ArrayList> list = new List<ArrayList>();
             foreach (DataRow item in table.Rows)
