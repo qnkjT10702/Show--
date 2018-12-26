@@ -14,13 +14,13 @@ namespace Enterprise.UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.micImg.Src = info.MicImg;
+            //this.micImg.Src = info.MicImg;
             //歌曲图片
 
-            this.MusicPlayDisc.Style.Add("background-image",info.MicImg);
+            //this.MusicPlayDisc.Style.Add("background-image", info.MicImg);
             //要带上url("")
-            this.MicName.InnerText = info.MicName;
-            this.SingerName.InnerText=info
+            //this.MicName.InnerText = info.MicName;
+            //this.SingerName.InnerText = info
 
         }
     }

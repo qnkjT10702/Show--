@@ -21,7 +21,7 @@ namespace Enterprise.UI
         private void OPgerefer(string condition)
         {
             //查询数据库  带条件
-            List<ArrayList> table = Songquery_O.query(condition);
+            List<ViewMiicSuger> table = Songquery_O.query(condition);
             //拿到数据
             //展示在页面
         }
