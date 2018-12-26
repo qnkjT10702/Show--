@@ -71,15 +71,15 @@ namespace DataSheetDAL
             return DBHelpe.ExecuteAdater(sql, false, parameter) == 1;
         }
 
-        public static List<ViewMicSuger> SelectMicinfo()
+        public static List<ViewMicsuger> SelectMicinfo()
         {
             string sql = "select *from MusicInfo mu,SingerInfo Si where Si.SingerId=mu.SingerId  ";
             DataTable table = DBHelpe.SelectDB(sql, false);
-            List<ViewMicSuger> list = new List<ViewMicSuger>();
+            List<ViewMicsuger> list = new List<ViewMicsuger>();
             foreach (DataRow row in table.Rows)
             {
 
-                list.Add(new ViewMicSuger
+                list.Add(new ViewMicsuger
                 {
                     MicImg = row["MicImg"].ToString(),
                     MicName = row["MicName"].ToString(),
