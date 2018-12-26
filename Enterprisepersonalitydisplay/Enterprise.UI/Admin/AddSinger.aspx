@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminSite1.Master" AutoEventWireup="true" CodeBehind="AddSinger.aspx.cs" Inherits="Enterprise.UI.Admin.AddSinger" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Label ID="LebSingerName" runat="server" Text="Label">歌手名字:</asp:Label>
+
+    <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        <div runat="server" id="Bigbox" style=" width:500px; height:500px;">
+            <asp:Label ID="LebSingerName" runat="server" Text="Label">歌手名字:</asp:Label>
             <asp:TextBox ID="TxtSingerName" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TxtSingerName" ErrorMessage="歌手名字不可以为空" EnableClientScript="false" ForeColor="Red"></asp:RequiredFieldValidator>
             <br  runat="server"/>
@@ -23,4 +25,5 @@
             <br  runat="server"/>
             <br  runat="server"/>
             <asp:Button ID="BtnMicSubmit" runat="server" Text="添加" OnClick="BtnMicSubmit_Click" />
-</asp:Content>
+        </div>
+    </asp:Content>
