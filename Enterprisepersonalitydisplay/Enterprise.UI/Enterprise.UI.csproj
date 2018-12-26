@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="StylePage.aspx" />
+    <Content Include="Userloing.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +184,13 @@
     </Compile>
     <Compile Include="StylePage.aspx.designer.cs">
       <DependentUpon>StylePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Userloing.aspx.cs">
+      <DependentUpon>Userloing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Userloing.aspx.designer.cs">
+      <DependentUpon>Userloing.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
