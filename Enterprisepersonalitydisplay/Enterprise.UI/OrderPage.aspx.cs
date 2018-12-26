@@ -1,4 +1,5 @@
-﻿using ServiceLogic.BLL;
+﻿using DataSheet.Model;
+using ServiceLogic.BLL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +20,7 @@ namespace Enterprise.UI
         private void OPgerefer(string condition)
         {
             //查询数据库  带条件
-            Songquery_O.query(condition);
-            
-
+            List<MusicInfo> table= Songquery_O.query(condition);
             //拿到数据
             //展示在页面
         }
