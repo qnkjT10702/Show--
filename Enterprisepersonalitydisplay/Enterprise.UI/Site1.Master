@@ -13,6 +13,11 @@
             padding:0px;
             margin:0px;
 			font-family: "微软雅黑";
+            -moz-user-select: none;
+	       -webkit-user-select: none;
+	       -ms-user-select: none;
+	       -khtml-user-select: none;
+	       user-select: none;
         }
         body{overflow-x:hidden;}
         a{text-decoration:none;}
@@ -226,6 +231,10 @@
             text-align:center;
             margin-top:16px;
         }
+        ContentPlaceHolder1{
+            position:absolute;
+            top:200px;
+        }
         /*合作链接结束*/
         /*尾部结束*/
     </style>
@@ -243,12 +252,12 @@
                     </div>
                 </div></a>
                 <ul id="menu_menu">
-                    <li><a href="HomePage.aspx">首页</a></li>
-                    <li><a href="MyMusic.aspx">我的音乐</a></li>
+                    <li><a href="HomePage.aspx" id="AppBar4">首页</a></li>
+                    <li><a href="MyMusic.aspx" id="AppBar5">我的音乐</a></li>
                 </ul>
                 <div id="searchDiv">
                     <asp:TextBox ID="searchBox" runat="server"></asp:TextBox>
-                    <asp:Button ID="searchBut" runat="server"/>
+                    <asp:Button ID="searchBut" OnClick="searchBut_Click" runat="server"/>
                 </div>
                 <ul id="LoginEnroll">
                     <li><a href="">登录</a></li>
