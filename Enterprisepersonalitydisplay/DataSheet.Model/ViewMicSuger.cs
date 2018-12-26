@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DataSheet.Model
 {
-    class Class1
+    public class ViewMicSuger:MusicInfo
     {
+        public string SingerName { get; set; }
+
     }
+
 }

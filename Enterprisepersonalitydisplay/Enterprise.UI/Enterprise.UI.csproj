@@ -78,7 +78,9 @@
     <Content Include="Imgs\end2.png" />
     <Content Include="Imgs\end3.png" />
     <Content Include="Imgs\round55.gif" />
-    <Content Include="MusicMenu.ascx" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\player.js" />
+    <Content Include="js\utill.js" />
     <Content Include="MyMusic.aspx" />
     <Content Include="OrderPage.aspx" />
     <Content Include="packages.config" />
@@ -166,13 +168,6 @@
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MusicMenu.ascx.cs">
-      <DependentUpon>MusicMenu.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MusicMenu.ascx.designer.cs">
-      <DependentUpon>MusicMenu.ascx</DependentUpon>
-    </Compile>
     <Compile Include="MyMusic.aspx.cs">
       <DependentUpon>MyMusic.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -221,7 +216,6 @@
     <Folder Include="css\" />
     <Folder Include="fonts\" />
     <Folder Include="images\" />
-    <Folder Include="js\" />
     <Folder Include="songs\" />
   </ItemGroup>
   <ItemGroup />
