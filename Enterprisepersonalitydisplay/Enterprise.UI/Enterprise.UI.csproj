@@ -50,6 +50,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -74,16 +78,28 @@
     <Content Include="Admin\ManageUser.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="HomePage.aspx" />
+<<<<<<< HEAD
+=======
+    <Content Include="images\cd.png" />
+    <Content Include="images\cd_tou.png" />
+    <Content Include="images\songs\c.jpg" />
+    <Content Include="images\songs\renzhendexue.jpg" />
+    <Content Include="images\songs\yanyuan.jpg" />
+    <Content Include="Imgs\body1.jpg" />
+>>>>>>> ae9749c4e8ba5fd81193398e7677b5341dc68d6d
     <Content Include="Imgs\end1.png" />
     <Content Include="Imgs\end2.png" />
     <Content Include="Imgs\end3.png" />
     <Content Include="Imgs\round55.gif" />
-    <Content Include="MusicMenu.ascx" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\player.js" />
+    <Content Include="js\utill.js" />
     <Content Include="MyMusic.aspx" />
     <Content Include="OrderPage.aspx" />
     <Content Include="packages.config" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Musicpaly.aspx" />
     <None Include="scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="scripts\jquery-3.3.1.js" />
     <Content Include="scripts\jquery-3.3.1.min.js" />
@@ -166,13 +182,6 @@
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MusicMenu.ascx.cs">
-      <DependentUpon>MusicMenu.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MusicMenu.ascx.designer.cs">
-      <DependentUpon>MusicMenu.ascx</DependentUpon>
-    </Compile>
     <Compile Include="MyMusic.aspx.cs">
       <DependentUpon>MyMusic.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -216,11 +225,22 @@
     <Compile Include="Userloing.aspx.designer.cs">
       <DependentUpon>Userloing.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Musicpaly.aspx.cs">
+      <DependentUpon>Musicpaly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Musicpaly.aspx.designer.cs">
+      <DependentUpon>Musicpaly.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />
+<<<<<<< HEAD
     <Folder Include="fonts\images\" />
     <Folder Include="js\" />
+=======
+    <Folder Include="fonts\" />
+>>>>>>> ae9749c4e8ba5fd81193398e7677b5341dc68d6d
     <Folder Include="songs\" />
   </ItemGroup>
   <ItemGroup />

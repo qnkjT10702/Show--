@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DataSheetDAL;
+
 
 namespace Enterprise.UI
 {
@@ -11,11 +13,7 @@ namespace Enterprise.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //332432
-            //我又改了
-            //测试1
-            //测试2
-            //鹿晗吃
+          
 
         }
     }
