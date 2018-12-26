@@ -89,6 +89,9 @@
     <Content Include="scripts\jquery-3.3.1.min.js" />
     <Content Include="scripts\jquery-3.3.1.slim.js" />
     <Content Include="scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="scripts\jquery.min.js" />
+    <Content Include="scripts\player.js" />
+    <Content Include="scripts\utill.js" />
     <Content Include="SingerPage.aspx" />
     <Content Include="Site1.Master" />
     <Content Include="Admin\AdminSite1.Master" />
@@ -206,7 +209,13 @@
       <DependentUpon>StylePage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="css\" />
+    <Folder Include="fonts\" />
+    <Folder Include="images\" />
+    <Folder Include="js\" />
+    <Folder Include="songs\" />
+  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DataSheet.Model\DataSheet.Model.csproj">
