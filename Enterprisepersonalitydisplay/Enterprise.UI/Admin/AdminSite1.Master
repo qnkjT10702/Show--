@@ -45,7 +45,7 @@
           #navigation{
               width:100%;
               height:50px;
-              background-color:#4A4A4A;
+              background-color:#1f2326;
               margin-top:-16px;
               text-align:center;
           }
@@ -53,18 +53,24 @@
               float: left;
               margin-left:65px;
               list-style:none;
-              width: 100px;
+              width: 110px;
               height: 50px;
               color:black;
               line-height: 50px;
               text-align: center;
-              background-color: orange;
+              background-color: #1f2326;
               position: relative;
               left: 210px;
+              font-size:15px;
+          }
+          #navigation ul li:hover{
+              background-color:orange;
+              color:orange;
+             
           }
           #navigation a{
               text-decoration:none;
-              color:black;
+              color:white;
           }
          
 
@@ -109,8 +115,7 @@
                     <span>甜</span>
                     <span>橙</span>
                     <span>音</span>
-                    <span>乐</span>
-                    <span>网</span>
+                    <span>乐</span>                    <span>网</span>
             </div>
 
             <div id="navigation">
