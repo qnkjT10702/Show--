@@ -3,7 +3,28 @@
      <script src="scripts/jquery-3.3.1.js"></script>
     <script>
         $(function () {
-            $('#AppBar2').css({ backgroundColor: '#4A4A4A',color:'#fdad02' })
+            $('#AppBar2').css({ backgroundColor: '#4A4A4A', color: '#fdad02' })
+            $('.list-Regio>span').click(function () {
+                for (var i = 0; i <= $('.list-Regio>span').length ; i++) {
+                     var s = $('.list-Regio>span').index($(this));
+                     $('.list-Regio>span').eq(s).css({ color: 'white', backgroundColor: "orange"});
+                     $('.list-Regio>span').eq(i).css({ color: 'black', backgroundColor: "white" });
+                }
+            })
+            $('.list-Sex>span').click(function () {
+                for (var i = 0; i <= $('.list-Sex>span').length; i++) {
+                    var s = $('.list-Sex>span').index($(this));
+                    $('.list-Sex>span').eq(s).css({ color: 'white', backgroundColor: "orange" });
+                    $('.list-Sex>span').eq(i).css({ color: 'black', backgroundColor: "white" });
+                }
+            })
+            $('.list-Style>span').click(function () {
+                for (var i = 0; i <= $('.list-Style>span').length; i++) {
+                    var s = $('.list-Style>span').index($(this));
+                    $('.list-Style>span').eq(s).css({ color: 'white', backgroundColor: "orange" });
+                    $('.list-Style>span').eq(i).css({ color: 'black', backgroundColor: "white" });
+                }
+            })
         })
     </script>
 </asp:Content>
@@ -41,14 +62,15 @@
 	        position: relative;
 	        left: 100px;
         }
-        #list a{
+        #list span{
 	        margin-left: 25px;
 	        position: relative;
 	        top: 35px;
 	        color: black;
 	        font-size: 14px;
+            padding: 5px 8px;
         }
-        #list a:hover{
+        #list span:hover{
 	        color: orange;
         }
         .list-s{
@@ -61,8 +83,8 @@
         .list-distance{
 	        margin-top: 25px;
         }
-        /*歌手分类部分	结束*/
-
+        /*歌手分类部分	1结束*/
+       
 
 
         /*歌手前十*/
@@ -93,10 +115,11 @@
 	        text-align: center;
 	        font-size: 18px;
         }
-        .singers-font a{
+        .singers-font{
 	        color: black;
+            font-size:16px;
         }
-        .singers a:hover{
+        .singers-font:hover{
 	        color: #fdad02;
         }
 
@@ -115,70 +138,32 @@
 		<!--背景图片部分结束-->
 		
 		<!--歌手分类部分-->
-		<div id="list">
-			<!--热门-->
-			<a href="" class="list-s" style="color: white">热门</a>
-			<a href="">A</a>
-			<a href="">B</a>
-			<a href="">C</a>
-			<a href="">D</a>
-			<a href="">E</a>
-			<a href="">F</a>
-			<a href="">G</a>
-			<a href="">H</a>
-			<a href="">I</a>
-			<a href="">J</a>
-			<a href="">K</a>
-			<a href="">L</a>
-			<a href="">M</a>
-			<a href="">N</a>
-			<a href="">O</a>
-			<a href="">P</a>
-			<a href="">Q</a>
-			<a href="">R</a>
-			<a href="">S</a>
-			<a href="">T</a>
-			<a href="">U</a>
-			<a href="">V</a>
-			<a href="">W</a>
-			<a href="">S</a>
-			<a href="">Y</a>
-			<a href="">Z</a>
-			<a href="">#</a>
-			<!--热门结束-->
-			
+		<div id="list">		
 			<!--全部-->
-			<div class="list-distance">
-			<a href="" class="list-s" style="color: white">全部</a>
-			<a href="">内地</a>
-			<a href="">港台</a>
-			<a href="">欧美</a>
-			<a href="">日本</a>
-			<a href="">韩国</a>
-			<a href="">其他</a>
+			<div class="list-distance list-Regio">
+			<span class="list-s" style="color: white">全部</span>
+			<span>内地</span>
+			<span>港台</span>
+			<span>欧美</span>
+			<span>日本</span>
+			<span>韩国</span>
+			<span>其他</span>
 			</div>
 			
-			<div class="list-distance">
-			<a href="" class="list-s" style="color: white">全部</a>
-			<a href="">男</a>
-			<a href="">女</a>
-			<a href="">组合</a>
+			<div class="list-distance list-Sex">
+			<span class="list-s" style="color: white">全部</span>
+			<span>男</span>
+			<span>女</span>
+			<span>组合</span>
 			</div>
 			
-			<div class="list-distance">
-			<a href="" class="list-s" style="color: white">全部</a>
-			<a href="">流行</a>
-			<a href="">嘻哈</a>
-			<a href="">摇滚</a>
-			<a href="">电子</a>
-			<a href="">民谣</a>
-			<a href="">R&B</a>
-			<a href="">民歌</a>
-			<a href="">轻音乐</a>
-			<a href="">爵士</a>
-			<a href="">古典</a>
-			<a href="">乡村</a>
-			<a href="">蓝调</a>
+			<div class="list-distance list-Style">
+			<span class="list-s" style="color: white">全部</span>
+			<span>流行音乐</span>
+			<span>经典老歌</span>
+            <span>古风歌曲</span>
+			<span>民谣</span>
+			<span>说唱</span>
 			</div>
 			<!--全部结束-->
 			<!--歌手分类部分结束-->	
@@ -187,70 +172,63 @@
 		
 		<!--歌手前十	上半部分-->
 		<div id="ends">
-			<div class="singers">
-				<div class="singers-img">
+			<div class="singers" runat="server" >
+				<div class="singers-img"  runat="server">
+					<img src=""   runat="server" id="HardImg"/>
+				</div>
+				<div class="singers-font">歌手名称</div>
+			</div>
+			<div class="singers" runat="server">
+				<div class="singers-img" runat="server">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font" runat="server"><span></span></div>
 			</div>
 			<div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div>
 			<div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div>
 			<div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
-			</div>
-			<div class="singers">
-				<div class="singers-img">
-					<img src="" />
-				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div><div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div><div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div><div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div>
 			<div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div>
 			<div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div>
 		</div>
-		<!--歌手前十结束-->
-		
-		
-		<!--歌手前十	下半部分-->
-			
-			
-		<!--歌手前十结束-->
 
 </asp:Content>
