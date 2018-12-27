@@ -20,5 +20,10 @@ namespace ServiceLogic.BLL
         {
             return MusicCRUD_F.query(condition);
         }
+
+        public static List<ViewMicsuger> PlaySong()
+        {
+            return MusicCRUD_F.PlaySong();
+        }
     }
 }

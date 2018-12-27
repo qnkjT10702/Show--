@@ -45,5 +45,31 @@ namespace DataSheetDAL
             return list;
         }
 
+        /// <summary>
+        /// 歌曲播放功能
+        /// </summary>
+        /// <returns></returns>
+        public static List<ViewMicsuger> PlaySong()
+        {
+            string sql = "select m.MicId,m.MicImg,m.MicName,m.MIcPlayCount,m.MicRegion,m.MicSignTime,m.MicSRc,ms.StyleName,s.SingerName   from MusicInfo m,SingerInfo s,MusicStyleInfo ms where m.SingerId = s.SingerId and m.StyleId = ms.StyleId";
+            DataTable table = DBHelpe.SelectDB(sql, false);
+            List<ViewMicsuger> Message = new List<ViewMicsuger>();
+            foreach (DataRow item in table.Rows)
+            {
+                Message.Add(new ViewMicsuger
+                {
+                    MicId = Convert.ToInt32(item["MicId"]),
+                    MicImg = item["MicImg"].ToString(),
+                    MicName = item["MicName"].ToString(),
+                    MicPlayCount = Convert.ToInt32(item["MIcPlayCount"]),
+                    MicRegion = item["MicRegion"].ToString(),
+                    MicSignTime = item["MicSignTime"].ToString(),
+                    MicSRc = item["MicSRc"].ToString(),
+                    StyleName = item["StyleName"].ToString(),
+                    SingerName = item["SingerName"].ToString()
+                });
+            }
+            return Message;
+        }
     }
 }
