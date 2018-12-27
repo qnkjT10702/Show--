@@ -79,6 +79,9 @@
     <Content Include="Imgs\end2.png" />
     <Content Include="Imgs\end3.png" />
     <Content Include="Imgs\round55.gif" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\player.js" />
+    <Content Include="js\utill.js" />
     <Content Include="MusicMenu.ascx" />
     <Content Include="MyMusic.aspx" />
     <Content Include="OrderPage.aspx" />
@@ -222,7 +225,6 @@
     <Folder Include="css\" />
     <Folder Include="fonts\" />
     <Folder Include="images\" />
-    <Folder Include="js\" />
     <Folder Include="songs\" />
   </ItemGroup>
   <ItemGroup />

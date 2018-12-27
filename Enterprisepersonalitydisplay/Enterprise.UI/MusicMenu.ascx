@@ -7,7 +7,7 @@
 		<!-- 模糊背景 -->
       <%--  4.--%>
 		<div class="music-player__blur" id="MusicPlayDisc" runat="server"></div>
-		<!-- 唱片 -->
+		<!-- 唱片 -->a
 		<div class="music-player__disc">
 			<!-- 唱片图片 -->
             <%--3.img--%>
