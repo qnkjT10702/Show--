@@ -8,7 +8,6 @@ namespace DataSheet.Model
 {
   public  class ViewMicsuger:Singerinfo
     {
-
         /// <summary>
         /// 歌曲Id
         /// </summary>
@@ -69,8 +68,6 @@ namespace DataSheet.Model
         /// 歌手头像
         /// </summary>
         public string HardImg { get; set; }
-
-
     }
 
 }
