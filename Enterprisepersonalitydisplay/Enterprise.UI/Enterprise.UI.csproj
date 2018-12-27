@@ -72,12 +72,19 @@
     <Content Include="Admin\AdminLogin.aspx" />
     <Content Include="Admin\HomePage.aspx" />
     <Content Include="Admin\ManageUser.aspx" />
+    <Content Include="css\htmleaf-demo.css" />
+    <Content Include="css\normalize.css" />
+    <Content Include="css\posterTvGrid.css" />
     <Content Include="Default.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="Imgs\end1.png" />
     <Content Include="Imgs\end2.png" />
     <Content Include="Imgs\end3.png" />
     <Content Include="Imgs\round55.gif" />
+    <Content Include="js\common.js" />
+    <Content Include="js\jquery-1.11.0.min.js" />
+    <Content Include="js\posterTvGrid.js" />
+    <Content Include="js\Userlogin.js" />
     <Content Include="MusicMenu.ascx" />
     <Content Include="MyMusic.aspx" />
     <Content Include="OrderPage.aspx" />
@@ -102,6 +109,7 @@
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -218,10 +226,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="css\" />
     <Folder Include="fonts\" />
     <Folder Include="images\" />
-    <Folder Include="js\" />
     <Folder Include="songs\" />
   </ItemGroup>
   <ItemGroup />
