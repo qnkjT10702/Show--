@@ -21,37 +21,38 @@ class Player {
 }
 
 //歌曲信息
-class Musics {
-    //歌曲
-    constructor() {
-        this.songs = [{
-                id: 1,
-                title: '爱',
-                singer: 'A_Lin',
-                songUrl: './songs/song.mp3',
-                imageUrl: './images/songs/c.jpg'
-            },
-            {
-                id: 2,
-                title: '认真的雪',
-                singer: '薛之谦',
-                songUrl: './songs/song.mp3',
-                imageUrl: './images/songs/renzhendexue.jpg'
-            },
-            {
-                id: 3,
-                title: '演员',
-                singer: '薛之谦',
-                songUrl: './songs/song.mp3',
-                imageUrl: './images/songs/yanyuan.jpg'
-            }
-        ]
-    }
-    //根据索引获取歌曲的方法
-    getSongByNum(index) {
-        return this.songs[index];
-    }
-}
+//class Musics {
+//    //歌曲
+//    constructor() {
+       
+//        this.songs = [{
+//                id: 1,
+//                title: '爱',
+//                singer: 'A_Lin',
+//                songUrl: './songs/song.mp3',
+//                imageUrl: './images/songs/c.jpg'
+//            },
+//            {
+//                id: 2,
+//                title: '认真的雪',
+//                singer: '薛之谦',
+//                songUrl: './songs/song.mp3',
+//                imageUrl: './images/songs/renzhendexue.jpg'
+//            },
+//            {
+//                id: 3,
+//                title: '演员',
+//                singer: '薛之谦',
+//                songUrl: './songs/song.mp3',
+//                imageUrl: './images/songs/yanyuan.jpg'
+//            }
+//        ]
+//    }
+//    //根据索引获取歌曲的方法
+//    getSongByNum(index) {
+//        return this.songs[index];
+//    }
+//}
 
 //真正的构建播放器的类
 class PlayerCreator {
@@ -98,32 +99,32 @@ class PlayerCreator {
         this.renderSongStyle();
         this.bindEventListener();
     }
-    //生成播放列表
-    renderSongList() {
-        let _str = '';
-        this.musics.songs.forEach((song, i) => {
-            _str += `<li class="music__list__item">${song.title}</li>`
-        });
-        this.song_list.html(_str);
-    }
+    ////生成播放列表
+    //renderSongList() {
+    //    let _str = '';
+    //    this.musics.songs.forEach((song, i) => {
+    //        _str += `<li class="music__list__item">${song.title}</li>`
+    //    });
+    //    this.song_list.html(_str);
+    //}
 
     //根据歌曲去渲染视图
-    renderSongStyle() {
-        let {
-            title,
-            singer,
-            songUrl,
-            imageUrl
-        } = this.musics.getSongByNum(this.song_index);
-        this.audio.src = songUrl;
-        this.render_doms.title.html(title);
-        this.render_doms.singer.html(singer);
-        this.render_doms.image.prop('src', imageUrl);
-        this.render_doms.blur.css('background-image', 'url("' + imageUrl + '")');
+    //renderSongStyle() {
+    //    let {
+    //        title,
+    //        singer,
+    //        songUrl,
+    //        imageUrl
+    //    } = this.musics.getSongByNum(this.song_index);
+    //    this.audio.src = songUrl;
+    //    this.render_doms.title.html(title);
+    //    this.render_doms.singer.html(singer);
+    //    this.render_doms.image.prop('src', imageUrl);
+    //    this.render_doms.blur.css('background-image', 'url("' + imageUrl + '")');
 
-        //切换列表中的item的类名 play
-        this.song_list.find('.music__list__item').eq(this.song_index).addClass('play').siblings().removeClass('play');
-    }
+    //    //切换列表中的item的类名 play
+    //    this.song_list.find('.music__list__item').eq(this.song_index).addClass('play').siblings().removeClass('play');
+    //}
     //绑定各种事件
     bindEventListener() {
         //播放按钮

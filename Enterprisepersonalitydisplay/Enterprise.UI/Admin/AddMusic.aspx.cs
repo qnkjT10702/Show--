@@ -25,7 +25,7 @@ namespace Enterprise.UI.Admin
                 ListSingerId.DataTextField = "SingerName";
                 ListSingerId.DataBind();
                 //  给歌手ID下拉控件 绑定数据
-
+           
                 DataTable tableSty = MusicCRUD.SelectMicStyle();
                 ListStyleId.DataSource = tableSty.DefaultView;
                 ListStyleId.DataTextField = "StyleName";
@@ -73,7 +73,7 @@ namespace Enterprise.UI.Admin
 
             string MicSJuedui = Path.Combine(Server.MapPath("/"), MicSsqlpath);
             // 绝对路径
-            FileMicImg.SaveAs(MicSJuedui);
+            FileMicSRc.SaveAs(MicSJuedui);
             /// <summary>
             /// 歌曲相对路径
             /// </summary>

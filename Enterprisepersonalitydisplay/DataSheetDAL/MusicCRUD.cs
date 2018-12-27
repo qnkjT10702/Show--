@@ -70,5 +70,24 @@ namespace DataSheetDAL
             string sql = "insert into SingerInfo values(@SingerName,@SingerClass,@SingerRegion,@HardImg)";
             return DBHelpe.ExecuteAdater(sql, false, parameter) == 1;
         }
+
+        public static List<ViewMicsuger> SelectMicinfo()
+        {
+            string sql = "select *from MusicInfo mu,SingerInfo Si where Si.SingerId=mu.SingerId  ";
+            DataTable table = DBHelpe.SelectDB(sql, false);
+            List<ViewMicsuger> list = new List<ViewMicsuger>();
+            foreach (DataRow row in table.Rows)
+            {
+
+                list.Add(new ViewMicsuger
+                {
+                    MicImg = row["MicImg"].ToString(),
+                    MicName = row["MicName"].ToString(),
+                    MicSRc = row["MicSRc"].ToString(),
+                    SingerName = row["SingerName"].ToString()
+                });
+            }
+            return list;
+        }
     }
 }
