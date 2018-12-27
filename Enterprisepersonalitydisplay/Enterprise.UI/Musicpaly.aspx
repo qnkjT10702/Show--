@@ -83,6 +83,7 @@
             dataType:"json",
             success:function(dt){
                 mysongs=dt;
+                console.log(dt);
                 new Player();
             }
         });
@@ -186,7 +187,7 @@
                 this.render_doms.title.html(title);
                 this.render_doms.singer.html(singer);
                 this.render_doms.image.prop('src', imageUrl);
-                this.render_doms.blur.css('background-image', 'url("' + imageUrl + '")');
+                this.render_doms.blur.css('background-image', 'url("' +(()=>{let i= imageUrl.replace('\\','\\\\'); return i})()  + '")');
 
                 //切换列表中的item的类名 play
                 this.song_list.find('.music__list__item').eq(this.song_index).addClass('play').siblings().removeClass('play');
