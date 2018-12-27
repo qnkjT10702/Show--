@@ -78,12 +78,15 @@
     <Content Include="Admin\ManageUser.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="HomePage.aspx" />
+<<<<<<< HEAD
+=======
     <Content Include="images\cd.png" />
     <Content Include="images\cd_tou.png" />
     <Content Include="images\songs\c.jpg" />
     <Content Include="images\songs\renzhendexue.jpg" />
     <Content Include="images\songs\yanyuan.jpg" />
     <Content Include="Imgs\body1.jpg" />
+>>>>>>> ae9749c4e8ba5fd81193398e7677b5341dc68d6d
     <Content Include="Imgs\end1.png" />
     <Content Include="Imgs\end2.png" />
     <Content Include="Imgs\end3.png" />
@@ -253,7 +256,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />
+<<<<<<< HEAD
+    <Folder Include="fonts\images\" />
+    <Folder Include="js\" />
+=======
     <Folder Include="fonts\" />
+>>>>>>> ae9749c4e8ba5fd81193398e7677b5341dc68d6d
     <Folder Include="songs\" />
   </ItemGroup>
   <ItemGroup />

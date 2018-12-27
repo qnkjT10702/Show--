@@ -16,7 +16,11 @@ namespace ServiceLogic.BLL
         /// 排行版查询
         /// </summary>
         /// <param name="condition">传过来的参数</param>
+<<<<<<< HEAD
+        public static List<ViewMicSuger> query(string condition)
+=======
         public static List<ViewMicsuger> query(string condition)
+>>>>>>> ae9749c4e8ba5fd81193398e7677b5341dc68d6d
         {
             return MusicCRUD_F.query(condition);
         }
