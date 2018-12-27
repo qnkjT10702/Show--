@@ -257,8 +257,7 @@
                     <asp:Button ID="searchBut" OnClick="searchBut_Click" runat="server"/>
                 </div>
                 <ul id="LoginEnroll">
-                    <li><a href="">登录</a></li>
-                    <li><a href="">注册</a></li>
+                    <li><a href="Userloing.aspx">登录</a></li>
                 </ul>
                 <%--登录后显示头像和昵称，点击可跳转我的音乐界面--%>
                 <ul id="loginOK">
