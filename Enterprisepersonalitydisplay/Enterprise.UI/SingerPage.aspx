@@ -41,14 +41,14 @@
 	        position: relative;
 	        left: 100px;
         }
-        #list a{
+        #list span{
 	        margin-left: 25px;
 	        position: relative;
 	        top: 35px;
 	        color: black;
 	        font-size: 14px;
         }
-        #list a:hover{
+        #list span:hover{
 	        color: orange;
         }
         .list-s{
@@ -115,70 +115,32 @@
 		<!--背景图片部分结束-->
 		
 		<!--歌手分类部分-->
-		<div id="list">
-			<!--热门-->
-			<a href="" class="list-s" style="color: white">热门</a>
-			<a href="">A</a>
-			<a href="">B</a>
-			<a href="">C</a>
-			<a href="">D</a>
-			<a href="">E</a>
-			<a href="">F</a>
-			<a href="">G</a>
-			<a href="">H</a>
-			<a href="">I</a>
-			<a href="">J</a>
-			<a href="">K</a>
-			<a href="">L</a>
-			<a href="">M</a>
-			<a href="">N</a>
-			<a href="">O</a>
-			<a href="">P</a>
-			<a href="">Q</a>
-			<a href="">R</a>
-			<a href="">S</a>
-			<a href="">T</a>
-			<a href="">U</a>
-			<a href="">V</a>
-			<a href="">W</a>
-			<a href="">S</a>
-			<a href="">Y</a>
-			<a href="">Z</a>
-			<a href="">#</a>
-			<!--热门结束-->
-			
+		<div id="list">		
 			<!--全部-->
 			<div class="list-distance">
-			<a href="" class="list-s" style="color: white">全部</a>
-			<a href="">内地</a>
-			<a href="">港台</a>
-			<a href="">欧美</a>
-			<a href="">日本</a>
-			<a href="">韩国</a>
-			<a href="">其他</a>
+			<span class="list-s" style="color: white">全部</span>
+			<span>内地</span>
+			<span>港台</span>
+			<span>欧美</span>
+			<span>日本</span>
+			<span>韩国</span>
+			<span>其他</span>
 			</div>
 			
 			<div class="list-distance">
-			<a href="" class="list-s" style="color: white">全部</a>
-			<a href="">男</a>
-			<a href="">女</a>
-			<a href="">组合</a>
+			<span class="list-s" style="color: white">全部</span>
+			<span>男</span>
+			<span>女</span>
+			<span>组合</span>
 			</div>
 			
 			<div class="list-distance">
-			<a href="" class="list-s" style="color: white">全部</a>
-			<a href="">流行</a>
-			<a href="">嘻哈</a>
-			<a href="">摇滚</a>
-			<a href="">电子</a>
-			<a href="">民谣</a>
-			<a href="">R&B</a>
-			<a href="">民歌</a>
-			<a href="">轻音乐</a>
-			<a href="">爵士</a>
-			<a href="">古典</a>
-			<a href="">乡村</a>
-			<a href="">蓝调</a>
+			<span class="list-s" style="color: white">全部</span>
+			<span>流行音乐</span>
+			<span>经典老歌</span>
+            <span>古风歌曲</span>
+			<span>民谣</span>
+			<span>说唱</span>
 			</div>
 			<!--全部结束-->
 			<!--歌手分类部分结束-->	
@@ -191,7 +153,7 @@
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><a href="">123</a></div>
 			</div>
 			<div class="singers">
 				<div class="singers-img">
