@@ -14,7 +14,11 @@ namespace DataSheetDAL
     {
 
         
-
+        /// <summary>
+        /// 搜索功能
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
         public static List<ViewMicsuger> query(string condition)
 
         {
