@@ -30,6 +30,6 @@ namespace DataSheet.Model
         /// <summary>
         /// 歌手头像
         /// </summary>
-        public string HardImg { get; set; } j
+        public string HardImg { get; set; } 
     }
 }
