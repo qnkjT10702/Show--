@@ -93,10 +93,10 @@
 	        text-align: center;
 	        font-size: 18px;
         }
-        .singers-font a{
+        .singers-font span{
 	        color: black;
         }
-        .singers a:hover{
+        .singers span:hover{
 	        color: #fdad02;
         }
 
@@ -153,58 +153,58 @@
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href="">123</a></div>
+				<div class="singers-font"><span>歌手名称</span></div>
 			</div>
 			<div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div>
 			<div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div>
 			<div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div>
 			<div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div><div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div><div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div><div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div>
 			<div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div>
 			<div class="singers">
 				<div class="singers-img">
 					<img src="" />
 				</div>
-				<div class="singers-font"><a href=""></a></div>
+				<div class="singers-font"><span></span></div>
 			</div>
 		</div>
 		<!--歌手前十结束-->
