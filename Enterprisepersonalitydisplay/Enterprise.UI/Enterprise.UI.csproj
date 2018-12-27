@@ -255,7 +255,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+
     <Folder Include="fonts\" />
+
+    <Folder Include="css\" />
+
+    <Folder Include="fonts\images\" />
+    <Folder Include="js\" />
+
+    <Folder Include="fonts\" />
+
+    <Folder Include="songs\" />
+
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
