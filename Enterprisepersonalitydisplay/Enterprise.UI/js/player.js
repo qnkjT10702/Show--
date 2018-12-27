@@ -20,17 +20,17 @@ class Player {
     }
 }
 
-//歌曲信息
+歌曲信息
 class Musics {
     //歌曲
     constructor() {
         this.songs = [{
-                id: 1,
-                title: 'Driving Home for Christmas',
-                singer: 'Campsite Dream',
-                songUrl: './songs/song.mp3',
-                imageUrl: './images/songs/c.jpg'
-            },
+            id: 1,
+            title: 'Driving Home for Christmas',
+            singer: 'Campsite Dream',
+            songUrl: './songs/song.mp3',
+            imageUrl: './images/songs/c.jpg'
+        },
             {
                 id: 2,
                 title: '认真的雪',

@@ -1,6 +1,7 @@
 ﻿using DataSheet.Model;
 using DataSheetDAL;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,9 +16,17 @@ namespace ServiceLogic.BLL
         /// 排行版查询
         /// </summary>
         /// <param name="condition">传过来的参数</param>
-        public static List<MusicInfo> query(string condition)
+
+
+
+        public static List<ViewMicsuger> query(string condition)
         {
             return MusicCRUD_F.query(condition);
+        }
+
+        public static List<ViewMicsuger> PlaySong()
+        {
+            return MusicCRUD_F.PlaySong();
         }
     }
 }

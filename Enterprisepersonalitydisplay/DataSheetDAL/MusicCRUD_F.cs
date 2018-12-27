@@ -1,5 +1,6 @@
 ﻿using DataSheet.Model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -11,7 +12,15 @@ namespace DataSheetDAL
 {
     public class MusicCRUD_F
     {
-        public static List<MusicInfo> query(string condition)
+
+        
+        /// <summary>
+        /// 搜索功能
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
+        public static List<ViewMicsuger> query(string condition)
+
         {
             //音乐信息表对应的音乐信息类
            
@@ -21,21 +30,54 @@ namespace DataSheetDAL
                 new SqlParameter ("@MicName",condition),
                 new SqlParameter("@SingerName",condition)
             };
-            
-            string sql = "select * from MusicInfo m,SingerInfo s where m.SingerId=s.SingerId and m.MicName like '%@MicName%' or s.SingerName like '%@SingerName%'";
-            DataTable table = DBHelpe.SelectDB(sql, false, paras);
-            List<MusicInfo> tab = new List<MusicInfo>();
+
+
+            string sql = "select m.MicId,m.MicImg,m.MicName,m.MIcPlayCount,m.MicRegion,m.MicSignTime,m.MicSRc,ms.StyleName,s.SingerName   from MusicInfo m,SingerInfo s,MusicStyleInfo ms where m.SingerId = s.SingerId and m.StyleId = ms.StyleId and (m.MicName like '%'+@MicName+'%' or s.SingerName like '%'+@SingerName+'%')";
+            DataTable table = DBHelpe.SelectDB(sql, false,paras);
+            List<ViewMicsuger> list = new List<ViewMicsuger>();
             foreach (DataRow item in table.Rows)
             {
-                tab.Add(new MusicInfo
+                list.Add(new ViewMicsuger
                 {
-                    MicId = Convert.ToInt32(item["MicId"]),
-                    MicName = item["MicName"].ToString(),
+                        MicId = Convert.ToInt32(item["MicId"]),
+                        MicImg = item["MicImg"].ToString(),
+                        MicName = item["MicName"].ToString(),
+                        MicPlayCount =Convert.ToInt32(item["MIcPlayCount"]),
+                        MicRegion = item["MicRegion"].ToString(),
+                        MicSignTime = item["MicSignTime"].ToString(),
+                        MicSRc = item["MicSRc"].ToString(),
+                        StyleName = item["StyleName"].ToString(),
+                        SingerName = item["SingerName"].ToString()
                 });
-
             }
-            return tab;
+            return list;
         }
 
+        /// <summary>
+        /// 歌曲播放功能
+        /// </summary>
+        /// <returns></returns>
+        public static List<ViewMicsuger> PlaySong()
+        {
+            string sql = "select m.MicId,m.MicImg,m.MicName,m.MIcPlayCount,m.MicRegion,m.MicSignTime,m.MicSRc,ms.StyleName,s.SingerName   from MusicInfo m,SingerInfo s,MusicStyleInfo ms where m.SingerId = s.SingerId and m.StyleId = ms.StyleId";
+            DataTable table = DBHelpe.SelectDB(sql, false);
+            List<ViewMicsuger> Message = new List<ViewMicsuger>();
+            foreach (DataRow item in table.Rows)
+            {
+                Message.Add(new ViewMicsuger
+                {
+                    MicId = Convert.ToInt32(item["MicId"]),
+                    MicImg = item["MicImg"].ToString(),
+                    MicName = item["MicName"].ToString(),
+                    MicPlayCount = Convert.ToInt32(item["MIcPlayCount"]),
+                    MicRegion = item["MicRegion"].ToString(),
+                    MicSignTime = item["MicSignTime"].ToString(),
+                    MicSRc = item["MicSRc"].ToString(),
+                    StyleName = item["StyleName"].ToString(),
+                    SingerName = item["SingerName"].ToString()
+                });
+            }
+            return Message;
+        }
     }
 }
