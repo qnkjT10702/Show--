@@ -77,14 +77,12 @@
     <script>
         //创建一个音乐播放器的类 单例模式
         var mysongs;
-        alert(0);
         $.ajax({
            // url:"/Musicpaly.aspx",
             type:"post",
             dataType:"json",
             success:function(dt){
                 mysongs=dt;
-                alert(1);
                 new Player();
             }
         });

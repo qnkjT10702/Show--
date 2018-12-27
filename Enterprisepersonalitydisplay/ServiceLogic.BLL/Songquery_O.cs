@@ -17,9 +17,16 @@ namespace ServiceLogic.BLL
         /// </summary>
         /// <param name="condition">传过来的参数</param>
 
+
+
         public static List<ViewMicsuger> query(string condition)
         {
             return MusicCRUD_F.query(condition);
+        }
+
+        public static List<ViewMicsuger> PlaySong()
+        {
+            return MusicCRUD_F.PlaySong();
         }
     }
 }
