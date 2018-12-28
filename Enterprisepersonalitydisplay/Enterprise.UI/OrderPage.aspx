@@ -3,6 +3,7 @@
     <script src="scripts/jquery-3.3.1.js"></script>
     <script src="scripts/jquery-1.11.1.min.js"></script>
     <script>
+         //background: url("images/0008118294621006_b.jpg"); background-repeat:no-repeat; background-size:100%;
         $(function () {
             $('#AppBar1').css({ backgroundColor: '#4A4A4A',color:'#fdad02' })
         })
@@ -76,49 +77,52 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <div id="Music" style="width: 960px; height: 250px;margin: 50px auto 0px; position: relative; background-image:url(images/dsfdv.png)">
-    
-   
-    
-   
-	<div id="orderBang">收藏榜单</div>
-	<ul>
-		<li class="box1">
-			<img src="images/Exo2.jpg" width='100' height='100' title="我的答案"
-			dataSrc='Musics/EXO - MY ANSWER (我的答案).mp3'/>
-		</li>
-		<li class="box2">
-			<img src="images/风格.jpg" width='80' height='80' title="爱上未来的你" dataSrc='Musics/鹿晗 - 爱上未来的你 (Live).mp3'/>
-		</li>
-		<li class="box3">
-			<img src="images/AlIn2.jpg" width='120' height='120' title="爱上你等于爱上寂寞" dataSrc='Musics/uuu.mp3' />
-		</li>
-		<li class="box4">
-			<img src="images/Mei.jpg" width='110' height='110' title="Love Story" dataSrc='Musics/Taylor Swift - Love Story.mp3' />
-		</li>
-	</ul>
-</div>
-<!--点播音乐结束-->
+    <div id="BgBig" style=" background-image: url(images/0008118294621006_b.jpg); background-repeat:no-repeat; background-size:100%;width:1400px;height:700px; position:relative;top:-50px;">
+           <div id="Music" style="width: 960px; height: 250px;margin: 50px auto 0px; position: relative; background-image:url(images/dsfdv.png);top: 100px;
+left: -72px;">
+	            <div id="orderBang">收藏榜单</div>
+	            <ul>
+		            <li class="box1">
+			            <img runat="server" src="images/Exo2.jpg" width='100' height='100' title="我的答案"
+			            dataSrc='Musics/EXO - MY ANSWER (我的答案).mp3'/>
+                        <a style="font-size:25px;position:relative; left:23px;">Exo</a>
+		            </li>
+		            <li class="box2">
+			            <img  runat="server" src="images/风格.jpg" width='80' height='80' title="爱上未来的你" dataSrc='Musics/鹿晗 - 爱上未来的你 (Live).mp3'/>
+                         <a style="font-size:25px">鹿晗</a>
+		            </li>
+		            <li class="box3">
+			            <img runat="server" src="images/AlIn2.jpg" width='120' height='120' title="爱上你等于爱上寂寞" dataSrc='Musics/uuu.mp3' />
+                         <a style="font-size:25px">A-Lin</a>
+		            </li>
+		            <li class="box4">
+			            <img runat="server" src="images/Mei.jpg" width='110' height='110' title="Love Story" dataSrc='Musics/Taylor Swift - Love Story.mp3' />
+                        <a style="font-size:25px">Taylor Swift</a>
+		            </li>
+	            </ul>
+            </div>
+            <!--点播音乐结束-->
 
-<!--音乐播放按扭开始-->
-<div class="MusicCon">
-	<div id="bgimgSinger"></div>
-	<div class='ImgTxt'>
-		<dl>
-			<dt><img src="images/Exo1.jpg" style=" width:90px;height:90px;" class="butImg"/></dt>
-			<dd>我的答案</dd>
-		</dl>
-	</div>
-    s
-	<div class="But">
-		<a href="#" class='prev' style="background-image:url(images/prev1.jpg); background-repeat:no-repeat"></a>
-		<a href="#" class='play' style="background-image:url(images/player1.jpg)"></a>
-		<a href="#" class='next' style="background-image:url(images/next1.jpg);background-repeat:no-repeat"></a>
-	</div>
+            <!--音乐播放按扭开始-->
+            <div class="MusicCon">
+	            <div id="bgimgSinger"></div>
+	            <div class='ImgTxt'>
+		            <dl>
+			            <dt><img src="images/Exo1.jpg" style=" width:90px;height:90px;" class="butImg"/></dt>
+			            <dd>我的答案</dd>
+		            </dl>
+	            </div>
+	            <div class="But">
+		            <a href="#" class='prev' style="background-image:url(images/prev1.jpg); background-repeat:no-repeat"></a>
+		            <a href="#" class='play' style="background-image:url(images/player1.jpg)"></a>
+		            <a href="#" class='next' style="background-image:url(images/next1.jpg);background-repeat:no-repeat"></a>
+	            </div>
 
-	<div class="clickBut"><img src="images/but.png"/></div>
+	            <div class="clickBut"><img src="images/but.png"/></div>
 
-	<div class="playBox"></div>
-</div>
+	            <div class="playBox"></div>
+          </div>
+    </div>
+ 
 <!--音乐播放按扭结束-->
 </asp:Content>
