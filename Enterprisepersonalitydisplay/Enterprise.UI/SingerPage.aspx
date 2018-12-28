@@ -3,7 +3,28 @@
      <script src="scripts/jquery-3.3.1.js"></script>
     <script>
         $(function () {
-            $('#AppBar2').css({ backgroundColor: '#4A4A4A',color:'#fdad02' })
+            $('#AppBar2').css({ backgroundColor: '#4A4A4A', color: '#fdad02' })
+            $('.list-Regio>span').click(function () {
+                for (var i = 0; i <= $('.list-Regio>span').length ; i++) {
+                     var s = $('.list-Regio>span').index($(this));
+                     $('.list-Regio>span').eq(s).css({ color: 'white', backgroundColor: "orange"});
+                     $('.list-Regio>span').eq(i).css({ color: 'black', backgroundColor: "white" });
+                }
+            })
+            $('.list-Sex>span').click(function () {
+                for (var i = 0; i <= $('.list-Sex>span').length; i++) {
+                    var s = $('.list-Sex>span').index($(this));
+                    $('.list-Sex>span').eq(s).css({ color: 'white', backgroundColor: "orange" });
+                    $('.list-Sex>span').eq(i).css({ color: 'black', backgroundColor: "white" });
+                }
+            })
+            $('.list-Style>span').click(function () {
+                for (var i = 0; i <= $('.list-Style>span').length; i++) {
+                    var s = $('.list-Style>span').index($(this));
+                    $('.list-Style>span').eq(s).css({ color: 'white', backgroundColor: "orange" });
+                    $('.list-Style>span').eq(i).css({ color: 'black', backgroundColor: "white" });
+                }
+            })
         })
     </script>
 </asp:Content>
@@ -47,6 +68,7 @@
 	        top: 35px;
 	        color: black;
 	        font-size: 14px;
+            padding: 5px 8px;
         }
         #list span:hover{
 	        color: orange;
@@ -92,10 +114,11 @@
 	        text-align: center;
 	        font-size: 18px;
         }
-        .singers-font span{
+        .singers-font{
 	        color: black;
+            font-size:16px;
         }
-        .singers span:hover{
+        .singers-font:hover{
 	        color: #fdad02;
         }
 
@@ -116,7 +139,7 @@
 		<!--歌手分类部分-->
 		<div id="list">		
 			<!--全部-->
-			<div class="list-distance">
+			<div class="list-distance list-Regio">
 			<span class="list-s" style="color: white">全部</span>
 			<span>内地</span>
 			<span>港台</span>
@@ -126,14 +149,14 @@
 			<span>其他</span>
 			</div>
 			
-			<div class="list-distance">
+			<div class="list-distance list-Sex">
 			<span class="list-s" style="color: white">全部</span>
 			<span>男</span>
 			<span>女</span>
 			<span>组合</span>
 			</div>
 			
-			<div class="list-distance">
+			<div class="list-distance list-Style">
 			<span class="list-s" style="color: white">全部</span>
 			<span>流行音乐</span>
 			<span>经典老歌</span>
@@ -148,17 +171,17 @@
 		
 		<!--歌手前十	上半部分-->
 		<div id="ends">
-			<div class="singers">
-				<div class="singers-img">
-					<img src="" />
+			<div class="singers" runat="server" >
+				<div class="singers-img"  runat="server">
+					<img src=""   runat="server" id="HardImg"/>
 				</div>
-				<div class="singers-font"><span>歌手名称</span></div>
+				<div class="singers-font">歌手名称</div>
 			</div>
-			<div class="singers">
-				<div class="singers-img">
+			<div class="singers" runat="server">
+				<div class="singers-img" runat="server">
 					<img src="" />
 				</div>
-				<div class="singers-font"><span></span></div>
+				<div class="singers-font" runat="server"><span></span></div>
 			</div>
 			<div class="singers">
 				<div class="singers-img">
@@ -206,12 +229,5 @@
 				<div class="singers-font"><span></span></div>
 			</div>
 		</div>
-		<!--歌手前十结束-->
-		
-		
-		<!--歌手前十	下半部分-->
-			
-			
-		<!--歌手前十结束-->
 
 </asp:Content>

@@ -6,12 +6,5 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
-    <form>
-        登录
-        <input type="type" name="name" value="" />
 
-
-    </form>
-</div>
 </asp:Content>

@@ -8,15 +8,17 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link href="css/htmleaf-demo.css" rel="stylesheet" />
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/posterTvGrid.css" rel="stylesheet" />
+
 
     <style>
-        #div{padding:0px 100px;}
-        #pictureRot{
-            width:1150px;
-            height:400px;
-            border:1px solid red;
-            position:relative;
+        #div{padding:-7px 100px;
         }
+        .posterTvGrid .leftNav{left:7px;background:url(Imgs/1.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Imgs/slide_next_btn.png");}
+        .posterTvGrid .rightNav{right:7px;background:url(Imgs/2.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Imgs/slide_next_btn.png");}
+
         h1{
             color:#4A4A4A;
             text-align:center;
@@ -51,11 +53,30 @@
         }
         .style{color:#fdad02;}
     </style>
-
+    
     <div id="div">
-        <div id="pictureRot">
-            <%--图片轮播代码--%>
-        </div>
+        <%--图片轮播代码--%>
+        <div class="htmleaf-container">
+		<div class="htmleaf-content">
+			<div id="posterTvGrid" style="margin:40px auto 0 auto;"></div>
+		</div>
+	</div>
+
+        <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/posterTvGrid.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+    <script type="text/javascript">
+	var posterTvGrid = new posterTvGrid('posterTvGrid',{className: "posterTvGrid"},[
+            { "img": "Imgs/round55.gif","title":"Lorem ipsum dolor sit amet","url":"http:\/\/www.htmleaf.com\/"},
+			{"img":"Imgs/assassins2.jpg","title":"Lorem ipsum dolor sit amet","url":"http:\/\/www.htmleaf.com\/"},
+			{"img":"Imgs/batman.jpg","title":"Lorem ipsum dolor sit amet","url":"http:\/\/www.htmleaf.com\/"},
+			{"img":"Imgs/deus-ex1.jpg","title":"Lorem ipsum dolor sit amet","url":"http:\/\/www.htmleaf.com\/"},
+			{"img":"Imgs/deus-ex2.jpg","title":"Lorem ipsum dolor sit amet","url":"http:\/\/www.htmleaf.com\/"},
+
+    ] 
+        ); 
+    </script>
+
         <div style="width:1150px;margin-bottom:20px;">
             <h1>新&nbsp;&nbsp;&nbsp;&nbsp;歌&nbsp;&nbsp;&nbsp;&nbsp;首&nbsp;&nbsp;&nbsp;&nbsp;发</h1>
             <div id="recommend_in">

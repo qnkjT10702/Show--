@@ -74,15 +74,6 @@
 
 
 
-/* 播放器唱片效果 */
-.music-player__disc {
-    float: left;
-    width: 130px;
-    height: 130px;
-    background: url(../images/cd.png) no-repeat center;
-    background-size: 100%;
-    position: relative;
-}
 
 /* 唱片指针 */
 .music-player__pointer {
