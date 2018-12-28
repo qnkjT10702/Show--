@@ -77,7 +77,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="BgBig" style=" background-image: url(images/0008118294621006_b.jpg); background-repeat:no-repeat; background-size:100%;width:1400px;height:700px; position:relative;top:-50px;">
+    <div id="BgBig" style=" background-image: url(images/0008118294621006_b.jpg); background-repeat:no-repeat; background-size:100%;width:1918px;height:700px; position:relative;top:-50px;">
            <div id="Music" style="width: 960px; height: 250px;margin: 50px auto 0px; position: relative; background-image:url(images/dsfdv.png);top: 100px;
 left: -72px;">
 	            <div id="orderBang">收藏榜单</div>
@@ -85,19 +85,20 @@ left: -72px;">
 		            <li class="box1">
 			            <img runat="server" src="images/Exo2.jpg" width='100' height='100' title="我的答案"
 			            dataSrc='Musics/EXO - MY ANSWER (我的答案).mp3'/>
-                        <a style="font-size:25px;position:relative; left:23px;">Exo</a>
+                        <a style="font-size:25px;position:relative; left:23px;" font-family:华文行楷">Exo</a>
 		            </li>
 		            <li class="box2">
 			            <img  runat="server" src="images/风格.jpg" width='80' height='80' title="爱上未来的你" dataSrc='Musics/鹿晗 - 爱上未来的你 (Live).mp3'/>
-                         <a style="font-size:25px">鹿晗</a>
+                         <a style="font-size:25px;display:inline-block;position:relative ;left:15px; font-family:华文行楷"">鹿晗</a>
 		            </li>
 		            <li class="box3">
-			            <img runat="server" src="images/AlIn2.jpg" width='120' height='120' title="爱上你等于爱上寂寞" dataSrc='Musics/uuu.mp3' />
-                         <a style="font-size:25px">A-Lin</a>
+			            <img runat="server" src="images/AlIn2.jpg" width='120' height='120' title="爱上你等于爱上寂寞" style="position: relative;left: 0px" dataSrc='Musics/uuu.mp3' />
+ 
+                         <a style="font-size:25px;position:relative;left:26px; font-family:华文行楷"">A-Lin</a>
 		            </li>
 		            <li class="box4">
 			            <img runat="server" src="images/Mei.jpg" width='110' height='110' title="Love Story" dataSrc='Musics/Taylor Swift - Love Story.mp3' />
-                        <a style="font-size:25px">Taylor Swift</a>
+                        <a style="font-size:25px;position:relative;left:16px; font-family:华文行楷">Taylor Swift</a>
 		            </li>
 	            </ul>
             </div>

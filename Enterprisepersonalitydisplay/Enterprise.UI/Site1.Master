@@ -18,7 +18,10 @@
 	       -khtml-user-select: none;
 	       user-select: none;
         }
-        body{}
+        body{
+            padding:0px;
+            margin:0px;
+        }
         a{text-decoration:none;}
         ul{list-style-type:none;}
         /*导航栏开始*/
