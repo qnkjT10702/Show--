@@ -16,8 +16,8 @@
 					}
 
 /*MusicCon  begin*/
-.MusicCon{width:700px; height:115px; position:fixed; /*固定定位*/
-			left:1px; bottom:165px; overflow:hidden; /*超出部分隐藏*/}
+.MusicCon{width:500px; height:115px; position:fixed; /*固定定位*/
+			left:1px; bottom:60px; overflow:hidden; /*超出部分隐藏*/}
 .MusicCon .ImgTxt{width:300px; height:115px;position:absolute; left:0px;}
 .MusicCon .But{width:160px; height:75px;position:absolute;padding-top:40px; left:300px;}
 .MusicCon .clickBut{width:22px; height:115px; background:blue;position:absolute;

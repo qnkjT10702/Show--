@@ -254,6 +254,7 @@
     <Content Include="MyMusic.aspx" />
     <Content Include="OrderPage.aspx" />
     <Content Include="packages.config" />
+    <Content Include="playMicOne.ascx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Musicpaly.aspx" />
@@ -385,6 +386,13 @@
     </Compile>
     <Compile Include="OrderPage.aspx.designer.cs">
       <DependentUpon>OrderPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="playMicOne.ascx.cs">
+      <DependentUpon>playMicOne.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="playMicOne.ascx.designer.cs">
+      <DependentUpon>playMicOne.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SingerPage.aspx.cs">

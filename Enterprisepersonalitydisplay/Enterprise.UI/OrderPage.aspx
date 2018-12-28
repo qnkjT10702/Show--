@@ -13,7 +13,7 @@
 			    $(".MusicCon").animate({width:"22px"},1000);
 			    mark=0;//关闭
 		    }else{
-			    $(".MusicCon").animate({width:"700px"},1000);
+			    $(".MusicCon").animate({width:"500px"},1000);
 			    mark=1;//打开
 		    }
 	    });
