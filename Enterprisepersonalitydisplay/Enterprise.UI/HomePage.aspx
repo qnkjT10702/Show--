@@ -30,7 +30,7 @@
             justify-content: space-between;
             flex-wrap: wrap;
         }
-        .songList{
+        #songList{
             width:360px;
             height:90px;
             background-color:#f8f8f8;
@@ -77,10 +77,10 @@
         ); 
     </script>
 
-        <div style="width:1150px;margin-bottom:20px;">
+        <div style="width:1150px;margin-bottom:20px;padding:0px 100px;box-sizing:border-box;">
             <h1>新&nbsp;&nbsp;&nbsp;&nbsp;歌&nbsp;&nbsp;&nbsp;&nbsp;首&nbsp;&nbsp;&nbsp;&nbsp;发</h1>
             <div id="recommend_in">
-                <div class="songList">
+                <div id="songList">
                     <div class="micImg"><asp:Image ID="micImg" runat="server" /></div>
                     <div class="micName"><asp:Label ID="micName" runat="server" Text="Label"></asp:Label></div>
                     <div class="singerName"><asp:Label ID="singerName" runat="server" Text="Label"></asp:Label></div>
@@ -95,9 +95,13 @@
             $('.micName,.singerName').hover(function () {
                 $(this).toggleClass('style');
             })
-            for (var i = 0; i < length; i++) {
-
-            }
+            
+        for(var i=1;i<2;i++){
+            var styleSong = document.getElementById('recommend_in');
+            var song = document.getElementById('songList');
+            var newNode = song.cloneNode(true);
+            styleSong.appendChild(newNode);
+		}
         })
     </script>
 
