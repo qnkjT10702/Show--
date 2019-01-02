@@ -1,0 +1,59 @@
+
+
+#Music ul li{width:120px; height:120px; color:#fff;
+			list-style-type:none;/*去掉圆点*/ position:absolute;/*绝对定位*/
+			}
+#Music ul li.box4{left:550px; top:80px;}
+#Music ul li.box3{left:308px; top:66px;}
+#Music ul li.box2{left:161px; top:132px;}
+#Music ul li.box1{left:20px; top:20px;}
+#Music ul li img{border-radius:50%;/*圆角的半径*/}
+#Music ul li img:hover{-webkit-transform:scale(1.1);-webkit-transition:all 0.3s linear;}
+#Music ul li img.zqq{-webkit-animation:zq 2s infinite linear;}
+@-webkit-keyframes zq{
+						from{-webkit-transform:rotate(0deg);}
+						to{-webkit-transform:rotate(360deg);}
+					}
+
+/*MusicCon  begin*/
+.MusicCon{width:500px; height:115px; position:fixed; /*固定定位*/
+			left:1px; bottom:60px; overflow:hidden; /*超出部分隐藏*/}
+.MusicCon .ImgTxt{width:300px; height:115px;position:absolute; left:0px;}
+.MusicCon .But{width:160px; height:75px;position:absolute;padding-top:40px; left:300px;}
+.MusicCon .clickBut{width:22px; height:115px; background:blue;position:absolute;
+			right:0px;}
+
+.MusicCon .ImgTxt dl{width:300px; height:100px; padding-top:13px;}
+.MusicCon .ImgTxt dl dt{width:90px;height:90px; float:left;}
+.MusicCon .ImgTxt dl dd{width:200px; height:90px; float:right;
+						color:#fff;font-size:22px; line-height:90px;}
+.MusicCon .But a{width:24px;height:32px;display:block;
+			float:left; margin:0px 10px;}
+    .MusicCon .But a.play {
+        background-image: url(images/player.jpg);
+    }
+ 
+    .MusicCon .But a.prev:hover {
+        background-image: url(images/prev1.jpg);
+    }
+    .MusicCon .But a.play:hover {
+        background-image: url(images/player1.jpg);
+    }
+    .MusicCon .But a.next:hover {
+        background-image: url(images/next1.jpg);
+    }
+#orderBang{
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	position: relative;
+	top:56px;
+	left:796px;
+}
+#bgimgSinger{
+	width:860px; height:200px;
+	position: absolute;
+	background-size: 860px 200px;
+	z-index: -1;
+	filter: blur(20px);
+}
