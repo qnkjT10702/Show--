@@ -149,7 +149,7 @@
         /*上半部分*/
         #ends {
             width: 1200px;
-            height: 540px;
+            height:10px;
             position: relative;
             left: 100px;
             display: flex; /*不换行*/
@@ -192,6 +192,10 @@
             width: 140px;
             height: 140px;
             border-radius: 50%;
+        }
+        /*改变母版页样式*/
+        #end{
+            position:relative;
         }
     </style>
 
