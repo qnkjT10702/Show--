@@ -83,7 +83,6 @@
             dataType:"json",
             success:function(dt){
                 mysongs=dt;
-                console.log(dt);
                 new Player();
             }
         });
