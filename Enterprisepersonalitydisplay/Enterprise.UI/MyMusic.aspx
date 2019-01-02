@@ -38,13 +38,11 @@
         #myLove{
             width:100%;
             padding:20px 100px;
-            border:1px solid red
         }
         h2{
             color:#333333;
         }
         #likeSong{
-            border:1px solid red;
             margin-top:20px;
         }
         #likeSong tr:nth-child(1){
@@ -69,12 +67,36 @@
     <div id="myLove">
         <h2><span>我的收藏</span></h2>
         <div id="likeSong">
-          <table style="width:1150px;border:3px solid #333333;" rules="all">
+          <table style="width:1150px;border:3px solid #4A4A4A;">
             <tr>
                 <td style="width:56%;">歌曲</td>
                 <td style="width:16%;">歌手</td>
                 <td style="width:10%;">风格</td>
                 <td>编辑</td>
+            </tr>
+            <tr>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+            </tr>
+            <tr>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+            </tr>
+            <tr>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+            </tr>
+            <tr>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
             </tr>
             <tr>
                 <td><a href="">123</a></td>
