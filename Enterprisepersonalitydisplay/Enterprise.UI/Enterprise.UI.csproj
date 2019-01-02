@@ -76,15 +76,54 @@
     <Content Include="Admin\AdminLogin.aspx" />
     <Content Include="Admin\HomePage.aspx" />
     <Content Include="Admin\ManageUser.aspx" />
+    <Content Include="css\MusicPaly.css" />
     <Content Include="css\player.css" />
     <Content Include="css\reset.css" />
+    <Content Include="css\htmleaf-demo.css" />
+    <Content Include="css\normalize.css" />
+    <Content Include="css\posterTvGrid.css" />
     <Content Include="Default.aspx" />
     <Content Include="HomePage.aspx" />
+    <Content Include="images\000.jpg" />
+    <Content Include="images\0008118294621006_b.jpg" />
+    <Content Include="images\141a07dfdca7ebff0ca0cc304718815b409eb60f47eee-rXJ0dL_fw658.jpg" />
+    <Content Include="images\a84e221fbd2210e9c0567c08b5db1efce514e19231b150-csugeh_fw658.jpg" />
+    <Content Include="images\AlIn2.jpg" />
+    <Content Include="images\ALin3.jpg" />
+    <Content Include="images\A_Lin1.jpg" />
+    <Content Include="images\banner.jpg" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\big1.jpg" />
+    <Content Include="images\big3.jpg" />
+    <Content Include="images\bigbang.jpg" />
+    <Content Include="images\but.png" />
     <Content Include="images\cd.png" />
     <Content Include="images\cd_tou.png" />
+    <Content Include="images\df1.png" />
+    <Content Include="images\dsfdv.png" />
+    <Content Include="images\e38795d99acb1967e143b419928160edfce462e43f7c3-2kO5y3_fw658.jpg" />
+    <Content Include="images\Exo1.jpg" />
+    <Content Include="images\Exo2.jpg" />
+    <Content Include="images\f2ab21df06fb0250ed1d00af1bf942bcc931b9045b88-7orh0l_fw658.jpg" />
+    <Content Include="images\f670e7be66692bc10853d2dd773fc4629d5d1ea359c36-ibN45j_fw658.jpg" />
+    <Content Include="images\f93fe8e4249bcc0a461f31911f4ad6a44291b3f598e6-OXuJ0M_fw658.jpg" />
+    <Content Include="images\Mei.jpg" />
+    <Content Include="images\MeIMSM2.jpg" />
+    <Content Include="images\next.jpg" />
+    <Content Include="images\next1.jpg" />
+    <Content Include="images\pause.jpg" />
+    <Content Include="images\pause2.jpg" />
+    <Content Include="images\player.jpg" />
+    <Content Include="images\player1.jpg" />
+    <Content Include="images\prev.jpg" />
+    <Content Include="images\prev1.jpg" />
     <Content Include="images\songs\c.jpg" />
     <Content Include="images\songs\renzhendexue.jpg" />
     <Content Include="images\songs\yanyuan.jpg" />
+    <Content Include="images\sugar.jpg" />
+    <Content Include="images\xjy.jpg" />
+    <Content Include="images\zjl.jpg" />
+    <Content Include="images\风格.jpg" />
     <Content Include="Imgs\0628bd16-8b02-4866-adce-7d02c044ea7bLaura Veirs.jpg" />
     <Content Include="Imgs\064c0db5-2dc6-4248-a629-a367550b41daMarina &amp; The Diamonds.jpg" />
     <Content Include="Imgs\07df117d-e53d-485b-8906-96df4dfb31d8Girl%27s Day %28걸스데이%29.jpg" />
@@ -182,27 +221,43 @@
     <Content Include="Imgs\round33.gif" />
     <Content Include="Imgs\round44.gif" />
     <Content Include="Imgs\round55.gif" />
-    <Content Include="js\jquery.min.js" />
-    <Content Include="js\player.js" />
-    <Content Include="js\utill.js" />
+    <Content Include="js\common.js" />
+    <Content Include="js\jquery-1.11.0.min.js" />
+    <Content Include="js\posterTvGrid.js" />
+    <Content Include="js\Userlogin.js" />
     <Content Include="MusicMenu.ascx" />
     <Content Include="MusicPalys2.aspx" />
+    <Content Include="Musics\048a3ddd-5ac6-4ced-86d4-ac18a59e61aaA-Lin - 爱 %28Live%29.mp3" />
+    <Content Include="Musics\06aa5e8b-7631-4330-b8d4-811bb0343a6dA-Lin - 爱 %28Live%29.mp3" />
+    <Content Include="Musics\16dadee6-e0c3-4720-83b7-70ca69e80b24IMG_0546.JPG" />
+    <Content Include="Musics\18327a2c-065c-4379-86e1-04eba7dd84e7鹿晗 - 请到长城来滑雪.mp3" />
+    <Content Include="Musics\1c70ce9b-d076-4374-86ba-1a6c0b00b781鹿晗 - 我们的明天 %28Live%29.mp3" />
+    <Content Include="Musics\21d8764c-76ed-4d9d-9870-ba9ae0919785A-Lin - 爱 %28Live%29.mp3" />
+    <Content Include="Musics\3a3289fd-d8df-46f0-8a7c-d1331d19adfbA-Lin - 爱 %28Live%29.mp3" />
+    <Content Include="Musics\48a47ce6-f7f1-408e-bf05-c9b7df2a5295A-Lin - 爱 %28Live%29.mp3" />
+    <Content Include="Musics\5c926fdd-66f2-4545-b4ca-cc5d4e40e6e8A-Lin - 等你 %28《华丽的挑战》电视剧插曲%29.mp3" />
+    <Content Include="Musics\8c7ff167-a661-4bdc-a053-3e6a0790d311鹿晗 - 爱上未来的你 %28Live%29.mp3" />
+    <Content Include="Musics\9b2652a2-c3b1-4704-8286-2f13978d1463A-Lin - 爱 %28Live%29.mp3" />
+    <Content Include="Musics\9b668f8e-f2a9-44ba-b055-1c69f7669b03鹿晗 - 爱上未来的你 %28Live%29.mp3" />
+    <Content Include="Musics\a1d7d797-646e-42db-9d0c-f32a5d72d0f4鹿晗 - 爱上未来的你 %28Live%29.mp3" />
+    <Content Include="Musics\b3337cd0-5756-4830-8e59-7904f2a8c1c8A-Lin - 爱 %28Live%29.mp3" />
+    <Content Include="Musics\b6eb6f4c-192b-47cb-9279-d6822f652c48A-Lin - 离开的时候.mp3" />
+    <Content Include="Musics\bf049dff-bf8f-4fdb-a77c-9ef13ecaab54A-Lin - 爱 %28Live%29.mp3" />
+    <Content Include="Musics\d1d14cbd-98e1-4ea5-95c7-1202a9e2c40d鹿晗 - 请到长城来滑雪.mp3" />
+    <Content Include="Musics\ed9310b1-f7be-4cce-bcd7-4f98ac374270鹿晗 - 爱上未来的你 %28Live%29.mp3" />
+    <Content Include="Musics\EXO - MY ANSWER %28我的答案%29.mp3" />
+    <Content Include="Musics\fec40f44-4bb9-4825-b638-bd9ff64c9893A-Lin - 爱 %28Live%29.mp3" />
+    <Content Include="Musics\Taylor Swift - Love Story.mp3" />
+    <Content Include="Musics\uuu.mp3" />
+    <Content Include="Musics\方拾贰 - 山下.mp3" />
+    <Content Include="Musics\鹿晗 - 爱上未来的你 %28Live%29.mp3" />
     <Content Include="MyMusic.aspx" />
     <Content Include="OrderPage.aspx" />
     <Content Include="packages.config" />
+    <Content Include="playMicOne.ascx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Musicpaly.aspx" />
-    <Content Include="Musics\0eaffc26-f347-4c00-8d28-def3945d1108" />
-    <Content Include="Musics\18d7f61c-4256-4ea1-bb45-51ccb00661a4" />
-    <Content Include="Musics\2c110baa-5f95-480c-beff-67e15620220e" />
-    <Content Include="Musics\3889bfda-f238-4e0e-b57a-830df0078a93" />
-    <Content Include="Musics\3eb6a071-d8bd-44be-910f-dc7407b505fd" />
-    <Content Include="Musics\68dda552-3671-4940-96fa-731010493268" />
-    <Content Include="Musics\746ccdeb-fc8f-4c76-9c8b-5d850450562c" />
-    <Content Include="Musics\d4f14850-4155-4c45-8483-5615b2714bf6" />
-    <Content Include="Musics\e87e81d1-d765-4550-934a-f2eec781ad9f" />
-    <Content Include="Musics\fb9d93ea-ee71-4754-b210-c4ffb144d5c5" />
     <Content Include="Imgs\2eb0ef8e-a3cd-4230-8e4d-36f200d92d0f" />
     <Content Include="Imgs\4d150c9d-6585-443f-abfe-afc6b4fbb73b" />
     <Content Include="Imgs\7e490588-093a-420d-bc47-dd010431d61e" />
@@ -216,7 +271,18 @@
     <Content Include="Imgs\c5c70bf3-dc23-4fc7-92b1-b868571e4bf3" />
     <Content Include="Imgs\d6477149-5a91-4955-98ee-2666bfb5e275" />
     <Content Include="Imgs\e4074489-c736-4b60-ac32-990ac95e54b9" />
+    <Content Include="Musics\0eaffc26-f347-4c00-8d28-def3945d1108" />
+    <Content Include="Musics\18d7f61c-4256-4ea1-bb45-51ccb00661a4" />
+    <Content Include="Musics\2c110baa-5f95-480c-beff-67e15620220e" />
+    <Content Include="Musics\3889bfda-f238-4e0e-b57a-830df0078a93" />
+    <Content Include="Musics\3eb6a071-d8bd-44be-910f-dc7407b505fd" />
+    <Content Include="Musics\68dda552-3671-4940-96fa-731010493268" />
+    <Content Include="Musics\746ccdeb-fc8f-4c76-9c8b-5d850450562c" />
+    <Content Include="Musics\d4f14850-4155-4c45-8483-5615b2714bf6" />
+    <Content Include="Musics\e87e81d1-d765-4550-934a-f2eec781ad9f" />
+    <Content Include="Musics\fb9d93ea-ee71-4754-b210-c4ffb144d5c5" />
     <None Include="scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="scripts\jquery-1.11.1.min.js" />
     <Content Include="scripts\jquery-3.3.1.js" />
     <Content Include="scripts\jquery-3.3.1.min.js" />
     <Content Include="scripts\jquery-3.3.1.slim.js" />
@@ -234,6 +300,7 @@
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -319,6 +386,13 @@
     </Compile>
     <Compile Include="OrderPage.aspx.designer.cs">
       <DependentUpon>OrderPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="playMicOne.ascx.cs">
+      <DependentUpon>playMicOne.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="playMicOne.ascx.designer.cs">
+      <DependentUpon>playMicOne.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SingerPage.aspx.cs">

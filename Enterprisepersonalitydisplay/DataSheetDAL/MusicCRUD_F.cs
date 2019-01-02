@@ -52,6 +52,39 @@ namespace DataSheetDAL
             }
             return list;
         }
+        /// <summary>
+        /// 歌手搜索
+        /// </summary>
+        /// <param name="sextext">歌手性别</param>
+        /// <param name="styletext">歌曲风格</param>
+        /// <returns></returns>
+        public static List<ViewMicsuger> RegionFind(string regiotext,string sextext, string styletext)
+        {
+            //参数化查询
+            SqlParameter[] paras = new SqlParameter[]
+            {
+                new SqlParameter("@SingerRegio",regiotext),
+                new SqlParameter ("@SingerClass",sextext),
+                new SqlParameter("@StyleName",styletext)
+            };
+            string sql = "select distinct top 10 s.HardImg,s.SingerName from MusicInfo m,SingerInfo s,MusicStyleInfo ms where m.SingerId=s.SingerId and m.StyleId=ms.StyleId and(s.SingerRegio like '%'+@SingerRegio+'%' and s.SingerClass like '%'+@SingerClass+'%' and ms.StyleName like '%'+@StyleName+'%')";
+            DataTable table = DBHelpe.SelectDB(sql, false, paras);
+            List<ViewMicsuger> list = new List<ViewMicsuger>();
+            foreach (DataRow row in table.Rows)
+            {
+                list.Add(new ViewMicsuger
+                {
+                    HardImg = row["HardImg"].ToString(),
+                    SingerName = row["SingerName"].ToString()
+                });
+            }
+            return list;
+        }
+
+
+
+
+
 
         /// <summary>
         /// 歌曲播放功能
