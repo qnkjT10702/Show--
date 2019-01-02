@@ -18,8 +18,27 @@ namespace DataSheetDAL
         /// <returns>返回音乐风格表所有列</returns>
         public static DataTable SelectMicStyle()
         {
-            string sql = "select * from MusicStyleInfo";
+            string sql = "select  top 4 m.MicImg,m.MicName,m.MicSRc,m.CollectCount,m.MIcPlayCount,s.SingerName from MusicInfo m,SingerInfo s  where m.SingerId=s.SingerId  order by CollectCount desc";
             return DBHelpe.SelectDB(sql, false);
+        }
+        public static List<ViewMicsuger> Selectorder()
+        {
+            string sql = "select top 4* from MusicInfo m ,SingerInfo s where s.SingerId=m.SingerId order by m.CollectCount desc";
+           DataTable table = DBHelpe.SelectDB(sql, false);
+            List<ViewMicsuger> list = new List<ViewMicsuger>();
+            foreach (DataRow row in table.Rows)
+            {
+
+                list.Add(new ViewMicsuger
+                {
+                    MicImg = row["MicImg"].ToString(),
+                    MicName = row["MicName"].ToString(),
+                    MicSRc = row["MicSRc"].ToString(),
+                    MicId = Convert.ToInt32(row["MicId"]),
+                    SingerName = row["SingerName"].ToString(),
+                });
+            }
+            return list;
         }
 
         public static bool query(string condition)

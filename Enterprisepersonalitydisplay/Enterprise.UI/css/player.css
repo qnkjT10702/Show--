@@ -79,14 +79,14 @@
 .music-player__pointer {
     width: 25px;
     position: absolute;
-    right: -10px;
-    top: 0;
+    right:-10px;
+    top: 10px;
     -webkit-transform-origin: right top;
     -ms-transform-origin: right top;
     transform-origin: right top;
-    -webkit-transform: rotate(-15deg);
-    -ms-transform: rotate(-15deg);
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-19deg);
+    -ms-transform: rotate(-19deg);
+    transform: rotate(-19deg);
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
@@ -107,10 +107,11 @@
     position: absolute;
     overflow: hidden;
     left: 0;
-    right: 0;
+    right: -374px;
     top: 0;
     bottom: 0;
     margin: auto;
+
 }
 
 
@@ -264,10 +265,18 @@
     -webkit-animation: disc 5s linear 0s infinite;
     animation: disc 5s linear 0s infinite;
 }
-
+.music-player__disc {
+    float: left;
+    width: 140px;
+    height: 140px;
+    background: url(../images/cd.png) no-repeat center;
+    background-size: auto auto;
+    background-size: 100%;
+    position: relative;
+    z-index:-1;
+}
 
 /*  播放进度  */
-
 .player__song--progress {
     width: 100%;
     margin-top: 15px;
