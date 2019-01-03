@@ -25,7 +25,7 @@
                     <button class="login_btn" runat="server">登入</button>
                 </li>
                 <li class="form_item form_to form_login">
-                    <p class="form_login_text">还没有有账号, 去<a class="toLogin" href="javascirpt:;">注册</a></p>
+                    <p class="form_login_text">还没有有账号, 去<a class="toLogin">注册</a></p>
                 </li>
             </ul>
         </div>
@@ -34,13 +34,13 @@
             <ul class="form_box">
                 <li class="form_item form_title">用户注册</li>
                 <li class="form_item form_name">
-                    <input class="form_name_value" type="text" placeholder="请输入用户名" runat="server">
+                    <input class="form_name_value" type="text" placeholder="请输入用户名" runat="server" id="form_name_value">
                 </li>
                 <li class="form_item form_mail">
-                    <input class="form_mail_value" type="text" placeholder="请输入邮箱" runat="server">
+                    <input class="form_mail_value" type="text" placeholder="请输入邮箱" runat="server" id="form_mail_value">
                 </li>
                 <li class="form_item form_pwd">
-                    <input class="form_pwd_value" type="password" placeholder="请输入密码" runat="server">
+                    <input class="form_pwd_value" type="password" placeholder="请输入密码" runat="server" id="form_pwd_value">
                 </li>
                 <li class="form_item form_pwd_confirm">
                     <input class="form_pwdc_value" type="password" placeholder="请确认密码" runat="server">
@@ -54,10 +54,10 @@
                     <p class="form_info_text hidden">提示: <span class="form_info_text_tip"></span></p>
                 </li>
                 <li class="form_item form_reg form_btn">
-                    <button class="reg_btn">注册</button>
+                    <button class="reg_btn" runat="server" onserverclick="Unnamed_ServerClick">注册</button>
                 </li>
                 <li class="form_item form_to form_reg">
-                    <p class="form_reg_text">已经有账号, 去<a class="toRegister" href="javascirpt:;">登入</a></p>
+                    <p class="form_reg_text">已经有账号, 去<a class="toRegister" >登入</a></p>
                 </li>
             </ul>
         </div>

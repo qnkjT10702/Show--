@@ -13,5 +13,10 @@ namespace Enterprise.UI
         {
 
         }
+
+        protected void Unnamed_ServerClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
