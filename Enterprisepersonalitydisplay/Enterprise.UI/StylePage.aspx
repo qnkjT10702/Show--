@@ -67,15 +67,6 @@
                 $(this).toggleClass('style');
             })
         })
-
-        for(var i=1;i<20;i++){
-            var styleSong = document.getElementById('styleSong');
-            var song = document.getElementById('song');
-            var newNode = song.cloneNode(true);
-            styleSong.appendChild(newNode);
-		}
-
-        
     </script>
 
 </asp:Content>
