@@ -31,7 +31,7 @@
         </div>
         <!-- login_section -->
         <div class="section login_section">
-            <ul class="form_box">
+            <ul class="form_box" accesskey="<">
                 <li class="form_item form_title">用户注册</li>
                 <li class="form_item form_name">
                     <input class="form_name_value" type="text" placeholder="请输入用户名" runat="server" id="form_name_value">
@@ -50,6 +50,11 @@
                 	<input  class="form_sex_value" type="radio" name="sex" id="form_sex_confirm_0" runat="server"/>男
 					<input  class="form_sex_value" type="radio" name="sex" id="form_sex_confirm_1"  runat="server"/>女
                 </li>
+                <li>
+                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="头像不可以为空" EnableClientScript="false" ControlToValidate="FileUpload1"></asp:RequiredFieldValidator>
+                </li>
+               
                 <li class="form_item form_info">
                     <p class="form_info_text hidden">提示: <span class="form_info_text_tip"></span></p>
                 </li>
