@@ -1,4 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Enterprise.UI.Default" %>
+
+<%@ Register Src="~/playMicOne.ascx" TagPrefix="uc1" TagName="playMicOne" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -9,10 +12,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-              <audio src="Musics\06aa5e8b-7631-4330-b8d4-811bb0343a6dA-Lin - 爱 (Live).mp3" controls="controls"></audio>
-               <img src="images/0008118294621006_b.jpg" />
-        </div>
+            <uc1:playMicOne runat="server" ID="playMicOne" />
     </form>
 
 </body>
