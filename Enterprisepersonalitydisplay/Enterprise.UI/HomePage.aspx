@@ -77,7 +77,7 @@
         ); 
     </script>
 
-        <div style="width:1150px;margin-bottom:20px;">
+        <div style="width:1150px;margin-bottom:20px;padding:0px 100px;box-sizing:border-box;">
             <h1>新&nbsp;&nbsp;&nbsp;&nbsp;歌&nbsp;&nbsp;&nbsp;&nbsp;首&nbsp;&nbsp;&nbsp;&nbsp;发</h1>
             <div id="recommend_in">
                 <div id="songList">

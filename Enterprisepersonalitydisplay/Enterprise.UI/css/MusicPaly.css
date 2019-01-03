@@ -1,12 +1,50 @@
 
 
 #Music ul li{width:120px; height:120px; color:#fff;
-			list-style-type:none;/*去掉圆点*/ position:absolute;/*绝对定位*/
+			list-style-type:none;/*去掉圆点*/ position:relative;/*绝对定位*/
 			}
-#Music ul li.box4{left:550px; top:80px;}
+/*#Music ul li.box4{left:550px; top:80px;}
 #Music ul li.box3{left:308px; top:66px;}
-#Music ul li.box2{left:161px; top:132px;}
-#Music ul li.box1{left:20px; top:20px;}
+#Music ul li.box2{left:161px; top:132px;}*/
+.box1:nth-child(1){
+    position: relative;
+    left: 308px;
+    top:24px;
+
+}
+.box1:nth-child(2) {
+    position: relative;
+    left: 63px;
+    top:-113px;
+}
+.box1:nth-child(3) {
+    position: relative;
+    left: 500px;
+    top: -214px;
+}
+.box1:nth-child(4) {
+    position: relative;
+    left: 637px;
+    top: -272px;
+}
+
+/*#Music ul:nth-of-type(3) {
+    position: relative;
+    left: 100px;
+    top: 0px;
+    height: 100px;
+    width: 100px;
+    border: solid 1px green;
+}
+#Music ul:nth-of-type(4) {
+    position: relative;
+    left: 100px;
+    top: 0px;
+    height: 100px;
+    width: 100px;
+    border: double 1px red;
+}*/
+
 #Music ul li img{border-radius:50%;/*圆角的半径*/}
 #Music ul li img:hover{-webkit-transform:scale(1.1);-webkit-transition:all 0.3s linear;}
 #Music ul li img.zqq{-webkit-animation:zq 2s infinite linear;}

@@ -19,32 +19,24 @@
         }
         #styleSong{
             width:100%;
-            border:1px solid red;
             padding:20px 100px;
             box-sizing:border-box;
             display:flex;   /*不换行*/
             justify-content: space-between;
             flex-wrap: wrap;
         }
-        #song{
-            width:220px;
-            height:290px;
-            background-color:#f8f8f8;
-            margin-bottom:20px;
-        }
-        .songImg{
-            width:100%;
-            height:220px;
-            background-color:peachpuff;
-        }
-        .songName{
-            color:black;
-            margin-top:12px;
-        }
-        .singerName{
+        #styleSong tr:nth-child(1){
             color:#999999;
         }
-        .style{color:#fdad02;}
+        #styleSong td{
+            padding:12px 10px;
+        }
+        #styleSong td a{
+            color:#4a4a4a;
+        }
+        #styleSong td a:hover{
+            color:#fdad02;
+        }
     </style>
 
     <div id="styleTitle">
@@ -54,11 +46,75 @@
         </span>
     </div>
     <div id="styleSong">
-        <div id="song">
-            <div class="songImg"><asp:Image ID="songImg" runat="server" /></div>
-            <div class="songName"><asp:Label ID="songName" runat="server" Text="Label"></asp:Label></div>
-            <div class="singerName"><asp:Label ID="singeName" runat="server" Text="Label"></asp:Label></div>
-        </div>
+        <table style="width:1150px;border:3px solid #4A4A4A;">
+            <tr>
+                <td style="width:56%;">歌曲</td>
+                <td style="width:16%;">歌手</td>
+                <td style="width:8%;">播放</td>
+                <td style="width:10%;">风格</td>
+                <td>收藏</td>
+            </tr>
+            <tr>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+            </tr>
+            <tr>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+            </tr>
+            <tr>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+            </tr>
+            <tr>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+            </tr>
+            <tr>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+            </tr>
+            <tr>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+            </tr>
+            <tr>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+            </tr>
+            <tr>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+            </tr>
+            <tr>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+            </tr>
+            <tr>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+                <td><a href="">123</a></td>
+            </tr>
+        </table>
     </div>
 
     <script>
