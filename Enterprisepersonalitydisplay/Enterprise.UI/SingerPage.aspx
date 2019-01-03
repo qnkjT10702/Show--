@@ -75,7 +75,6 @@
                 }
                 $('#ends').html(outStamper);
             }
-            
         })
     </script>
 </asp:Content>
@@ -198,7 +197,7 @@
         #end{
             position:relative;
         }
-        #SingerPage{
+         #SingerPage{
             border: solid 1px red;
             position: absolute;
             height: 100px;
@@ -267,5 +266,4 @@
 
         </div>
     </div>
-
 </asp:Content>
