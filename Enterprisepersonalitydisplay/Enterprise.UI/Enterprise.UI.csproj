@@ -200,6 +200,7 @@
     <Content Include="Imgs\end2.png" />
     <Content Include="Imgs\end3.png" />
     <Content Include="Imgs\round55.gif" />
+    <Content Include="Imgs\timg1.jpg" />
     <Content Include="js\base.js" />
     <Content Include="js\common.js" />
     <Content Include="js\index.js" />

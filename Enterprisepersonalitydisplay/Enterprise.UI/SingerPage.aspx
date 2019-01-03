@@ -198,12 +198,11 @@
             position:relative;
         }
          #SingerPage{
-            border: solid 1px red;
             position: absolute;
             height: 100px;
-            background-color: #f5eab3;
+            background-image:url(Imgs/timg1.jpg);
             z-index: 10;
-            height: 1029px;
+            height: 1031px;
             top: 389px;
             width: 100%;
         }
