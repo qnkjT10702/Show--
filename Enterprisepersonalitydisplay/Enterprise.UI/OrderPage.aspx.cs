@@ -27,22 +27,9 @@ namespace Enterprise.UI
         protected void Page_Load(object sender, EventArgs e)
         {
        
-           
-            //one = MusicCRUD.Selectorder()[3];
-            //two = MusicCRUD.Selectorder()[2];
-            //three = MusicCRUD.Selectorder()[1];
-            //four = MusicCRUD.Selectorder()[0];
             if (Request.RequestType == "POST")
             {
 
-                //  int index = tbMicInfoOrder.Count;
-
-                //for (int i = 0; i < tbMicInfoOrder.Count; i++)
-                //{
-
-                //     string name =tbMicInfoOrder[i].MicName;
-                //    orderBang.InnerText = name;
-                // }
 
                  List<ViewMicsuger> tbH = MusicCRUD.Selectorder();
         //序列化 这个集合 Json

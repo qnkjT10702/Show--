@@ -18,7 +18,7 @@ namespace DataSheetDAL
         /// <returns>返回音乐风格表所有列</returns>
         public static DataTable SelectMicStyle()
         {
-            string sql = "select  top 4 m.MicImg,m.MicName,m.MicSRc,m.CollectCount,m.MIcPlayCount,s.SingerName from MusicInfo m,SingerInfo s  where m.SingerId=s.SingerId  order by CollectCount desc";
+            string sql = "select *from MusicStyleInfo";
             return DBHelpe.SelectDB(sql, false);
         }
         public static List<ViewMicsuger> Selectorder()
