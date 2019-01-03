@@ -74,8 +74,6 @@
             var newNode = song.cloneNode(true);
             styleSong.appendChild(newNode);
 		}
-
-        
     </script>
 
 </asp:Content>
