@@ -27,7 +27,7 @@ namespace DataSheet.Model
         /// <summary>
         /// 歌曲风格
         /// </summary>
-        public int StyleId { get; set; }
+        public int StyleId {    get; set; }
         /// <summary>
         /// 歌曲地区 
         /// </summary>
