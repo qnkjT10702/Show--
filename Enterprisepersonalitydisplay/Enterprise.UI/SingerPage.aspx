@@ -75,6 +75,7 @@
                 }
                 $('#ends').html(outStamper);
             }
+            
         })
     </script>
 </asp:Content>
@@ -197,6 +198,22 @@
         #end{
             position:relative;
         }
+        #SingerPage{
+            border: solid 1px red;
+            position: absolute;
+            height: 100px;
+            background-color: #f5eab3;
+            z-index: 10;
+            height: 1029px;
+            top: 389px;
+            width: 100%;
+        }
+        .Catalog{
+            margin-left: 20%;
+            background-color: white;
+            height: 1029px;
+            margin-right: 20%;
+        }
     </style>
 
 
@@ -244,6 +261,11 @@
     <!--歌手前十	上半部分-->
     <div id="ends">
        
+    </div>
+    <div id="SingerPage">
+        <div class="Catalog">
+
+        </div>
     </div>
 
 </asp:Content>
