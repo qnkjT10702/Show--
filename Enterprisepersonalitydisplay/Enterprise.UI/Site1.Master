@@ -7,6 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>甜橙音乐网</title>
     <link href="css/MusicPaly.css" rel="stylesheet" />
+    <link href="css/base2orderby2.css" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
     <style>
         *{
             padding:0px;

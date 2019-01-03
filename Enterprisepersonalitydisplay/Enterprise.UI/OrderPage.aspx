@@ -21,15 +21,30 @@
             
             //
             let Stie = $('#micMenuApp').html();
-            let outHtm='';
-            console.log(Stie);
+            let outHtm = '';
+               console.log(Stie);
+            
             for (var i = 0; i < dt.length; i++) {
                 Mouther = Stie.replace('{{micImg}}', dt[i].MicImg).replace('{{micName}}', dt[i].MicName).replace('{{micSrc}}', dt[i].MicSRc).replace('{{SingerName}}', dt[i].SingerName);
                 //未完
                 outHtm += Mouther;
             }
             $('#micMenuApp').html(outHtm);
+
+            let Stie2 = $('#PalyMusico').html();
+            //获取要替换部分的html代码
+                let outHtm2 = '';
+            console.log(Stie2);
+            console.log(dt.MicName);
+            Mouther2 = Stie2.replace('{{micImg3}}', dt[0].MicName).replace('{{micImg2}}', dt[0].MicImg).replace('{{micSrc3}}', dt[0].MicSRc);
+            //替换
+            outHtm2 += Mouther2;
+            //再赋给字符串变量
+            $('#PalyMusico').html(outHtm2);
+            //再添加html代码
         }
+         
+
             var mark=1; //打开
 	    $(".clickBut").click(function(){
 		    if(mark==1){
@@ -125,9 +140,12 @@ left: -72px;">
             <div class="MusicCon">
 	            <div id="bgimgSinger"></div>
 	            <div class='ImgTxt'>
-		            <dl>
-			            <dt><img src="images/Exo1.jpg" style=" width:90px;height:90px;" class="butImg"/></dt>
-			            <dd>我的答案</dd>
+		            <dl id="PalyMusico">
+			            <dt>
+                            <%--<img src="images/Exo1.jpg"  class="butImg"/>--%>
+                            <img src="{{micImg2}}" class="butImg" style=" width:90px;height:90px; " dataSrc='{{micSrc3}}'/>
+			            </dt>
+			            <dd>{{micImg3}}</dd>
 		            </dl>
 	            </div>
 	            <div class="But">
