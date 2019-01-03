@@ -197,6 +197,21 @@
         #end{
             position:relative;
         }
+         #SingerPage{
+            position: absolute;
+            height: 100px;
+            background-image:url(Imgs/timg1.jpg);
+            z-index: 10;
+            height: 1031px;
+            top: 389px;
+            width: 100%;
+        }
+        .Catalog{
+            margin-left: 20%;
+            background-color: white;
+            height: 1029px;
+            margin-right: 20%;
+        }
     </style>
 
 
@@ -245,5 +260,9 @@
     <div id="ends">
        
     </div>
+    <div id="SingerPage">
+        <div class="Catalog">
 
+        </div>
+    </div>
 </asp:Content>
