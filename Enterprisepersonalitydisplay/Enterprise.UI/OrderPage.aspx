@@ -5,8 +5,46 @@
     <script>
          //background: url("images/0008118294621006_b.jpg"); background-repeat:no-repeat; background-size:100%;
         $(function () {
-            $('#AppBar1').css({ backgroundColor: '#4A4A4A',color:'#fdad02' })
-        })
+           // $('#AppBar1').css({ backgroundColor: '#4A4A4A', color: '#fdad02' })
+
+            //这里写Ajax
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                success: function (dt) {
+                    ss(dt);
+                }
+            });
+
+        });
+        function ss(dt) {
+            
+            //
+            let Stie = $('#micMenuApp').html();
+            let outHtm = '';
+               console.log(Stie);
+            
+            for (var i = 0; i < dt.length; i++) {
+                Mouther = Stie.replace('{{micImg}}', dt[i].MicImg).replace('{{micName}}', dt[i].MicName).replace('{{micSrc}}', dt[i].MicSRc).replace('{{SingerName}}', dt[i].SingerName);
+                //未完
+                outHtm += Mouther;
+            }
+            $('#micMenuApp').html(outHtm);
+
+            let Stie2 = $('#PalyMusico').html();
+            //获取要替换部分的html代码
+                let outHtm2 = '';
+            console.log(Stie2);
+            console.log(dt.MicName);
+            Mouther2 = Stie2.replace('{{micImg3}}', dt[0].MicName).replace('{{micImg2}}', dt[0].MicImg).replace('{{micSrc3}}', dt[0].MicSRc);
+            //替换
+            outHtm2 += Mouther2;
+            //再赋给字符串变量
+            $('#PalyMusico').html(outHtm2);
+            //再添加html代码
+        }
+         
+
             var mark=1; //打开
 	    $(".clickBut").click(function(){
 		    if(mark==1){
@@ -20,8 +58,9 @@
 
 	    var obj_Mp3=null;
 	    var _index=0;
-	    //点击可以点歌
-	    $("#Music ul li").click(function(){
+        //点击可以点歌
+        $("#Music ul").on('click', 'li', function () {
+            //预约事件先把事件给ul
 		    _index=$(this).index();//获取到序列号
 		    $(this).find("img").addClass("zqq").parent().siblings('li').find("img").removeClass("zqq");//加上 class="zqq"zqq
 		    var simg=$(this).find("img").attr("src");
@@ -80,27 +119,20 @@
     <div id="BgBig" style=" background-image: url(images/0008118294621006_b.jpg); background-repeat:no-repeat; background-size:100%;width:1918px;height:700px; position:relative;top:-50px;">
            <div id="Music" style="width: 960px; height: 250px;margin: 50px auto 0px; position: relative; background-image:url(images/dsfdv.png);top: 100px;
 left: -72px;">
-	            <div id="orderBang">收藏榜单</div>
-	            <ul>
+	            <div id="orderBang">
+                    收藏榜单
+                    <img  src="Imgs/Xin.png" style="position:absolute;top:48px;left:23px; height:170px;width:159px;">
+	            </div>
+	            <ul id="micMenuApp">
 		            <li class="box1">
-			            <img runat="server" src="images/Exo2.jpg" width='100' height='100' title="我的答案"
-			            dataSrc='Musics/EXO - MY ANSWER (我的答案).mp3'/>
-                        <a style="font-size:25px;position:relative; left:23px;" font-family:华文行楷">Exo</a>
-		            </li>
-		            <li class="box2">
-			            <img  runat="server" src="images/风格.jpg" width='80' height='80' title="爱上未来的你" dataSrc='Musics/鹿晗 - 爱上未来的你 (Live).mp3'/>
-                         <a style="font-size:25px;display:inline-block;position:relative ;left:15px; font-family:华文行楷"">鹿晗</a>
-		            </li>
-		            <li class="box3">
-			            <img runat="server" src="images/AlIn2.jpg" width='120' height='120' title="爱上你等于爱上寂寞" style="position: relative;left: 0px" dataSrc='Musics/uuu.mp3' />
- 
-                         <a style="font-size:25px;position:relative;left:26px; font-family:华文行楷"">A-Lin</a>
-		            </li>
-		            <li class="box4">
-			            <img runat="server" src="images/Mei.jpg" width='110' height='110' title="Love Story" dataSrc='Musics/Taylor Swift - Love Story.mp3' />
-                        <a style="font-size:25px;position:relative;left:16px; font-family:华文行楷">Taylor Swift</a>
-		            </li>
+			            <img src="{{micImg}}" width='120px' height='120px' title="{{micName}}" dataSrc='{{micSrc}}'/>
+                       <%-- <a style="font-size:25px;position:relative; left:23px; font-family:华文行楷">{{SingerName}}</a>--%>
+		            </li>  
 	            </ul>
+                <img  src="Imgs/未标题-5.png" style="position:absolute;top:186px; left:323px; height:121px;width:85px;"/>
+                 <img  src="Imgs/未标题-7.png" style="position:absolute;top:148px; left:79px; height:121px;width:85px;"/>
+                 <img  src="Imgs/未标题-6.png" style="position:absolute;top:181px; left:514px; height:121px;width:85px;"/>
+             
             </div>
             <!--点播音乐结束-->
 
@@ -108,9 +140,12 @@ left: -72px;">
             <div class="MusicCon">
 	            <div id="bgimgSinger"></div>
 	            <div class='ImgTxt'>
-		            <dl>
-			            <dt><img src="images/Exo1.jpg" style=" width:90px;height:90px;" class="butImg"/></dt>
-			            <dd>我的答案</dd>
+		            <dl id="PalyMusico">
+			            <dt>
+                            <%--<img src="images/Exo1.jpg"  class="butImg"/>--%>
+                            <img src="{{micImg2}}" class="butImg" style=" width:90px;height:90px; " dataSrc='{{micSrc3}}'/>
+			            </dt>
+			            <dd>{{micImg3}}</dd>
 		            </dl>
 	            </div>
 	            <div class="But">

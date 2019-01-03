@@ -7,15 +7,44 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DataSheetDAL;
+using System.Data;
+using Newtonsoft.Json;
+
 
 namespace Enterprise.UI
 {
     public partial class OrderPage : System.Web.UI.Page
     {
+        //public ViewMicsuger one;
+        //public ViewMicsuger two;
+        //public ViewMicsuger three;
+        //public ViewMicsuger four;
+        public ViewMicsuger view = null;
+       
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            Site1 OPge = Page.Master as Site1;
-            OPge.inquire += OPgerefer;
+       
+            if (Request.RequestType == "POST")
+            {
+
+
+                 List<ViewMicsuger> tbH = MusicCRUD.Selectorder();
+        //序列化 这个集合 Json
+                string JsonTb = JsonConvert.SerializeObject(tbH);
+                Response.Write(JsonTb);
+                Response.End();
+            }
+            else
+            {
+
+                Site1 OPge = Page.Master as Site1;
+                OPge.inquire += OPgerefer;
+                
+            }
+           
 
         }
         private void OPgerefer(string condition)

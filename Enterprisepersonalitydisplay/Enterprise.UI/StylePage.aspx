@@ -123,8 +123,6 @@
                 $(this).toggleClass('style');
             })
         })
-        
-        
     </script>
 
 </asp:Content>
