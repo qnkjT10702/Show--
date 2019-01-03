@@ -52,6 +52,10 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+<<<<<<< HEAD
+      <Private>True</Private>
+=======
+>>>>>>> 41b01db2eea23e955260709d8f48e5aebda521fa
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
@@ -198,12 +202,14 @@
     <Content Include="Imgs\f7d96319-e01e-47ef-9ceb-580133300b2aBirdy.jpg" />
     <Content Include="Imgs\ff3a5ca2-a0a0-48d3-af99-9a1cf4fe1d3fEXO.jpg" />
     <Content Include="Imgs\footer.gif" />
+    <Content Include="Imgs\ink.png" />
     <Content Include="Imgs\round33.gif" />
     <Content Include="Imgs\round44.gif" />
     <Content Include="Imgs\end1.png" />
     <Content Include="Imgs\end2.png" />
     <Content Include="Imgs\end3.png" />
     <Content Include="Imgs\round55.gif" />
+    <Content Include="Imgs\timg1.jpg" />
     <Content Include="js\base.js" />
     <Content Include="js\common.js" />
     <Content Include="js\index.js" />

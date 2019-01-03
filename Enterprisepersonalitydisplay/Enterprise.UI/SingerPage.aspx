@@ -75,7 +75,6 @@
                 }
                 $('#ends').html(outStamper);
             }
-            
         })
     </script>
 </asp:Content>
@@ -198,13 +197,12 @@
         #end{
             position:relative;
         }
-        #SingerPage{
-            border: solid 1px red;
+         #SingerPage{
             position: absolute;
             height: 100px;
-            background-color: #f5eab3;
+            background-image:url(Imgs/timg1.jpg);
             z-index: 10;
-            height: 1029px;
+            height: 1031px;
             top: 389px;
             width: 100%;
         }
@@ -213,6 +211,17 @@
             background-color: white;
             height: 1029px;
             margin-right: 20%;
+        }
+        .fork{
+            background-color:black;
+            position:absolute;
+            left:1120px;
+            top:2px;
+            width:25px;
+            height:25px;
+            text-align:center;
+            line-height:25px;
+            border-radius:50%;
         }
     </style>
 
@@ -263,9 +272,8 @@
        
     </div>
     <div id="SingerPage">
-        <div class="Catalog">
-
+        <div class="Catalog">         
         </div>
+         <span class="fork">X</span>
     </div>
-
 </asp:Content>
