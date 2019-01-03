@@ -25,11 +25,14 @@
 		<div class="music-player__disc">
 			<!-- 唱片图片 -->
             <%--3.img--%>
-			<div class="music-player__image" runat="server">
-				<img style="width:100px;" src="" alt="" runat="server" id="micImg"/>
+			<div class="music-player__image" style="left:-373px; height:110px;width:110px;" runat="server">
+				<img style="width:110px; height:110px;" src="" alt="" runat="server" id="micImg"/>
 			</div>
 			<!-- 指针 -->
-			<div class="music-player__pointer"><img style="width:100%;" src="./images/cd_tou.png" alt="" runat="server"/></div>
+			<div class="music-player__pointer">
+                <img style="width:100%;" src="./images/cd_tou.png" alt="" runat="server"/>
+
+			</div>
 		</div>
 		<!-- 控件主体 -->
 		<div class="music-player__controls">
