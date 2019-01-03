@@ -123,8 +123,17 @@
                 $(this).toggleClass('style');
             })
         })
+         HEAD
+
+        for(var i=1;i<20;i++){
+            var styleSong = document.getElementById('styleSong');
+            var song = document.getElementById('song');
+            var newNode = song.cloneNode(true);
+            styleSong.appendChild(newNode);
+		}
         
         
+ b6b2b868a2efa1a152c074927e437c68893b2c82
     </script>
 
 </asp:Content>
