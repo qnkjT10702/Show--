@@ -212,6 +212,17 @@
             height: 1029px;
             margin-right: 20%;
         }
+        .fork{
+            background-color:black;
+            position:absolute;
+            left:1120px;
+            top:2px;
+            width:25px;
+            height:25px;
+            text-align:center;
+            line-height:25px;
+            border-radius:50%;
+        }
     </style>
 
 
@@ -261,8 +272,8 @@
        
     </div>
     <div id="SingerPage">
-        <div class="Catalog">
-
+        <div class="Catalog">         
         </div>
+         <span class="fork">X</span>
     </div>
 </asp:Content>
