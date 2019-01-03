@@ -90,36 +90,7 @@
                 }
 
                 // 如果格式正确, 存储信息
-                var userInfo = {
-                    name: form_name_value,
-                    mail: form_mail_value,
-                    pwd:  form_pwd_value,
-                    sex:  form_sex_value,
-                };
-                var storageUserInfo = localStorage.getItem('userInfo');
-                if(storageUserInfo) {
-                    storageUserInfo = JSON.parse(storageUserInfo);
-                    var flag = true;
-                    storageUserInfo.forEach(function(value) {
-                        if(value.name == form_name_value) {
-                            base.getEle('form_info_text')[1].classList.remove('hidden');
-                            base.getEle('form_info_text_tip')[1].innerHTML = '该用户名已经被注册过了';
-                            flag = false;
-                            return false;
-                        }
-                    });
-                    if(!flag) {
-                        return false;
-                    }
-                    storageUserInfo.push(userInfo);
-                }else {
-                    storageUserInfo =userInfo;
-                    
-                }
-                //base.getEle('form_info_text')[1].classList.remove('hidden');
-                //base.getEle('form_info_text_tip')[1].innerHTML = "注册成功";
-                alert('注册成功');
-                localStorage.setItem('userInfo', JSON.stringify(storageUserInfo));
+                
             }
         }
     };
