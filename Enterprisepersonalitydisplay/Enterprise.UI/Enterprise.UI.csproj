@@ -76,10 +76,15 @@
     <Content Include="Admin\HomePage.aspx" />
     <Content Include="Admin\ManageUser.aspx" />
     <Content Include="css\base.css" />
+    <Content Include="css\base2orderby2.css" />
+    <Content Include="css\home.css" />
     <Content Include="css\htmleaf-demo.css" />
     <Content Include="css\index.css" />
+    <Content Include="css\MusicPaly.css" />
     <Content Include="css\normalize.css" />
+    <Content Include="css\player.css" />
     <Content Include="css\posterTvGrid.css" />
+    <Content Include="css\reset.css" />
     <Content Include="Default.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="Imgs\end1.png" />
@@ -94,6 +99,7 @@
     <Content Include="js\Userlogin.js" />
     <Content Include="MusicMenu.ascx" />
     <Content Include="MyMusic.aspx" />
+    <Content Include="OrderByPage2.aspx" />
     <Content Include="OrderPage.aspx" />
     <Content Include="packages.config" />
     <Content Include="playMicOne.ascx" />
@@ -101,12 +107,14 @@
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <None Include="scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="scripts\jquery-1.11.1.min.js" />
+    <Content Include="scripts\jquery-1.9.1.min.js" />
     <Content Include="scripts\jquery-3.3.1.js" />
     <Content Include="scripts\jquery-3.3.1.min.js" />
     <Content Include="scripts\jquery-3.3.1.slim.js" />
     <Content Include="scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="scripts\jquery.min.js" />
     <Content Include="scripts\player.js" />
+    <Content Include="scripts\SuperSlide.js" />
     <Content Include="scripts\utill.js" />
     <Content Include="SingerPage.aspx" />
     <Content Include="Site1.Master" />
@@ -190,6 +198,13 @@
     </Compile>
     <Compile Include="MyMusic.aspx.designer.cs">
       <DependentUpon>MyMusic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderByPage2.aspx.cs">
+      <DependentUpon>OrderByPage2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderByPage2.aspx.designer.cs">
+      <DependentUpon>OrderByPage2.aspx</DependentUpon>
     </Compile>
     <Compile Include="OrderPage.aspx.cs">
       <DependentUpon>OrderPage.aspx</DependentUpon>
