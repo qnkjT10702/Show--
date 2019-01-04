@@ -33,7 +33,7 @@ var base = {
             info.tip = '请输入用户名'
         }else {
             // 校验格式
-            var reg = /^[a-zA-Z]{6,18}$/;
+            var reg = /^\w{6,18}$/;
             if(!reg.test(name)) {
                 info.flag = false;
                 info.tip = '用户名为6到18位字母'
