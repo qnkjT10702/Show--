@@ -2,7 +2,7 @@
 <style>
     .Song{
         border:1px solid orange;
-        width:60%;
+        width:1100px;
         height:40px;
         margin:0 auto;
         background-color:blanchedalmond;
