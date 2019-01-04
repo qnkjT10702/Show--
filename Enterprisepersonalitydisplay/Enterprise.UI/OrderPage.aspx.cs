@@ -16,10 +16,7 @@ namespace Enterprise.UI
 {
     public partial class OrderPage : System.Web.UI.Page
     {
-        //public ViewMicsuger one;
-        //public ViewMicsuger two;
-        //public ViewMicsuger three;
-        //public ViewMicsuger four;
+       
         public ViewMicsuger view = null;
        
 
@@ -32,7 +29,7 @@ namespace Enterprise.UI
 
 
                  List<ViewMicsuger> tbH = MusicCRUD.Selectorder();
-        //序列化 这个集合 Json
+                //序列化 这个集合 Json
                 string JsonTb = JsonConvert.SerializeObject(tbH);
                 Response.Write(JsonTb);
                 Response.End();

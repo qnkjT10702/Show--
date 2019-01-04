@@ -119,7 +119,7 @@
     <div id="BgBig" style=" background-image: url(images/0008118294621006_b.jpg); background-repeat:no-repeat; background-size:100%;width:1918px;height:700px; position:relative;top:-50px;">
            <div id="Music" style="width: 960px; height: 250px;margin: 50px auto 0px; position: relative; background-image:url(images/dsfdv.png);top: 100px;
 left: -72px;">
-	            <div id="orderBang">
+	            <div class="orderBang">
                     收藏榜单
                     <img  src="Imgs/Xin.png" style="position:absolute;top:48px;left:23px; height:170px;width:159px;">
 	            </div>
