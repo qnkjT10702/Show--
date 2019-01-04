@@ -241,7 +241,7 @@
 }
 
 .index-page .main-category .container-list {
-    background-color: #F5F6FA
+    
 }
 
 .index-page .main-category .list {
@@ -898,7 +898,7 @@
     z-index: 2;
     background: #000000;
     height: 600px;
-    left: 0;
+    left: -99px;
     top: 0;
     color: #fff;
 }
@@ -929,7 +929,7 @@
     margin-left: 20px;
     margin-right: 20px;
     float: left;
-    background: url("../img/round44.gif") no-repeat;
+    background: url("../images/round44.gif") no-repeat;
     width: 41px;
     height: 41px;
     position: relative;
@@ -1035,29 +1035,29 @@
     margin-left: -360px;
 }
 
-.index-page .solution-more-slide .bd li.item-1 {
-    background: url("../img/banner1.jpg") no-repeat center top;
-}
+    .index-page .solution-more-slide .bd li.item-1 {
+        background: url("../images/zhangliangying.gif") no-repeat center top;
+    }
 
-.index-page .solution-more-slide .bd li.item-2 {
-    background: url("../img/banner2.jpg") no-repeat center top;
-}
+    .index-page .solution-more-slide .bd li.item-2 {
+        background: url("../images/luhan.gif") no-repeat center top;
+    }
 
-.index-page .solution-more-slide .bd li.item-3 {
-    background: url("../img/banner3.jpg") no-repeat center top;
-}
+    .index-page .solution-more-slide .bd li.item-3 {
+        background: url("../images/meimei.gif") no-repeat center top;
+    }
 
-.index-page .solution-more-slide .bd li.item-4 {
-    background: url("../img/banner4.jpg") no-repeat center top;
-}
+    .index-page .solution-more-slide .bd li.item-4 {
+        background: url("../images/zhangbichen.gif") no-repeat center top;
+    }
 
-.index-page .solution-more-slide .bd li.item-5 {
-    background: url("../img/banner5.jpg") no-repeat center top;
-}
+    .index-page .solution-more-slide .bd li.item-5 {
+        background: url("../images/zhifouzhifou.gif") no-repeat center top;
+    }
 
-.index-page .solution-more-slide .bd li.item-6 {
-    background: url("../img/banner6.jpg") no-repeat center top;
-}
+    .index-page .solution-more-slide .bd li.item-6 {
+        background: url("../images/IU.gif") no-repeat center top;
+    }
 
 .index-page .solution-more-slide .bd .inner {
     padding-left: 360px;

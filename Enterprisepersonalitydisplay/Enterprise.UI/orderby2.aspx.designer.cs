@@ -10,6 +10,6 @@
 namespace Enterprise.UI {
     
     
-    public partial class OrderByPage2 {
+    public partial class orderby2 {
     }
 }

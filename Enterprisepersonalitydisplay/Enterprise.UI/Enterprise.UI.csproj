@@ -52,7 +52,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
@@ -112,7 +111,10 @@
     <Content Include="images\f2ab21df06fb0250ed1d00af1bf942bcc931b9045b88-7orh0l_fw658.jpg" />
     <Content Include="images\f670e7be66692bc10853d2dd773fc4629d5d1ea359c36-ibN45j_fw658.jpg" />
     <Content Include="images\f93fe8e4249bcc0a461f31911f4ad6a44291b3f598e6-OXuJ0M_fw658.jpg" />
+    <Content Include="images\IU.gif" />
+    <Content Include="images\luhan.gif" />
     <Content Include="images\Mei.jpg" />
+    <Content Include="images\meimei.gif" />
     <Content Include="images\MeIMSM2.jpg" />
     <Content Include="images\next.jpg" />
     <Content Include="images\next1.jpg" />
@@ -127,6 +129,9 @@
     <Content Include="images\songs\yanyuan.jpg" />
     <Content Include="images\sugar.jpg" />
     <Content Include="images\xjy.jpg" />
+    <Content Include="images\zhangbichen.gif" />
+    <Content Include="images\zhangliangying.gif" />
+    <Content Include="images\zhifouzhifou.gif" />
     <Content Include="images\zjl.jpg" />
     <Content Include="images\风格.jpg" />
     <Content Include="Imgs\0628bd16-8b02-4866-adce-7d02c044ea7bLaura Veirs.jpg" />
@@ -210,11 +215,13 @@
     <Content Include="js\common.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jquery-1.11.0.min.js" />
+    <Content Include="js\jquery-1.9.1.min.js" />
     <Content Include="js\posterTvGrid.js" />
+    <Content Include="js\SuperSlide.js" />
     <Content Include="js\Userlogin.js" />
     <Content Include="MusicMenu.ascx" />
     <Content Include="MyMusic.aspx" />
-    <Content Include="OrderByPage2.aspx" />
+    <Content Include="orderby2.aspx" />
     <Content Include="OrderPage.aspx" />
     <Content Include="packages.config" />
     <Content Include="playMicOne.ascx" />
@@ -314,12 +321,12 @@
     <Compile Include="MyMusic.aspx.designer.cs">
       <DependentUpon>MyMusic.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OrderByPage2.aspx.cs">
-      <DependentUpon>OrderByPage2.aspx</DependentUpon>
+    <Compile Include="orderby2.aspx.cs">
+      <DependentUpon>orderby2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OrderByPage2.aspx.designer.cs">
-      <DependentUpon>OrderByPage2.aspx</DependentUpon>
+    <Compile Include="orderby2.aspx.designer.cs">
+      <DependentUpon>orderby2.aspx</DependentUpon>
     </Compile>
     <Compile Include="OrderPage.aspx.cs">
       <DependentUpon>OrderPage.aspx</DependentUpon>
