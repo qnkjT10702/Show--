@@ -59,7 +59,7 @@
                     <p class="form_info_text hidden">提示: <span class="form_info_text_tip"></span></p>
                 </li>
                 <li class="form_item form_reg form_btn">
-                    <button class="reg_btn" runat="server" onserverclick="Unnamed_ServerClick">注册</button>
+                    <button class="reg_btn" runat="server" onserverclick="Unnamed_ServerClick" >注册</button>
                 </li>
                 <li class="form_item form_to form_reg">
                     <p class="form_reg_text">已经有账号, 去<a class="toRegister" >登入</a></p>
