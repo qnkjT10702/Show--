@@ -59,7 +59,7 @@
 
                     <button class="reg_btn" id="regBtn" runat="server">注册</button>
 
-                    <button class="reg_btn" runat="server" onserverclick="Unnamed_ServerClick" >注册</button>
+                    <button class="reg_btn" runat="server">注册</button>
 
                 </li>
                 <li class="form_item form_to form_reg">
