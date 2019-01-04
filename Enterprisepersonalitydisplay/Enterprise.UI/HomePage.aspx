@@ -14,8 +14,7 @@
 
 
     <style>
-        #div{padding:-7px 100px;
-        }
+        #div{padding:-7px 100px;}
         .posterTvGrid .leftNav{left:7px;background:url(Imgs/1.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Imgs/slide_next_btn.png");}
         .posterTvGrid .rightNav{right:7px;background:url(Imgs/2.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Imgs/slide_next_btn.png");}
 
