@@ -8,12 +8,14 @@
             base.getEle('toRegister')[0].onclick = function() {
                 base.getEle('register_section')[0].classList.remove('hidden');
                 base.getEle('login_section')[0].classList.add('hidden');
+                document.getElementById('actionName').value = '2';
             };
 
             // 到 登入
             base.getEle('toLogin')[0].onclick = function() {
                 base.getEle('login_section')[0].classList.remove('hidden');
                 base.getEle('register_section')[0].classList.add('hidden');
+                document.getElementById('actionName').value = '1';
             };
 
             // 登入 功能实现
@@ -83,7 +85,7 @@
                     return false;
                 }
                 
-                if (document.getElementById("ContentPlaceHolder1_form_sex_confirm_0").checked == false && document.getElementById("ContentPlaceHolder1_form_sex_confirm_0").checked==false){
+                if (document.getElementById("ContentPlaceHolder1_form_sex_confirm_0").checked == false && document.getElementById("ContentPlaceHolder1_form_sex_confirm_1").checked==false){
                 	base.getEle('form_info_text')[1].classList.remove('hidden');
                 	 base.getEle('form_info_text_tip')[1].innerHTML ="未选中性别";
                     return false;
