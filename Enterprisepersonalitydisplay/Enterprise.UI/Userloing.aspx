@@ -27,7 +27,7 @@
                     <button class="login_btn" runat="server" id="Longin_btn" >登入</button>
                 </li>
                 <li class="form_item form_to form_login">
-                    <p class="form_login_text">还没有有账号, 去<a class="toLogin">注册</a></p>
+                    <p class="form_login_text">还没有有账号, 去<a class="toLogin" >注册</a></p>
                 </li>
             </ul>
         </div>
@@ -56,7 +56,11 @@
                     <p class="form_info_text hidden">提示: <span class="form_info_text_tip"></span></p>
                 </li>
                 <li class="form_item form_reg form_btn">
+
                     <button class="reg_btn" id="regBtn" runat="server">注册</button>
+
+                    <button class="reg_btn" runat="server" onserverclick="Unnamed_ServerClick" >注册</button>
+
                 </li>
                 <li class="form_item form_to form_reg">
                     <p class="form_reg_text">已经有账号, 去<a class="toRegister" >登入</a></p>
