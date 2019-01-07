@@ -59,8 +59,6 @@
 
                     <button class="reg_btn" id="regBtn" runat="server">注册</button>
 
-                    <button class="reg_btn" runat="server">注册</button>
-
                 </li>
                 <li class="form_item form_to form_reg">
                     <p class="form_reg_text">已经有账号, 去<a class="toRegister" >登入</a></p>
