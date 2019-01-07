@@ -59,6 +59,12 @@
                 	<input  class="form_sex_value" type="radio" name="sex" id="form_sex_confirm_0" runat="server"/>男
 					<input  class="form_sex_value" type="radio" name="sex" id="form_sex_confirm_1"  runat="server"/>女
                 </li>
+                <li>
+                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" EnableClientScript="false" ControlToValidate="FileUpload1"  runat="server" ErrorMessage="头像不能为空"></asp:RequiredFieldValidator>
+                </li>
+                
+                
                 <li class="form_item form_info">
                     <p class="form_info_text hidden">提示: <span class="form_info_text_tip"></span></p>
                 </li>
