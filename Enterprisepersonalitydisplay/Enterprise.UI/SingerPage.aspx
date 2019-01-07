@@ -202,14 +202,14 @@
             height: 100px;
             background-image:url(Imgs/timg1.jpg);
             z-index: 10;
-            height: 1031px;
+            height: 983px;
             top: 389px;
             width: 100%;
         }
         .Catalog{
             margin-left: 20%;
             background-color: white;
-            height: 1029px;
+            height: 983px;
             margin-right: 20%;
         }
         .fork{

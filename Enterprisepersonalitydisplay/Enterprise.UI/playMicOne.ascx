@@ -14,7 +14,7 @@
         margin-top:-5px;
         color:green;
      }
-    .singer{
+    .singer{@
        text-decoration:none; 
        font-size:20px;
        color:green;
