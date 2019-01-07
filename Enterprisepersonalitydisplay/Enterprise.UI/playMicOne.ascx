@@ -2,7 +2,7 @@
 <style>
     .Song{
         border:1px solid orange;
-        width:60%;
+        width:1100px;
         height:40px;
         margin:0 auto;
         background-color:blanchedalmond;
@@ -14,7 +14,7 @@
         margin-top:-5px;
         color:green;
      }
-    .singer{
+    .singer{@
        text-decoration:none; 
        font-size:20px;
        color:green;
@@ -38,7 +38,7 @@
         color:orange;
     }
 </style>
-<div class="Song">
+<div class="Song"> 
   <div style="display:flex;">
       <a href="#" class="js_song" title="说爱你(Cover 沈以诚)">说爱你(Cover 沈以诚)</a>       <%--///跳转歌曲播放页面--%>
       <a href="#" class="singer" title="Ssssperm">Ssssperm</a>                                <%--///点击跳转歌手页面--%>

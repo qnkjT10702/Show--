@@ -53,7 +53,6 @@ a {
 
 hr {
     height: 1px;
-    background: #ccc;
     width: 100%;
     border: none;
     margin: 0;
@@ -66,7 +65,6 @@ img {
 }
 
 body {
-    background: #fff;
     color: #666;
     font: 12px/150% Arial,Verdana, "microsoft yahei";
 }
@@ -102,7 +100,6 @@ button {
 
 mark {
     color: #000;
-    background: #ff0;
 }
 
 small {
@@ -143,27 +140,6 @@ em {
 h2, h3 {
     font-family: "microsoft yahei";
     font-weight: 100;
-}
-
-table tr:nth-child(odd) {
-    background: #F4F4F4;
-}
-
-table td:nth-child(even) {
-    color: #F36140;
-}
-
-table tr:nth-child(2) {
-    background: #fff;
-    color: #888;
-}
-
-table.aui-tab-data tr {
-    background: #fff;
-}
-
-table.aui-tab-data tr:nth-child(odd) {
-    background-color: #F5F5F5;
 }
 
 table.aui-tab-data tr th {

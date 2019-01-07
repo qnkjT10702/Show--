@@ -53,6 +53,55 @@ namespace DataSheetDAL
             return list;
         }
         /// <summary>
+        /// 登录功能
+        /// </summary>
+        /// <param name="userInfo"></param>
+        /// <returns></returns>
+        public static List<UserInfo> LoginUser(UserInfo userInfo)
+        {
+            SqlParameter[] paras = new SqlParameter[]
+            {
+                new SqlParameter ("@UserName",userInfo.UserName),
+                new SqlParameter("@UserPwd",userInfo.UserPwd)
+            };
+            string sql = "select * from UserInfo where UserName=@UserName and UserPwd=@UserPwd";
+            DataTable table = DBHelpe.SelectDB(sql, false, paras);
+            List<UserInfo> list = new List<UserInfo>();
+            foreach (DataRow item in table.Rows)
+            {
+                list.Add(new UserInfo
+                {
+                    UserId = (int)item["UserId"],
+                    UserName = item["UserName"].ToString(),
+                    UserPwd = item["UserPwd"].ToString(),
+                    UserSex = item["UserSex"].ToString(),
+                    UserEmall = item["UserEmall"].ToString(),
+                    HeadImg = item["HeadImg"].ToString()
+                });
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// 注册功能
+        /// </summary>
+        /// <param name="userInfo"></param>
+        /// <returns></returns>
+        public static bool AddUserInfo(UserInfo userInfo)
+        {
+            SqlParameter[] paras = new SqlParameter[]
+           {
+                new SqlParameter ("@UserName",userInfo.UserName),
+                new SqlParameter("@UserPwd",userInfo.UserPwd),
+                new SqlParameter("@UserSex",userInfo.UserSex),
+                new SqlParameter("@UserEmall",userInfo.UserEmall),
+                new SqlParameter("@HeadImg",userInfo.HeadImg),
+           };
+            string sql = "insert into UserInfo values (@UserName,@UserPwd,@UserEmall,@HeadImg,@UserSex)";
+            return DBHelpe.ExecuteAdater(sql, false, paras) == 1;
+        }
+
+        /// <summary>
         /// 歌手搜索
         /// </summary>
         /// <param name="sextext">歌手性别</param>

@@ -80,12 +80,14 @@
     <Content Include="css\home.css" />
     <Content Include="css\htmleaf-demo.css" />
     <Content Include="css\index.css" />
+    <Content Include="css\index2.css" />
     <Content Include="css\MusicPaly.css" />
     <Content Include="css\normalize.css" />
     <Content Include="css\player.css" />
     <Content Include="css\posterTvGrid.css" />
     <Content Include="css\reset.css" />
     <Content Include="Default.aspx" />
+    <Content Include="editorial.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="images\000.jpg" />
     <Content Include="images\0008118294621006_b.jpg" />
@@ -110,7 +112,10 @@
     <Content Include="images\f2ab21df06fb0250ed1d00af1bf942bcc931b9045b88-7orh0l_fw658.jpg" />
     <Content Include="images\f670e7be66692bc10853d2dd773fc4629d5d1ea359c36-ibN45j_fw658.jpg" />
     <Content Include="images\f93fe8e4249bcc0a461f31911f4ad6a44291b3f598e6-OXuJ0M_fw658.jpg" />
+    <Content Include="images\IU.gif" />
+    <Content Include="images\luhan.gif" />
     <Content Include="images\Mei.jpg" />
+    <Content Include="images\meimei.gif" />
     <Content Include="images\MeIMSM2.jpg" />
     <Content Include="images\next.jpg" />
     <Content Include="images\next1.jpg" />
@@ -125,6 +130,9 @@
     <Content Include="images\songs\yanyuan.jpg" />
     <Content Include="images\sugar.jpg" />
     <Content Include="images\xjy.jpg" />
+    <Content Include="images\zhangbichen.gif" />
+    <Content Include="images\zhangliangying.gif" />
+    <Content Include="images\zhifouzhifou.gif" />
     <Content Include="images\zjl.jpg" />
     <Content Include="images\风格.jpg" />
     <Content Include="Imgs\0628bd16-8b02-4866-adce-7d02c044ea7bLaura Veirs.jpg" />
@@ -221,12 +229,15 @@
     <Content Include="js\base.js" />
     <Content Include="js\common.js" />
     <Content Include="js\index.js" />
+    <Content Include="js\index2.js" />
     <Content Include="js\jquery-1.11.0.min.js" />
+    <Content Include="js\jquery-1.9.1.min.js" />
     <Content Include="js\posterTvGrid.js" />
+    <Content Include="js\SuperSlide.js" />
     <Content Include="js\Userlogin.js" />
     <Content Include="MusicMenu.ascx" />
     <Content Include="MyMusic.aspx" />
-    <Content Include="OrderByPage2.aspx" />
+    <Content Include="orderby2.aspx" />
     <Content Include="OrderPage.aspx" />
     <Content Include="packages.config" />
     <Content Include="playMicOne.ascx" />
@@ -260,7 +271,9 @@
   <ItemGroup>
     <Content Include="StylePage.aspx" />
     <Content Include="Userloing.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\AddMusic.aspx.cs">
@@ -312,6 +325,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="editorial.aspx.cs">
+      <DependentUpon>editorial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editorial.aspx.designer.cs">
+      <DependentUpon>editorial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -326,12 +346,12 @@
     <Compile Include="MyMusic.aspx.designer.cs">
       <DependentUpon>MyMusic.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OrderByPage2.aspx.cs">
-      <DependentUpon>OrderByPage2.aspx</DependentUpon>
+    <Compile Include="orderby2.aspx.cs">
+      <DependentUpon>orderby2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OrderByPage2.aspx.designer.cs">
-      <DependentUpon>OrderByPage2.aspx</DependentUpon>
+    <Compile Include="orderby2.aspx.designer.cs">
+      <DependentUpon>orderby2.aspx</DependentUpon>
     </Compile>
     <Compile Include="OrderPage.aspx.cs">
       <DependentUpon>OrderPage.aspx</DependentUpon>
