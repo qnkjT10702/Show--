@@ -1,0 +1,103 @@
+.newviewport {
+    width: 100%;
+    height: 100%;
+}
+
+.newviewport {
+    width: 100%;
+    height:600px;
+    position: absolute;
+    background: url(../Imgs/Userloginorange1.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 80px;
+    box-sizing: border-box;
+}
+.newviewport .newform_box {
+  box-shadow: 0px 0px 34px 4px #ccc;
+  background-color: #fff;
+  padding: 170px;
+  text-align: center;
+  padding-top:14px;
+  width:600px;
+  height:600px;
+  
+}
+.newviewport .newform_box .newform_item {
+  height: 46px;
+  line-height:6px;
+  width: 300px;
+}
+.newviewport .newform_box .newform_item input,
+.newviewport .newform_box .newform_item button {
+  width: 260px;
+  height:42px;
+  border-radius:20px;
+  border: none;
+}
+.newviewport .newform_box .newform_item input {
+  padding-left: 4px;
+  border: 1px solid gainsboro;
+}
+.newviewport .newform_box .newform_item button {
+  background-color: #FFE907;
+  color: gray;
+}
+.newviewport .newform_box .newform_info {
+  height: 20px;
+  line-height: 20px;
+  text-align: left;
+}
+.newviewport .newform_box .newform_info p {
+  padding: 0 20px;
+}
+.newviewport .newform_box .newform_info .newform_info_text_tip {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px;
+}
+.newform_info_text{
+	font-size: 14px;
+}
+.newviewport .newform_box .newform_to {
+  height: 20px;
+  line-height:10px;
+/*  text-align: right;*/
+  color: gray;
+}
+.newviewport .newform_box .newform_to p {
+  padding: 0 20px;
+}
+.newviewport .newform_box .newform_to a {
+  color: #0054ff;
+}
+.newviewport .newform_box .newform_to a:hover {
+  text-decoration: underline;
+}
+#head_newform_sex_confirm_0, #head_newform_sex_confirm_1 {
+    width: 15px;
+    height: 15px;
+    border: 1px solid red;
+    margin-left: 20px;
+    padding-left: 0;
+}
+.newform_item{
+	margin-top:18px;
+	font-size: 20px;
+}
+.newreg_btn{
+	margin-top:-40px;
+}
+.newform_box{
+	height:500px;
+	width: 300px;
+}
+.newform_reg_text{
+	text-align: center;
+	margin-top:-10px;
+}
+input{
+    font-size:14px;
+    color:black;
+}
