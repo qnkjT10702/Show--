@@ -57,6 +57,7 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" EnableClientScript="false" ControlToValidate="FileUpload1"  runat="server" ErrorMessage="头像不能为空"></asp:RequiredFieldValidator>
                 </li>
                 
+                
                 <li class="form_item form_info">
                     <p class="form_info_text hidden">提示: <span class="form_info_text_tip"></span></p>
                 </li>

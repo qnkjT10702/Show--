@@ -26,22 +26,17 @@
                     base.getEle('newform_info_text_tip')[0].innerHTML = checkPwd.tip;
                     return false;
                 }
-                var checkPwd = base.checkPwd(newform_pwdc_value);
-                if(!checkPwd.flag) {// 如果用密码不匹配
-                    base.getEle('newform_info_text')[0].classList.remove('hidden');
-                    base.getEle('newform_info_text_tip')[0].innerHTML = checkPwd.tip;
-                    return false;
-                }
+                //var checkPwd = base.checkPwd(newform_pwdc_value);
+                //if(!checkPwd.flag) {// 如果用密码不匹配
+                //    base.getEle('newform_info_text')[0].classList.remove('hidden');
+                //    base.getEle('newform_info_text_tip')[0].innerHTML = checkPwd.tip;
+                //    return false;
+                //}
                 var checkMail = base.checkMail(newform_mail_value);
                 if (!checkMail.flag) {// 如果邮箱不匹配
                     base.getEle('newform_info_text')[0].classList.remove('hidden');
                     base.getEle('newform_info_text_tip')[0].innerHTML = checkMail.tip;
                     return false;
-                }
-                else {
-                    base.getEle('newform_info_text')[0].classList.remove('hidden');
-                    base.getEle('newform_info_text_tip')[0].innerHTML = "";
-                    return true;
                 }
 
                 if (newform_pwdc_value != newform_newpwdc_value) {
@@ -50,7 +45,7 @@
                     return false;
                 }
                 
-                if (document.getElementById("head_newform_sex_confirm_0").checked == false && document.getElementById("head_newform_sex_confirm_1").checked==false){
+                if (document.getElementById("ContentPlaceHolder1_newform_sex_confirm_0").checked == false && document.getElementById("ContentPlaceHolder1_newform_sex_confirm_1").checked==false){
                 	base.getEle('newform_info_text')[0].classList.remove('hidden');
                 	 base.getEle('newform_info_text_tip')[0].innerHTML ="未选中性别";
                     return false;

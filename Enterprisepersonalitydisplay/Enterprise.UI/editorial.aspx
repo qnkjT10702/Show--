@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="editorial.aspx.cs" Inherits="Enterprise.UI.editorial" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+    
+</asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="css/base.css" rel="stylesheet" />
     <link href="css/index2.css" rel="stylesheet" />
     <div class="newviewport">
@@ -30,6 +31,10 @@
                 	<input  class="newform_sex_value" type="radio" name="sex" id="newform_sex_confirm_0" runat="server"/>男
 					<input  class="newform_sex_value" type="radio" name="sex" id="newform_sex_confirm_1" runat="server"/>女
                 </li>
+                <li>
+                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" EnableClientScript="false" ControlToValidate="FileUpload1" runat="server" ErrorMessage="头像不可以为空"></asp:RequiredFieldValidator>
+                </li>
                 <li class="newform_item newform_info">
                     <p class="newform_info_text hidden">提示: <span class="newform_info_text_tip"></span></p>
                 </li>
@@ -45,3 +50,4 @@
     <script src="js/base.js"></script>
     <script src="js/index2.js"></script>
 </asp:Content>
+

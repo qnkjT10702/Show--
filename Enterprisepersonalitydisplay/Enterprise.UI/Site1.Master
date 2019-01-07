@@ -239,6 +239,8 @@
         /*合作链接结束*/
         /*尾部结束*/
     </style>
+     <asp:ContentPlaceHolder ID="head" runat="server">
+     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -283,10 +285,12 @@
 
 
 
+        <div id="bodyer">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
 
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-
+        </div>
+        
 
 
 
@@ -356,7 +360,6 @@
     
     </div>
     </form>
-   <asp:ContentPlaceHolder ID="head" runat="server">
-   </asp:ContentPlaceHolder>
+  
 </body>
 </html>
