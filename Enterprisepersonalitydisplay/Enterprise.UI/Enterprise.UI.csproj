@@ -231,6 +231,7 @@
     <Content Include="playMicOne.ascx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="WebForm1.aspx" />
     <None Include="scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="scripts\jquery-1.11.1.min.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
@@ -383,6 +384,13 @@
     </Compile>
     <Compile Include="Userloing.aspx.designer.cs">
       <DependentUpon>Userloing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
