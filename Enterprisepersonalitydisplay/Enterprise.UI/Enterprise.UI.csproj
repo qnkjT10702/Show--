@@ -80,12 +80,14 @@
     <Content Include="css\home.css" />
     <Content Include="css\htmleaf-demo.css" />
     <Content Include="css\index.css" />
+    <Content Include="css\index2.css" />
     <Content Include="css\MusicPaly.css" />
     <Content Include="css\normalize.css" />
     <Content Include="css\player.css" />
     <Content Include="css\posterTvGrid.css" />
     <Content Include="css\reset.css" />
     <Content Include="Default.aspx" />
+    <Content Include="editorial.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="images\000.jpg" />
     <Content Include="images\0008118294621006_b.jpg" />
@@ -215,6 +217,7 @@
     <Content Include="js\base.js" />
     <Content Include="js\common.js" />
     <Content Include="js\index.js" />
+    <Content Include="js\index2.js" />
     <Content Include="js\jquery-1.11.0.min.js" />
     <Content Include="js\jquery-1.9.1.min.js" />
     <Content Include="js\posterTvGrid.js" />
@@ -309,6 +312,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editorial.aspx.cs">
+      <DependentUpon>editorial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editorial.aspx.designer.cs">
+      <DependentUpon>editorial.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
