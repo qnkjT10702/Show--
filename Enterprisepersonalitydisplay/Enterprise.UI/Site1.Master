@@ -171,7 +171,6 @@
             padding:40px 100px;
             position:absolute;
             box-sizing:border-box;
-            top: 714px;
         }
         #end a{
             color:#999999;
