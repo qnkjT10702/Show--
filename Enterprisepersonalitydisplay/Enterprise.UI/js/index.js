@@ -47,9 +47,6 @@
                     });
                    /* base.getEle('form_info_text')[0].classList.remove('hidden');
                     base.getEle('form_info_text_tip')[0].innerHTML = '您的账号密码不正确, 请检查';*/
-                }else {
-                    base.getEle('form_info_text')[0].classList.remove('hidden');
-                    base.getEle('form_info_text_tip')[0].innerHTML = '您的账号密码不正确, 请检查';
                 }
             };
 

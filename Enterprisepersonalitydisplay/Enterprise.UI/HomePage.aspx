@@ -29,7 +29,7 @@
             justify-content: space-between;
             flex-wrap: wrap;
         }
-        #songList{
+        .songList{
             width:360px;
             height:90px;
             background-color:#f8f8f8;
@@ -46,11 +46,13 @@
             color:#000000;
             margin-top:21px;
         }
+        .micName:hover{color:#fdad02;}
+        .singerName:hover{color:#fdad02;}
         .singerName{
             color:#999999;
             margin-top:4px;
         }
-        .style{color:#fdad02;}
+        /*.style{color:#fdad02;}*/
     </style>
     
     <div id="div">
@@ -76,32 +78,42 @@
         ); 
     </script>
 
-        <div style="width:1150px;margin-bottom:20px;padding:0px 100px;box-sizing:border-box;">
+        <div style="width:1150px;margin-bottom:20px;padding:0px 100px;box-sizing:border-box;border:1px solid red;">
             <h1>新&nbsp;&nbsp;&nbsp;&nbsp;歌&nbsp;&nbsp;&nbsp;&nbsp;首&nbsp;&nbsp;&nbsp;&nbsp;发</h1>
             <div id="recommend_in">
-                <div id="songList">
+                <div id="songList" class="songList">
                     <div class="micImg"><asp:Image ID="micImg" runat="server" /></div>
                     <div class="micName"><asp:Label ID="micName" runat="server" Text="Label"></asp:Label></div>
                     <div class="singerName"><asp:Label ID="singerName" runat="server" Text="Label"></asp:Label></div>
+                </div>
+                <div class="songList">
+                    <div class="micImg"><asp:Image ID="Image1" runat="server" /></div>
+                    <div class="micName"><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></div>
+                    <div class="singerName"><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></div>
+                </div>
+                <div class="songList">
+                    <div class="micImg"><asp:Image ID="Image2" runat="server" /></div>
+                    <div class="micName"><asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></div>
+                    <div class="singerName"><asp:Label ID="Label4" runat="server" Text="Label"></asp:Label></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <%--<script src="scripts/jquery-3.3.1.min.js"></script>
     <script>
         $(function () {
             $('.micName,.singerName').hover(function () {
                 $(this).toggleClass('style');
             })
             
-        for(var i=1;i<2;i++){
-            var styleSong = document.getElementById('recommend_in');
-            var song = document.getElementById('songList');
-            var newNode = song.cloneNode(true);
-            styleSong.appendChild(newNode);
-		}
+  //      for(var i=1;i<2;i++){
+  //          var styleSong = document.getElementById('recommend_in');
+  //          var song = document.getElementById('songList');
+  //          var newNode = song.cloneNode(true);
+  //          styleSong.appendChild(newNode);
+		//}
         })
-    </script>
+    </script>--%>
 
 </asp:Content>

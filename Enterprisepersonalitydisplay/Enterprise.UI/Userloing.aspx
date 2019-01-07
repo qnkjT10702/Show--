@@ -3,6 +3,13 @@
     <link href="css/base.css" rel="stylesheet" />
 <link href="css/index.css" rel="stylesheet" />
     
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            $('#LoginEnroll').css({ backgroundColor: '#fdad02' });
+            $('#LoginEnroll a').css({ color: '#4A4A4A' });
+        })
+    </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -52,14 +59,18 @@
                 	<input  class="form_sex_value" type="radio" name="sex" id="form_sex_confirm_0" runat="server"/>男
 					<input  class="form_sex_value" type="radio" name="sex" id="form_sex_confirm_1"  runat="server"/>女
                 </li>
+                <li>
+                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" EnableClientScript="false" ControlToValidate="FileUpload1"  runat="server" ErrorMessage="头像不能为空"></asp:RequiredFieldValidator>
+                </li>
+                
+                
                 <li class="form_item form_info">
                     <p class="form_info_text hidden">提示: <span class="form_info_text_tip"></span></p>
                 </li>
                 <li class="form_item form_reg form_btn">
 
                     <button class="reg_btn" id="regBtn" runat="server">注册</button>
-
-                    <button class="reg_btn" runat="server">注册</button>
 
                 </li>
                 <li class="form_item form_to form_reg">
