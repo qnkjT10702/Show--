@@ -14,12 +14,14 @@ namespace Enterprise.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
 
-            if (Page.Request.RequestType=="POST")
+
+            if (Page.Request.RequestType == "POST")
             {
-                List<ViewMicsuger> s = Songquery_O.PlaySong();
-                object st = from n in  s select new { id = n.MicId, title = n.MicName, singer = n.SingerName, songUrl = n.MicSRc, imageUrl = n.MicImg };
+                string MicName = Request["SongName"];
+                string SingerName = Request["SingerName"];
+                List<ViewMicsuger> s = Songquery_O.PlaySong(MicName, SingerName);
+                object st = from n in s select new { id = n.MicId, title = n.MicName, singer = n.SingerName, songUrl = n.MicSRc, imageUrl = n.MicImg };
                 //var i = new object[] {
                 //    new {
                 //        id=1,
@@ -34,12 +36,11 @@ namespace Enterprise.UI
                 //        singer= "薛之谦",
                 //        songUrl= "./songs/song.mp3",
                 //        imageUrl= "./images/songs/renzhendexue.jpg"
-                           
+
                 //    }
                 //};
                 Response.Write(JsonConvert.SerializeObject(st));
                 Response.End();
-                //ss
             }
         }
     }
