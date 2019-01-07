@@ -3,6 +3,13 @@
     <link href="css/base.css" rel="stylesheet" />
 <link href="css/index.css" rel="stylesheet" />
     
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            $('#LoginEnroll').css({ backgroundColor: '#fdad02' });
+            $('#LoginEnroll a').css({ color: '#4A4A4A' });
+        })
+    </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

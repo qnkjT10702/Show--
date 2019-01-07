@@ -273,7 +273,7 @@
             <%--导航栏下部分（排行榜）开始--%>
             <div id="menu_down">
                 <ul id="menuOrder">
-                    <li><a href="OrderPage.aspx"  runat="server" id="AppBar1">排行榜</a></li>
+                    <li><a href="orderby2.aspx"  runat="server" id="AppBar1">排行榜</a></li>
                     <li><a href="SingerPage.aspx" runat="server" id="AppBar2">歌手</a></li>
                     <li><a href="StylePage.aspx" runat="server" id="AppBar3">风格</a></li>
                 </ul>
