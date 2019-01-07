@@ -39,6 +39,23 @@ namespace ServiceLogic.BLL
         {
             return MusicCRUD_F.RegionFind(regiotext,Sextext, Styletext);
         }
-        
+        /// <summary>
+        /// 注册功能
+        /// </summary>
+        /// <param name="userInfo"></param>
+        /// <returns></returns>
+        public static bool AddUserInfo(UserInfo userInfo)
+        {
+            return MusicCRUD_F.AddUserInfo(userInfo);
+        }
+
+        /// <summary>
+        /// 登录功能
+        /// </summary>
+        /// <param name="userInfo"></param>
+        public static List<UserInfo> LoginUser(UserInfo userInfo)
+        {
+            return MusicCRUD_F.LoginUser(userInfo);
+        }
     }
 }

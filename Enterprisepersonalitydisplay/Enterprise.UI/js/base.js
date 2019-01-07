@@ -36,7 +36,7 @@ var base = {
             var reg = /^\w{6,18}$/;
             if(!reg.test(name)) {
                 info.flag = false;
-                info.tip = '用户名为6到18位字母'
+                info.tip = '用户名为6到18位字母或数字'
             }
         }
         return info;
@@ -56,10 +56,10 @@ var base = {
             info.tip = '请输入密码';
         }else {
             // 校验格式
-            var reg = /^[a-zA-Z]{6,18}$/;
+            var reg = /^\w{6,18}$/;
             if(!reg.test(pwd)) {
                 info.flag = false;
-                info.tip = '密码为至少6位的字母';
+                info.tip = '密码为至少6位的字母或数字';
             }
         }
         return info;

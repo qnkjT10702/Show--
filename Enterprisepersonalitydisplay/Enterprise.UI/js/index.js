@@ -8,12 +8,14 @@
             base.getEle('toRegister')[0].onclick = function() {
                 base.getEle('register_section')[0].classList.remove('hidden');
                 base.getEle('login_section')[0].classList.add('hidden');
+                document.getElementById('actionName').value = '2';
             };
 
             // 到 登入
             base.getEle('toLogin')[0].onclick = function() {
                 base.getEle('login_section')[0].classList.remove('hidden');
                 base.getEle('register_section')[0].classList.add('hidden');
+                document.getElementById('actionName').value = '1';
             };
 
             // 登入 功能实现
