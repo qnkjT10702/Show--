@@ -236,6 +236,8 @@
     <Content Include="js\SuperSlide.js" />
     <Content Include="js\Userlogin.js" />
     <Content Include="MusicMenu.ascx" />
+    <Content Include="Musicpaly.aspx" />
+    <Content Include="MusicPalys2.aspx" />
     <Content Include="MyMusic.aspx" />
     <Content Include="orderby2.aspx" />
     <Content Include="OrderPage.aspx" />
@@ -259,6 +261,7 @@
     <Content Include="Admin\AdminSite1.Master" />
     <Content Include="scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="scripts\jquery-3.3.1.min.map" />
+    <Content Include="SingerPageHan.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -339,6 +342,20 @@
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Musicpaly.aspx.cs">
+      <DependentUpon>Musicpaly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Musicpaly.aspx.designer.cs">
+      <DependentUpon>Musicpaly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MusicPalys2.aspx.cs">
+      <DependentUpon>MusicPalys2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MusicPalys2.aspx.designer.cs">
+      <DependentUpon>MusicPalys2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MyMusic.aspx.cs">
       <DependentUpon>MyMusic.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -374,6 +391,9 @@
     </Compile>
     <Compile Include="SingerPage.aspx.designer.cs">
       <DependentUpon>SingerPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SingerPageHan.ashx.cs">
+      <DependentUpon>SingerPageHan.ashx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>

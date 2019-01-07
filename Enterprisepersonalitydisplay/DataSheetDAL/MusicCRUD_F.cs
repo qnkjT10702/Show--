@@ -52,6 +52,34 @@ namespace DataSheetDAL
             }
             return list;
         }
+
+        /// <summary>
+        /// 根据歌手名字查找歌曲
+        /// </summary>
+        /// <param name="singerName">歌手名字</param>
+        /// <returns></returns>
+        public static List<ViewMicsuger> FindSong(string singerName)
+        {
+            //参数化查询
+            SqlParameter [] paras = new SqlParameter[]
+            {
+                new SqlParameter ("@SingerName",singerName)
+            };
+            string sql = "select m.MicName,s.SingerName, mu.StyleName from MusicInfo m,SingerInfo s,MusicStyleInfo mu where m.SingerId=s.SingerId and m.StyleId=mu.StyleId and s.SingerName=@SingerName";
+            DataTable table = DBHelpe.SelectDB(sql, false, paras);
+            List<ViewMicsuger> list = new List<ViewMicsuger>();
+            foreach (DataRow item in table.Rows)
+            {
+                list.Add(new ViewMicsuger
+                {
+                    MicName = item["MicName"].ToString(),
+                    SingerName = item["SingerName"].ToString(),
+                    StyleName = item["StyleName"].ToString()
+                });
+            }
+            return list;
+        }
+
         /// <summary>
         /// 登录功能
         /// </summary>
@@ -136,13 +164,18 @@ namespace DataSheetDAL
 
 
         /// <summary>
-        /// 歌曲播放功能
+        /// 歌曲播放功能 根据歌手名字及歌曲名字
         /// </summary>
         /// <returns></returns>
-        public static List<ViewMicsuger> PlaySong()
+        public static List<ViewMicsuger> PlaySong(string MicName, string SingerName)
         {
-            string sql = "select m.MicId,m.MicImg,m.MicName,m.MIcPlayCount,m.MicRegion,m.MicSignTime,m.MicSRc,ms.StyleName,s.SingerName   from MusicInfo m,SingerInfo s,MusicStyleInfo ms where m.SingerId = s.SingerId and m.StyleId = ms.StyleId";
-            DataTable table = DBHelpe.SelectDB(sql, false);
+            SqlParameter[] paras = new SqlParameter[]
+           {
+                new SqlParameter("@MicName",MicName),
+                new SqlParameter ("@SingerName",SingerName)
+           };
+            string sql = "select m.MicId,m.MicImg,m.MicName,m.MIcPlayCount,m.MicRegion,m.MicSignTime,m.MicSRc,ms.StyleName,s.SingerName,m.SingerId from MusicInfo m,SingerInfo s,MusicStyleInfo ms where m.SingerId = s.SingerId and m.StyleId = ms.StyleId and(m.MicName like '%'+@MicName+'%' and s.SingerName like '%'+@SingerName+'%')";
+            DataTable table = DBHelpe.SelectDB(sql, false,paras);
             List<ViewMicsuger> Message = new List<ViewMicsuger>();
             foreach (DataRow item in table.Rows)
             {
@@ -156,9 +189,19 @@ namespace DataSheetDAL
                     MicSignTime = item["MicSignTime"].ToString(),
                     MicSRc = item["MicSRc"].ToString(),
                     StyleName = item["StyleName"].ToString(),
-                    SingerName = item["SingerName"].ToString()
+                    SingerName = item["SingerName"].ToString(),
+                    SingerId = (int)item["SingerId"]
                 });
             }
+
+            //增加点播量
+            SqlParameter[] parasST = new SqlParameter[]
+            {
+                new SqlParameter("@MicName",MicName),
+                new SqlParameter("@SingerId",Message[0].SingerId)
+            };
+            string UpdateSql = "update MusicInfo set MIcPlayCount = MIcPlayCount+1 where MicName =@MicName and SingerId=@SingerId";
+            DBHelpe.ExecuteAdater(UpdateSql, false, parasST);
             return Message;
         }
     }
