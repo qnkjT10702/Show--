@@ -63,6 +63,9 @@
 .viewport .form_box .form_to p {
   padding: 0 20px;
 }
+.hidden {
+    display: none;
+}
 .viewport .form_box .form_to a {
   color: #0054ff;
 }
