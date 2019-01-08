@@ -20,13 +20,24 @@ namespace ServiceLogic.BLL
         {
             return MusicCRUD_F.query(condition);
         }
+        
+        /// <summary>
+        /// 根据歌手名字查找歌曲
+        /// </summary>
+        /// <param name="singerName">歌手名字</param>
+        /// <returns></returns>
+        public static List<ViewMicsuger> FindSong(string singerName)
+        {
+            return MusicCRUD_F.FindSong(singerName);
+        }
+
         /// <summary>
         /// 歌曲查询
         /// </summary>
         /// <returns></returns>
-        public static List<ViewMicsuger> PlaySong()
+        public static List<ViewMicsuger> PlaySong(string MicName, string SingerName)
         {
-            return MusicCRUD_F.PlaySong();
+            return MusicCRUD_F.PlaySong(MicName, SingerName);
         }
         
         /// <summary>
