@@ -41,19 +41,23 @@ namespace Enterprise.UI
                  UserSex = "女";
             }
             /// <summary>
-            ///用户头像
+            ///用户注册
             /// </summary>
             bool i= Songquery_O.AddUserInfo(new UserInfo { UserName = form_name_value.Value, UserPwd = form_pwd_value.Value, UserSex = UserSex, UserEmall = form_mail_value.Value, HeadImg = SigJuedui });
             if (i)
               {
-                 Response.Write("ok");
+                 
               }
             
         }
 
+        /// <summary>
+        /// 用户登录
+        /// </summary>
         protected void Longin_btn_ServerClick()
         {
             List<UserInfo> s =  Songquery_O.LoginUser(new UserInfo { UserName = form_name_value_login.Value, UserPwd = form_pwd_value_login.Value });
+            Session["UserId"] = s[0].UserId;
             if (s != null)
             {
                 Response.Write("ok");

@@ -20,7 +20,18 @@ namespace ServiceLogic.BLL
         {
             return MusicCRUD_F.query(condition);
         }
-        
+
+        /// <summary>
+        /// 用户歌曲收藏功能
+        /// </summary>
+        /// <param name="micName"></param>
+        /// <param name="singerName"></param>
+        /// <returns></returns>
+        public static bool SongCollection(string micName, string singerName,object UserId)
+        {
+            return MusicCRUD_F.SongCollection(micName, singerName, UserId);
+        }
+
         /// <summary>
         /// 根据歌手名字查找歌曲
         /// </summary>
