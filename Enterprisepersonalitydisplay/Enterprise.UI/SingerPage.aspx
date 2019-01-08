@@ -192,7 +192,7 @@
         /*上半部分*/
         #ends {
             width: 1200px;
-            height: 10px;
+            height: 500px;
             position: relative;
             left: 100px;
             display: flex; /*不换行*/
