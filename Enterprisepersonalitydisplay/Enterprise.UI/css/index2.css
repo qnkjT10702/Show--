@@ -97,9 +97,8 @@
     margin-left: 20px;
     padding-left: 0;
 }
-.newhidden{
-    /*display:none;*/
-    color:salmon;
+.newform_reg_text{
+    text-align:right;
 }
 
 
