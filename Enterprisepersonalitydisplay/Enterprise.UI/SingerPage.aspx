@@ -192,7 +192,7 @@
         /*上半部分*/
         #ends {
             width: 1200px;
-            height: 10px;
+            height: 500px;
             position: relative;
             left: 100px;
             display: flex; /*不换行*/
@@ -321,9 +321,146 @@
             margin-top: -3px;
         }
     </style>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            var Stamper = '<div class="singers"><div class="singers-img"> <img src="{{HardImg}}" /> </div><div class="singers-font">{{SingerName}}</div> </div>';
+            var Song = '<div class="Song"><div style="display: flex;"><span class="js_song">{{MicName}}</span><span class="js_singer">{{SingerName}}</span><span class="play"></span><span class="style">{{StyleName}}</span><span class="collect">+</span></div></div>';
+            Ajax();
+            $('#AppBar2').css({ backgroundColor: '#4A4A4A', color: '#fdad02' })
 
+            $('.list-Regio>span').click(function () {
+                for (var i = 0; i <= $('.list-Regio>span').length ; i++) {
+                    var s = $('.list-Regio>span').index($(this));
+                    $('.list-Regio>span').eq(s).css({ color: 'white', backgroundColor: "orange" });
+                    $('.list-Regio>span').eq(i).css({ color: 'black', backgroundColor: "white" });
+                    $('.list-Regio>span').eq(s).addClass('list-RegioSpan');
+                    $('.list-Regio>span').eq(i).removeClass('list-RegioSpan');
+                }
+                Ajax();
+            })
 
-    <!--背景图片部分-->
+            $('.list-Sex>span').click(function () {
+                for (var i = 0; i <= $('.list-Sex>span').length; i++) {
+                    var s = $('.list-Sex>span').index($(this));
+                    $('.list-Sex>span').eq(s).css({ color: 'white', backgroundColor: "orange" });
+                    $('.list-Sex>span').eq(i).css({ color: 'black', backgroundColor: "white" });
+                    $('.list-Sex>span').eq(s).addClass('list-SexSpan');
+                    $('.list-Sex>span').eq(i).removeClass('list-SexSpan');
+                }
+                Ajax();
+            })
+
+            $('.list-Style>span').click(function () {
+                for (var i = 0; i <= $('.list-Style>span').length; i++) {
+                    var s = $('.list-Style>span').index($(this));
+                    $('.list-Style>span').eq(s).css({ color: 'white', backgroundColor: "orange" });
+                    $('.list-Style>span').eq(i).css({ color: 'black', backgroundColor: "white" });
+                    $('.list-Style>span').eq(s).addClass('list-StyleSpan');
+                    $('.list-Style>span').eq(i).removeClass('list-StyleSpan');
+                }
+                Ajax();
+            })
+            function Ajax() {
+
+                var Regiotext = $('.list-RegioSpan').text();
+                var Sextext = $('.list-SexSpan').text();
+                var Styletext = $('.list-StyleSpan').text();
+                if (Regiotext == "全部") {
+                    Regiotext = "";
+                }
+                if (Sextext == "全部") {
+                    Sextext = "";
+                }
+                if (Styletext == "全部") {
+                    Styletext = "";
+                }
+                $.ajax({
+                    type: 'post',
+                    dataType: 'json',
+                    data: { Regiotext: Regiotext, Sextext: Sextext, Styletext: Styletext },
+                    success: function (data) {
+                        Replacedata(data);
+                    }
+                })
+            }
+            //生成母版的方法
+            function Replacedata(data) {
+                let outStamper = '';
+                for (var i = 0; i < data.length; i++) {
+                    //outitem = item.replase('{{b}}', d[i].b).re;
+                    //out.push(ouitem);
+                    //console.log(data[i].HardImg);
+                    outStamper += Stamper.replace('{{HardImg}}', data[i].HardImg).replace('{{SingerName}}', data[i].SingerName);
+                }
+                $('#ends').html(outStamper);
+            }
+
+            //点击歌手名字显示歌曲
+            $('#ends').on('click', '.singers-font', function () {
+                $('#SingerPage').css({ display: 'block' });
+                var s = $('.singers-font').index($(this));
+                var Fonttext = $('.singers-font').eq(s).text();
+                $.ajax({
+                    url: 'SingerPageHan.ashx',
+                    type: 'post',
+                    dataType: 'json',
+                    data: { SingerName: Fonttext },
+                    success: function (data) {
+                        //通过母版 替换页面
+                        CreateStamper(data);
+                    }
+                })
+            })
+            $('.fork').click(function () {
+                $('#SingerPage').css({ display: 'none' });
+            })
+
+            //替换母版的方法
+            function CreateStamper(data) {
+                var Replace = "";
+                for (var i = 0; i < data.length; i++) {
+                    Replace += Song.replace('{{MicName}}', data[i].MicName).replace('{{SingerName}}', data[i].SingerName).replace('{{StyleName}}', data[i].StyleName);
+                }
+                $('#Catalog').html(Replace);
+            }
+
+            //播放功能
+            $('#Catalog').on('click', '.play', function () {
+                var s = $('.play').index($(this));
+                var SongName = $('.js_song').eq(s).text();
+                var SingerName = $('.js_singer').eq(s).text();
+                location.href = 'Musicpaly.aspx?SongName=' + SongName + '&SingerName=' + SingerName;
+                
+            })
+
+            //收藏功能
+            $('#Catalog').on('click', '.collect', function () {
+                var s = $('.collect').index($(this));
+                var MicName = $('.js_song').eq(s).text();
+                var SingerName = $('.js_singer').eq(s).text();
+                $.ajax({
+                    url: 'SongCollection.ashx',
+                    type: 'post',
+                    dataType: 'json',
+                    data: { MicName: MicName, SingerName: SingerName },
+                    success: function (data) {
+                        CollectTheResults(data);
+                    }
+                })
+            })
+            //返回收藏结果
+            function CollectTheResults(data) {
+                if (data) {
+                    alert("收藏成功");
+                }
+                else {
+                    alert("您的网络开始开小差了");
+                }
+            }
+
+        })
+    </script><!--背景图片部分-->
     <div id="middle-img">
         <img src="Imgs/body1.jpg" />
         <div class="font-1">你关注的歌手将展示在这里</div>

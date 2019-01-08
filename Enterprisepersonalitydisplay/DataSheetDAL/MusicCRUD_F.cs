@@ -54,6 +54,49 @@ namespace DataSheetDAL
         }
 
         /// <summary>
+        ///歌曲收藏功能 根据歌曲名和歌手名加用户名进行收藏
+        /// </summary>
+        /// <param name="micName"></param>
+        /// <param name="singerName"></param>
+        /// <returns></returns>
+        public static bool SongCollection(string micName, string singerName,object UserId)
+        {
+            //参数化查询
+            SqlParameter[] paras = new SqlParameter[]
+            {
+                new SqlParameter ("@MicName",micName),
+                new SqlParameter("@SingerName",singerName)
+            };
+            string sql = "select m.MicId from MusicInfo m,SingerInfo s,MusicStyleInfo ms where m.SingerId = s.SingerId and m.StyleId = ms.StyleId and(m.MicName like '%'+@MicName+'%' and s.SingerName like '%'+@SingerName+'%')";
+            DataTable table = DBHelpe.SelectDB(sql, false, paras);
+            List<ViewMicsuger> list = new List<ViewMicsuger>();
+            foreach (DataRow item in table.Rows)
+            {
+                list.Add(new ViewMicsuger
+                {
+                    MicId = Convert.ToInt32(item["MicId"])
+                });
+            }
+
+            //给歌曲增加收藏量 通过歌曲id
+            SqlParameter[] ParasMicId = new SqlParameter[]
+            {
+                new SqlParameter("@MicId",list[0].MicId)
+            };
+            string sqlMicid = "update MusicInfo set CollectCount=CollectCount+1 where MicId=@MicId";
+            DBHelpe.ExecuteAdater(sqlMicid, false, ParasMicId);
+
+            //给用户收藏表增加信息 获取用户id
+            SqlParameter[] ParasUserId = new SqlParameter[]
+            {
+                new SqlParameter("@MicId",list[0].MicId),
+                new SqlParameter("@UserId",UserId)
+            };
+            string sqlUserId = "insert into UserCollect values (@UserId,@MicId)";
+            return DBHelpe.ExecuteAdater(sqlUserId, false, ParasUserId)==1;
+        }
+
+        /// <summary>
         /// 根据歌手名字查找歌曲
         /// </summary>
         /// <param name="singerName">歌手名字</param>
@@ -194,13 +237,12 @@ namespace DataSheetDAL
                 });
             }
 
-            //增加点播量
+            //增加点播量 通过歌曲id进行增加
             SqlParameter[] parasST = new SqlParameter[]
             {
-                new SqlParameter("@MicName",MicName),
-                new SqlParameter("@SingerId",Message[0].SingerId)
+                new SqlParameter("@MicId",Message[0].MicId)
             };
-            string UpdateSql = "update MusicInfo set MIcPlayCount = MIcPlayCount+1 where MicName =@MicName and SingerId=@SingerId";
+            string UpdateSql = "update MusicInfo set MIcPlayCount = MIcPlayCount+1 where MicId =@MicId";
             DBHelpe.ExecuteAdater(UpdateSql, false, parasST);
             return Message;
         }
