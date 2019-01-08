@@ -12,13 +12,71 @@
                 });
             $('#AppBar1').css({ backgroundColor: '#4A4A4A', color: '#fdad02' });
             //收藏的点击事件begin
+               //点击可以点歌
+        $("#Music ul").on('click', 'li', function () {
+            //预约事件先把事件给ul
+		    _index=$(this).index();//获取到序列号
+		    $(this).find("img").addClass("zqq").parent().siblings('li').find("img").removeClass("zqq");//加上 class="zqq"zqq
+		    var simg=$(this).find("img").attr("src");
+		    //alert(simg);
+		    $(".butImg").attr("src",simg);
+		    var str="url("+simg+")";
+		    $("#bgimgSinger").css("background-image",str);
+		    var stxt=$(this).find("img").attr("title");
+		    $(".ImgTxt dl dd").text(stxt);
+		    var sUrl=$(this).find("img").attr("dataSrc");
+		    //创建音乐播器
+		    obj_Mp3=creatMusic(sUrl);
+		    $(".play").css("background","url(images/pause2.jpg)")
+		    obj_Mp3.play();//播放
+		
+	    });
+
+	    function creatMusic(src){
+	        var creat_Mp3=$("<audio src='"+src+"'></audio>").get(0);
+			    $(".playBox").html("");
+			    $(".playBox").append(creat_Mp3);
+			    return creat_Mp3;	
+	    };
+
+	    //点击下一个向下播放
+	    $("a.next").click(function(){
+		    _index++;  //_index+1
+		    $("#Music ul li").eq(_index).trigger('click'); //触发他的click事件
+	    });
+
+	    $("a.prev").click(function(){
+		    _index--;  //_index+1
+		    $("#Music ul li").eq(_index).trigger('click'); //触发他的click事件
+	    });
+	    var count =0;
+	    $("a.play").click(function(){
+		    count++;
+		    if(count%2==0){
+			    obj_Mp3.pause();//暂停
+			    $(".play").css("background","url(images/player1.jpg)");
+			
+		    }
+		    else{
+			    $(".play").css("background","url(images/pause2.jpg)");
+				    // $("#Music ul li").eq(_index).trigger('click');
+			    obj_Mp3.play();//播放
+		    }
+		
+		    $("#Music ul li").find("img").removeClass("zqq");
+	    });
+
             var colleCount = 0;
             $('.btnColle').click(function () {
                 colleCount++;
                 if (colleCount % 2) {
                     $(this).css('backgroundPosition', "220px 70px");
-                    var i = $(this).prev().prev().children().html();
-                    alert(i);
+                    //var i = $(this).prev().prev().children().html();
+                    //alert(i);
+                    var s = $('.btnColle').index($(this));
+                    alert(s);
+
+                    
 
                 }
                 else {
@@ -58,6 +116,7 @@
         function Example_1(dt) {
             
             //
+         
             let Stie = $('#micMenuApp').html();
             let outHtm = '';
             
@@ -65,6 +124,9 @@
                 Mouther = Stie.replace('{{micImg}}', dt[i].MicImg).replace('{{micName}}', dt[i].MicName).replace('{{micSrc}}', dt[i].MicSRc).replace('{{SingerName}}', dt[i].SingerName);
                 //未完
                 outHtm += Mouther;
+                //var SingerName = dt[i].SingerName;
+                //alert(SingerName);
+
             }
             $('#micMenuApp').html(outHtm);
 
@@ -208,65 +270,9 @@
 	    });
 
 	    var obj_Mp3=null;
-	    var _index=0;
-        //点击可以点歌
-        $("#Music ul").on('click', 'li', function () {
-            //预约事件先把事件给ul
-		    _index=$(this).index();//获取到序列号
-		    $(this).find("img").addClass("zqq").parent().siblings('li').find("img").removeClass("zqq");//加上 class="zqq"zqq
-		    var simg=$(this).find("img").attr("src");
-		    //alert(simg);
-		    $(".butImg").attr("src",simg);
-		    var str="url("+simg+")";
-		    $("#bgimgSinger").css("background-image",str);
-		    var stxt=$(this).find("img").attr("title");
-		    $(".ImgTxt dl dd").text(stxt);
-		    var sUrl=$(this).find("img").attr("dataSrc");
-		    //创建音乐播器
-		    obj_Mp3=creatMusic(sUrl);
-		    $(".play").css("background","url(images/pause2.jpg)")
-		    obj_Mp3.play();//播放
-		
-	    });
-
-	    function creatMusic(src){
-	        var creat_Mp3=$("<audio src='"+src+"'></audio>").get(0);
-			    $(".playBox").html("");
-			    $(".playBox").append(creat_Mp3);
-			    return creat_Mp3;	
-	    };
-
-	    //点击下一个向下播放
-	    $("a.next").click(function(){
-		    _index++;  //_index+1
-		    $("#Music ul li").eq(_index).trigger('click'); //触发他的click事件
-	    });
-
-         //$(".btnColle").click(function () {
-         //    //$(".btnColle").css({ backgroundPosition: ' 220px 70px' });
-         //    alert("vv");
-         //   });
-
-	    $("a.prev").click(function(){
-		    _index--;  //_index+1
-		    $("#Music ul li").eq(_index).trigger('click'); //触发他的click事件
-	    });
-	    var count =0;
-	    $("a.play").click(function(){
-		    count++;
-		    if(count%2==0){
-			    obj_Mp3.pause();//暂停
-			    $(".play").css("background","url(images/player1.jpg)");
-			
-		    }
-		    else{
-			    $(".play").css("background","url(images/pause2.jpg)");
-				    // $("#Music ul li").eq(_index).trigger('click');
-			    obj_Mp3.play();//播放
-		    }
-		
-		    $("#Music ul li").find("img").removeClass("zqq");
-	    });
+        var _index = 0;
+        console.log($("#Music>ul").length)
+     
     </script>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
