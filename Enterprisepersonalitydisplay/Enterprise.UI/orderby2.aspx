@@ -17,9 +17,10 @@
             //预约事件先把事件给ul
 		    _index=$(this).index();//获取到序列号
 		    $(this).find("img").addClass("zqq").parent().siblings('li').find("img").removeClass("zqq");//加上 class="zqq"zqq
-		    var simg=$(this).find("img").attr("src");
-		    //alert(simg);
-		    $(".butImg").attr("src",simg);
+            var simg = $(this).find("img").attr("src");
+            var salt=$(this).find("img").attr("alt");
+            $(".butImg").attr("src", simg);
+           $(".butImg").attr("title", salt);
 		    var str="url("+simg+")";
 		    $("#bgimgSinger").css("background-image",str);
 		    var stxt=$(this).find("img").attr("title");
@@ -64,20 +65,28 @@
 		    }
 		
 		    $("#Music ul li").find("img").removeClass("zqq");
-	    });
-
+            });
             var colleCount = 0;
-            $('.btnColle').click(function () {
+
+            var MicIdTit = 0;
+            //歌曲Id
+
+             $('.btnColle').click(function () {
                 colleCount++;
                 if (colleCount % 2) {
                     $(this).css('backgroundPosition', "220px 70px");
-                    //var i = $(this).prev().prev().children().html();
-                    //alert(i);
-                    var s = $('.btnColle').index($(this));
-                    alert(s);
-
+                    MicIdTit = $(".butImg").attr("title");
+                    //歌曲ID 
+                         $.ajax({
+                    type: "post",
+                    dataType: "json",
+                    data: {
+                        MicId:icIdTit,
+                    },
+                    success: function (dt) {
+                    }
+                });
                     
-
                 }
                 else {
                      $(this).css('backgroundPosition', "-2px 70px");
@@ -97,7 +106,9 @@
                 }
             })
             //下载点击事件的结束
-           
+
+        });
+
             //这里写Ajax
             $.ajax({
                 type: "post",
@@ -112,16 +123,15 @@
                 }
             });
 
-        });
+           
+           
+           
         function Example_1(dt) {
-            
-            //
-         
             let Stie = $('#micMenuApp').html();
             let outHtm = '';
             
             for (var i = 0; i < dt.length; i++) {
-                Mouther = Stie.replace('{{micImg}}', dt[i].MicImg).replace('{{micName}}', dt[i].MicName).replace('{{micSrc}}', dt[i].MicSRc).replace('{{SingerName}}', dt[i].SingerName);
+                Mouther = Stie.replace('{{micImg}}', dt[i].MicImg).replace('{{micName}}', dt[i].MicName).replace('{{micSrc}}', dt[i].MicSRc).replace('{{SingerName}}', dt[i].SingerName).replace("{{Micid}}", dt[i].MicId);
                 //未完
                 outHtm += Mouther;
                 //var SingerName = dt[i].SingerName;
@@ -132,8 +142,8 @@
 
             let Stie2 = $('#PalyMusico').html();
             //获取要替换部分的html代码
-                let outHtm2 = '';
-              Mouther2 = Stie2.replace('{{micImg3}}', dt[0].MicName).replace('{{micImg2}}', dt[0].MicImg).replace('{{micSrc3}}', dt[0].MicSRc);
+            let outHtm2 = '';
+            Mouther2 = Stie2.replace('{{micImg3}}', dt[0].MicName).replace('{{micImg2}}', dt[0].MicImg).replace('{{micSrc3}}', dt[0].MicSRc);
             //替换
             outHtm2 += Mouther2;
             //再赋给字符串变量
@@ -147,7 +157,7 @@
             let outHtm = '';
             
             for (var i = 0; i < dt.length; i++) {
-                Mouther = Stie.replace('{{micImg}}', dt[i].MicImg).replace('{{micName}}', dt[i].MicName).replace('{{micSrc}}', dt[i].MicSRc).replace('{{SingerName}}', dt[i].SingerName);
+                Mouther = Stie.replace('{{micImg}}', dt[i].MicImg).replace('{{micName}}', dt[i].MicName).replace('{{micSrc}}', dt[i].MicSRc).replace('{{SingerName}}', dt[i].SingerName).replace("{{Micid}}", dt[i].MicId);
                 //未完
                 outHtm += Mouther;
             }
@@ -171,7 +181,7 @@
             let outHtm = '';
         
             for (var i = 0; i < dt.length; i++) {
-                Mouther = Stie.replace('{{micImg}}', dt[i].MicImg).replace('{{micName}}', dt[i].MicName).replace('{{micSrc}}', dt[i].MicSRc).replace('{{SingerName}}', dt[i].SingerName);
+                Mouther = Stie.replace('{{micImg}}', dt[i].MicImg).replace('{{micName}}', dt[i].MicName).replace('{{micSrc}}', dt[i].MicSRc).replace('{{SingerName}}', dt[i].SingerName).replace("{{Micid}}", dt[i].MicId);
                 //未完
                 outHtm += Mouther;
             }
@@ -194,7 +204,7 @@
             let outHtm = '';
             
             for (var i = 0; i < dt.length; i++) {
-                Mouther = Stie.replace('{{micImg}}', dt[i].MicImg).replace('{{micName}}', dt[i].MicName).replace('{{micSrc}}', dt[i].MicSRc).replace('{{SingerName}}', dt[i].SingerName);
+                Mouther = Stie.replace('{{micImg}}', dt[i].MicImg).replace('{{micName}}', dt[i].MicName).replace('{{micSrc}}', dt[i].MicSRc).replace('{{SingerName}}', dt[i].SingerName).replace("{{Micid}}", dt[i].MicId);
                 //未完
                 outHtm += Mouther;
             }
@@ -216,7 +226,7 @@
             let Stie = $('#micMenuApp6').html();
             let outHtm = '';
             for (var i = 0; i < dt.length; i++) {
-                Mouther = Stie.replace('{{micImg}}', dt[i].MicImg).replace('{{micName}}', dt[i].MicName).replace('{{micSrc}}', dt[i].MicSRc).replace('{{SingerName}}', dt[i].SingerName);
+                Mouther = Stie.replace('{{micImg}}', dt[i].MicImg).replace('{{micName}}', dt[i].MicName).replace('{{micSrc}}', dt[i].MicSRc).replace('{{SingerName}}', dt[i].SingerName).replace("{{Micid}}", dt[i].MicId);
                 //未完
                 outHtm += Mouther;
             }
@@ -241,7 +251,7 @@
               
             
             for (var i = 0; i < dt.length; i++) {
-                Mouther = Stie.replace('{{micImg}}', dt[i].MicImg).replace('{{micName}}', dt[i].MicName).replace('{{micSrc}}', dt[i].MicSRc).replace('{{SingerName}}', dt[i].SingerName);
+                Mouther = Stie.replace('{{micImg}}', dt[i].MicImg).replace('{{micName}}', dt[i].SingerName).replace('{{micSrc}}', dt[i].MicSRc).replace('{{SingerName}}', dt[i].SingerName).replace("{{Micid}}", dt[i].MicId);
                 //未完
                 outHtm += Mouther;
             }
@@ -338,7 +348,7 @@
 	                                        </div>
 	                                        <ul id="micMenuApp">
 		                                        <li class="box1">
-			                                        <img src="{{micImg}}" width='120px' height='120px' title="{{micName}}" dataSrc='{{micSrc}}'/>
+			                                        <img src="{{micImg}}" width='120px' height='120px' title="{{micName}}" dataSrc='{{micSrc}}' alt="{{Micid}}"/>
                                                    <%-- <a style="font-size:25px;position:relative; left:23px; font-family:华文行楷">{{SingerName}}</a>--%>
 		                                        </li>  
 	                                        </ul>
@@ -356,7 +366,7 @@
 		                                    <dl id="PalyMusico">
 			                                    <dt>
                                                     <%--<img src="images/Exo1.jpg"  class="butImg"/>--%>
-                                                    <img src="{{micImg2}}" class="butImg" style=" width:90px;height:90px; " dataSrc='{{micSrc3}}'/>
+                                                    <img src="{{micImg2}}" class="butImg" title="" style=" width:90px;height:90px; " dataSrc='{{micSrc3}}'/>
 			                                    </dt>
 			                                    <dd>{{micImg3}}</dd>
 		                                    </dl>
@@ -386,7 +396,7 @@
 	                                        </div>
 	                                        <ul id="micMenuApp2">
 		                                        <li class="box1">
-			                                        <img src="{{micImg}}" width='120px' height='120px' title="{{micName}}" dataSrc='{{micSrc}}'/>
+			                                        <img src="{{micImg}}" width='120px' height='120px' title="{{micName}}" dataSrc='{{micSrc}}' alt="{{Micid}}" />
                                                    <%-- <a style="font-size:25px;position:relative; left:23px; font-family:华文行楷">{{SingerName}}</a>--%>
 		                                        </li>  
 	                                        </ul>
@@ -403,7 +413,7 @@
 		                                    <dl id="PalyMusico2">
 			                                    <dt>
                                                     <%--<img src="images/Exo1.jpg"  class="butImg"/>--%>
-                                                    <img src="{{micImg2}}" class="butImg" style=" width:90px;height:90px; " dataSrc='{{micSrc3}}'/>
+                                                    <img src="{{micImg2}}" class="butImg" title="" style=" width:90px;height:90px; " dataSrc='{{micSrc3}}'/>
 			                                    </dt>
 			                                    <dd>{{micImg3}}</dd>
 		                                    </dl>
@@ -434,7 +444,7 @@
 	                                        </div>
 	                                        <ul id="micMenuApp3">
 		                                        <li class="box1">
-			                                        <img src="{{micImg}}" width='120px' height='120px' title="{{micName}}" dataSrc='{{micSrc}}'/>
+			                                        <img src="{{micImg}}" width='120px' height='120px' title="{{micName}}" dataSrc='{{micSrc}}' alt="{{Micid}}"/>
                                                    <%-- <a style="font-size:25px;position:relative; left:23px; font-family:华文行楷">{{SingerName}}</a>--%>
 		                                        </li>  
 	                                        </ul>
@@ -452,7 +462,7 @@
 		                                    <dl id="PalyMusico3">
 			                                    <dt>
                                                    
-                                                    <img src="{{micImg2}}" class="butImg" style=" width:90px;height:90px; " dataSrc='{{micSrc3}}'/>
+                                                    <img src="{{micImg2}}" title="" class="butImg" style=" width:90px;height:90px; " dataSrc='{{micSrc3}}' alt="{{Micid}}"/>
 			                                    </dt>
 			                                    <dd>{{micImg3}}</dd>
 		                                    </dl>
@@ -499,7 +509,7 @@
 		                                    <dl id="PalyMusico4">
 			                                    <dt>
                                                     <%--<img src="images/Exo1.jpg"  class="butImg"/>--%>
-                                                    <img src="{{micImg2}}" class="butImg" style=" width:90px;height:90px; " dataSrc='{{micSrc3}}'/>
+                                                    <img src="{{micImg2}}" title="" class="butImg" style=" width:90px;height:90px; " dataSrc='{{micSrc3}}' alt="{{Micid}}"/>
 			                                    </dt>
 			                                    <dd>{{micImg3}}</dd>
 		                                    </dl>
@@ -529,7 +539,7 @@
 	                                        </div>
 	                                        <ul id="micMenuApp5">
 		                                        <li class="box1">
-			                                        <img src="{{micImg}}" width='120px' height='120px' title="{{micName}}" dataSrc='{{micSrc}}'/>
+			                                        <img src="{{micImg}}" width='120px' height='120px' title="{{micName}}" dataSrc='{{micSrc}}' alt="{{Micid}}"/>
                                                    <%-- <a style="font-size:25px;position:relative; left:23px; font-family:华文行楷">{{SingerName}}</a>--%>
 		                                        </li>  
 	                                        </ul>
@@ -546,7 +556,7 @@
 		                                    <dl id="PalyMusico5">
 			                                    <dt>
                                                     <%--<img src="images/Exo1.jpg"  class="butImg"/>--%>
-                                                    <img src="{{micImg2}}" class="butImg" style=" width:90px;height:90px; " dataSrc='{{micSrc3}}'/>
+                                                    <img  src="{{micImg2}}" title="" class="butImg" style=" width:90px;height:90px; " dataSrc='{{micSrc3}}' alt="{{Micid}}"/>
 			                                    </dt>
 			                                    <dd>{{micImg3}}</dd>
 		                                    </dl>
@@ -576,7 +586,7 @@
 	                                        </div>
 	                                        <ul id="micMenuApp6">
 		                                        <li class="box1">
-			                                        <img src="{{micImg}}" width='120px' height='120px' title="{{micName}}" dataSrc='{{micSrc}}'/>
+			                                        <img src="{{micImg}}" width='120px' height='120px' title="{{micName}}" dataSrc='{{micSrc}}' alt="{{Micid}}"/>
                                                    <%-- <a style="font-size:25px;position:relative; left:23px; font-family:华文行楷">{{SingerName}}</a>--%>
 		                                        </li>  
 	                                        </ul>
@@ -593,7 +603,7 @@
 		                                    <dl id="PalyMusico6">
 			                                    <dt class="dt">
                                                     <%--<img src="images/Exo1.jpg"  class="butImg"/>--%>
-                                                    <img src="{{micImg2}}" class="butImg" style=" width:90px;height:90px; " dataSrc='{{micSrc3}}'/>
+                                                    <img  src="{{micImg2}}" title="" class="butImg" style=" width:90px;height:90px; " dataSrc='{{micSrc3}}'/>
 			                                    </dt>
 			                                    <dd>{{micImg3}}</dd>
 		                                    </dl>
