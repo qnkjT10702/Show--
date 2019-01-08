@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charsset=utf-8"/>
+    <script src="scripts/jquery-3.3.1.min.js"></script>
     <title>甜橙音乐网</title>
     <link href="css/MusicPaly.css" rel="stylesheet" />
     <link href="css/base2orderby2.css" rel="stylesheet" />
@@ -169,7 +170,8 @@
             height:300px;
             background-color:#333333;
             padding:40px 100px;
-            position:absolute;
+            position:relative;
+            top:0px;
             box-sizing:border-box;
         }
         #end a{

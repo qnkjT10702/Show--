@@ -153,7 +153,9 @@ left: -72px;">
 		            <a href="#" class='play' style="background-image:url(images/player1.jpg)"></a>
 		            <a href="#" class='next' style="background-image:url(images/next1.jpg);background-repeat:no-repeat"></a>
 	            </div>
-
+                <asp:Button ID="btnColle2" CssClass="btnColle" CausesValidation="false" runat="server" Text="" BackColor="transparent" BorderColor="Transparent"/>
+                <asp:Button ID="btnDownLoad2" CssClass="btnDownLoad" CausesValidation="false" runat="server" Text="" BackColor="transparent" BorderColor="Transparent" />  
+                
 	            <div class="clickBut"><img src="images/but.png"/></div>
 
 	            <div class="playBox"></div>
