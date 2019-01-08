@@ -460,13 +460,7 @@
             }
 
         })
-    </script>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-
-
-    <!--背景图片部分-->
+    </script><!--背景图片部分-->
     <div id="middle-img">
         <img src="Imgs/body1.jpg" />
         <div class="font-1">你关注的歌手将展示在这里</div>

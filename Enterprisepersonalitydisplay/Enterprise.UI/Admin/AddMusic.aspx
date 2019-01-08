@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="overflow:hidden;background-image:url(../Imgs/lx6.jpg);background-size:100% 100%;">
-        <div id="Bigbox" style="position:relative;left:580px;top:30px;width:500px;height:600px;overflow-y:hidden;">
+        <div id="Bigbox" style="position:relative;left:580px;top:30px;width:500px;height:700px;overflow-y:hidden;">
             <asp:Label ID="LebMicName" runat="server" Text="Label" style="font-size:14px;">歌曲名字:</asp:Label>
             <asp:TextBox ID="TxtMicName" runat="server" style="box-sizing:border-box;padding:0px 10px;width:150px;margin-left:10px;height:20px;border-radius:10px;border:1px solid black;"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="#ff3300" ControlToValidate="TxtMicName" ErrorMessage="歌曲名字不可以为空" EnableClientScript="false"></asp:RequiredFieldValidator>
@@ -33,8 +33,7 @@
             <asp:FileUpload ID="FileMicSRc" runat="server" />
             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server"   ForeColor="#ff3300" ControlToValidate="FileMicSRc" ErrorMessage="歌曲路径不可以为空" EnableClientScript="false"></asp:RequiredFieldValidator>
             <br  runat="server"/>
-            <br  runat="server"/>
-            <asp:Button ID="BtnMicSubmit" runat="server" Text="添加" OnClick="BtnMicSubmit_Click" />
+            <asp:Button ID="BtnMicSubmit" runat="server" Text="添加" OnClick="BtnMicSubmit_Click" style="width:120px;height:30px;margin-top:15px;margin-left:40px;"/>
         </div>
        </div>     
 </asp:Content>
