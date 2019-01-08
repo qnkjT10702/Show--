@@ -28,13 +28,12 @@
              <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server"   ForeColor="#ff3300" ControlToValidate="ListMicRegion" ErrorMessage="歌曲地区不可以为空" EnableClientScript="false"></asp:RequiredFieldValidator>
             <br  runat="server"/>
              <br  runat="server"/>
-          
             <asp:Label ID="Label1" runat="server" Text="Label" style="font-size:14px;">歌曲路径:</asp:Label>
             <asp:FileUpload ID="FileMicSRc" runat="server" />
             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server"   ForeColor="#ff3300" ControlToValidate="FileMicSRc" ErrorMessage="歌曲路径不可以为空" EnableClientScript="false"></asp:RequiredFieldValidator>
             <br  runat="server"/>
             <br  runat="server"/>
-            <asp:Button ID="BtnMicSubmit" runat="server" Text="添加" OnClick="BtnMicSubmit_Click" />
+            <asp:Button ID="BtnMicSubmit" runat="server" style="position:absolute;top:-124px;left:-31px;background-color:red;" Text="添加" OnClick="BtnMicSubmit_Click" />
         </div>
        </div>     
 </asp:Content>
