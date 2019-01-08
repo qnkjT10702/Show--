@@ -11,20 +11,20 @@
             <ul class="newform_box">
                 <li class="newform_item newform_title">编辑资料</li>
                 <li class="newform_item newform_name">
-                    <input class="newform_name_value" type="text" placeholder="请输入用户名" runat="server">
+                    <input class="newform_name_value" type="text" placeholder="请输入用户名" runat="server"/>
                 </li>
                 <li class="newform_item newform_mail">
-                    <input class="newform_mail_value" type="text" placeholder="请输入邮箱" runat="server">
+                    <input class="newform_mail_value" type="text" placeholder="请输入邮箱" runat="server"/>
                 </li>
                 <li class="newform_item newform_pwd">
-                    <input class="newform_pwd_value" type="password" placeholder="请输入原密码" runat="server">
+                    <input class="newform_pwd_value" type="password" placeholder="请输入原密码" runat="server"/>
                 </li>
                 <li class="newform_item newform_pwd_confirm">
-                    <input class="newform_pwdc_value" type="password" placeholder="请输入新密码" runat="server">
+                    <input class="newform_pwdc_value" type="password" placeholder="请输入新密码" runat="server"/>
                 </li>
                 
                 <li class="newform_item newform_pwd_confirm_1">
-                    <input class="newform_newpwdc_value" type="password" placeholder="再次输入新密码" runat="server">
+                    <input class="newform_newpwdc_value" type="password" placeholder="再次输入新密码" runat="server"/>
                 </li>
                 
                 <li class="newform_item newform_sex_confirm">
@@ -42,7 +42,7 @@
                     <button class="newreg_btn" runat="server" >确认修改</button>
                 </li>
                 <li class="newform_item newform_to newform_reg">
-                    <p class="newform_reg_text">不想修改了, <a class="newtoRegister" href="javascirpt:;">退出</a></p>
+                    <p class="newform_reg_text">不想修改了, <a class="newtoRegister" href="javascirpt:;">退出登录</a></p>
                 </li>
             </ul>
         </div>
