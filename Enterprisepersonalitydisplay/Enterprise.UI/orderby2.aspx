@@ -69,7 +69,7 @@
                                             <img  src="Imgs/未标题-5.png" style="position:absolute;top:186px; left:323px; height:121px;width:85px;"/>
                                             <img  src="Imgs/未标题-7.png" style="position:absolute;top:148px; left:79px; height:121px;width:85px;"/>
                                             <img  src="Imgs/未标题-6.png" style="position:absolute;top:181px; left:514px; height:121px;width:85px;"/>
-             
+        
                                      </div>
                                     <!--点播音乐结束-->
 
@@ -90,6 +90,8 @@
 		                                    <a href="#" class='play' style="background-image:url(images/player1.jpg)"></a>
 		                                    <a href="#" class='next' style="background-image:url(images/next1.jpg);background-repeat:no-repeat"></a>
 	                                    </div>
+                                        <input type="button" class="btnColle" />
+                                        <input type="button" class="btnDownLoad" />
 	                                    <div class="clickBut"><img src="images/but.png"/></div>
 	                                    <div class="playBox"></div>
                                   </div>
@@ -135,6 +137,8 @@
 		                                    <a href="#" class='play' style="background-image:url(images/player1.jpg)"></a>
 		                                    <a href="#" class='next' style="background-image:url(images/next1.jpg);background-repeat:no-repeat"></a>
 	                                    </div>
+                                        <input type="button" class="btnColle" />
+                                        <input type="button" class="btnDownLoad" />
 	                                    <div class="clickBut"><img src="images/but.png"/></div>
 	                                    <div class="playBox"></div>
                                   </div>
@@ -145,11 +149,12 @@
 					<li class="item-3" style="position: absolute; width: 1920px; left: 0px; top: 0px; display: none;">
 						<div class="container">
 							<div class="inner">
+
 								<div id="BgBig" style=" background-repeat:no-repeat; background-size:100%;width:1918px;height:700px; position:relative;top:-50px;">
                                       <div id="Music" style="width: 960px; height: 250px;margin: 50px auto 0px; position: relative; background-image:url(images/dsfdv.png);top: -80px; left: -510px;">
 	                                        <div class="orderBang">
                                                  欧美榜单
-                                                <img  src="Imgs/Xin.png" style="position:absolute;top:48px;left:23px; height:170px;width:159px;">
+                                                <img  src="Imgs/Xin.png" style="position:absolute;top:48px;left:23px; height:170px;width:159px;"/>
 	                                        </div>
 	                                        <ul id="micMenuApp3">
 		                                        <li class="box1">
@@ -165,7 +170,7 @@
                                     <!--点播音乐结束-->
 
                                     <!--音乐播放按扭开始-->
-                                    <div class="MusicCon">
+                                    <div class="MusicCon" runat="server">
 	                                    <div id="bgimgSinger3"></div>
 	                                    <div class='ImgTxt'>
 		                                    <dl id="PalyMusico3">
@@ -181,6 +186,8 @@
 		                                    <a href="#" class='play' style="background-image:url(images/player1.jpg)"></a>
 		                                    <a href="#" class='next' style="background-image:url(images/next1.jpg);background-repeat:no-repeat"></a>
 	                                    </div>
+                                        <input type="button" class="btnColle" />
+                                        <input type="button" class="btnDownLoad" />
 	                                    <div class="clickBut"><img src="images/but.png"/></div>
 	                                    <div class="playBox"></div>
                                   </div>
@@ -226,6 +233,8 @@
 		                                    <a href="#" class='play' style="background-image:url(images/player1.jpg)"></a>
 		                                    <a href="#" class='next' style="background-image:url(images/next1.jpg);background-repeat:no-repeat"></a>
 	                                    </div>
+                                       <input type="button" class="btnColle" />
+                                        <input type="button" class="btnDownLoad" />  
 	                                    <div class="clickBut"><img src="images/but.png"/></div>
 	                                    <div class="playBox"></div>
                                   </div>
@@ -271,6 +280,8 @@
 		                                    <a href="#" class='play' style="background-image:url(images/player1.jpg)"></a>
 		                                    <a href="#" class='next' style="background-image:url(images/next1.jpg);background-repeat:no-repeat"></a>
 	                                    </div>
+                                       <input type="button" class="btnColle" />
+                                        <input type="button" class="btnDownLoad" />
 	                                    <div class="clickBut"><img src="images/but.png"/></div>
 	                                    <div class="playBox"></div>
                                   </div>
@@ -304,7 +315,7 @@
 	                                    <div id="bgimgSinger6"></div>
 	                                    <div class='ImgTxt'>
 		                                    <dl id="PalyMusico6">
-			                                    <dt>
+			                                    <dt class="dt">
                                                     <%--<img src="images/Exo1.jpg"  class="butImg"/>--%>
                                                     <img src="{{micImg2}}" class="butImg" style=" width:90px;height:90px; " dataSrc='{{micSrc3}}'/>
 			                                    </dt>
@@ -316,6 +327,8 @@
 		                                    <a href="#" class='play' style="background-image:url(images/player1.jpg)"></a>
 		                                    <a href="#" class='next' style="background-image:url(images/next1.jpg);background-repeat:no-repeat"></a>
 	                                    </div>
+                                       <input type="button" class="btnColle" />
+                                       <input type="button" class="btnDownLoad" />
 	                                    <div class="clickBut"><img src="images/but.png"/></div>
 	                                    <div class="playBox"></div>
                                   </div>
@@ -339,23 +352,51 @@
             //background: url("images/0008118294621006_b.jpg"); background-repeat:no-repeat; background-size:100%;
         $(function () {
             $('#AppBar1').css({ backgroundColor: '#4A4A4A', color: '#fdad02' });
+            //收藏的点击事件begin
+            var colleCount = 0;
+            $('.btnColle').click(function () {
+                colleCount++;
+                if (colleCount % 2) {
+                    $(this).css('backgroundPosition', "220px 70px");
+                    var i = $(this).prev().prev().children().html();
+                    alert(i);
 
+                }
+                else {
+                     $(this).css('backgroundPosition', "-2px 70px");
+                }
+            })
+            //收藏点击事件的结束
+
+             //下载的点击事件begin
+            var colleCount = 0;
+            $('.btnDownLoad').click(function () {
+                colleCount++;
+                if (colleCount % 2) {
+                    $(this).css('backgroundPosition', "223px 66px");
+                }
+                else {
+                     $(this).css('backgroundPosition', "-2px 66px");
+                }
+            })
+            //下载点击事件的结束
+           
             //这里写Ajax
             $.ajax({
                 type: "post",
                 dataType: "json",
                 success: function (dt) {
-                    ss(dt);
-                    sss(dt);
-                    ssss(dt);
-                    s4(dt);
-                    s5(dt);
-                    s6(dt);
+                    Example_1(dt.colle);
+                    Example_2(dt.colleHot);
+                    Example_3(dt.colleEurope);
+                    Example_4(dt.colleChinese);
+                    Example_5(dt.colleNew);
+                    Example_6(dt.colleReHan);
                 }
             });
 
         });
-        function ss(dt) {
+        function Example_1(dt) {
             
             //
             let Stie = $('#micMenuApp').html();
@@ -373,7 +414,6 @@
             //获取要替换部分的html代码
                 let outHtm2 = '';
             console.log(Stie2);
-            console.log(dt.MicName);
             Mouther2 = Stie2.replace('{{micImg3}}', dt[0].MicName).replace('{{micImg2}}', dt[0].MicImg).replace('{{micSrc3}}', dt[0].MicSRc);
             //替换
             outHtm2 += Mouther2;
@@ -381,7 +421,7 @@
             $('#PalyMusico').html(outHtm2);
             //再添加html代码
         }
-         function sss(dt) {
+         function Example_2(dt) {
             
             //
             let Stie = $('#micMenuApp2').html();
@@ -407,7 +447,7 @@
             $('#PalyMusico2').html(outHtm2);
             //再添加html代码
         }
-        function s4(dt) {
+        function Example_3(dt) {
             
             //
             let Stie = $('#micMenuApp4').html();
@@ -433,7 +473,7 @@
             $('#PalyMusico4').html(outHtm2);
             //再添加html代码
         }
-        function s5(dt) {
+        function Example_4(dt) {
             
             //
             let Stie = $('#micMenuApp5').html();
@@ -459,7 +499,7 @@
             $('#PalyMusico5').html(outHtm2);
             //再添加html代码
         }
-        function s6(dt) {
+        function Example_5(dt) {
             
             //
             let Stie = $('#micMenuApp6').html();
@@ -485,7 +525,7 @@
             $('#PalyMusico6').html(outHtm2);
             //再添加html代码
         }
-         function ssss(dt) {
+         function Example_6(dt) {
             
             //
             let Stie = $('#micMenuApp3').html();
@@ -557,6 +597,10 @@
 		    $("#Music ul li").eq(_index).trigger('click'); //触发他的click事件
 	    });
 
+         //$(".btnColle").click(function () {
+         //    //$(".btnColle").css({ backgroundPosition: ' 220px 70px' });
+         //    alert("vv");
+         //   });
 
 	    $("a.prev").click(function(){
 		    _index--;  //_index+1

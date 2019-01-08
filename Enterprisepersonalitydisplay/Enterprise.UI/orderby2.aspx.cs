@@ -13,25 +13,38 @@ namespace Enterprise.UI
 {
     public partial class orderby2 : System.Web.UI.Page
     {
-        public ViewMicsuger view = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.RequestType == "POST")
             {
 
-
                 List<ViewMicsuger> tbH = MusicCRUD.Selectorder();
-                //序列化 这个集合 Json
-                string JsonTb = JsonConvert.SerializeObject(tbH);
-                Response.Write(JsonTb);
+                //收藏榜
+                List<ViewMicsuger> tbNewMic = MusicCRUD.SelectNewMic();
+                //新歌榜
+                List<ViewMicsuger> tbEuropeMic = MusicCRUD.SelectEuropeMic();
+                //欧美榜
+                List<ViewMicsuger> tbHotMic = MusicCRUD.SelectHotMic();
+                //热歌榜
+                List<ViewMicsuger> tbChineseMic = MusicCRUD.SelectChineseMic();
+                //华语榜
+                List<ViewMicsuger> tbReHanMic = MusicCRUD.SelectReHanMic();
+                //日韩版
+
+
+
+
+                var obj = new { colle= tbH,colleNew=tbNewMic,colleEurope=tbEuropeMic,colleHot=tbHotMic,colleChinese=tbChineseMic,colleReHan=tbReHanMic};
+                
+                string JsonTbNew = JsonConvert.SerializeObject(obj);
+                //序列化
+                Response.Write(JsonTbNew);
                 Response.End();
             }
             else
             {
-
                 Site1 OPge = Page.Master as Site1;
                 OPge.inquire += OPgerefer;
-
             }
         }
         private void OPgerefer(string condition)
@@ -41,5 +54,16 @@ namespace Enterprise.UI
             //拿到数据
             //展示在页面
         }
+
+        protected void btnColle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //protected void btnColle_Click(object sender, EventArgs e)
+        //{
+        //    //收藏的点击事件
+        //    btnColle.Style.Add("background-position","220px 70px");
+        //}
     }
 }
