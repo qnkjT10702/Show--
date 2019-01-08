@@ -80,3 +80,17 @@
     margin-left: 20px;
     padding-left: 0;
 }
+.newhidden{
+    display:none;
+    color:brown;
+    margin-left:40%;
+    font-size:15px;
+    margin-top:10px;
+   
+}
+.reg_btn{
+    margin-top:19px;
+}
+.form_reg_text{
+    margin-top:23px;
+}

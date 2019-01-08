@@ -67,16 +67,16 @@
                 
                 <li class="form_item form_info">
                     <p class="form_info_text hidden">提示: <span class="form_info_text_tip"></span></p>
+                    <span class="form_info_text  newhidden">注册成功</span>
                 </li>
                 <li class="form_item form_reg form_btn">
-
                     <button class="reg_btn" id="regBtn" runat="server">注册</button>
-
                 </li>
                 <li class="form_item form_to form_reg">
                     <p class="form_reg_text">已经有账号, 去<a class="toRegister" >登入</a></p>
                 </li>
             </ul>
+           
         </div>
     </div>
     <script src="js/base.js"></script>
