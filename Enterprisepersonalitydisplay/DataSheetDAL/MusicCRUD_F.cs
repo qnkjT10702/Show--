@@ -78,7 +78,7 @@ namespace DataSheetDAL
                 });
             }
 
-            //给歌曲增加收藏量
+            //给歌曲增加收藏量 通过歌曲id
             SqlParameter[] ParasMicId = new SqlParameter[]
             {
                 new SqlParameter("@MicId",list[0].MicId)
@@ -86,7 +86,7 @@ namespace DataSheetDAL
             string sqlMicid = "update MusicInfo set CollectCount=CollectCount+1 where MicId=@MicId";
             DBHelpe.ExecuteAdater(sqlMicid, false, ParasMicId);
 
-            //给用户收藏表增加信息
+            //给用户收藏表增加信息 获取用户id
             SqlParameter[] ParasUserId = new SqlParameter[]
             {
                 new SqlParameter("@MicId",list[0].MicId),
@@ -237,7 +237,7 @@ namespace DataSheetDAL
                 });
             }
 
-            //增加点播量
+            //增加点播量 通过歌曲id进行增加
             SqlParameter[] parasST = new SqlParameter[]
             {
                 new SqlParameter("@MicId",Message[0].MicId)

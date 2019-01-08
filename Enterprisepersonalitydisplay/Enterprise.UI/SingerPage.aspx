@@ -327,10 +327,20 @@
                     dataType: 'json',
                     data: { MicName: MicName, SingerName: SingerName },
                     success: function (data) {
-                        
+                        CollectTheResults(data);
                     }
                 })
             })
+            //返回收藏结果
+            function CollectTheResults(data) {
+                if (data) {
+                    alert("收藏成功");
+                }
+                else {
+                    alert("您的网络开始开小差了");
+                }
+            }
+
         })
     </script>
 </asp:Content>
