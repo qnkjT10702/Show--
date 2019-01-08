@@ -42,7 +42,7 @@
                     <button class="newreg_btn" runat="server" >确认修改</button>
                 </li>
                 <li class="newform_item newform_to newform_reg">
-                    <p class="newform_reg_text">不想修改了, <a class="newtoRegister" href="javascirpt:;">退出登录</a></p>
+                    <p class="newform_reg_text"><a class="newtoRegister" href="HomePage.aspx">返回</a></p>
                 </li>
             </ul>
         </div>

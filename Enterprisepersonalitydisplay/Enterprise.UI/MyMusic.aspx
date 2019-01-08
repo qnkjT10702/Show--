@@ -59,13 +59,16 @@
         #likeSong td a:hover{
             color:#fdad02;
         }
+        #out:hover{
+            cursor:pointer;
+        }
     </style>
 
     <div id="MyMusic"></div>
     <div id="MyInfo">
         <div id="UImg"><asp:Image ID="UserImg" runat="server" /></div>
         <div id="UName"><asp:Label ID="UserName" runat="server" Text="Label"></asp:Label></div>
-        <div style="margin-top:10px;"><a href="editorial.aspx">编辑资料</a></div>
+        <div style="margin-top:10px;"><a href="editorial.aspx">编辑资料</a>,<span id="out">退出登录</span></div>
     </div>
     <div id="myLove">
         <h2><span>我的收藏</span></h2>

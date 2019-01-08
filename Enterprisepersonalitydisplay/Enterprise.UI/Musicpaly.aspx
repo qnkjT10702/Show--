@@ -75,6 +75,7 @@
 </div>
     </div>
     </form>
+    <span style="color:white;position:absolute;top:395px;left:900px;">返回</span>
     <script src="js/utill.js"></script>
     <script src="js/jquery.min.js"></script>
     <script>
