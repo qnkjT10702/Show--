@@ -356,7 +356,7 @@
     </Compile>
     <Compile Include="MusicPaly2.ascx.designer.cs">
       <DependentUpon>MusicPaly2.ascx</DependentUpon>
-
+	</Compile>
     <Compile Include="Musicpaly.aspx.cs">
       <DependentUpon>Musicpaly.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -170,7 +170,8 @@
             height:300px;
             background-color:#333333;
             padding:40px 100px;
-            position:absolute;
+            position:relative;
+            top:0px;
             box-sizing:border-box;
         }
         #end a{

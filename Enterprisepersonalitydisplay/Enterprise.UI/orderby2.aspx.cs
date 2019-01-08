@@ -20,7 +20,7 @@ namespace Enterprise.UI
 
                 List<ViewMicsuger> tbH = MusicCRUD.Selectorder();
                 //收藏榜
-                List<ViewMicsuger> tbNewMic = MusicCRUD.SelectNewMic();
+                List<ViewMicsuger> tbNewMic = MusicCRUD.Selectorder();
                 //新歌榜
                 List<ViewMicsuger> tbEuropeMic = MusicCRUD.SelectEuropeMic();
                 //欧美榜
@@ -30,10 +30,6 @@ namespace Enterprise.UI
                 //华语榜
                 List<ViewMicsuger> tbReHanMic = MusicCRUD.SelectReHanMic();
                 //日韩版
-
-
-
-
                 var obj = new { colle= tbH,colleNew=tbNewMic,colleEurope=tbEuropeMic,colleHot=tbHotMic,colleChinese=tbChineseMic,colleReHan=tbReHanMic};
                 
                 string JsonTbNew = JsonConvert.SerializeObject(obj);
