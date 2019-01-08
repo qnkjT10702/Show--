@@ -3,7 +3,48 @@
     <script src="scripts/jquery-3.3.1.js"></script>
     <script>
         $(function () {
-            $('#AppBar5').css({ backgroundColor: '#fdad02', color: '#4A4A4A' })
+            var SongInfo = '<tr><td class="MicName">{{MicName}}</td><td class="SingerName">{{SingerName}}</td><td class="StyleName">{{StyleName}}</td><td class="ShiftOut">移出收藏</td></tr>';
+            $('#AppBar5').css({ backgroundColor: '#fdad02', color: '#4A4A4A' });
+            $.ajax({
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    MicInfo(data);
+                }
+            })
+
+            //替换母版的方法
+            function MicInfo(data) {
+                var SongInfo_replace = "";
+                for (var i = 0; i < data.length; i++) {
+                    SongInfo_replace += SongInfo.replace('{{MicName}}', data[i].MicName).replace('{{SingerName}}', data[i].SingerName).replace('{{StyleName}}', data[i].StyleName);
+                }
+                $('#Songlike').html(SongInfo_replace);
+            }
+
+            //点击歌曲名播放功能
+            $('#Songlike').on('click', '.MicName', function () {
+                var s = $('.MicName').index($(this));
+                var MicName = $('.MicName').eq(s).text();
+                var SingerName = $('.SingerName').eq(s).text();
+                location.href = 'Musicpaly.aspx?SongName=' + MicName + '&SingerName=' + SingerName;
+            })
+
+            //更改用户收藏表
+            $('#Songlike').on('click', '.ShiftOut', function () {
+                var s = $('.ShiftOut').index($(this));
+                var MicName = $('.MicName').eq(s).text();
+                var SingerName = $('.SingerName').eq(s).text();
+                $.ajax({
+                    url: 'DeleteCollection_MyMusic.ashx',
+                    type: 'post',
+                    dataType: 'json',
+                    data: { MicName: MicName, SingerName: SingerName },
+                    success: function (data) {
+                        
+                    }
+                })
+            })
         })
     </script>
 </asp:Content>
@@ -47,20 +88,28 @@
         #likeSong{
             margin-top:20px;
         }
-        #likeSong tr:nth-child(1){
-            color:#999999;
-        }
         #likeSong td{
             padding:12px 10px;
         }
-        #likeSong td a{
-            color:#4a4a4a;
-        }
-        #likeSong td a:hover{
-            color:#fdad02;
-        }
         #out:hover{
             cursor:pointer;
+        }
+        .MicName{
+            width:56%;
+        }
+        .MicName:hover{
+            color:aqua;
+        }
+        .SingerName{
+            width:16%;
+            color:burlywood;
+        }
+        .StyleName{
+            width:10%;
+            color:burlywood;
+        }
+        .ShiftOut:hover{
+            color:orange;
         }
     </style>
 
@@ -73,43 +122,8 @@
     <div id="myLove">
         <h2><span>我的收藏</span></h2>
         <div id="likeSong">
-          <table style="width:1150px;border:3px solid #4A4A4A;">
-            <tr>
-                <td style="width:56%;">歌曲</td>
-                <td style="width:16%;">歌手</td>
-                <td style="width:10%;">风格</td>
-                <td>编辑</td>
-            </tr>
-            <tr>
-                <td><a href="">123</a></td>
-                <td><a href="">123</a></td>
-                <td><a href="">123</a></td>
-                <td><a href="">123</a></td>
-            </tr>
-            <tr>
-                <td><a href="">123</a></td>
-                <td><a href="">123</a></td>
-                <td><a href="">123</a></td>
-                <td><a href="">123</a></td>
-            </tr>
-            <tr>
-                <td><a href="">123</a></td>
-                <td><a href="">123</a></td>
-                <td><a href="">123</a></td>
-                <td><a href="">123</a></td>
-            </tr>
-            <tr>
-                <td><a href="">123</a></td>
-                <td><a href="">123</a></td>
-                <td><a href="">123</a></td>
-                <td><a href="">123</a></td>
-            </tr>
-            <tr>
-                <td><a href="">123</a></td>
-                <td><a href="">123</a></td>
-                <td><a href="">123</a></td>
-                <td><a href="">123</a></td>
-            </tr>
+          <table style="width:1150px;border:3px solid #4A4A4A;" id="Songlike">
+            
           </table>
         </div>
     </div>
