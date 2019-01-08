@@ -66,10 +66,16 @@
                                                    <%-- <a style="font-size:25px;position:relative; left:23px; font-family:华文行楷">{{SingerName}}</a>--%>
 		                                        </li>  
 	                                        </ul>
+
                                             <img  src="Imgs/未标题-5.png" style="position:absolute;top:186px; left:323px; height:121px;width:85px;"/>
                                             <img  src="Imgs/未标题-7.png" style="position:absolute;top:148px; left:79px; height:121px;width:85px;"/>
                                             <img  src="Imgs/未标题-6.png" style="position:absolute;top:181px; left:514px; height:121px;width:85px;"/>
         
+
+                                            <img  src="Imgs/未标题-5.png" style="position:absolute;top:180px; left:345px; height:70px;"/>
+                                            <img  src="Imgs/未标题-7.png" style="position:absolute;top:140px; left:101px; height:60px;"/>
+                                            <img  src="Imgs/未标题-6.png" style="position:absolute;top:160px; left:540px; height:60px;"/>
+
                                      </div>
                                     <!--点播音乐结束-->
 
@@ -114,9 +120,9 @@
                                                    <%-- <a style="font-size:25px;position:relative; left:23px; font-family:华文行楷">{{SingerName}}</a>--%>
 		                                        </li>  
 	                                        </ul>
-                                            <img  src="Imgs/未标题-5.png" style="position:absolute;top:186px; left:323px; height:121px;width:85px;"/>
-                                            <img  src="Imgs/未标题-7.png" style="position:absolute;top:148px; left:79px; height:121px;width:85px;"/>
-                                            <img  src="Imgs/未标题-6.png" style="position:absolute;top:181px; left:514px; height:121px;width:85px;"/>
+                                            <img  src="Imgs/未标题-5.png" style="position:absolute;top:180px; left:345px; height:70px;"/>
+                                            <img  src="Imgs/未标题-7.png" style="position:absolute;top:140px; left:101px; height:60px;"/>
+                                            <img  src="Imgs/未标题-6.png" style="position:absolute;top:160px; left:540px; height:60px;"/>
                                      </div>
                                     <!--点播音乐结束-->
 
@@ -162,9 +168,9 @@
                                                    <%-- <a style="font-size:25px;position:relative; left:23px; font-family:华文行楷">{{SingerName}}</a>--%>
 		                                        </li>  
 	                                        </ul>
-                                            <img  src="Imgs/未标题-5.png" style="position:absolute;top:186px; left:323px; height:121px;width:85px;"/>
-                                            <img  src="Imgs/未标题-7.png" style="position:absolute;top:148px; left:79px; height:121px;width:85px;"/>
-                                            <img  src="Imgs/未标题-6.png" style="position:absolute;top:181px; left:514px; height:121px;width:85px;"/>
+                                            <img  src="Imgs/未标题-5.png" style="position:absolute;top:180px; left:345px; height:70px;"/>
+                                            <img  src="Imgs/未标题-7.png" style="position:absolute;top:140px; left:101px; height:60px;"/>
+                                            <img  src="Imgs/未标题-6.png" style="position:absolute;top:160px; left:540px; height:60px;"/>
              
                                      </div>
                                     <!--点播音乐结束-->
@@ -210,9 +216,9 @@
                                                    <%-- <a style="font-size:25px;position:relative; left:23px; font-family:华文行楷">{{SingerName}}</a>--%>
 		                                        </li>  
 	                                        </ul>
-                                            <img  src="Imgs/未标题-5.png" style="position:absolute;top:186px; left:323px; height:121px;width:85px;"/>
-                                            <img  src="Imgs/未标题-7.png" style="position:absolute;top:148px; left:79px; height:121px;width:85px;"/>
-                                            <img  src="Imgs/未标题-6.png" style="position:absolute;top:181px; left:514px; height:121px;width:85px;"/>
+                                            <img  src="Imgs/未标题-5.png" style="position:absolute;top:180px; left:345px; height:70px;"/>
+                                            <img  src="Imgs/未标题-7.png" style="position:absolute;top:140px; left:101px; height:60px;"/>
+                                            <img  src="Imgs/未标题-6.png" style="position:absolute;top:160px; left:540px; height:60px;"/>
                                      </div>
                                     <!--点播音乐结束-->
 
@@ -257,9 +263,9 @@
                                                    <%-- <a style="font-size:25px;position:relative; left:23px; font-family:华文行楷">{{SingerName}}</a>--%>
 		                                        </li>  
 	                                        </ul>
-                                            <img  src="Imgs/未标题-5.png" style="position:absolute;top:186px; left:323px; height:121px;width:85px;"/>
-                                            <img  src="Imgs/未标题-7.png" style="position:absolute;top:148px; left:79px; height:121px;width:85px;"/>
-                                            <img  src="Imgs/未标题-6.png" style="position:absolute;top:181px; left:514px; height:121px;width:85px;"/>
+                                            <img  src="Imgs/未标题-5.png" style="position:absolute;top:180px; left:345px; height:70px;"/>
+                                            <img  src="Imgs/未标题-7.png" style="position:absolute;top:140px; left:101px; height:60px;"/>
+                                            <img  src="Imgs/未标题-6.png" style="position:absolute;top:160px; left:540px; height:60px;"/>
                                      </div>
                                     <!--点播音乐结束-->
 
@@ -304,9 +310,9 @@
                                                    <%-- <a style="font-size:25px;position:relative; left:23px; font-family:华文行楷">{{SingerName}}</a>--%>
 		                                        </li>  
 	                                        </ul>
-                                            <img  src="Imgs/未标题-5.png" style="position:absolute;top:186px; left:323px; height:121px;width:85px;"/>
-                                            <img  src="Imgs/未标题-7.png" style="position:absolute;top:148px; left:79px; height:121px;width:85px;"/>
-                                            <img  src="Imgs/未标题-6.png" style="position:absolute;top:181px; left:514px; height:121px;width:85px;"/>
+                                            <img  src="Imgs/未标题-5.png" style="position:absolute;top:180px; left:345px; height:70px;"/>
+                                            <img  src="Imgs/未标题-7.png" style="position:absolute;top:140px; left:101px; height:60px;"/>
+                                            <img  src="Imgs/未标题-6.png" style="position:absolute;top:160px; left:540px; height:60px;"/>
                                      </div>
                                     <!--点播音乐结束-->
 

@@ -20,13 +20,24 @@ namespace ServiceLogic.BLL
         {
             return MusicCRUD_F.query(condition);
         }
+        
+        /// <summary>
+        /// 根据歌手名字查找歌曲
+        /// </summary>
+        /// <param name="singerName">歌手名字</param>
+        /// <returns></returns>
+        public static List<ViewMicsuger> FindSong(string singerName)
+        {
+            return MusicCRUD_F.FindSong(singerName);
+        }
+
         /// <summary>
         /// 歌曲查询
         /// </summary>
         /// <returns></returns>
-        public static List<ViewMicsuger> PlaySong()
+        public static List<ViewMicsuger> PlaySong(string MicName, string SingerName)
         {
-            return MusicCRUD_F.PlaySong();
+            return MusicCRUD_F.PlaySong(MicName, SingerName);
         }
         
         /// <summary>
@@ -39,6 +50,23 @@ namespace ServiceLogic.BLL
         {
             return MusicCRUD_F.RegionFind(regiotext,Sextext, Styletext);
         }
-        
+        /// <summary>
+        /// 注册功能
+        /// </summary>
+        /// <param name="userInfo"></param>
+        /// <returns></returns>
+        public static bool AddUserInfo(UserInfo userInfo)
+        {
+            return MusicCRUD_F.AddUserInfo(userInfo);
+        }
+
+        /// <summary>
+        /// 登录功能
+        /// </summary>
+        /// <param name="userInfo"></param>
+        public static List<UserInfo> LoginUser(UserInfo userInfo)
+        {
+            return MusicCRUD_F.LoginUser(userInfo);
+        }
     }
 }
