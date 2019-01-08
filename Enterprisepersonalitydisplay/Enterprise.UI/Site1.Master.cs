@@ -13,7 +13,7 @@ namespace Enterprise.UI
         public event Action<string> inquire;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void searchBut_Click(object sender, EventArgs e)

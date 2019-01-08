@@ -61,12 +61,11 @@ namespace Enterprise.UI.Admin
             string MicJuedui = Path.Combine(Server.MapPath("/"), Micsqlpath);
             // 绝对路径
             FileMicImg.SaveAs(MicJuedui);
-
             /// <summary>
             /// 歌曲背景图
             /// </summary>
-         
-          
+
+
             string MicSrdm = Guid.NewGuid().ToString();
             string MicSrc = string.Format("{0}{1}", MicSrdm, FileMicSRc.FileName);
             string MicSsqlpath = Path.Combine("Musics", MicSrc);

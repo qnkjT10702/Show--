@@ -12,6 +12,37 @@
     top:46px;
 
 }
+.btnColle {
+    width: 44px;
+    height: 50px;
+    background-image: url("../Imgs/Collect1.png");
+    background-size:89px;
+    background-position:-2px 70px;
+    position: absolute;
+    left: 487px;
+    top: 41px;
+    background-color:transparent;
+    border-color:transparent;
+}
+.btnDownLoad {
+    width: 44px;
+    height: 50px;
+    background-image: url("../Imgs/DownLoad.png");
+    background-size: 89px;
+    background-position: -2px 66px;
+    position: absolute;
+    left: 607px;
+    top: 41px;
+    background-color: transparent;
+    border-color: transparent;
+}
+    /*.btnDownLoad:hover {
+        background-position: 223px 66px;
+    }*/
+    /*.btnColle:hover {
+        background-position: 220px 70px;
+    }*/
+
 .box1:nth-child(2) {
     position: relative;
     left: 63px;
@@ -54,7 +85,7 @@
 					}
 
 /*MusicCon  begin*/
-.MusicCon{width:500px; height:115px; position:fixed; /*固定定位*/
+.MusicCon{width:700px; height:115px; position:fixed; /*固定定位*/
 			left:1389px; bottom:205px; overflow:hidden; /*超出部分隐藏*/}
 .MusicCon .ImgTxt{width:300px; height:115px;position:absolute; left:0px;}
 .MusicCon .But{width:160px; height:75px;position:absolute;padding-top:40px; left:300px;}
