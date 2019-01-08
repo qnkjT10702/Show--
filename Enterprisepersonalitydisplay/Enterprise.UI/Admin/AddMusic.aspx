@@ -9,7 +9,7 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="#ff3300" ControlToValidate="TxtMicName" ErrorMessage="歌曲名字不可以为空" EnableClientScript="false"></asp:RequiredFieldValidator>
             <br  runat="server"/>   
             <asp:Label ID="LebMicImg" runat="server" Text="Label" style="font-size:14px;">歌曲封面:</asp:Label>
-            <asp:FileUpload ID="FileMicImg" runat="server" style=""/>
+            <asp:FileUpload ID="FileMicImg" runat="server"/>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ForeColor="#ff3300" ControlToValidate="FileMicImg" ErrorMessage="歌曲封面不可以为空" EnableClientScript="false"></asp:RequiredFieldValidator>
              <br  runat="server"/>
               <br  runat="server"/>

@@ -188,6 +188,7 @@
     <Content Include="Imgs\c9ca5287-bddb-4687-842c-63260999df22Girl%27s Day %28걸스데이%29.jpg" />
     <Content Include="Imgs\c9e51191-7068-48ac-ad94-7d8fb44f9951EXO.jpg" />
     <Content Include="Imgs\cb91e338-4669-4c58-b54d-2cfe7079a4d8鹿晗.jpg" />
+    <Content Include="Imgs\Collect1.png" />
     <Content Include="Imgs\citruswirls.jpg" />
     <Content Include="Imgs\d66e8808-196c-4588-8d8d-6a95acbe6dedEXO.jpg" />
     <Content Include="Imgs\d872f23b-b333-4ab8-9f88-3025b76dd0901522829138983.png.JPG" />
@@ -236,6 +237,7 @@
     <Content Include="js\SuperSlide.js" />
     <Content Include="js\Userlogin.js" />
     <Content Include="MusicMenu.ascx" />
+    <Content Include="MusicPaly2.ascx" />
     <Content Include="Musicpaly.aspx" />
     <Content Include="MusicPalys2.aspx" />
     <Content Include="MyMusic.aspx" />
@@ -262,6 +264,7 @@
     <Content Include="scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="scripts\jquery-3.3.1.min.map" />
     <Content Include="SingerPageHan.ashx" />
+    <Content Include="SongCollection.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -342,6 +345,13 @@
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MusicPaly2.ascx.cs">
+      <DependentUpon>MusicPaly2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MusicPaly2.ascx.designer.cs">
+      <DependentUpon>MusicPaly2.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Musicpaly.aspx.cs">
       <DependentUpon>Musicpaly.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -401,6 +411,9 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SongCollection.ashx.cs">
+      <DependentUpon>SongCollection.ashx</DependentUpon>
     </Compile>
     <Compile Include="StylePage.aspx.cs">
       <DependentUpon>StylePage.aspx</DependentUpon>
