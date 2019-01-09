@@ -23,7 +23,7 @@
         }
         #styleSong{
             width:100%;
-            height:550px;
+            height:700px;
             padding:20px 100px;
             box-sizing:border-box;
             display:flex;   /*不换行*/
@@ -97,10 +97,10 @@
         </div>
         <div id="PagingBox">
             <label style="position:relative;top:388px;left:-642px; font-size:20px;">跳转至：</label>
-            <input type="text"  id="DropNum" style=" font-size:30px; height:30px;width:144px; border:black solid 1px; background-color:antiquewhite; position:absolute;left:676px;top:589px;" />
-            <div id="Go"  style=" position:absolute; top:589px; left:847px; border:black solid 1px; background-color:black; color:white; border-radius:50%; height:30px;width:30px; font-size:18px;line-height:27px; text-align:center; font-weight:bold;">Go</div>
-             <div id="Top" style=" position:relative; top:403px; left:-560px; border:black solid 1px; height:30px;width:30px; font-size:30px;line-height:25px; text-align:center; font-weight:bold;"><</div>
-            <div id="Bttomm" style=" position:relative; top:373px; left:-400px; border:black solid 1px; height:30px;width:30px; font-size:30px;line-height:25px; text-align:center; font-weight:bold;">></div>
+            <input type="text"  id="DropNum" style=" font-size:30px; height:30px;width:130px; border:black solid 1px; background-color:antiquewhite; position:absolute;left:683px;top:589px;" />
+            <div id="Go"  style=" position:absolute; top:589px; left:822px; border:black solid 1px; background-color:black; color:white; border-radius:50%; height:30px;width:30px; font-size:18px;line-height:27px; text-align:center; font-weight:bold;">Go</div>
+             <div id="Top" style=" position:relative; top:403px; left:-564px; border:black solid 1px; height:30px;width:30px; font-size:30px;line-height:25px; text-align:center; font-weight:bold;"><</div>
+            <div id="Bttomm" style=" position:relative; top:373px; left:-392px; border:black solid 1px; height:30px;width:30px; font-size:30px;line-height:25px; text-align:center; font-weight:bold;">></div>
             <div id="PositionPage" style="position:absolute;top:636px;left:727px;">
                 <span id="Now" style="font-size:25px; color:orange"></span>
                 <span id="Now2" style="font-size:25px; color:antiquewhite;font-weight:bold;">/</span>
