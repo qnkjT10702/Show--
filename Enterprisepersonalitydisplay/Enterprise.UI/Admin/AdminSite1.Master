@@ -121,9 +121,9 @@
 
             <div id="navigation">
                 <ul>
-                    <li><a href="">用户管理</a></li>
-                    <li><a href="">添加歌曲</a></li>
-                    <li><a href="">添加艺人</a></li>
+                    <li><a href="../Admin/AdminLogin.aspx">用户登录</a></li>
+                    <li><a href="../Admin/AddMusic.aspx">添加歌曲</a></li>
+                    <li><a href="../Admin/AddSinger.aspx">添加艺人</a></li>
                     <li><a href="">动态管理</a></li>
                     <li><a href="">动态栏目管理</a></li>
                 </ul>

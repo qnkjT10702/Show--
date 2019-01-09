@@ -15,8 +15,6 @@ namespace Enterprise.UI.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ListStyleId.Style.Add("width", "100px");
-            ListStyleId.Style.Add("height", "100px");
             if (!IsPostBack)
             {
                 DataTable tableSinger = MusicCRUD.SelectSingerInfo();

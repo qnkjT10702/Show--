@@ -41,17 +41,17 @@
         #styleSong td a:hover{
             color:#fdad02;
         }
-         .btnCollestSty {
-        width: 44px;
-        height: 50px;
-        background-image: url("../Imgs/Collect1.png");
-        background-size:89px;
-        background-position:-2px 70px;
-        position: relative;
-        left: 873px;
-        top: -17px;
-         border-color:transparent;
-        background-color:transparent;
+        .btnCollestSty {
+            width: 44px;
+            height: 50px;
+            background-image: url("../Imgs/Collect1.png");
+            background-size:89px;
+            background-position:-2px 70px;
+            position: relative;
+            left: 873px;
+            top: -17px;
+            border-color:transparent;
+            background-color:transparent;
         }
         .btnDownLoadSty {
             width: 44px;
