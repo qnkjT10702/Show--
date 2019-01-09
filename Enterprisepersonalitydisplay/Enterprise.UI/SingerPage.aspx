@@ -341,12 +341,15 @@
             })
             //返回收藏结果
             function CollectTheResults(data) {
-                if (data[0].result == true) {
+                console.log(data.result)
+                if (data.result==1) {
                     alert("收藏成功");
                 }
-                else {
-                    alert("您还没有登录赶快去登录吧");
+                else if (data.result == -1) {
+                    alert("您还没有登录赶快去登录吧！");
                     location.href = 'Userloing.aspx';
+                } else if (data.result == 0) {
+                    alert("这首歌您已经添加过了哦！")
                 }
             }
 

@@ -1,5 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminSite1.Master" AutoEventWireup="true" CodeBehind="AddMusic.aspx.cs" Inherits="Enterprise.UI.Admin.AddMusic" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script>
+        $(function () {
+            $('#imgBtn').click(function () {
+                $('.fileImg').click();
+            });
+            $('.fileImg').change(function () {
+                $('.b1').click();
+            })
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="overflow:hidden;background-image:url(../Imgs/lx6.jpg);background-size:100% 100%;width:100%;height:700px;">
@@ -8,9 +18,18 @@
             <asp:TextBox ID="TxtMicName" runat="server" style="box-sizing:border-box;padding:0px 10px;width:150px;margin-left:10px;height:20px;border-radius:10px;border:1px solid black;"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="#ff3300" ControlToValidate="TxtMicName" ErrorMessage="歌曲名字不可以为空" EnableClientScript="false" style="font-size:13px;"></asp:RequiredFieldValidator>
             <br  runat="server"/>   
+
+            <asp:Label ID="LebMicImg" runat="server" Text="Label" style="font-size:14px;">歌曲封面:</asp:Label>
+            <div id="imgBtn" style="width:200px;height:200px;border:solid 1px #00ffff">
+                <asp:Image ID="MicImageBg" Width="100%" Height="100%" runat="server" />
+            </div>
+            <asp:FileUpload ID="FileMicImg" CssClass="fileImg" style="display:none;" runat="server"/>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ForeColor="#ff3300" ControlToValidate="FileMicImg" ErrorMessage="歌曲封面不可以为空" EnableClientScript="false" style="font-size:13px;"></asp:RequiredFieldValidator>
+
             <asp:Label ID="LebMicImg" runat="server" Text="Label" style="font-size:14px;margin-left:140px;">歌曲封面:</asp:Label>
             <asp:FileUpload ID="FileMicImg" runat="server"/>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ForeColor="#ff3300" ControlToValidate="FileMicImg" ErrorMessage="歌曲封面不可以为空" EnableClientScript="false" style="font-size:13px;margin-left:-80px;"></asp:RequiredFieldValidator>
+
              <br  runat="server"/>
              <asp:Label ID="LebSingerId" runat="server" Text="Label" style="font-size:14px;margin-left:140px;">歌曲风格:</asp:Label>
             <asp:DropDownList ID="ListStyleId" runat="server" style="height:20px;font-size:13px;"></asp:DropDownList>
@@ -32,6 +51,7 @@
 
             <asp:Button ID="BtnMicSubmit" runat="server" Text="添加" OnClick="BtnMicSubmit_Click" style="width:120px;height:30px;margin-top:15px;margin-left:180px;"/>
             <br  runat="server"/>
+            <asp:Button ID="Button1" CssClass="b1" style="display:none" runat="server" OnClick="Button1_Click" Text="Button" />
         </div>
        </div>     
 </asp:Content>

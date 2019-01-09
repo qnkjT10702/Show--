@@ -13,6 +13,7 @@ namespace DataSheetDAL
 {
     public class MusicCRUD
     {
+        
         /// <summary>
         /// 
         /// </summary>
@@ -204,6 +205,22 @@ namespace DataSheetDAL
                 new SqlParameter("@HardImg",singer.HardImg)
             };
             string sql = "insert into SingerInfo values(@SingerName,@SingerClass,@SingerRegion,@HardImg)";
+            return DBHelpe.ExecuteAdater(sql, false, parameter) == 1;
+        }
+        /// <summary>
+        /// 向数据库添加管理员信息
+        /// </summary>
+        /// <param name="music">数据类型是歌手信息类</param>
+        /// <returns></returns>
+        public static bool AddAdmInfo(AdminInfo admin)
+        {
+            SqlParameter[] parameter = new SqlParameter[]
+            {
+                new SqlParameter("@AdminName",admin.AdminName),
+                new SqlParameter("@AdminUser",admin.AdminUser),
+                new SqlParameter("@AdminPwd",admin.AdminPwd),
+            };
+            string sql = "select *from AdminInfo where AdminUser=@AdminUser and AdminPwd=AdminPwd and AdminName=AdminName";
             return DBHelpe.ExecuteAdater(sql, false, parameter) == 1;
         }
 

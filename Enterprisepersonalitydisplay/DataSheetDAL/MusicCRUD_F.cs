@@ -95,22 +95,37 @@ namespace DataSheetDAL
         /// <returns></returns>
         public static bool SongCollection(string MicId,object UserId)
         {
-            //给歌曲增加收藏量 通过歌曲id
-            SqlParameter[] ParasMicId = new SqlParameter[]
-            {
-                new SqlParameter("@MicId",MicId)
-            };
-            string sqlMicid = "update MusicInfo set CollectCount=CollectCount+1 where MicId=@MicId";
-            DBHelpe.ExecuteAdater(sqlMicid, false, ParasMicId);
-
-            //给用户收藏表增加信息 获取用户id
-            SqlParameter[] ParasUserId = new SqlParameter[]
+            //判断是否能添加
+            SqlParameter[] Parasjudge = new SqlParameter[]
             {
                 new SqlParameter("@MicId",MicId),
                 new SqlParameter("@UserId",UserId)
             };
-            string sqlUserId = "insert into UserCollect values (@UserId,@MicId)";
-            return DBHelpe.ExecuteAdater(sqlUserId, false, ParasUserId)==1;
+            string sql = "select CollectId from UserCollect where UserId=@UserId and MicId=@MicId";
+            DataTable table = DBHelpe.SelectDB(sql, false, Parasjudge);
+            if (table.Rows.Count==0)
+            {
+                //给歌曲增加收藏量 通过歌曲id
+                SqlParameter[] ParasMicId = new SqlParameter[]
+                {
+                new SqlParameter("@MicId",MicId)
+                };
+                string sqlMicid = "update MusicInfo set CollectCount=CollectCount+1 where MicId=@MicId";
+                DBHelpe.ExecuteAdater(sqlMicid, false, ParasMicId);
+
+                //给用户收藏表增加信息 获取用户id
+                SqlParameter[] ParasUserId = new SqlParameter[]
+                {
+                new SqlParameter("@MicId",MicId),
+                new SqlParameter("@UserId",UserId)
+                };
+                string sqlUserId = "insert into UserCollect values (@UserId,@MicId)";
+                return DBHelpe.ExecuteAdater(sqlUserId, false, ParasUserId) == 1;
+            }else
+            {
+                return false;
+            }
+            
         }
 
         /// <summary>

@@ -46,23 +46,15 @@ namespace Enterprise.UI.Admin
 
         protected void BtnMicSubmit_Click(object sender, EventArgs e)
         {
-             string MicName= TxtMicName.Text;
+            string Micsqlpath = MicImageBg.ImageUrl;
+
+            /// <summary>
+            /// 图片的路径
+            /// </summary>
+            string MicName = TxtMicName.Text;
             /// <summary>
             /// 歌曲名
             /// </summary>
-      
-           
-            string Micrdm = Guid.NewGuid().ToString();
-            string Micimg = string.Format("{0}{1}", Micrdm, FileMicImg.FileName);
-            string Micsqlpath = Path.Combine("Imgs", Micimg);
-
-            string MicJuedui = Path.Combine(Server.MapPath("/"), Micsqlpath);
-            // 绝对路径
-            FileMicImg.SaveAs(MicJuedui);
-            /// <summary>
-            /// 歌曲背景图
-            /// </summary>
-
 
             string MicSrdm = Guid.NewGuid().ToString();
             string MicSrc = string.Format("{0}{1}", MicSrdm, FileMicSRc.FileName);
@@ -81,6 +73,23 @@ namespace Enterprise.UI.Admin
                 Response.Write("添加歌曲成功！");
             }
 
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            
+           
+            string Micrdm = Guid.NewGuid().ToString();
+            string Micimg = string.Format("{0}{1}", Micrdm, FileMicImg.FileName);
+            string Micsqlpath = Path.Combine("Imgs", Micimg);
+            //相对路径
+            string MicJuedui = Path.Combine(Server.MapPath("/"), Micsqlpath);
+            // 绝对路径
+            FileMicImg.SaveAs(MicJuedui);
+            /// <summary>
+            /// 歌曲背景图
+            /// </summary>
+            MicImageBg.ImageUrl = "/"+Micsqlpath;
         }
     }
 }
