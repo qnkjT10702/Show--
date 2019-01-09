@@ -9,7 +9,7 @@
             <br />
             <br />
             <br />
-            <asp:Label ID="Label2" runat="server" Text="Label" style="font-size:14px;">密&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;码</asp:Label>
+            <asp:Label ID="Label2" runat="server" Text="Label" style="font-size:14px;">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</asp:Label>
             <asp:TextBox ID="TextBox2" runat="server" style="padding:0px 10px;box-sizing:border-box;width:150px;margin-left:10px;height:20px;border-radius:10px;border:1px solid black;"></asp:TextBox>
             <br />
             <br />
