@@ -12,7 +12,6 @@
     <link href="css/normalize.css" rel="stylesheet" />
     <link href="css/posterTvGrid.css" rel="stylesheet" />
 
-
     <style>
         #div{padding:-7px 100px;}
         .posterTvGrid .leftNav{left:7px;background:url(Imgs/1.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Imgs/slide_next_btn.png");}

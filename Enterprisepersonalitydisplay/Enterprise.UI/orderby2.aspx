@@ -77,7 +77,8 @@
                     $(this).css('backgroundPosition', "220px 70px");
                     MicIdTit = $(".butImg").attr("title");
                     //歌曲ID 
-                         $.ajax({
+                    $.ajax({
+                        url: "",
                     type: "post",
                     dataType: "json",
                     data: {
