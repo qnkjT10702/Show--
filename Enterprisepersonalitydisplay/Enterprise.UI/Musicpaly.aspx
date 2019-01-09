@@ -75,10 +75,14 @@
 </div>
     </div>
     </form>
-    <span style="color:white;position:absolute;top:395px;left:900px;">返回</span>
+    <span style="color:white;position:absolute;top:395px;left:900px;cursor:pointer;" runat="server" id="GetBack_href">返回</span>
     <script src="js/utill.js"></script>
     <script src="js/jquery.min.js"></script>
+    <script src="scripts/jquery-3.3.1.js"></script>
     <script>
+        $('#GetBack_href').click(function(){
+            history.back();
+        })
         //创建一个音乐播放器的类 单例模式
         var mysongs;
         $.ajax({

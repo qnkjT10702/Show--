@@ -17,7 +17,7 @@ namespace Enterprise.UI
         {
             if (Request.RequestType == "POST")
             {
-
+                int  StyName = Convert.ToInt32(Request["MicId"]);
                 List<ViewMicsuger> tbH = MusicCRUD.Selectorder();
                 //收藏榜
                 List<ViewMicsuger> tbNewMic = MusicCRUD.Selectorder();

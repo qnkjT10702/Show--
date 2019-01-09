@@ -247,6 +247,7 @@
     <Content Include="playMicOne.ascx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="DeleteCollection_MyMusic.ashx" />
     <None Include="scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="scripts\jquery-1.11.1.min.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
@@ -330,6 +331,9 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteCollection_MyMusic.ashx.cs">
+      <DependentUpon>DeleteCollection_MyMusic.ashx</DependentUpon>
     </Compile>
     <Compile Include="editorial.aspx.cs">
       <DependentUpon>editorial.aspx</DependentUpon>

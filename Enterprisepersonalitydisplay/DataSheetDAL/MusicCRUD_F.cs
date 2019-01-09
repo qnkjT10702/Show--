@@ -53,35 +53,52 @@ namespace DataSheetDAL
             return list;
         }
 
-        /// <summary>
-        ///歌曲收藏功能 根据歌曲名和歌手名加用户名进行收藏
-        /// </summary>
-        /// <param name="micName"></param>
-        /// <param name="singerName"></param>
-        /// <returns></returns>
-        public static bool SongCollection(string micName, string singerName,object UserId)
+        public static bool DeleteCollection(string micName, string singerName, object userId)
         {
-            //参数化查询
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 我的音乐页面 个人音乐收藏功能
+        /// </summary>
+        /// <param name="userId">用户id</param>
+        /// <returns></returns>
+        public static List<ViewMicsuger> MicSearch(object userId)
+        {
+            //从用户收藏表中查询数据
             SqlParameter[] paras = new SqlParameter[]
             {
-                new SqlParameter ("@MicName",micName),
-                new SqlParameter("@SingerName",singerName)
+                new SqlParameter ("@UserId",userId)
             };
-            string sql = "select m.MicId from MusicInfo m,SingerInfo s,MusicStyleInfo ms where m.SingerId = s.SingerId and m.StyleId = ms.StyleId and(m.MicName like '%'+@MicName+'%' and s.SingerName like '%'+@SingerName+'%')";
+            string sql = "select m.MicName,s.SingerName,mu.StyleName from MusicInfo m,SingerInfo s,MusicStyleInfo mu where m.SingerId=s.SingerId and m.StyleId=mu.StyleId and m.MicId in(select MicId from UserCollect where UserId=@UserId)";
             DataTable table = DBHelpe.SelectDB(sql, false, paras);
             List<ViewMicsuger> list = new List<ViewMicsuger>();
             foreach (DataRow item in table.Rows)
             {
                 list.Add(new ViewMicsuger
                 {
-                    MicId = Convert.ToInt32(item["MicId"])
+                    MicName = item["MicName"].ToString(),
+                    SingerName = item["SingerName"].ToString(),
+                    StyleName = item["StyleName"].ToString()
+                    
                 });
             }
+            return list;
 
+        }
+
+        /// <summary>
+        ///歌曲收藏功能 根据歌曲名和歌手名加用户名进行收藏
+        /// </summary>
+        /// <param name="micName"></param>
+        /// <param name="singerName"></param>
+        /// <returns></returns>
+        public static bool SongCollection(string MicId,object UserId)
+        {
             //给歌曲增加收藏量 通过歌曲id
             SqlParameter[] ParasMicId = new SqlParameter[]
             {
-                new SqlParameter("@MicId",list[0].MicId)
+                new SqlParameter("@MicId",MicId)
             };
             string sqlMicid = "update MusicInfo set CollectCount=CollectCount+1 where MicId=@MicId";
             DBHelpe.ExecuteAdater(sqlMicid, false, ParasMicId);
@@ -89,7 +106,7 @@ namespace DataSheetDAL
             //给用户收藏表增加信息 获取用户id
             SqlParameter[] ParasUserId = new SqlParameter[]
             {
-                new SqlParameter("@MicId",list[0].MicId),
+                new SqlParameter("@MicId",MicId),
                 new SqlParameter("@UserId",UserId)
             };
             string sqlUserId = "insert into UserCollect values (@UserId,@MicId)";
@@ -108,13 +125,14 @@ namespace DataSheetDAL
             {
                 new SqlParameter ("@SingerName",singerName)
             };
-            string sql = "select m.MicName,s.SingerName, mu.StyleName from MusicInfo m,SingerInfo s,MusicStyleInfo mu where m.SingerId=s.SingerId and m.StyleId=mu.StyleId and s.SingerName=@SingerName";
+            string sql = "select m.MicName,s.SingerName, mu.StyleName,m.MicId from MusicInfo m,SingerInfo s,MusicStyleInfo mu where m.SingerId=s.SingerId and m.StyleId=mu.StyleId and s.SingerName=@SingerName";
             DataTable table = DBHelpe.SelectDB(sql, false, paras);
             List<ViewMicsuger> list = new List<ViewMicsuger>();
             foreach (DataRow item in table.Rows)
             {
                 list.Add(new ViewMicsuger
                 {
+                    MicId = (int)item["MicId"],
                     MicName = item["MicName"].ToString(),
                     SingerName = item["SingerName"].ToString(),
                     StyleName = item["StyleName"].ToString()
