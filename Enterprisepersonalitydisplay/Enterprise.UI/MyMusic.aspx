@@ -39,7 +39,7 @@
                     url: 'DeleteCollection_MyMusic.ashx',
                     type: 'post',
                     dataType: 'json',
-                    data: { MicName: MicName, SingerName: SingerName },
+                    //data: { MicName: MicName, SingerName: SingerName },
                     success: function (data) {
                         
                     }
