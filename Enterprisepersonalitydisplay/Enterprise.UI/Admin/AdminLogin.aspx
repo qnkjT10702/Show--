@@ -13,12 +13,9 @@
             <asp:RequiredFieldValidator ID="RequAdminName" runat="server" ControlToValidate="TxtAdminName" EnableClientScript="false" ErrorMessage="管理员昵称不可以为空" ForeColor="Red"></asp:RequiredFieldValidator>
             <br />
             <br />
-            <asp:Label ID="LabAdminPwd" runat="server" Text="Label" style="font-size:14px;">密&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;码</asp:Label>
+            <asp:Label ID="LabAdminPwd" runat="server" Text="Label" style="font-size:14px;">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</asp:Label>
             <asp:TextBox ID="TxtAdminPwd"  runat="server" style="padding:0px 10px;box-sizing:border-box;width:150px;margin-left:10px;height:20px;border-radius:10px;border:1px solid black;"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequPwd" runat="server" ControlToValidate="TxtAdminPwd" EnableClientScript="false" ErrorMessage="管理员密码不可以为空" ForeColor="Red"></asp:RequiredFieldValidator>
-
-            <asp:Label ID="Label2" runat="server" Text="Label" style="font-size:14px;">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</asp:Label>
-            <asp:TextBox ID="TextBox2" runat="server" style="padding:0px 10px;box-sizing:border-box;width:150px;margin-left:10px;height:20px;border-radius:10px;border:1px solid black;"></asp:TextBox>
             <br />
             <br />
             
