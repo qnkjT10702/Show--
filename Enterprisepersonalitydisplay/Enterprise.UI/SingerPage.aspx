@@ -4,124 +4,6 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="scripts/jquery-3.3.1.js"></script>
-    <script>
-        $(function () {
-            var Stamper = '<div class="singers"><div class="singers-img"> <img src="{{HardImg}}" /> </div><div class="singers-font">{{SingerName}}</div> </div>';
-            var Song = '<div class="Song"><div style="display: flex;"><span class="js_song">{{MicName}}</span><span class="js_singer">{{SingerName}}</span><span class="play"></span><span class="style">{{StyleName}}</span><span class="collect">+</span></div></div>';
-            Ajax();
-            $('#AppBar2').css({ backgroundColor: '#4A4A4A', color: '#fdad02' })
-
-            $('.list-Regio>span').click(function () {
-                for (var i = 0; i <= $('.list-Regio>span').length ; i++) {
-                    var s = $('.list-Regio>span').index($(this));
-                    $('.list-Regio>span').eq(s).css({ color: 'white', backgroundColor: "orange" });
-                    $('.list-Regio>span').eq(i).css({ color: 'black', backgroundColor: "white" });
-                    $('.list-Regio>span').eq(s).addClass('list-RegioSpan');
-                    $('.list-Regio>span').eq(i).removeClass('list-RegioSpan');
-                }
-                Ajax();
-            })
-
-            $('.list-Sex>span').click(function () {
-                for (var i = 0; i <= $('.list-Sex>span').length; i++) {
-                    var s = $('.list-Sex>span').index($(this));
-                    $('.list-Sex>span').eq(s).css({ color: 'white', backgroundColor: "orange" });
-                    $('.list-Sex>span').eq(i).css({ color: 'black', backgroundColor: "white" });
-                    $('.list-Sex>span').eq(s).addClass('list-SexSpan');
-                    $('.list-Sex>span').eq(i).removeClass('list-SexSpan');
-                }
-                Ajax();
-            })
-
-            $('.list-Style>span').click(function () {
-                for (var i = 0; i <= $('.list-Style>span').length; i++) {
-                    var s = $('.list-Style>span').index($(this));
-                    $('.list-Style>span').eq(s).css({ color: 'white', backgroundColor: "orange" });
-                    $('.list-Style>span').eq(i).css({ color: 'black', backgroundColor: "white" });
-                    $('.list-Style>span').eq(s).addClass('list-StyleSpan');
-                    $('.list-Style>span').eq(i).removeClass('list-StyleSpan');
-                }
-                Ajax();
-            })
-            function Ajax() {
-
-                var Regiotext = $('.list-RegioSpan').text();
-                var Sextext = $('.list-SexSpan').text();
-                var Styletext = $('.list-StyleSpan').text();
-                if (Regiotext == "全部") {
-                    Regiotext = "";
-                }
-                if (Sextext == "全部") {
-                    Sextext = "";
-                }
-                if (Styletext == "全部") {
-                    Styletext = "";
-                }
-                $.ajax({
-                    type: 'post',
-                    dataType: 'json',
-                    data: { Regiotext: Regiotext, Sextext: Sextext, Styletext: Styletext },
-                    success: function (data) {
-                        Replacedata(data);
-                    }
-                })
-            }
-            //生成母版的方法
-            function Replacedata(data) {
-                let outStamper = '';
-                for (var i = 0; i < data.length; i++) {
-                    //outitem = item.replase('{{b}}', d[i].b).re;
-                    //out.push(ouitem);
-                    //console.log(data[i].HardImg);
-                    outStamper += Stamper.replace('{{HardImg}}', data[i].HardImg).replace('{{SingerName}}', data[i].SingerName);
-                }
-                $('#ends').html(outStamper);
-            }
-
-            //点击歌手名字显示歌曲
-            $('#ends').on('click', '.singers-font', function () {
-                $('#SingerPage').css({ display: 'block' });
-                var s = $('.singers-font').index($(this));
-                var Fonttext = $('.singers-font').eq(s).text();
-                $.ajax({
-                    url: 'SingerPageHan.ashx',
-                    type: 'post',
-                    dataType: 'json',
-                    data: { SingerName: Fonttext },
-                    success: function (data) {
-                        //通过母版 替换页面
-                        CreateStamper(data);
-                    }
-                })
-            })
-            $('.fork').click(function () {
-                $('#SingerPage').css({ display: 'none' });
-            })
-
-            //替换母版的方法
-            function CreateStamper(data) {
-                var Replace = "";
-                for (var i = 0; i < data.length; i++) {
-                    Replace += Song.replace('{{MicName}}', data[i].MicName).replace('{{SingerName}}', data[i].SingerName).replace('{{StyleName}}', data[i].StyleName);
-                }
-                $('#Catalog').html(Replace);
-            }
-
-            //播放功能
-            $('#Catalog').on('click', '.play', function () {
-               
-                var s = $('.play').index($(this));
-                var SongName = $('.js_song').eq(s).text();
-                var SingerName = $('.js_singer').eq(s).text();
-                console.log(location.href);
-                location.href = 'Musicpaly.aspx?SongName=' + SongName + '&SingerName=' + SingerName;
-                
-            })
-        })
-    </script>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
         a {
             text-decoration: none;
@@ -224,9 +106,9 @@
             font-size: 16px;
         }
 
-        .singers-font:hover {
-             color: #fdad02;
-        }
+            .singers-font:hover {
+                color: #fdad02;
+            }
 
         /*下半部分*/
 
@@ -280,7 +162,7 @@
             margin: 0 auto;
             background-color: blanchedalmond;
             line-height: 40px;
-            position:relative;
+            position: relative;
         }
 
         .js_song {
@@ -295,6 +177,7 @@
             font-size: 14px;
             color: #515351;
             margin-left: 300px;
+            position:absolute;
         }
 
         .play {
@@ -303,7 +186,7 @@
             background-image: url("Imgs/round44.gif");
             background-size: 212%;
             background-position: 0px -35px;
-            margin-left: 120px;
+            margin-left: 470px;
             margin-top: 6px;
         }
 
@@ -320,12 +203,17 @@
             color: orange;
             margin-top: -3px;
         }
+        .MicId_F{
+            position:absolute;
+            display:none;
+            right:0px;
+        }
     </style>
     <script src="scripts/jquery-3.3.1.js"></script>
     <script>
         $(function () {
-            var Stamper = '<div class="singers"><div class="singers-img"> <img src="{{HardImg}}" /> </div><div class="singers-font">{{SingerName}}</div> </div>';
-            var Song = '<div class="Song"><div style="display: flex;"><span class="js_song">{{MicName}}</span><span class="js_singer">{{SingerName}}</span><span class="play"></span><span class="style">{{StyleName}}</span><span class="collect">+</span></div></div>';
+            var Stamper = '<div class="singers"><div class="singers-img"> <img src="{{HardImg}}" title="歌手图片" /> </div><div class="singers-font" title="歌手名字">{{SingerName}}</div> </div>';
+            var Song = '<div class="Song"><div style="display: flex;"><span class="js_song" title="歌曲名">{{MicName}}</span><span class="js_singer" title="歌手名">{{SingerName}}</span><span class="play" title="播放"></span><span class="style" title="风格名">{{StyleName}}</span><span class="collect" title="收藏">+</span><span class="MicId_F">{{MicId}}</span></div></div>';
             Ajax();
             $('#AppBar2').css({ backgroundColor: '#4A4A4A', color: '#fdad02' })
 
@@ -350,7 +238,7 @@
                 }
                 Ajax();
             })
-
+            
             $('.list-Style>span').click(function () {
                 for (var i = 0; i <= $('.list-Style>span').length; i++) {
                     var s = $('.list-Style>span').index($(this));
@@ -420,7 +308,7 @@
             function CreateStamper(data) {
                 var Replace = "";
                 for (var i = 0; i < data.length; i++) {
-                    Replace += Song.replace('{{MicName}}', data[i].MicName).replace('{{SingerName}}', data[i].SingerName).replace('{{StyleName}}', data[i].StyleName);
+                    Replace += Song.replace('{{MicName}}', data[i].MicName).replace('{{SingerName}}', data[i].SingerName).replace('{{StyleName}}', data[i].StyleName).replace('{{MicId}}', data[i].MicId);
                 }
                 $('#Catalog').html(Replace);
             }
@@ -428,22 +316,24 @@
             //播放功能
             $('#Catalog').on('click', '.play', function () {
                 var s = $('.play').index($(this));
+                
                 var SongName = $('.js_song').eq(s).text();
                 var SingerName = $('.js_singer').eq(s).text();
                 location.href = 'Musicpaly.aspx?SongName=' + SongName + '&SingerName=' + SingerName;
-                
+
             })
 
             //收藏功能
             $('#Catalog').on('click', '.collect', function () {
                 var s = $('.collect').index($(this));
-                var MicName = $('.js_song').eq(s).text();
-                var SingerName = $('.js_singer').eq(s).text();
+                var MicId = $('.MicId_F').eq(s).text();
+                //var MicName = $('.js_song').eq(s).text();
+                //var SingerName = $('.js_singer').eq(s).text();
                 $.ajax({
                     url: 'SongCollection.ashx',
                     type: 'post',
                     dataType: 'json',
-                    data: { MicName: MicName, SingerName: SingerName },
+                    data: { MicId: MicId},
                     success: function (data) {
                         CollectTheResults(data);
                     }
@@ -451,16 +341,27 @@
             })
             //返回收藏结果
             function CollectTheResults(data) {
-                if (data) {
+                console.log(data.result)
+                if (data.result==1) {
                     alert("收藏成功");
                 }
-                else {
-                    alert("您的网络开始开小差了");
+                else if (data.result == -1) {
+                    alert("您还没有登录赶快去登录吧！");
+                    location.href = 'Userloing.aspx';
+                } else if (data.result == 0) {
+                    alert("这首歌您已经添加过了哦！")
                 }
             }
 
         })
+
+    </script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <!--背景图片部分-->
+
     </script><!--背景图片部分-->
+
     <div id="middle-img">
         <img src="Imgs/body1.jpg" />
         <div class="font-1">你关注的歌手将展示在这里</div>
@@ -473,10 +374,9 @@
         <!--全部-->
         <div class="list-distance list-Regio">
             <span class="list-s" style="color: white">全部</span>
-            <span>内地</span>
-            <span>港台</span>
-            <span>欧美</span>
+            <span>华语</span>
             <span>日本</span>
+            <span>欧美</span>
             <span>韩国</span>
             <span>其他</span>
         </div>

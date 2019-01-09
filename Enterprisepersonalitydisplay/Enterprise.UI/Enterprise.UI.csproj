@@ -242,11 +242,11 @@
     <Content Include="MusicPalys2.aspx" />
     <Content Include="MyMusic.aspx" />
     <Content Include="orderby2.aspx" />
-    <Content Include="OrderPage.aspx" />
     <Content Include="packages.config" />
     <Content Include="playMicOne.ascx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="DeleteCollection_MyMusic.ashx" />
     <None Include="scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="scripts\jquery-1.11.1.min.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
@@ -331,6 +331,9 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DeleteCollection_MyMusic.ashx.cs">
+      <DependentUpon>DeleteCollection_MyMusic.ashx</DependentUpon>
+    </Compile>
     <Compile Include="editorial.aspx.cs">
       <DependentUpon>editorial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -379,13 +382,6 @@
     </Compile>
     <Compile Include="orderby2.aspx.designer.cs">
       <DependentUpon>orderby2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="OrderPage.aspx.cs">
-      <DependentUpon>OrderPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="OrderPage.aspx.designer.cs">
-      <DependentUpon>OrderPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="playMicOne.ascx.cs">
       <DependentUpon>playMicOne.ascx</DependentUpon>

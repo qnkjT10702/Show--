@@ -20,7 +20,7 @@ namespace Enterprise.UI
             string SingerName = context.Request["SingerName"];
             //查询数据库
             List<ViewMicsuger> FindSong = Songquery_O.FindSong(SingerName);
-            var st = from s in FindSong select new { MicName = s.MicName, SingerName = s.SingerName, StyleName = s.StyleName };
+            var st = from s in FindSong select new { MicName = s.MicName, SingerName = s.SingerName, StyleName = s.StyleName, MicId =s.MicId};
             context.Response.Write(JsonConvert.SerializeObject(st));
             context.Response.End();
 
