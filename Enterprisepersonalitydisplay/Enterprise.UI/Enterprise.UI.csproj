@@ -189,9 +189,7 @@
     <Content Include="Imgs\c9e51191-7068-48ac-ad94-7d8fb44f9951EXO.jpg" />
     <Content Include="Imgs\cb91e338-4669-4c58-b54d-2cfe7079a4d8鹿晗.jpg" />
     <Content Include="Imgs\Collect1.png" />
-
     <Content Include="Imgs\citruswirls.jpg" />
-
     <Content Include="Imgs\d66e8808-196c-4588-8d8d-6a95acbe6dedEXO.jpg" />
     <Content Include="Imgs\d872f23b-b333-4ab8-9f88-3025b76dd0901522829138983.png.JPG" />
     <Content Include="Imgs\d9727567-4303-4ae8-b2e2-80e030383adeGirl%27s Day %28걸스데이%29.jpg" />
@@ -239,15 +237,11 @@
     <Content Include="js\SuperSlide.js" />
     <Content Include="js\Userlogin.js" />
     <Content Include="MusicMenu.ascx" />
-
     <Content Include="MusicPaly2.ascx" />
-
     <Content Include="Musicpaly.aspx" />
     <Content Include="MusicPalys2.aspx" />
-
     <Content Include="MyMusic.aspx" />
     <Content Include="orderby2.aspx" />
-    <Content Include="OrderPage.aspx" />
     <Content Include="packages.config" />
     <Content Include="playMicOne.ascx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
@@ -349,14 +343,13 @@
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
-
     <Compile Include="MusicPaly2.ascx.cs">
       <DependentUpon>MusicPaly2.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MusicPaly2.ascx.designer.cs">
       <DependentUpon>MusicPaly2.ascx</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="Musicpaly.aspx.cs">
       <DependentUpon>Musicpaly.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -384,13 +377,6 @@
     </Compile>
     <Compile Include="orderby2.aspx.designer.cs">
       <DependentUpon>orderby2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="OrderPage.aspx.cs">
-      <DependentUpon>OrderPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="OrderPage.aspx.designer.cs">
-      <DependentUpon>OrderPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="playMicOne.ascx.cs">
       <DependentUpon>playMicOne.ascx</DependentUpon>
