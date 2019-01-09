@@ -242,7 +242,6 @@
     <Content Include="MusicPalys2.aspx" />
     <Content Include="MyMusic.aspx" />
     <Content Include="orderby2.aspx" />
-    <Content Include="OrderPage.aspx" />
     <Content Include="packages.config" />
     <Content Include="playMicOne.ascx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
@@ -383,13 +382,6 @@
     </Compile>
     <Compile Include="orderby2.aspx.designer.cs">
       <DependentUpon>orderby2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="OrderPage.aspx.cs">
-      <DependentUpon>OrderPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="OrderPage.aspx.designer.cs">
-      <DependentUpon>OrderPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="playMicOne.ascx.cs">
       <DependentUpon>playMicOne.ascx</DependentUpon>

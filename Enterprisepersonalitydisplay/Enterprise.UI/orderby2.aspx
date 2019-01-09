@@ -344,7 +344,7 @@
                                       <div id="Music" style="width: 960px; height: 250px;margin: 50px auto 0px; position: relative; background-image:url(images/dsfdv.png);top: -80px; left: -510px;">
 	                                        <div class="orderBang">
                                                  收藏榜单
-                                                <img  src="Imgs/Xin.png" style="position:absolute;top:48px;left:23px; height:170px;width:159px;">
+                                                <img src="Imgs/Xin.png" style="position:absolute;top:48px;left:23px; height:170px;width:159px;">
 	                                        </div>
 	                                        <ul id="micMenuApp">
 		                                        <li class="box1">
@@ -352,10 +352,10 @@
                                                    <%-- <a style="font-size:25px;position:relative; left:23px; font-family:华文行楷">{{SingerName}}</a>--%>
 		                                        </li>  
 	                                        </ul>
-
-                                            <img  src="Imgs/未标题-5.png" style="position:absolute;top:186px; left:323px; height:121px;width:85px;"/>
-                                            <img  src="Imgs/未标题-7.png" style="position:absolute;top:148px; left:79px; height:121px;width:85px;"/>
-                                            <img  src="Imgs/未标题-6.png" style="position:absolute;top:181px; left:514px; height:121px;width:85px;"/>
+                                          
+                                            <img  src="Imgs/未标题-5.png" style="position:absolute;top:180px; left:345px; height:70px;"/>
+                                            <img  src="Imgs/未标题-7.png" style="position:absolute;top:140px; left:101px; height:60px;"/>
+                                            <img  src="Imgs/未标题-6.png" style="position:absolute;top:160px; left:540px; height:60px;"/>
                                      </div>
                                     <!--点播音乐结束-->
 
