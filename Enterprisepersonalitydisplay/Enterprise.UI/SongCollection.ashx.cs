@@ -18,7 +18,7 @@ namespace Enterprise.UI
         {
             context.Response.ContentType = "text/plain";
             string MicId = context.Request["MicId"];
-            var UserId = "1";
+            var UserId = context.Session["UserId"];
             if (UserId == null)
             {
                 context.Response.Write(new JavaScriptSerializer().Serialize(new { result = -1 }));
@@ -28,11 +28,6 @@ namespace Enterprise.UI
                 bool st = Songquery_O.SongCollection(MicId,UserId);
                 context.Response.Write(new JavaScriptSerializer().Serialize(new { result = Convert.ToInt32(st) }));
                 context.Response.End();
-                //}else
-                //{
-                //    context.Response.Write(new JavaScriptSerializer().Serialize(new { result = 3 }));
-                //    context.Response.End();
-                //}
                 
             }
             

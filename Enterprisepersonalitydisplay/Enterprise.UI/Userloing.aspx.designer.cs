@@ -31,6 +31,15 @@ namespace Enterprise.UI {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword form_pwd_value_login;
         
         /// <summary>
+        /// Label2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
         /// Longin_btn 控件。
         /// </summary>
         /// <remarks>
@@ -85,22 +94,13 @@ namespace Enterprise.UI {
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton form_sex_confirm_1;
         
         /// <summary>
-        /// FileUpload1 控件。
+        /// Label1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
-        
-        /// <summary>
-        /// RequiredFieldValidator1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// regBtn 控件。
