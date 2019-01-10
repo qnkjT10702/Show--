@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.SessionState;
 
 namespace Enterprise.UI
@@ -16,10 +17,11 @@ namespace Enterprise.UI
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
-            string MicName = context.Request["MicName"];
-            string SingerName = context.Request["SingerName"];
-            var UserId = context.Session["UserId"];
-            bool ss = Songquery_O.DeleteCollection(MicName, SingerName, UserId);
+            string MicId = context.Request["MicId"];
+            var UserId = "1";
+            bool ss = Songquery_O.DeleteCollection(MicId, UserId);
+            context.Response.Write(new JavaScriptSerializer().Serialize(new { result = Convert.ToInt32(ss) }));
+            context.Response.End();
         }
 
         public bool IsReusable

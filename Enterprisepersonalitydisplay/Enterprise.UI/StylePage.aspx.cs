@@ -19,11 +19,11 @@ namespace Enterprise.UI
             if (Request.RequestType == "POST")
             {
                 string StyName = Request["styName"];
-                int index = int.Parse(Request["index"]);
+                int index = 1;//int.Parse(Request["index"]);
                 List<ViewMicsuger> Stytb = MusicCRUD.SelectMicStyle(StyName);
                 int count;
                 //一共多少条
-                List<ViewMicsuger> Stytb2 = MusicCRUD.SelectStyMusic(index, 1, "MicId", out count, $"StyleName='{StyName}'");
+                List<ViewMicsuger> Stytb2 = MusicCRUD.SelectStyMusic(index, 3, "MicId", out count, $"StyleName='{StyName}'");
                 //根据前台传过来的data 
 
                 string JsonStyTb = JsonConvert.SerializeObject(new { idx = index, ct = count, Stydata = Stytb2 });

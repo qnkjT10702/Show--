@@ -10,6 +10,33 @@
     <link href="css/MusicPaly.css" rel="stylesheet" />
     <link href="css/base2orderby2.css" rel="stylesheet" />
     <link href="css/home.css" rel="stylesheet" />
+
+    <link href="css/lanren.css" rel="stylesheet" />
+
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            Ajax_Show();
+            function Ajax_Show() {
+                $.ajax({
+                    url:'ShowFaces.ashx',
+                    type: 'post',
+                    dataType: 'json',
+                    success: function (data) {
+                        HoneyBunny(data);
+                    }
+                })
+            }
+            //显示用户头像用户名
+            function HoneyBunny(data) {
+                console.log(data);
+                $('#LoginEnroll').css({ display: 'none' });
+                $('#loginOK').css({ display: 'block' });
+                $('#UserImg').attr('src', data[0].HeadImg);
+                $('#UserName').text(data[0].UserName);
+            }
+        })
+    </script>
     <style>
         *{
             padding:0px;
@@ -112,6 +139,7 @@
             display: flex;  /*不换行*/
             position:relative;
             left:270px;
+            display:block;
         }
         #LoginEnroll li a{
             font-size:18px;
@@ -128,16 +156,16 @@
             left:1100px;
             padding:10px 0px;
             box-sizing:border-box;
-            border:1px solid red;
             display:none;
         }
         #UserImg{
             width:40px;
             height:40px;
-            border:1px solid red;
+            border-radius:50%;
         }
         #UserName{
             color:#fdad02;
+            margin-left: -8px;
         }
         /*导航栏上部分（首页）结束*/
         /*导航栏下部分（排行榜）开始*/
@@ -241,8 +269,7 @@
         /*合作链接结束*/
         /*尾部结束*/
     </style>
-     <asp:ContentPlaceHolder ID="head" runat="server">
-     </asp:ContentPlaceHolder>
+    
 </head>
 <body>
     <form id="form1" runat="server">
@@ -264,13 +291,13 @@
                     <asp:TextBox ID="searchBox" runat="server"></asp:TextBox>
                     <asp:Button ID="searchBut" OnClick="searchBut_Click" runat="server"/>
                 </div>
-                <ul id="LoginEnroll">
+                <ul id="LoginEnroll" runat="server">
                     <li><a href="Userloing.aspx">登录</a></li>
                 </ul>
                 <%--登录后显示头像和昵称，点击可跳转我的音乐界面--%>
-                <ul id="loginOK">
-                  <li><a href="MyMusic.aspx"><asp:Image ID="UserImg" runat="server" /></a></li>
-                  <li><a href="MyMusic.aspx"><asp:Label ID="UserName" runat="server" Text="Label"></asp:Label></a></li>
+                <ul id="loginOK" runat="server">
+                  <li><a href="editorial.aspx"><asp:Image ID="UserImg" runat="server" /></a></li>
+                  <li><a href="editorial.aspx"><asp:Label ID="UserName" runat="server" Text="Label"></asp:Label></a></li>
                 </ul>
             </div>
             <%--导航栏上部分（首页）结束--%>
@@ -362,6 +389,7 @@
     
     </div>
     </form>
-  
+   <asp:ContentPlaceHolder ID="head" runat="server">
+     </asp:ContentPlaceHolder>
 </body>
 </html>

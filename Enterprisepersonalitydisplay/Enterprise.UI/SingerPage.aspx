@@ -145,8 +145,8 @@
         .fork {
             background-color: black;
             position: absolute;
-            left: 1120px;
-            top: 2px;
+            left: 1221px;
+            top: -1px;
             width: 25px;
             height: 25px;
             text-align: center;
@@ -250,7 +250,6 @@
                 Ajax();
             })
             function Ajax() {
-
                 var Regiotext = $('.list-RegioSpan').text();
                 var Sextext = $('.list-SexSpan').text();
                 var Styletext = $('.list-StyleSpan').text();
@@ -373,7 +372,7 @@
     <div id="list">
         <!--全部-->
         <div class="list-distance list-Regio">
-            <span class="list-s" style="color: white">全部</span>
+            <span class="list-s list-RegioSpan" style="color: white">全部</span>
             <span>华语</span>
             <span>日本</span>
             <span>欧美</span>
@@ -382,14 +381,14 @@
         </div>
 
         <div class="list-distance list-Sex">
-            <span class="list-s" style="color: white">全部</span>
+            <span class="list-s list-SexSpan" style="color: white">全部</span>
             <span>男</span>
             <span>女</span>
             <span>组合</span>
         </div>
 
         <div class="list-distance list-Style">
-            <span class="list-s" style="color: white">全部</span>
+            <span class="list-s list-StyleSpan" style="color: white">全部</span>
             <span>流行音乐</span>
             <span>经典老歌</span>
             <span>古风歌曲</span>

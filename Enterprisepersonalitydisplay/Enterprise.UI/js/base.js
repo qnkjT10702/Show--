@@ -33,10 +33,10 @@ var base = {
             info.tip = '请输入用户名'
         }else {
             // 校验格式
-            var reg = /^\w{6,18}$/;
+            var reg = /^[\u4E00-\u9FA5\\s\w]{6,18}$/;
             if(!reg.test(name)) {
                 info.flag = false;
-                info.tip = '用户名为6到18位字母或数字'
+                info.tip = '用户名为6到18位汉字,字母或数字'
             }
         }
         return info;
