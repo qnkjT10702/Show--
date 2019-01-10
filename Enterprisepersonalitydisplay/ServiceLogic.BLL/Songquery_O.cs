@@ -28,11 +28,11 @@ namespace ServiceLogic.BLL
         /// <param name="singerName">歌手名</param>
         /// <param name="userId">用户id</param>
         /// <returns></returns>
-        public static bool DeleteCollection(string micName, string singerName, object userId)
+        public static bool DeleteCollection(string MicId,object userId)
         {
-            return MusicCRUD_F.DeleteCollection(micName, singerName, userId);
+            return MusicCRUD_F.DeleteCollection(MicId,userId);
         }
-
+        
         /// <summary>
         /// 用户歌曲收藏功能
         /// </summary>
@@ -42,6 +42,16 @@ namespace ServiceLogic.BLL
         public static bool SongCollection(string MicId,object UserId)
         {
             return MusicCRUD_F.SongCollection(MicId, UserId);
+        }
+
+        /// <summary>
+        /// 根据用户id 查询用户头像及用户名
+        /// </summary>
+        /// <param name="userId">用户id</param>
+        /// <returns></returns>
+        public static List<UserInfo> ShowUser(object userId)
+        {
+            return MusicCRUD_F.ShowUser(userId);
         }
 
         /// <summary>
