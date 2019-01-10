@@ -10,22 +10,9 @@
         
         $(function () {
             $('#AppBar3').css({ backgroundColor: '#4A4A4A', color: '#fdad02' });
+         
         })
-           var options = {
-	        circle_radius: 120,
-	        normal_feature_size: 100,
-	        highlighted_feature_size: 150,
-	        top_margin: 100,
-	        bottom_margin: 50,
-	        spacing: 40,
-	        min_padding: 50,
-	        heading_font_size: 24,
-	        description_font_size: 10,
-	        type: 'image'
-        };
-
-        var fp = new FeaturePresenter($("#test-element"), settings, options);
-        fp.createPresenter();
+           
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -40,7 +27,7 @@
         }
         #styleSong{
             width:100%;
-            height:700px;
+            height:550px;
             padding:20px 100px;
             box-sizing:border-box;
             display:flex;   /*不换行*/
@@ -126,7 +113,7 @@
             <div id="Go"  style=" position:absolute; top:630px; left:792px; border:black solid 1px; background-color:black; color:white; border:solid 3px #fdad02 ;border-radius:50%; height:30px;width:30px; font-size:16px;line-height:27px; text-align:center; font-weight:bold;">Go</div>
              <div id="Top" style=" position:relative; top:403px; left:-875px; border:black solid 1px; height:30px;width:30px; font-size:30px;line-height:25px; text-align:center; font-weight:bold;"><</div>
             <div id="Bttomm" style=" position:relative; top:373px; left:-468px; border:black solid 1px; height:30px;width:30px; font-size:30px;line-height:25px; text-align:center; font-weight:bold;">></div>
-            <div id="PositionPage" style="position:absolute;top:636px;left:727px;">
+            <div id="PositionPage" style="position:absolute;top:519px;left:463px;">
                 <span id="Now" style="font-size:25px; color:orange"></span>
                 <span id="Now2" style="font-size:25px; color:antiquewhite;font-weight:bold;">/</span>
                 <span id="CountNum" style="font-size:20px;"></span>
@@ -142,6 +129,24 @@
 	        {image: 'Imgs/liux.jpg', heading: '流行音乐', description: ''},
 	        {image: 'Imgs/timg-7.gif', heading: '说唱', description: ''}
         ];
+        $(function () {
+               var fp = new FeaturePresenter($("#test-element"), settings, options);
+                fp.createPresenter();
+        });
+        var options = {
+	        circle_radius: 120,
+	        normal_feature_size: 100,
+	        highlighted_feature_size: 150,
+	        top_margin: 100,
+	        bottom_margin: 50,
+	        spacing: 40,
+	        min_padding: 50,
+	        heading_font_size: 24,
+	        description_font_size: 10,
+	        type: 'image'
+        };
+
+        
         var Stie = ' <div class="bigBox" style=" position: relative; left:651px; margin-bottom: 20px; border:1px black solid; height:110px;width:742px; background-color:antiquewhite;"><a href="#" class="bgpaly"></a> <div runat="server" id="SingerNameSty" style="position:relative;top:26px; color:chocolate;left:133px; font-size:25px;">{{SingerName}}</div><div  id="SusicNameSty" style="position:relative;top:38px;left:131px; font-size:21px;">{{MicName}}</div><input type="button" class="btnCollestSty" /><input type="button" class="btnDownLoadSty" /><div id="SingerImg" style=" position:relative;left:0px;top:0px;"><img id="SingerImgs" title="{{MicId}}" src="{{MicImg}}" style="position:relative;top:-86px;left:0px; height:110px; width:110px"/></div></div>';
         $(function () {
             var s;
@@ -153,21 +158,21 @@
             //$('#ListMciStyle').change(function () {
             //    Load();
             //});
-            $(".feature-presenter>img").click(function(){
-                s = $(".feature-presenter-text-heading").text(); 
-                alert(s);
-                Load();
-	            });
-            function Load() {
-                 //第一步 得到  你选择的是什么‘文本’
-                var option = $("#ListMciStyle option:selected").text();
+            $(".feature-presenter>img").click(function () {
+                s = $(".feature-presenter-text-heading").text();
                
+                Load();
+            });
+            function Load() {
+                //第一步 得到  你选择的是什么‘文本’
+                var option = s;
+
                 //写ajax
                 //得到数据 --
                 $.ajax({
                     type: "post",
                     dataType: "json",
-                    data:{ 
+                    data: {
                         styName: option,
                         index: index
                     },
@@ -178,35 +183,34 @@
                         //当前第几页
                     }
                 });
-     
+
             }
             function StyMic(data) {
                 let outHtm = '';
-                    console.log(Stie);
+                console.log(Stie);
                 for (var i = 0; i < data.length; i++) {
                     Mouther = Stie.replace('{{MicSRc}}', data[i].MicSRc).replace('{{SingerName}}', data[i].SingerName).replace('{{MicName}}', data[i].MicName).replace('{{MicImg}}', data[i].MicImg).replace("{{MicId}}", data[i].MicId);
                     outHtm += Mouther;
                 }
                 $('#MicControlBox').html(outHtm);
-            }   
+            }
 
-            function CreateCountPage(data)
-            {
+            function CreateCountPage(data) {
                 PageCount = data.ct;
-               //显示当前页数/总页数
-                     $("#Now").text(index);
-                    $("#CountNum").text(PageCount);
+                //显示当前页数/总页数
+                $("#Now").text(index);
+                $("#CountNum").text(PageCount);
             }
             $("#Top").click(function () {
-               
-                    if (index >1) {
-                        index--;
-                    }
-                Load(); 
+
+                if (index > 1) {
+                    index--;
+                }
+                Load();
             });
             $("#Bttomm").click(function () {
-               
-                if (index< PageCount) {
+
+                if (index < PageCount) {
                     index++;
                 }
                 Load();
@@ -219,19 +223,19 @@
                 }
                 Load();
             });
-             var colleCount = 0;
+            var colleCount = 0;
             $("#MicControlBox").on('click', ".btnCollestSty", function () {
                 colleCount++;
                 if (colleCount % 2) {
                     $(this).css('backgroundPosition', "220px 70px");
                     var MicIdTit = $(this).siblings("#SingerImg").children("#SingerImgs").attr("title");
-                    //歌曲ID 
+                    //歌曲ID  
                     $.ajax({
                         url: "SongCollection.ashx",
                         type: "post",
                         dataType: "json",
                         data: {
-                            MicId:MicIdTit,
+                            MicId: MicIdTit,
                         },
                         success: function (dt) {
                             if (dt.result == 0) {
@@ -241,25 +245,38 @@
 
                             }
                         }
-                        });
-                    
+                    });
+
                 }
                 else {
-                        $(this).css('backgroundPosition', "-2px 70px");
-                }
-                 
-            });
-            //// $("#MicControlBox").on('click', $(".bgpaly"), function () {
-               
-            ////    $(".bgpaly").click(function () {
-            ////       //var MicIdTit = $(this).siblings("#SingerImg").children("#SingerImgs").attr("title");
-            ////    });
-                
-                
-            ////});
-        });
+                    //取消收藏
+                    $.ajax({
+                        url: "DeleteCollection_MyMusic.ashx",
+                        type: "post",
+                        dataType: "json",
+                        data: {
+                            MicId: MicIdTit,
+                        },
+                        success: function (dt) {
+                            if (dt.result == 1) {
+                                alert("已经取消收藏此歌曲！");
+                            }
+                            else {
 
-       
+                            }
+                        }
+                    });
+                    $(this).css('backgroundPosition', "-2px 70px");
+                }
+
+            });
+            $("#MicControlBox").on('click', ".bgpaly", function () {
+                var SingerName = $(this).siblings("#ContentPlaceHolder1_SingerNameSty").text();
+                var SongName = $(this).siblings("#SusicNameSty").text();
+                location.href = 'Musicpaly.aspx?SongName=' + SongName + '&SingerName=' + SingerName;
+            });
+
+        });
     </script>
 
 </asp:Content>
