@@ -4,6 +4,27 @@
     <script>
         $(function () {
             $('#AppBar4').css({ backgroundColor: '#fdad02', color: '#4A4A4A' })
+            Ajax_ShowMic();
+
+            function Ajax_ShowMic() {
+                $.ajax({
+                    type: 'post',
+                    dataType: 'json',
+                    success: function (data) {
+                        Show_info(data);
+                    }
+                })
+            }
+
+            //显示歌曲信息的方法
+            function Show_info(data) {
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+                    $('.micImg_img').eq(i).css({ src: data[i].MicImg });
+                    $('.micName_Name').eq(i).text() = data[i].MicName;
+                    $('.singerName_sing').eq(i).text() = data[i].SingerName;
+                }
+            }
         })
     </script>
 </asp:Content>
@@ -67,7 +88,7 @@
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
     <script type="text/javascript">
 	var posterTvGrid = new posterTvGrid('posterTvGrid',{className: "posterTvGrid"},[
-            { "img": "Imgs/round55.gif","title":"Lorem ipsum dolor sit amet","url":"http:\/\/www.htmleaf.com\/"},
+            {"img":"Imgs/round55.gif","title":"Lorem ipsum dolor sit amet","url":"http:\/\/www.htmleaf.com\/"},
 			{"img":"Imgs/assassins2.jpg","title":"Lorem ipsum dolor sit amet","url":"http:\/\/www.htmleaf.com\/"},
 			{"img":"Imgs/batman.jpg","title":"Lorem ipsum dolor sit amet","url":"http:\/\/www.htmleaf.com\/"},
 			{"img":"Imgs/deus-ex1.jpg","title":"Lorem ipsum dolor sit amet","url":"http:\/\/www.htmleaf.com\/"},
@@ -77,23 +98,28 @@
         ); 
     </script>
 
-        <div style="width:1150px;margin-bottom:20px;padding:0px 100px;box-sizing:border-box;border:1px solid red;">
+        <div style="width:1150px;margin-bottom:20px;padding:0px 100px;box-sizing:border-box;border:1px solid red;margin-left: 179px;">
             <h1>新&nbsp;&nbsp;&nbsp;&nbsp;歌&nbsp;&nbsp;&nbsp;&nbsp;首&nbsp;&nbsp;&nbsp;&nbsp;发</h1>
             <div id="recommend_in">
                 <div id="songList" class="songList">
-                    <div class="micImg"><asp:Image ID="micImg" runat="server" /></div>
-                    <div class="micName"><asp:Label ID="micName" runat="server" Text="Label"></asp:Label></div>
-                    <div class="singerName"><asp:Label ID="singerName" runat="server" Text="Label"></asp:Label></div>
+                    <div class="micImg"><asp:Image ID="micImg" runat="server" CssClass="micImg_img" /></div>
+                    <div class="micName"><asp:Label ID="micName" runat="server" Text="Label" CssClass="micName_Name"></asp:Label></div>
+                    <div class="singerName"><asp:Label ID="singerName" runat="server" Text="Label" CssClass="singerName_sing"></asp:Label></div>
                 </div>
                 <div class="songList">
-                    <div class="micImg"><asp:Image ID="Image1" runat="server" /></div>
-                    <div class="micName"><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></div>
-                    <div class="singerName"><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></div>
+                    <div class="micImg"><asp:Image ID="Image1" runat="server" CssClass="micImg_img" /></div>
+                    <div class="micName"><asp:Label ID="Label1" runat="server" Text="Label" CssClass="micName_Name"></asp:Label></div>
+                    <div class="singerName"><asp:Label ID="Label2" runat="server" Text="Label" CssClass="singerName_sing"></asp:Label></div>
                 </div>
                 <div class="songList">
                     <div class="micImg"><asp:Image ID="Image2" runat="server" /></div>
-                    <div class="micName"><asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></div>
-                    <div class="singerName"><asp:Label ID="Label4" runat="server" Text="Label"></asp:Label></div>
+                    <div class="micName"><asp:Label ID="Label3" runat="server" Text="Label" CssClass="micName_Name"></asp:Label></div>
+                    <div class="singerName"><asp:Label ID="Label4" runat="server" Text="Label" CssClass="singerName_sing"></asp:Label></div>
+                </div>
+                <div class="songList">
+                    <div class="micImg"><asp:Image ID="Image3" runat="server" /></div>
+                    <div class="micName"><asp:Label ID="Label5" runat="server" Text="Label"></asp:Label></div>
+                    <div class="singerName"><asp:Label ID="Label6" runat="server" Text="Label"></asp:Label></div>
                 </div>
             </div>
         </div>

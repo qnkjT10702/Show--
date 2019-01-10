@@ -18,7 +18,7 @@ namespace Enterprise.UI
         {
             context.Response.ContentType = "text/plain";
             string MicId = context.Request["MicId"];
-            var UserId = "1";
+            var UserId ="1";
             bool ss = Songquery_O.DeleteCollection(MicId, UserId);
             context.Response.Write(new JavaScriptSerializer().Serialize(new { result = Convert.ToInt32(ss) }));
             context.Response.End();

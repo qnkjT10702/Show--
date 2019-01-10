@@ -165,7 +165,7 @@
         }
         #UserName{
             color:#fdad02;
-            margin-left: -8px;
+            margin-left: -2px;
         }
         /*导航栏上部分（首页）结束*/
         /*导航栏下部分（排行榜）开始*/

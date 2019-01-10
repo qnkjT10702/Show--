@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.SessionState;
 
 namespace Enterprise.UI
@@ -17,6 +18,8 @@ namespace Enterprise.UI
             context.Response.ContentType = "text/plain";
             context.Session["UserId"] = null;
             //context.Response.Redirect("");
+            context.Response.Write(new JavaScriptSerializer().Serialize(new { result = -1 }));
+            context.Response.End();
         }
 
         public bool IsReusable
