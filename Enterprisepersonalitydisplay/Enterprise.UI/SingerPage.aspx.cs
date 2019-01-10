@@ -27,7 +27,7 @@ namespace Enterprise.UI
             string Regiotext = Request["Regiotext"];
             string Sextext = Request["Sextext"];
             string Styletext = Request["Styletext"];
-            List<ViewMicsuger> FindData = Songquery_O.RegionFind(Regiotext,Sextext, Styletext);
+            List<ViewMicsuger> FindData = Songquery_O.RegionFind(Regiotext,Sextext,Styletext);
             var st = from s in FindData select new { HardImg = s.HardImg, SingerName= s.SingerName };
             Response.Write(JsonConvert.SerializeObject(st));
             Response.End();

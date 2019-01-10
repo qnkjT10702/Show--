@@ -16,15 +16,24 @@
     <script src="scripts/jquery-3.3.1.js"></script>
     <script>
         $(function () {
-            Ajax();
-            function Ajax() {
+            Ajax_Show();
+            function Ajax_Show() {
                 $.ajax({
+                    url:'ShowFaces.ashx',
                     type: 'post',
                     dataType: 'json',
-                    success: function () {
-
+                    success: function (data) {
+                        HoneyBunny(data);
                     }
                 })
+            }
+            //显示用户头像用户名
+            function HoneyBunny(data) {
+                console.log(data);
+                $('#LoginEnroll').css({ display: 'none' });
+                $('#loginOK').css({ display: 'block' });
+                $('#UserImg').attr('src', data[0].HeadImg);
+                $('#UserName').text(data[0].UserName);
             }
         })
     </script>
@@ -130,7 +139,7 @@
             display: flex;  /*不换行*/
             position:relative;
             left:270px;
-            display:none;
+            display:block;
         }
         #LoginEnroll li a{
             font-size:18px;
@@ -147,17 +156,16 @@
             left:1100px;
             padding:10px 0px;
             box-sizing:border-box;
-            border:1px solid red;
-            display:block;
+            display:none;
         }
         #UserImg{
             width:40px;
             height:40px;
-            border:1px solid red;
             border-radius:50%;
         }
         #UserName{
             color:#fdad02;
+            margin-left: -8px;
         }
         /*导航栏上部分（首页）结束*/
         /*导航栏下部分（排行榜）开始*/
@@ -288,8 +296,8 @@
                 </ul>
                 <%--登录后显示头像和昵称，点击可跳转我的音乐界面--%>
                 <ul id="loginOK" runat="server">
-                  <li><asp:Image ID="UserImg" runat="server" /></li>
-                  <li><asp:Label ID="UserName" runat="server" Text="Label"></asp:Label></li>
+                  <li><a href="editorial.aspx"><asp:Image ID="UserImg" runat="server" /></a></li>
+                  <li><a href="editorial.aspx"><asp:Label ID="UserName" runat="server" Text="Label"></asp:Label></a></li>
                 </ul>
             </div>
             <%--导航栏上部分（首页）结束--%>

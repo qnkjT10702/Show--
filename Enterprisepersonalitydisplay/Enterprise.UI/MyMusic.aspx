@@ -66,10 +66,15 @@
                     type: 'post',
                     dataType: 'json',
                     success: function () {
-
+                        Show_sdf();
                     }
                 })
+                
             })
+            //刷新页面
+            function Show_sdf() {
+                locatiion.replace("MyMusic.aspx");
+            }
         })
     </script>
 </asp:Content>

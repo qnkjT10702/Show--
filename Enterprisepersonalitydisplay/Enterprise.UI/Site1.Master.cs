@@ -1,4 +1,5 @@
 ﻿using DataSheet.Model;
+using Newtonsoft.Json;
 using ServiceLogic.BLL;
 using System;
 using System.Collections.Generic;
@@ -15,18 +16,7 @@ namespace Enterprise.UI
         public event Action<string> inquire;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.HttpMethod == "POST")
-            {
-                var UserId = Session["UserId"];
-                if (UserId !=null)
-                {
-                    loginOK.Style["display"] = "block";
-                    LoginEnroll.Style["display"] = "none";
-                    List<UserInfo> HoneyBunny = Songquery_O.ShowUser(UserId);
-                    UserImg.ImageUrl = HoneyBunny[0].HeadImg;
-                    UserName.Text = HoneyBunny[0].UserName;
-                }
-            }
+            
         }
 
         protected void searchBut_Click(object sender, EventArgs e)
@@ -36,15 +26,6 @@ namespace Enterprise.UI
                 inquire.Invoke(searchBox.Text);
             }
 
-        }
-
-        /// <summary>
-        /// 显示用户头像并且显示名字 通过用户id
-        /// </summary>
-        /// <param name=""></param>
-        private void DisplayUser()
-        {
-           
         }
     }
 }

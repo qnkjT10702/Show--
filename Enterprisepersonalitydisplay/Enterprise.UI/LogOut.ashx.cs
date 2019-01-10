@@ -16,7 +16,7 @@ namespace Enterprise.UI
         {
             context.Response.ContentType = "text/plain";
             context.Session["UserId"] = null;
-            context.Response.Redirect("MyMusic.aspx");
+            //context.Response.Redirect("");
         }
 
         public bool IsReusable

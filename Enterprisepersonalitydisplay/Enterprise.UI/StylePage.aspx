@@ -160,16 +160,16 @@
 	            });
             function Load() {
                  //第一步 得到  你选择的是什么‘文本’
-                var option = s;
+                var option = $("#ListMciStyle option:selected").text();
+               
                 //写ajax
-                //得到数据 -- 
+                //得到数据 --
                 $.ajax({
                     type: "post",
                     dataType: "json",
-                    data: { 
+                    data:{ 
                         styName: option,
-                        index: index,
-                        //当前第几页
+                        index: index
                     },
                     success: function (data) {
                         // 写一个方法动态创建页码
