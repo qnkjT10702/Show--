@@ -266,6 +266,7 @@
     <Content Include="scripts\jquery-3.3.1.min.map" />
     <Content Include="SingerPageHan.ashx" />
     <Content Include="SongCollection.ashx" />
+    <Content Include="ShowFaces.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -395,6 +396,9 @@
       <DependentUpon>playMicOne.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowFaces.ashx.cs">
+      <DependentUpon>ShowFaces.ashx</DependentUpon>
+    </Compile>
     <Compile Include="SingerPage.aspx.cs">
       <DependentUpon>SingerPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

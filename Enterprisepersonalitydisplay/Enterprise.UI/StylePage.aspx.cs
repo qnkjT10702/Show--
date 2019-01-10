@@ -19,7 +19,7 @@ namespace Enterprise.UI
             if (Request.RequestType == "POST")
             {
                 string StyName = Request["styName"];
-                int index = int.Parse(Request["index"]);
+                int index = 1;//int.Parse(Request["index"]);
                 List<ViewMicsuger> Stytb = MusicCRUD.SelectMicStyle(StyName);
                 int count;
                 //一共多少条
