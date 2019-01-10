@@ -139,7 +139,7 @@
         ];
         $(function () {
                var fp = new FeaturePresenter($("#test-element"), settings, options);
-                fp.createPresenter();
+               fp.createPresenter();
         });
         var options = {
 	        circle_radius: 120,
@@ -168,9 +168,12 @@
             //    Load();
             //});
             $(".feature-presenter>img").click(function () {
-                s = $(".feature-presenter-text-heading").text();
+                
+                setTimeout(() => {
+                    s = $(".feature-presenter-text-heading").text();
+                    Load();
+                },600)
                
-                Load();
             });
             function Load() {
                 //第一步 得到  你选择的是什么‘文本’
@@ -184,14 +187,12 @@
                     data: {
                         styName: option,
                         index: index
-
                     },
                     success: function (data) {
                         // 写一个方法动态创建页码
                         MidList = data;
                         StyMic(data.Stydata);
                         CreateCountPage(data);
-                      
                         //当前第几页
                     }
                 });

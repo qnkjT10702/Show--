@@ -28,7 +28,7 @@ namespace Enterprise.UI
                 //当前登录用户所收藏的歌曲Id
 
                 string StyName = Request["styName"];
-                int index = 1;//int.Parse(Request["index"]);
+                int index = int.Parse(Request["index"]);
                 List<ViewMicsuger> Stytb = MusicCRUD.SelectMicStyle(StyName);
                 int count;
                 //一共多少条
