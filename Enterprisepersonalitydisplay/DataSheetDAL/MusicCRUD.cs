@@ -11,9 +11,27 @@ using System.Data.SqlClient;
 
 namespace DataSheetDAL
 {
+   
+    
     public class MusicCRUD
     {
-        
+        public static List<int> UserMidColle(int UserId)
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[] {
+                new SqlParameter("@UserId",UserId)
+            };
+            string sql = "select  *from UserCollect where UserId=@UserId";
+            DataTable table= DBHelpe.SelectDB(sql, false, sqlParameters);
+            List<int> ListMicId = new List<int>();
+            foreach(DataRow row in table.Rows)
+            {
+                ListMicId.Add(
+                     Convert.ToInt32(row["MicId"])
+                    );
+            }
+            return ListMicId;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -136,14 +154,9 @@ namespace DataSheetDAL
         /// <returns>新歌曲信息集合</returns>
         public static List<ViewMicsuger> SelectNewMic()
         {
-            string TimeMin = DateTime.Now.ToString();
-            string TimeMax = DateTime.Now.AddDays(30).ToString();
-            SqlParameter[] parameter = new SqlParameter[] {
-                new SqlParameter("@TimeMin",TimeMin),
-                new SqlParameter("@TimeMax",TimeMax)
-            };
-            string sql = "select  top 4* from MusicInfo m , SingerInfo Sger where m.SingerId=Sger.SingerId and m.MicSignTime between @TimeMin and @TimeMax order by m.MIcPlayCount desc";
-            DataTable table = DBHelpe.SelectDB(sql, false, parameter);
+            
+            string sql = "select top 4 * from MusicInfo where dateadd(day,-7,getdate())<MicSignTime";
+            DataTable table = DBHelpe.SelectDB(sql, false);
             List<ViewMicsuger> list = new List<ViewMicsuger>();
             foreach (DataRow row in table.Rows)
             {
