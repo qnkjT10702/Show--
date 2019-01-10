@@ -202,9 +202,11 @@
                 console.log(Stie);
                 for (var i = 0; i < data.length; i++) {
                     Mouther = Stie.replace('{{MicSRc}}', data[i].MicSRc).replace('{{SingerName}}', data[i].SingerName).replace('{{MicName}}', data[i].MicName).replace('{{MicImg}}', data[i].MicImg).replace("{{MicId}}", data[i].MicId);
-                    if (IsColle(data[i].MIcId) == true) {
-                       // AddCssColle
-                        Mouther = Stie.replace('{{MicSRc}}', data[i].MicSRc).replace('{{SingerName}}', data[i].SingerName).replace('{{MicName}}', data[i].MicName).replace('{{MicImg}}', data[i].MicImg).replace("{{MicId}}", data[i].MicId).replace("{{IsColleCss}}", ".AddCssColle");
+                    if (IsColle(data[i].MIcId)) {
+                        // AddCssColle
+                        Mouther = Mouther.replace('{{IsColleCss}}','reMoveCss');// Stie.replace('{{MicSRc}}', data[i].MicSRc).replace('{{SingerName}}', data[i].SingerName).replace('{{MicName}}', data[i].MicName).replace('{{MicImg}}', data[i].MicImg).replace("{{MicId}}", data[i].MicId).replace("{{IsColleCss}}", ".AddCssColle");
+                    } else {
+                        Mouther = Mouther.replace('{{IsColleCss}}','AddCssColle');
                     }
                     outHtm += Mouther;
                 }
