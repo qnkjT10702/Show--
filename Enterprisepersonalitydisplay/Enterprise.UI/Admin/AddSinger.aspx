@@ -21,7 +21,7 @@
              <br />
              <asp:Label ID="LebHardImg" runat="server" Text="Label" style="font-size:14px;">歌手头像：</asp:Label>
             <asp:FileUpload ID="FileHardImg" runat="server"/>
-             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="FileHardImg" ErrorMessage="歌手头像不可以为空" EnableClientScript="false" ForeColor="Red" style="font-size:13px;"></asp:RequiredFieldValidator>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="FileHardImg" ErrorMessage="歌手头像不可以为空" EnableClientScript="false" ForeColor="Red" style="font-size:13px;margin-left:-80px;"></asp:RequiredFieldValidator>
             <br  runat="server"/>
             <asp:Button ID="BtnMicSubmit" runat="server" Text="添加" OnClick="BtnMicSubmit_Click" style="width:120px;height:30px;margin-left:40px;margin-top:10px;"/>
         </div>

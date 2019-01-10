@@ -23,11 +23,13 @@
         }
         #styleSong{
             width:100%;
+            height:700px;
             padding:20px 100px;
             box-sizing:border-box;
             display:flex;   /*不换行*/
             justify-content: space-between;
             flex-wrap: wrap;
+            border:1px solid blue;
         }
         #styleSong tr:nth-child(1){
             color:#999999;
@@ -94,17 +96,16 @@
         <%--动态替换代码end--%>
         </div>
         <div id="PagingBox">
-            <label style="position:relative;top:424px;left:-864px; font-size:20px;">跳转至：</label>
-            <input type="text"  id="DropNum" style=" font-size:30px; height:30px;width:126px; border:black solid 1px; background-color:antiquewhite; position:absolute;left:953px;top:625px;" />
-            <div id="Go"  style=" position:absolute; top:624px; left:1097px; border:black solid 1px; background-color:black; color:white; border-radius:50%; height:30px;width:30px; font-size:18px;line-height:27px; text-align:center; font-weight:bold;">Go</div>
-             <div id="Top" style=" position:relative; top:400px; left:-900px; border:black solid 1px; height:30px;width:30px; font-size:30px;line-height:30px; text-align:center; font-weight:bold;"><</div>
-            <div id="Bttomm" style=" position:relative; top:370px; left:-583px; border:black solid 1px; height:30px;width:30px; font-size:30px;line-height:30px; text-align:center; font-weight:bold;">></div>
+            <label style="position:relative;top:388px;left:-642px; font-size:20px;">跳转至：</label>
+            <input type="text"  id="DropNum" style=" font-size:30px; height:30px;width:130px; border:black solid 1px; background-color:antiquewhite; position:absolute;left:683px;top:589px;" />
+            <div id="Go"  style=" position:absolute; top:589px; left:822px; border:black solid 1px; background-color:black; color:white; border-radius:50%; height:30px;width:30px; font-size:18px;line-height:27px; text-align:center; font-weight:bold;">Go</div>
+             <div id="Top" style=" position:relative; top:403px; left:-564px; border:black solid 1px; height:30px;width:30px; font-size:30px;line-height:25px; text-align:center; font-weight:bold;"><</div>
+            <div id="Bttomm" style=" position:relative; top:373px; left:-392px; border:black solid 1px; height:30px;width:30px; font-size:30px;line-height:25px; text-align:center; font-weight:bold;">></div>
             <div id="PositionPage" style="position:absolute;top:636px;left:727px;">
                 <span id="Now" style="font-size:25px; color:orange"></span>
                 <span id="Now2" style="font-size:25px; color:antiquewhite;font-weight:bold;">/</span>
                 <span id="CountNum" style="font-size:20px;"></span>
-            </div>
-            
+            </div>            
         </div>
     </div>
 
