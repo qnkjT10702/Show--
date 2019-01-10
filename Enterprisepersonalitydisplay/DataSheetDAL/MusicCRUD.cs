@@ -225,7 +225,7 @@ namespace DataSheetDAL
         /// </summary>
         /// <param name="music">数据类型是歌手信息类</param>
         /// <returns></returns>
-        public static bool AddAdmInfo(AdminInfo admin)
+        public static List<AdminInfo> AddAdmInfo(AdminInfo admin)
         {
             SqlParameter[] parameter = new SqlParameter[]
             {
@@ -233,8 +233,21 @@ namespace DataSheetDAL
                 new SqlParameter("@AdminUser",admin.AdminUser),
                 new SqlParameter("@AdminPwd",admin.AdminPwd),
             };
+            List<AdminInfo> admins = new List<AdminInfo>();
             string sql = "select *from AdminInfo where AdminUser=@AdminUser and AdminPwd=AdminPwd and AdminName=AdminName";
-            return DBHelpe.ExecuteAdater(sql, false, parameter) == 1;
+            DataTable table = DBHelpe.SelectDB(sql, false, parameter);
+            foreach(DataRow row in table.Rows)
+            {
+                admins.Add(
+                    new AdminInfo {
+                        AdminId = Convert.ToInt32(row["AdminId"]),
+                        AdminName = row["AdminName"].ToString(),
+                        AdminPwd = row["AdminPwd"].ToString(),
+                        AdminUser=row["AdminUser"].ToString(),
+        
+                    });
+            }
+            return admins;
         }
 
         public static List<ViewMicsuger> SelectMicinfo()
