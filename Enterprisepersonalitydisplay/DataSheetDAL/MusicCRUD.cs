@@ -15,6 +15,16 @@ namespace DataSheetDAL
     
     public class MusicCRUD
     {
+
+        public static bool AddpalyCount(MusicInfo music)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@MicId",music.MicId),
+            };
+            string sql = "update MusicInfo set MIcPlayCount = MIcPlayCount+1 where MicId =@MicId";
+           return DBHelpe.ExecuteAdater(sql, false, parameters)>0;
+        }
         public static List<int> UserMidColle(int UserId)
         {
             SqlParameter[] sqlParameters = new SqlParameter[] {
