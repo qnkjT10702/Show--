@@ -37,7 +37,7 @@ namespace Enterprise.UI.Admin
             {
                 if (admins.Count>0)
                 {
-                    Response.Write("管理员登陆成功！");
+                   
                     string AdName = JsonConvert.SerializeObject(admins[0].AdminName);
                     string AdminId = JsonConvert.SerializeObject(admins[0].AdminId);
                     //把集合里面的stuInfoId那一列给用JsonConvert(序列化数据转换类里面的)一个方法Serializeobject("这里面放要序列化的对象")
@@ -55,7 +55,7 @@ namespace Enterprise.UI.Admin
 
                     Response.Cookies.Add(cookie);
                     //再把cookie  用Response响应给服务器 存到浏览器
-                    Response.Redirect("Admin/HomePage.aspx");
+                    Response.Redirect("/Admin/HomePage.aspx");
 
                     //再响应给服务器一个需要权限的页面
                     //去创建一个cookie来存储这个票证，以便于去权限的页面的母版去验证票证
