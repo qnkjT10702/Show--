@@ -164,8 +164,7 @@ namespace DataSheetDAL
         /// <returns>新歌曲信息集合</returns>
         public static List<ViewMicsuger> SelectNewMic()
         {
-            
-            string sql = "select top 4 * from MusicInfo where dateadd(day,-7,getdate())<MicSignTime";
+            string sql = "select top 4 m.MicImg,m.MicName,m.MicSRc,m.MicId,s.SingerName from MusicInfo m ,SingerInfo s where m.SingerId=s.SingerId and dateadd(day,-7,getdate())<MicSignTime";
             DataTable table = DBHelpe.SelectDB(sql, false);
             List<ViewMicsuger> list = new List<ViewMicsuger>();
             foreach (DataRow row in table.Rows)
