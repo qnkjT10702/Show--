@@ -65,15 +65,21 @@
                     url: "LogOut.ashx",
                     type: 'post',
                     dataType: 'json',
-                    success: function () {
-                        Show_sdf();
+                    success: function (data) {
+                        if (data.result == -1) {
+                            Show_sdf();
+                        }
+                        
                     }
                 })
                 
             })
             //刷新页面
             function Show_sdf() {
-                locatiion.replace("MyMusic.aspx");
+                console.log('s');
+                location.href="/MyMusic.aspx";
+                
+                
             }
         })
     </script>
@@ -114,7 +120,7 @@
 
         #myLove {
             width: 100%;
-            padding: 20px 100px;
+            padding: 20px 188px;
         }
 
         h2 {

@@ -220,12 +220,12 @@ namespace DataSheetDAL
             string sql = "insert into SingerInfo values(@SingerName,@SingerClass,@SingerRegion,@HardImg)";
             return DBHelpe.ExecuteAdater(sql, false, parameter) == 1;
         }
-      /// <summary>
-      /// 管理员登录
-      /// </summary>
-      /// <param name="admin"></param>
-      /// <returns></returns>
-        public static List<AdminInfo> AddAdmInfo(AdminInfo admin)
+        /// <summary>
+        /// 向数据库添加管理员信息
+        /// </summary>
+        /// <param name="music">数据类型是歌手信息类</param>
+        /// <returns></returns>
+        public static bool AddAdmInfo(AdminInfo admin)
         {
             SqlParameter[] parameter = new SqlParameter[]
             {
@@ -234,18 +234,7 @@ namespace DataSheetDAL
                 new SqlParameter("@AdminPwd",admin.AdminPwd),
             };
             string sql = "select *from AdminInfo where AdminUser=@AdminUser and AdminPwd=AdminPwd and AdminName=AdminName";
-            DataTable table = DBHelpe.SelectDB(sql, false, parameter);
-            List<AdminInfo> infos = new List<AdminInfo>();
-            foreach(DataRow row in table.Rows)
-            {
-                infos.Add(new AdminInfo {
-                    AdminId = Convert.ToInt32(row["AdminId"]),
-                    AdminName = row["AdminName"].ToString(),
-                    AdminPwd=row["AdminPwd"].ToString(),
-                    AdminUser=row["AdminUser"].ToString(),
-                });
-            }
-            return infos;
+            return DBHelpe.ExecuteAdater(sql, false, parameter) == 1;
         }
 
         public static List<ViewMicsuger> SelectMicinfo()
@@ -291,15 +280,6 @@ namespace DataSheetDAL
                 });
             }
             return list;
-        }
-        public static bool AddpalyCount( MusicInfo music)
-        {
-            SqlParameter[] parasST = new SqlParameter[]
-            {
-                new SqlParameter("@MicId",music.MicId)
-            };
-            string UpdateSql = "update MusicInfo set MIcPlayCount = MIcPlayCount+1 where MicId =@MicId";
-          return  DBHelpe.ExecuteAdater(UpdateSql, false, parasST)==1;
         }
       
         /// <summary>
@@ -368,14 +348,11 @@ namespace DataSheetDAL
                     MicName = row["MicName"].ToString(),
                     SingerName = row["SingerName"].ToString(),
                     StyleName = row["StyleName"].ToString(),
-                    MicId = Convert.ToInt32(row["MicId"]),
                 });
             }
             return views;
         }
     }
-
-    
 
    
 }
