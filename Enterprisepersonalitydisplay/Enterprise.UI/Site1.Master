@@ -10,6 +10,7 @@
     <link href="css/MusicPaly.css" rel="stylesheet" />
     <link href="css/base2orderby2.css" rel="stylesheet" />
     <link href="css/home.css" rel="stylesheet" />
+    <link href="css/lanren.css" rel="stylesheet" />
     <style>
         *{
             padding:0px;
@@ -241,8 +242,7 @@
         /*合作链接结束*/
         /*尾部结束*/
     </style>
-     <asp:ContentPlaceHolder ID="head" runat="server">
-     </asp:ContentPlaceHolder>
+    
 </head>
 <body>
     <form id="form1" runat="server">
@@ -362,6 +362,7 @@
     
     </div>
     </form>
-  
+   <asp:ContentPlaceHolder ID="head" runat="server">
+     </asp:ContentPlaceHolder>
 </body>
 </html>
