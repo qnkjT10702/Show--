@@ -249,11 +249,8 @@
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="DeleteCollection_MyMusic.ashx" />
-
     <Content Include="PlayCount.ashx" />
-
     <Content Include="LogOut.ashx" />
-
     <None Include="scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="scripts\jquery-1.11.1.min.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
@@ -265,6 +262,7 @@
     <Content Include="scripts\player.js" />
     <Content Include="scripts\SuperSlide.js" />
     <Content Include="scripts\utill.js" />
+    <Content Include="searchSong.aspx" />
     <Content Include="SingerPage.aspx" />
     <Content Include="Site1.Master" />
     <Content Include="Admin\AdminSite1.Master" />
@@ -406,6 +404,13 @@
       <DependentUpon>playMicOne.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="searchSong.aspx.cs">
+      <DependentUpon>searchSong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="searchSong.aspx.designer.cs">
+      <DependentUpon>searchSong.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ShowFaces.ashx.cs">
       <DependentUpon>ShowFaces.ashx</DependentUpon>
     </Compile>
