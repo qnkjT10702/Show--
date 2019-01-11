@@ -81,16 +81,6 @@
             padding: 0 20px;
         }
 
-
-
-.newviewport .newform_box .newform_to a {
-    color: #0054ff;
-}
-
-    .newviewport .newform_box .newform_to a:hover {
-        text-decoration: underline;
-    }
-
 #ContentPlaceHolder1_newform_sex_confirm_0, #ContentPlaceHolder1_newform_sex_confirm_1 {
     width: 15px;
     height: 15px;

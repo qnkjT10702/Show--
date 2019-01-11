@@ -20,7 +20,7 @@
         <!-- register_section -->
         <div class="section register_section hidden">
             <ul class="form_box">
-                <li class="form_item form_title">用户登入</li>
+                <li class="form_item form_title">用户登录</li>
                 <li class="form_item form_name">
                     <input class="form_name_value" type="text" placeholder="请输入用户名" runat="server" id="form_name_value_login">
                 </li>
@@ -33,6 +33,7 @@
                 <li class="form_item form_login form_btn">
                     <button class="login_btn" runat="server" id="Longin_btn" >登入</button>
                 </li>
+
                 <li class="form_item form_to form_login">
                     <p class="form_login_text">还没有有账号, 去<a class="toLogin" >注册</a></p>
                 </li>
@@ -73,7 +74,7 @@
                     <button class="reg_btn" id="regBtn" runat="server">注册</button>
                 </li>
                 <li class="form_item form_to form_reg">
-                    <p class="form_reg_text">已经有账号, 去<a class="toRegister" >登入</a></p>
+                    <p class="form_reg_text">已经有账号, 去<a class="toRegister" >登录</a></p>
                 </li>
             </ul>
            
