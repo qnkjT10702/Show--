@@ -54,6 +54,33 @@ namespace DataSheetDAL
         }
 
         /// <summary>
+        /// 查找用户名及用户邮箱
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public static List<UserInfo> LookupName(object userId)
+        {
+
+            SqlParameter[] paras = new SqlParameter[]
+            {
+                new SqlParameter ("@userId",userId)
+            };
+            string sql = "select UserName,UserEmall,UserSex from UserInfo where UserId=@userId";
+            DataTable table = DBHelpe.SelectDB(sql, false, paras);
+            List<UserInfo> list = new List<UserInfo>();
+            foreach (DataRow item in table.Rows)
+            {
+                list.Add(new UserInfo
+                {
+                    UserName = item["UserName"].ToString(),
+                    UserEmall = item["UserEmall"].ToString(),
+                    UserSex = item["UserSex"].ToString()
+                });
+            }
+            return list;
+        }
+
+        /// <summary>
         /// 根据用户id 查询用户头像及用户名
         /// </summary>
         /// <param name="userId"></param>

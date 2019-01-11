@@ -21,10 +21,7 @@ namespace Enterprise.UI
 
         protected void searchBut_Click(object sender, EventArgs e)
         {
-            if (inquire!= null)
-            {
-                inquire.Invoke(searchBox.Text);
-            }
+            
 
         }
     }

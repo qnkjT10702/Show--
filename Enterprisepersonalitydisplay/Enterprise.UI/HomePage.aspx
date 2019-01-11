@@ -20,11 +20,18 @@
             function Show_info(data) {
                 console.log(data);
                 for (var i = 0; i < data.length; i++) {
-                    $('.micImg_img').eq(i).css({ src: data[i].MicImg });
-                    $('.micName_Name').eq(i).text() = data[i].MicName;
-                    $('.singerName_sing').eq(i).text() = data[i].SingerName;
+                    $(".micImg_img").eq(i).attr('src', data[i].MicImg);
+                    $('.micName_Name').eq(i).text(data[i].MicName);
+                    $('.singerName_sing').eq(i).text(data[i].SingerName);
                 }
             }
+
+            $('.songList').click(function () {
+                var s = $('.songList').index($(this));
+                var MicName = $('.micName_Name').eq(s).text();
+                var SingerName = $('.singerName_sing').eq(s).text();
+                location.href = 'Musicpaly.aspx?SongName=' + MicName + '&SingerName=' + SingerName;
+            })
         })
     </script>
 </asp:Content>
@@ -72,6 +79,10 @@
             color:#999999;
             margin-top:4px;
         }
+        .micImg_img{
+            width:90px;
+            height:90px;
+        }
         /*.style{color:#fdad02;}*/
     </style>
     
@@ -98,7 +109,7 @@
         ); 
     </script>
 
-        <div style="width:1150px;margin-bottom:20px;padding:0px 100px;box-sizing:border-box;border:1px solid red;margin-left: 179px;">
+        <div style="width:1150px;margin-bottom:20px;padding:0px 100px;box-sizing:border-box;margin-left: 179px;">
             <h1>新&nbsp;&nbsp;&nbsp;&nbsp;歌&nbsp;&nbsp;&nbsp;&nbsp;首&nbsp;&nbsp;&nbsp;&nbsp;发</h1>
             <div id="recommend_in">
                 <div id="songList" class="songList">
@@ -112,14 +123,14 @@
                     <div class="singerName"><asp:Label ID="Label2" runat="server" Text="Label" CssClass="singerName_sing"></asp:Label></div>
                 </div>
                 <div class="songList">
-                    <div class="micImg"><asp:Image ID="Image2" runat="server" /></div>
+                    <div class="micImg"><asp:Image ID="Image2" runat="server" CssClass="micImg_img" /></div>
                     <div class="micName"><asp:Label ID="Label3" runat="server" Text="Label" CssClass="micName_Name"></asp:Label></div>
                     <div class="singerName"><asp:Label ID="Label4" runat="server" Text="Label" CssClass="singerName_sing"></asp:Label></div>
                 </div>
                 <div class="songList">
-                    <div class="micImg"><asp:Image ID="Image3" runat="server" /></div>
-                    <div class="micName"><asp:Label ID="Label5" runat="server" Text="Label"></asp:Label></div>
-                    <div class="singerName"><asp:Label ID="Label6" runat="server" Text="Label"></asp:Label></div>
+                    <div class="micImg"><asp:Image ID="Image3" runat="server" CssClass="micImg_img" /></div>
+                    <div class="micName"><asp:Label ID="Label5" runat="server" Text="Label" CssClass="micName_Name"></asp:Label></div>
+                    <div class="singerName"><asp:Label ID="Label6" runat="server" Text="Label" CssClass="singerName_sing"></asp:Label></div>
                 </div>
             </div>
         </div>
