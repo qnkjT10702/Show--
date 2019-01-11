@@ -20,7 +20,7 @@ namespace Enterprise.UI
                 int  StyName = Convert.ToInt32(Request["MicId"]);
                 List<ViewMicsuger> tbH = MusicCRUD.Selectorder();
                 //收藏榜
-                List<ViewMicsuger> tbNewMic = MusicCRUD.Selectorder();
+                List<ViewMicsuger> tbNewMic = MusicCRUD.SelectNewMic();
                 //新歌榜
                 List<ViewMicsuger> tbEuropeMic = MusicCRUD.SelectEuropeMic();
                 //欧美榜
