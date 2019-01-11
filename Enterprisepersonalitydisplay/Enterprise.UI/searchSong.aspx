@@ -16,7 +16,7 @@
         }
     </style>
 
-    <h2 id="h2">搜索内容</h2>
+    <h2 id="h2">搜索内容<span style="margin-left:80%;">返回</span></h2>
     <table id="tableSong">
         <tr>
             <td style="width:46%;">歌曲</td>
