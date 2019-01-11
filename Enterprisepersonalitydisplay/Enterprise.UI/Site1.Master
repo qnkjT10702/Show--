@@ -35,6 +35,11 @@
                 $('#UserImg').attr('src', data[0].HeadImg);
                 $('#UserName').text(data[0].UserName);
             }
+
+            //点击搜索功能
+            $('#searchBut').click(function () {
+                var text = $('#searchBox').text();
+            })
         })
     </script>
     <style>
@@ -289,7 +294,7 @@
                 </ul>
                 <div id="searchDiv">
                     <asp:TextBox ID="searchBox" runat="server"></asp:TextBox>
-                    <asp:Button ID="searchBut" OnClick="searchBut_Click" runat="server"/>
+                    <asp:Button ID="searchBut" runat="server"/>
                 </div>
                 <ul id="LoginEnroll" runat="server">
                     <li><a href="Userloing.aspx">登录</a></li>
