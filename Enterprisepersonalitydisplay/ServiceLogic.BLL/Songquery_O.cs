@@ -22,14 +22,46 @@ namespace ServiceLogic.BLL
         }
 
         /// <summary>
+        /// 根据用户id 移出用户收藏表的id
+        /// </summary>
+        /// <param name="micName">歌曲名</param>
+        /// <param name="singerName">歌手名</param>
+        /// <param name="userId">用户id</param>
+        /// <returns></returns>
+        public static bool DeleteCollection(string MicId,object userId)
+        {
+            return MusicCRUD_F.DeleteCollection(MicId,userId);
+        }
+        
+        /// <summary>
         /// 用户歌曲收藏功能
         /// </summary>
         /// <param name="micName"></param>
         /// <param name="singerName"></param>
         /// <returns></returns>
-        public static bool SongCollection(string micName, string singerName,object UserId)
+        public static bool SongCollection(string MicId,object UserId)
         {
-            return MusicCRUD_F.SongCollection(micName, singerName, UserId);
+            return MusicCRUD_F.SongCollection(MicId, UserId);
+        }
+
+        /// <summary>
+        /// 根据用户id 查询用户头像及用户名
+        /// </summary>
+        /// <param name="userId">用户id</param>
+        /// <returns></returns>
+        public static List<UserInfo> ShowUser(object userId)
+        {
+            return MusicCRUD_F.ShowUser(userId);
+        }
+
+        /// <summary>
+        /// 我的音乐页面 个人音乐收藏功能
+        /// </summary>
+        /// <param name="userId">用户id</param>
+        /// <returns></returns>
+        public static List<ViewMicsuger> MicSearch(object userId)
+        {
+            return MusicCRUD_F.MicSearch(userId);
         }
 
         /// <summary>

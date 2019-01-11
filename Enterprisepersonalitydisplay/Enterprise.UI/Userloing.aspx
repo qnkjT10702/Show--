@@ -29,9 +29,10 @@
                 </li>
                 <li class="form_item form_info">
                     <p class="form_info_text hidden">提示: <span class="form_info_text_tip"></span></p>
+                    <asp:Label ID="Label2" runat="server" Text="Label" CssClass="Label2"></asp:Label>
                 </li>
                 <li class="form_item form_login form_btn">
-                    <button class="login_btn" runat="server" id="Longin_btn" >登入</button>
+                    <button class="login_btn" runat="server" id="Longin_btn" >登录</button>
                 </li>
 
                 <li class="form_item form_to form_login">
@@ -60,15 +61,9 @@
                 	<input  class="form_sex_value" type="radio" name="sex" id="form_sex_confirm_0" runat="server"/>男
 					<input  class="form_sex_value" type="radio" name="sex" id="form_sex_confirm_1"  runat="server"/>女
                 </li>
-                <li>
-                    <asp:FileUpload ID="FileUpload1" runat="server" />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" EnableClientScript="false" ControlToValidate="FileUpload1"  runat="server" ErrorMessage="头像不能为空"></asp:RequiredFieldValidator>
-                </li>
-                
-                
                 <li class="form_item form_info">
                     <p class="form_info_text hidden">提示: <span class="form_info_text_tip"></span></p>
-                    <span class="form_info_text  newhidden">注册成功</span>
+                    <asp:Label ID="Label1" runat="server" Text="Label" CssClass="form_info_text  newhidden"></asp:Label>
                 </li>
                 <li class="form_item form_reg form_btn">
                     <button class="reg_btn" id="regBtn" runat="server">注册</button>

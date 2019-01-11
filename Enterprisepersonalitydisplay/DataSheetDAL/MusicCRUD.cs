@@ -11,8 +11,37 @@ using System.Data.SqlClient;
 
 namespace DataSheetDAL
 {
+   
+    
     public class MusicCRUD
     {
+
+        public static bool AddpalyCount(MusicInfo music)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@MicId",music.MicId),
+            };
+            string sql = "update MusicInfo set MIcPlayCount = MIcPlayCount+1 where MicId =@MicId";
+           return DBHelpe.ExecuteAdater(sql, false, parameters)>0;
+        }
+        public static List<int> UserMidColle(int UserId)
+        {
+            SqlParameter[] sqlParameters = new SqlParameter[] {
+                new SqlParameter("@UserId",UserId)
+            };
+            string sql = "select  *from UserCollect where UserId=@UserId";
+            DataTable table= DBHelpe.SelectDB(sql, false, sqlParameters);
+            List<int> ListMicId = new List<int>();
+            foreach(DataRow row in table.Rows)
+            {
+                ListMicId.Add(
+                     Convert.ToInt32(row["MicId"])
+                    );
+            }
+            return ListMicId;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -135,14 +164,8 @@ namespace DataSheetDAL
         /// <returns>新歌曲信息集合</returns>
         public static List<ViewMicsuger> SelectNewMic()
         {
-            string TimeMin = DateTime.Now.ToString();
-            string TimeMax = DateTime.Now.AddDays(30).ToString();
-            SqlParameter[] parameter = new SqlParameter[] {
-                new SqlParameter("@TimeMin",TimeMin),
-                new SqlParameter("@TimeMax",TimeMax)
-            };
-            string sql = "select  top 4* from MusicInfo m , SingerInfo Sger where m.SingerId=Sger.SingerId and m.MicSignTime between @TimeMin and @TimeMax order by m.MIcPlayCount desc";
-            DataTable table = DBHelpe.SelectDB(sql, false, parameter);
+            string sql = "select top 4 m.MicImg,m.MicName,m.MicSRc,m.MicId,s.SingerName from MusicInfo m ,SingerInfo s where m.SingerId=s.SingerId and dateadd(day,-7,getdate())<MicSignTime";
+            DataTable table = DBHelpe.SelectDB(sql, false);
             List<ViewMicsuger> list = new List<ViewMicsuger>();
             foreach (DataRow row in table.Rows)
             {
@@ -205,6 +228,35 @@ namespace DataSheetDAL
             };
             string sql = "insert into SingerInfo values(@SingerName,@SingerClass,@SingerRegion,@HardImg)";
             return DBHelpe.ExecuteAdater(sql, false, parameter) == 1;
+        }
+        /// <summary>
+        /// 向数据库添加管理员信息
+        /// </summary>
+        /// <param name="music">数据类型是歌手信息类</param>
+        /// <returns></returns>
+        public static List<AdminInfo> AddAdmInfo(AdminInfo admin)
+        {
+            SqlParameter[] parameter = new SqlParameter[]
+            {
+                new SqlParameter("@AdminName",admin.AdminName),
+                new SqlParameter("@AdminUser",admin.AdminUser),
+                new SqlParameter("@AdminPwd",admin.AdminPwd),
+            };
+            List<AdminInfo> admins = new List<AdminInfo>();
+            string sql = "select *from AdminInfo where AdminUser=@AdminUser and AdminPwd=AdminPwd and AdminName=AdminName";
+            DataTable table = DBHelpe.SelectDB(sql, false, parameter);
+            foreach(DataRow row in table.Rows)
+            {
+                admins.Add(
+                    new AdminInfo {
+                        AdminId = Convert.ToInt32(row["AdminId"]),
+                        AdminName = row["AdminName"].ToString(),
+                        AdminPwd = row["AdminPwd"].ToString(),
+                        AdminUser=row["AdminUser"].ToString(),
+        
+                    });
+            }
+            return admins;
         }
 
         public static List<ViewMicsuger> SelectMicinfo()

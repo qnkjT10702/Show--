@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DataSheet.Model;
+using Newtonsoft.Json;
+using ServiceLogic.BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +16,7 @@ namespace Enterprise.UI
         public event Action<string> inquire;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void searchBut_Click(object sender, EventArgs e)
@@ -22,6 +25,7 @@ namespace Enterprise.UI
             {
                 inquire.Invoke(searchBox.Text);
             }
+
         }
     }
 }

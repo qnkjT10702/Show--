@@ -13,7 +13,7 @@ namespace DataSheetDAL
     public class MusicCRUD_F
     {
 
-        
+
         /// <summary>
         /// 搜索功能
         /// </summary>
@@ -23,7 +23,7 @@ namespace DataSheetDAL
 
         {
             //音乐信息表对应的音乐信息类
-           
+
             //参数化查询
             SqlParameter[] paras = new SqlParameter[]
             {
@@ -33,24 +33,97 @@ namespace DataSheetDAL
 
 
             string sql = "select m.MicId,m.MicImg,m.MicName,m.MIcPlayCount,m.MicRegion,m.MicSignTime,m.MicSRc,ms.StyleName,s.SingerName   from MusicInfo m,SingerInfo s,MusicStyleInfo ms where m.SingerId = s.SingerId and m.StyleId = ms.StyleId and (m.MicName like '%'+@MicName+'%' or s.SingerName like '%'+@SingerName+'%')";
-            DataTable table = DBHelpe.SelectDB(sql, false,paras);
+            DataTable table = DBHelpe.SelectDB(sql, false, paras);
             List<ViewMicsuger> list = new List<ViewMicsuger>();
             foreach (DataRow item in table.Rows)
             {
                 list.Add(new ViewMicsuger
                 {
-                        MicId = Convert.ToInt32(item["MicId"]),
-                        MicImg = item["MicImg"].ToString(),
-                        MicName = item["MicName"].ToString(),
-                        MicPlayCount =Convert.ToInt32(item["MIcPlayCount"]),
-                        MicRegion = item["MicRegion"].ToString(),
-                        MicSignTime = item["MicSignTime"].ToString(),
-                        MicSRc = item["MicSRc"].ToString(),
-                        StyleName = item["StyleName"].ToString(),
-                        SingerName = item["SingerName"].ToString()
+                    MicId = Convert.ToInt32(item["MicId"]),
+                    MicImg = item["MicImg"].ToString(),
+                    MicName = item["MicName"].ToString(),
+                    MicPlayCount = Convert.ToInt32(item["MIcPlayCount"]),
+                    MicRegion = item["MicRegion"].ToString(),
+                    MicSignTime = item["MicSignTime"].ToString(),
+                    MicSRc = item["MicSRc"].ToString(),
+                    StyleName = item["StyleName"].ToString(),
+                    SingerName = item["SingerName"].ToString()
                 });
             }
             return list;
+        }
+
+        /// <summary>
+        /// 根据用户id 查询用户头像及用户名
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public static List<UserInfo> ShowUser(object userId)
+        {
+            //参数化查询
+            SqlParameter[] paras = new SqlParameter[]
+            {
+                new SqlParameter ("@userId",userId)
+            };
+            string sql = "select UserName,HeadImg from UserInfo where UserId=@userId";
+            DataTable table = DBHelpe.SelectDB(sql, false, paras);
+            List<UserInfo> list = new List<UserInfo>();
+            foreach (DataRow item in table.Rows)
+            {
+                list.Add(new UserInfo
+                {
+                    UserName = item["UserName"].ToString(),
+                    HeadImg = item["HeadImg"].ToString()
+                });
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// 根据用户id 移出用户收藏表的数据
+        /// </summary>
+        /// <param name="MicId">歌曲id</param>
+        /// <param name="userId">用户id</param>
+        /// <returns></returns>
+        public static bool DeleteCollection(string MicId, object userId)
+        {
+            //参数化查询
+            SqlParameter[] paras = new SqlParameter[]
+            {
+                new SqlParameter ("@MicId",MicId),
+                new SqlParameter("@userId",userId)
+            };
+            string sql = "delete from UserCollect where UserId =@userId and MicId=@MicId";
+            return DBHelpe.ExecuteAdater(sql, false, paras) != 0;
+        }
+
+        /// <summary>
+        /// 我的音乐页面 个人音乐收藏功能
+        /// </summary>
+        /// <param name="userId">用户id</param>
+        /// <returns></returns>
+        public static List<ViewMicsuger> MicSearch(object userId)
+        {
+            //从用户收藏表中查询数据
+            SqlParameter[] paras = new SqlParameter[]
+            {
+                new SqlParameter ("@UserId",userId)
+            };
+            string sql = "select m.MicName,s.SingerName,mu.StyleName,m.MicId from MusicInfo m,SingerInfo s,MusicStyleInfo mu where m.SingerId=s.SingerId and m.StyleId=mu.StyleId and m.MicId in(select MicId from UserCollect where UserId=@UserId)";
+            DataTable table = DBHelpe.SelectDB(sql, false, paras);
+            List<ViewMicsuger> list = new List<ViewMicsuger>();
+            foreach (DataRow item in table.Rows)
+            {
+                list.Add(new ViewMicsuger
+                {
+                    MicName = item["MicName"].ToString(),
+                    SingerName = item["SingerName"].ToString(),
+                    StyleName = item["StyleName"].ToString(),
+                    MicId = Convert.ToInt32(item["MicId"])
+                });
+            }
+            return list;
+
         }
 
         /// <summary>
@@ -59,41 +132,40 @@ namespace DataSheetDAL
         /// <param name="micName"></param>
         /// <param name="singerName"></param>
         /// <returns></returns>
-        public static bool SongCollection(string micName, string singerName,object UserId)
+        public static bool SongCollection(string MicId, object UserId)
         {
-            //参数化查询
-            SqlParameter[] paras = new SqlParameter[]
+            //判断是否能添加
+            SqlParameter[] Parasjudge = new SqlParameter[]
             {
-                new SqlParameter ("@MicName",micName),
-                new SqlParameter("@SingerName",singerName)
-            };
-            string sql = "select m.MicId from MusicInfo m,SingerInfo s,MusicStyleInfo ms where m.SingerId = s.SingerId and m.StyleId = ms.StyleId and(m.MicName like '%'+@MicName+'%' and s.SingerName like '%'+@SingerName+'%')";
-            DataTable table = DBHelpe.SelectDB(sql, false, paras);
-            List<ViewMicsuger> list = new List<ViewMicsuger>();
-            foreach (DataRow item in table.Rows)
-            {
-                list.Add(new ViewMicsuger
-                {
-                    MicId = Convert.ToInt32(item["MicId"])
-                });
-            }
-
-            //给歌曲增加收藏量 通过歌曲id
-            SqlParameter[] ParasMicId = new SqlParameter[]
-            {
-                new SqlParameter("@MicId",list[0].MicId)
-            };
-            string sqlMicid = "update MusicInfo set CollectCount=CollectCount+1 where MicId=@MicId";
-            DBHelpe.ExecuteAdater(sqlMicid, false, ParasMicId);
-
-            //给用户收藏表增加信息 获取用户id
-            SqlParameter[] ParasUserId = new SqlParameter[]
-            {
-                new SqlParameter("@MicId",list[0].MicId),
+                new SqlParameter("@MicId",MicId),
                 new SqlParameter("@UserId",UserId)
             };
-            string sqlUserId = "insert into UserCollect values (@UserId,@MicId)";
-            return DBHelpe.ExecuteAdater(sqlUserId, false, ParasUserId)==1;
+            string sql = "select CollectId from UserCollect where UserId=@UserId and MicId=@MicId";
+            DataTable table = DBHelpe.SelectDB(sql, false, Parasjudge);
+            if (table.Rows.Count == 0)
+            {
+                //给歌曲增加收藏量 通过歌曲id
+                SqlParameter[] ParasMicId = new SqlParameter[]
+                {
+                new SqlParameter("@MicId",MicId)
+                };
+                string sqlMicid = "update MusicInfo set CollectCount=CollectCount+1 where MicId=@MicId";
+                DBHelpe.ExecuteAdater(sqlMicid, false, ParasMicId);
+
+                //给用户收藏表增加信息 获取用户id
+                SqlParameter[] ParasUserId = new SqlParameter[]
+                {
+                new SqlParameter("@MicId",MicId),
+                new SqlParameter("@UserId",UserId)
+                };
+                string sqlUserId = "insert into UserCollect values (@UserId,@MicId)";
+                return DBHelpe.ExecuteAdater(sqlUserId, false, ParasUserId) == 1;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         /// <summary>
@@ -104,17 +176,18 @@ namespace DataSheetDAL
         public static List<ViewMicsuger> FindSong(string singerName)
         {
             //参数化查询
-            SqlParameter [] paras = new SqlParameter[]
+            SqlParameter[] paras = new SqlParameter[]
             {
                 new SqlParameter ("@SingerName",singerName)
             };
-            string sql = "select m.MicName,s.SingerName, mu.StyleName from MusicInfo m,SingerInfo s,MusicStyleInfo mu where m.SingerId=s.SingerId and m.StyleId=mu.StyleId and s.SingerName=@SingerName";
+            string sql = "select m.MicName,s.SingerName, mu.StyleName,m.MicId from MusicInfo m,SingerInfo s,MusicStyleInfo mu where m.SingerId=s.SingerId and m.StyleId=mu.StyleId and s.SingerName=@SingerName";
             DataTable table = DBHelpe.SelectDB(sql, false, paras);
             List<ViewMicsuger> list = new List<ViewMicsuger>();
             foreach (DataRow item in table.Rows)
             {
                 list.Add(new ViewMicsuger
                 {
+                    MicId = (int)item["MicId"],
                     MicName = item["MicName"].ToString(),
                     SingerName = item["SingerName"].ToString(),
                     StyleName = item["StyleName"].ToString()
@@ -160,16 +233,30 @@ namespace DataSheetDAL
         /// <returns></returns>
         public static bool AddUserInfo(UserInfo userInfo)
         {
-            SqlParameter[] paras = new SqlParameter[]
-           {
-                new SqlParameter ("@UserName",userInfo.UserName),
-                new SqlParameter("@UserPwd",userInfo.UserPwd),
-                new SqlParameter("@UserSex",userInfo.UserSex),
-                new SqlParameter("@UserEmall",userInfo.UserEmall),
-                new SqlParameter("@HeadImg",userInfo.HeadImg),
-           };
-            string sql = "insert into UserInfo values (@UserName,@UserPwd,@UserEmall,@HeadImg,@UserSex)";
-            return DBHelpe.ExecuteAdater(sql, false, paras) == 1;
+            SqlParameter[] ParasU = new SqlParameter[]
+            {
+                new SqlParameter ("@UserName",userInfo.UserName)
+            };
+            string sqlUser = "select * from UserInfo where UserName=@UserName";
+            DataTable table = DBHelpe.SelectDB(sqlUser, false, ParasU);
+            if (table.Rows.Count == 0)
+            {
+                    SqlParameter[] paras = new SqlParameter[]
+                {
+                    new SqlParameter ("@UserName",userInfo.UserName),
+                    new SqlParameter("@UserPwd",userInfo.UserPwd),
+                    new SqlParameter("@UserSex",userInfo.UserSex),
+                    new SqlParameter("@UserEmall",userInfo.UserEmall),
+                    new SqlParameter("@HeadImg",userInfo.HeadImg),
+                };
+                    string sql = "insert into UserInfo values (@UserName,@UserPwd,@UserEmall,@HeadImg,@UserSex)";
+                    return DBHelpe.ExecuteAdater(sql, false, paras) == 1;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         /// <summary>
@@ -178,7 +265,7 @@ namespace DataSheetDAL
         /// <param name="sextext">歌手性别</param>
         /// <param name="styletext">歌曲风格</param>
         /// <returns></returns>
-        public static List<ViewMicsuger> RegionFind(string regiotext,string sextext, string styletext)
+        public static List<ViewMicsuger> RegionFind(string regiotext, string sextext, string styletext)
         {
             //参数化查询
             SqlParameter[] paras = new SqlParameter[]
@@ -218,7 +305,7 @@ namespace DataSheetDAL
                 new SqlParameter ("@SingerName",SingerName)
            };
             string sql = "select m.MicId,m.MicImg,m.MicName,m.MIcPlayCount,m.MicRegion,m.MicSignTime,m.MicSRc,ms.StyleName,s.SingerName,m.SingerId from MusicInfo m,SingerInfo s,MusicStyleInfo ms where m.SingerId = s.SingerId and m.StyleId = ms.StyleId and(m.MicName like '%'+@MicName+'%' and s.SingerName like '%'+@SingerName+'%')";
-            DataTable table = DBHelpe.SelectDB(sql, false,paras);
+            DataTable table = DBHelpe.SelectDB(sql, false, paras);
             List<ViewMicsuger> Message = new List<ViewMicsuger>();
             foreach (DataRow item in table.Rows)
             {

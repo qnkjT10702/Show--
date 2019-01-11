@@ -86,11 +86,16 @@
     margin-left:40%;
     font-size:15px;
     margin-top:10px;
-   
 }
 .reg_btn{
     margin-top:19px;
 }
 .form_reg_text{
     margin-top:23px;
+}
+.Label2{
+    left: 81px;
+    position: relative;
+    top: 3px;
+    display:none;
 }

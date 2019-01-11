@@ -103,6 +103,7 @@
     </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <script src="../scripts/jquery-3.3.1.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -121,11 +122,11 @@
 
             <div id="navigation">
                 <ul>
-                    <li><a href="">用户管理</a></li>
-                    <li><a href="">添加歌曲</a></li>
-                    <li><a href="">添加艺人</a></li>
-                    <li><a href="">动态管理</a></li>
-                    <li><a href="">动态栏目管理</a></li>
+                    <li><a href="../Admin/AdminLogin.aspx">管理员登录</a></li>
+                    <li><a href="../Admin/AddMusic.aspx">添加歌曲</a></li>
+                    <li><a href="../Admin/AddSinger.aspx">添加艺人</a></li>
+                    <li><a href="#">动态管理</a></li>
+                    <li><a href="#">动态栏目管理</a></li>
                 </ul>
             </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

@@ -81,6 +81,7 @@
     <Content Include="css\htmleaf-demo.css" />
     <Content Include="css\index.css" />
     <Content Include="css\index2.css" />
+    <Content Include="css\lanren.css" />
     <Content Include="css\MusicPaly.css" />
     <Content Include="css\normalize.css" />
     <Content Include="css\player.css" />
@@ -229,6 +230,7 @@
     <Content Include="Imgs\~]%28_E5_XAEWR~%40RQ9Q%25W%250X.jpg" />
     <Content Include="js\base.js" />
     <Content Include="js\common.js" />
+    <Content Include="js\feature.presenter.1.5.min.js" />
     <Content Include="js\index.js" />
     <Content Include="js\index2.js" />
     <Content Include="js\jquery-1.11.0.min.js" />
@@ -242,11 +244,13 @@
     <Content Include="MusicPalys2.aspx" />
     <Content Include="MyMusic.aspx" />
     <Content Include="orderby2.aspx" />
-    <Content Include="OrderPage.aspx" />
     <Content Include="packages.config" />
     <Content Include="playMicOne.ascx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="DeleteCollection_MyMusic.ashx" />
+    <Content Include="PlayCount.ashx" />
+    <Content Include="LogOut.ashx" />
     <None Include="scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="scripts\jquery-1.11.1.min.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
@@ -258,6 +262,7 @@
     <Content Include="scripts\player.js" />
     <Content Include="scripts\SuperSlide.js" />
     <Content Include="scripts\utill.js" />
+    <Content Include="searchSong.aspx" />
     <Content Include="SingerPage.aspx" />
     <Content Include="Site1.Master" />
     <Content Include="Admin\AdminSite1.Master" />
@@ -265,6 +270,7 @@
     <Content Include="scripts\jquery-3.3.1.min.map" />
     <Content Include="SingerPageHan.ashx" />
     <Content Include="SongCollection.ashx" />
+    <Content Include="ShowFaces.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -331,6 +337,9 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DeleteCollection_MyMusic.ashx.cs">
+      <DependentUpon>DeleteCollection_MyMusic.ashx</DependentUpon>
+    </Compile>
     <Compile Include="editorial.aspx.cs">
       <DependentUpon>editorial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -344,6 +353,9 @@
     </Compile>
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOut.ashx.cs">
+      <DependentUpon>LogOut.ashx</DependentUpon>
     </Compile>
     <Compile Include="MusicPaly2.ascx.cs">
       <DependentUpon>MusicPaly2.ascx</DependentUpon>
@@ -366,6 +378,7 @@
     <Compile Include="MusicPalys2.aspx.designer.cs">
       <DependentUpon>MusicPalys2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MyModule1.cs" />
     <Compile Include="MyMusic.aspx.cs">
       <DependentUpon>MyMusic.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -380,12 +393,8 @@
     <Compile Include="orderby2.aspx.designer.cs">
       <DependentUpon>orderby2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OrderPage.aspx.cs">
-      <DependentUpon>OrderPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="OrderPage.aspx.designer.cs">
-      <DependentUpon>OrderPage.aspx</DependentUpon>
+    <Compile Include="PlayCount.ashx.cs">
+      <DependentUpon>PlayCount.ashx</DependentUpon>
     </Compile>
     <Compile Include="playMicOne.ascx.cs">
       <DependentUpon>playMicOne.ascx</DependentUpon>
@@ -395,6 +404,16 @@
       <DependentUpon>playMicOne.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="searchSong.aspx.cs">
+      <DependentUpon>searchSong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="searchSong.aspx.designer.cs">
+      <DependentUpon>searchSong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowFaces.ashx.cs">
+      <DependentUpon>ShowFaces.ashx</DependentUpon>
+    </Compile>
     <Compile Include="SingerPage.aspx.cs">
       <DependentUpon>SingerPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

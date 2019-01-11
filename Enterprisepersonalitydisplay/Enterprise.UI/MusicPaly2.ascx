@@ -6,7 +6,6 @@
      <input type="button" class="btnDownLoadSty" />
     <audio runat="server" id="AudioMic" controls="controls" src="" style="width:500px; background-color:transparent;position:relative;left:250px;top:-2px;"></audio>
     <div id="SingerImg" runat="server" style=" position:relative;left:0px;top:0px;">
-  
         <asp:Image ID="SingerImgs" runat="server" src="../Imgs/38d88ab1-4fcd-4f19-9d2c-28a707c66bf3Kim Taylor.jpg" Height="110px" Width="110px" style="position:relative;top:-96px;left:0px;"/>
     </div>
 </div>
