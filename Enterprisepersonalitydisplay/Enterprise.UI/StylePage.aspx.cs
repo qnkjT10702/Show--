@@ -35,7 +35,7 @@ namespace Enterprise.UI
                 List<ViewMicsuger> Stytb2 = MusicCRUD.SelectStyMusic(index, 3, "MicId", out count, $"StyleName='{StyName}'");
                 //根据前台传过来的data 
 
-                string JsonStyTb = JsonConvert.SerializeObject(new { idx = index, ct = count, Stydata = Stytb2,UserMid= ListMicid });
+                string JsonStyTb = JsonConvert.SerializeObject(new { idx = index, ct = count, Stydata = Stytb2,UserMids= ListMicid });
                 //序列化
                 Response.Write(JsonStyTb);
                 Response.End();
