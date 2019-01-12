@@ -102,7 +102,9 @@
             top: 166px;
             text-align: center;
         }
-
+        #end{
+            top:4px;
+        }
         #UImg {
             width: 106px;
             height: 106px;

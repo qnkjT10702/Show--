@@ -34,6 +34,7 @@
                 <li class="form_item form_login form_btn">
                     <button class="login_btn" runat="server" id="Longin_btn" >登录</button>
                 </li>
+
                 <li class="form_item form_to form_login">
                     <p class="form_login_text">还没有有账号, 去<a class="toLogin" >注册</a></p>
                 </li>

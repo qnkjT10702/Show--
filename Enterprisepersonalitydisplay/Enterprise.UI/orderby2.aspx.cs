@@ -40,19 +40,19 @@ namespace Enterprise.UI
                 Response.Write(JsonTbNew);
                 Response.End();
             }
-            else
-            {
-                Site1 OPge = Page.Master as Site1;
-                OPge.inquire += OPgerefer;
-            }
+            //else
+            //{
+            //    Site1 OPge = Page.Master as Site1;
+            //    OPge.inquire += OPgerefer;
+            //}
         }
-        private void OPgerefer(string condition)
-        {
-            //查询数据库  带条件
-            List<ViewMicsuger> table = Songquery_O.query(condition);
-            //拿到数据
-            //展示在页面
-        }
+        //private void OPgerefer(string condition)
+        //{
+        //    //查询数据库  带条件
+        //    List<ViewMicsuger> table = Songquery_O.query(condition);
+        //    //拿到数据
+        //    //展示在页面
+        //}
 
         protected void btnColle_Click(object sender, EventArgs e)
         {

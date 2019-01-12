@@ -82,7 +82,7 @@ namespace Enterprise.UI
             else
             {
                 Label2.Style["display"] = "block";
-                Label2.Text = "注册失败，用户不存在";
+                Label2.Text = "登录失败，用户不存在";
             }
         }
     }

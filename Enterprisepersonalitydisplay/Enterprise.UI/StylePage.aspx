@@ -238,6 +238,7 @@
                 }
                 Load();
             });
+        });
 
             $("#MicControlBox").on('click', ".btnCollestSty", function () {
 
@@ -272,7 +273,13 @@
                         },
                         success: function(dt){
                             if (dt.result == 1) {
+
                                  Load();
+
+                                alert("已经取消收藏此歌曲！");
+                            }
+                            else {
+
                             }
                         }
 

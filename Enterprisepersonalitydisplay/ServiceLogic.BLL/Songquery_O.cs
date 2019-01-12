@@ -22,6 +22,16 @@ namespace ServiceLogic.BLL
         }
 
         /// <summary>
+        /// 查找用户名加用户邮箱
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public static List<UserInfo> LookupName(object userId)
+        {
+            return MusicCRUD_F.LookupName(userId);
+        }
+
+        /// <summary>
         /// 根据用户id 移出用户收藏表的id
         /// </summary>
         /// <param name="micName">歌曲名</param>
