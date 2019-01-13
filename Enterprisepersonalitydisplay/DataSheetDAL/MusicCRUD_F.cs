@@ -81,6 +81,54 @@ namespace DataSheetDAL
         }
 
         /// <summary>
+        /// 编辑资料
+        /// </summary>
+        /// <param name="userId_s">用户id</param>
+        /// <param name="user_Name">用户名</param>
+        /// <param name="user_Mail">用户邮箱</param>
+        /// <param name="user_OldPwd">用户旧密码</param>
+        /// <param name="user_NewPwd">用户新密码</param>
+        /// <param name="sigsqlpath">用户头像</param>
+        /// <returns></returns>
+        public static bool ChangeInfo(object UserId_s, string user_Name, string user_Mail, string user_OldPwd, string user_NewPwd,string User_sex)
+        {
+            //判断旧密码是否输入正确
+            SqlParameter[] paras = new SqlParameter[]
+            {
+                new SqlParameter("@UserId",UserId_s)
+            };
+            string sql = "select UserPwd,UserName from UserInfo where UserId=@UserId";
+            DataTable table = DBHelpe.SelectDB(sql,false,paras);
+            List<UserInfo> list = new List<UserInfo>();
+            foreach (DataRow item in table.Rows)
+            {
+                list.Add(new UserInfo
+                {
+                    UserPwd = item["UserPwd"].ToString(),
+                    UserName = item["UserName"].ToString()
+                });
+            }
+            if(user_OldPwd == list[0].UserPwd && user_Name != list[0].UserName)
+            {
+                ////参数化查询
+                SqlParameter[] PaaraSt = new SqlParameter[]
+                {
+                    new SqlParameter("@UserId",UserId_s),
+                    new SqlParameter ("@UserName",user_Name),
+                    new SqlParameter ("@UserPwd",user_NewPwd),
+                    new SqlParameter("@UserSex",User_sex),
+                    new SqlParameter ("@UserEmall",user_Mail)
+                };
+                string sqlCompilew = "update UserInfo set UserName = @UserName,UserPwd=@UserPwd,UserEmall=@UserEmall,UserSex=@UserSex where UserId=@UserId";
+                return DBHelpe.ExecuteAdater(sqlCompilew, false, PaaraSt) == 1;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
         /// 根据用户id 查询用户头像及用户名
         /// </summary>
         /// <param name="userId"></param>

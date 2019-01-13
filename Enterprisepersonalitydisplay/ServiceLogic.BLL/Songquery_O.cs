@@ -55,6 +55,21 @@ namespace ServiceLogic.BLL
         }
 
         /// <summary>
+        /// 编辑资料
+        /// </summary>
+        /// <param name="userId_s">用户id</param>
+        /// <param name="user_Name">用户名</param>
+        /// <param name="user_Mail">用户邮箱</param>
+        /// <param name="user_OldPwd">用户旧密码</param>
+        /// <param name="user_NewPwd">用户新密码</param>
+        /// <param name="sigsqlpath">用户头像</param>
+        /// <returns></returns>
+        public static bool ChangeInfo(object UserId_s, string user_Name, string user_Mail, string user_OldPwd, string user_NewPwd,string User_sex)
+        {
+            return MusicCRUD_F.ChangeInfo(UserId_s, user_Name, user_Mail, user_OldPwd, user_NewPwd, User_sex);
+        }
+
+        /// <summary>
         /// 根据用户id 查询用户头像及用户名
         /// </summary>
         /// <param name="userId">用户id</param>

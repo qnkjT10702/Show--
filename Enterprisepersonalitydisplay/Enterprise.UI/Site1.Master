@@ -39,6 +39,7 @@
             //点击搜索功能
             $('#searchBut').click(function () {
                 var text = $('#searchBox').text();
+                location.href = 'searchSong.aspx?text=' + text;
             })
         })
     </script>

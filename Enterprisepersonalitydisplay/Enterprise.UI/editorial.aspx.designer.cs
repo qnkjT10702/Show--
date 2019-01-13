@@ -58,24 +58,6 @@ namespace Enterprise.UI {
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton newform_sex_confirm_1;
         
         /// <summary>
-        /// FileUpload1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
-        
-        /// <summary>
-        /// RequiredFieldValidator1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
-        /// <summary>
         /// newform_info_text_tip 控件。
         /// </summary>
         /// <remarks>

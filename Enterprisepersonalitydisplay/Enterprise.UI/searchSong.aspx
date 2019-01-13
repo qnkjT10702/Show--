@@ -26,11 +26,25 @@
         </tr>
         <tr>
             <td>123</td>
-            <td>123</td>
+            <td>播放</td>
             <td>123</td>
             <td>123</td>
         </tr>
     </table>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            function Ajax() {
+                $.ajax({
+                    type: 'post',
+                    dataType: 'json',
+                    success: function (data) {
+                        
+                    }
+                })
+            }
+        })
+    </script>
 </asp:Content>

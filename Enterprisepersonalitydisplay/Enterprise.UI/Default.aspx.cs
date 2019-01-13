@@ -23,6 +23,7 @@ namespace Enterprise.UI
                 this.Panel1.Controls.Add(shop);
                 //添加控件
                 shop.micsuger = comde;
+                Response.Redirect("HomePage.aspx");
 
             }
         }
