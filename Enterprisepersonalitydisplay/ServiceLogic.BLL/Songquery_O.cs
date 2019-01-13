@@ -16,9 +16,9 @@ namespace ServiceLogic.BLL
         /// 排行版查询
         /// </summary>
         /// <param name="condition">传过来的参数</param>
-        public static List<ViewMicsuger> query(string condition)
+        public static List<ViewMicsuger> query(string textName)
         {
-            return MusicCRUD_F.query(condition);
+            return MusicCRUD_F.query(textName);
         }
 
         /// <summary>
