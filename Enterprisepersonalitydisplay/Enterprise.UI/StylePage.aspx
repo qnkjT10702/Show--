@@ -159,7 +159,6 @@
             function Load() {
                 //第一步 得到  你选择的是什么‘文本’
                 var option = s;
-
                 //写ajax
                 //得到数据 --
                 $.ajax({
@@ -182,7 +181,7 @@
              //判断歌曲有没有被用户收藏过
             function IsColle(MIcId) {
                 for (let i = 0; i < MidList.UserMids.length; i++) {
-                   // console.log(MidList.UserMids[i]+'=='+ MIcId)
+                    console.log(MidList.UserMids[i]+'=='+ MIcId)
                     if (MIcId == MidList.UserMids[i]) {
                         return true;
                     }
@@ -241,14 +240,10 @@
         });
 
             $("#MicControlBox").on('click', ".btnCollestSty", function () {
-
-                
                 var MicIdTit = $(this).attr("class");
-                let MusicId= $(this).siblings("#SingerImg").children("#SingerImgs").attr("title");
-            
+                let MusicId = $(this).siblings("#SingerImg").children("#SingerImgs").attr("title");
                
                 if (MicIdTit.indexOf("AddCssColle") == -1) {
-
                     $.ajax({
                         url: "SongCollection.ashx",
                         type: "post",
@@ -262,8 +257,11 @@
                             }
                         }
                     });
+                     $(this).removeClass("reMoveCss");
+                     $(this).addClass("AddCssColle");
                 }
                 else {
+
                     $.ajax({
                         url: "DeleteCollection_MyMusic.ashx",
                         type: "post",
@@ -284,64 +282,19 @@
                         }
 
                     });
+                     $(this).removeClass("AddCssColle");
+                     $(this).addClass("reMoveCss");
                 }
-                  //  $(this).siblings("#SingerImg").children("#SingerImgs").attr("title");
-                   
-               // }
-                //if ($(this).attr("class") == "reMoveCss") {
-                //    //$(this).attr(".class", 'AddCssColle');
-                //     var f=$(this).attr("class");
-                //    alert(f);
-                   
-                //    alert(MicIdTit);
-                //   // 歌曲ID  
-                //    $.ajax({
-                //       url: "SongCollection.ashx",
-                //        type: "post",
-                //        dataType: "json",
-                //        data: {
-                //            MicId: MicIdTit,
-                //        },
-                //        success: function (dt) {
-                //            if (dt.result == 0) {
-                //                alert("已经收藏过此歌曲！");
-                //            }
-                //            else {
-
-                //            }
-                //        }
-                //    });
-
-                //}
-                //else {
-                //    //取消收藏
-                //    $.ajax({
-                //        url: "DeleteCollection_MyMusic.ashx",
-                //        type: "post",
-                //        dataType: "json",
-                //        data: {
-                //            MicId: MicIdTit,
-                //        },
-                //        success: function (dt) {
-                //            if (dt.result == 1) {
-                //                alert("已经取消收藏此歌曲！");
-                //            }
-                //            else {
-
-                //            }
-                //        }
-                   //});
-                      //$(this).attr("class", '.reMoveCss');
-               // }
-
+              
+            //收藏功能介绍
             });
             $("#MicControlBox").on('click', ".bgpaly", function () {
                 var SingerName = $(this).siblings("#ContentPlaceHolder1_SingerNameSty").text();
                 var SongName = $(this).siblings("#SusicNameSty").text();
                 location.href = 'Musicpaly.aspx?SongName=' + SongName + '&SingerName=' + SingerName;
             });
-
-        });
+        
+      
     </script>
 
 </asp:Content>
