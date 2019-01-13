@@ -30,16 +30,14 @@ namespace DataSheetDAL
             SqlParameter[] sqlParameters = new SqlParameter[] {
                 new SqlParameter("@UserId",UserId)
             };
-            string sql = "select  *from UserCollect where UserId=@UserId";
+            string sql = "select  * from UserCollect where UserId=@UserId";
             DataTable table= DBHelpe.SelectDB(sql, false, sqlParameters);
-            List<int> ListMicId = new List<int>();
+            List<int> UserCollectIds = new List<int>();
             foreach(DataRow row in table.Rows)
             {
-                ListMicId.Add(
-                     Convert.ToInt32(row["MicId"])
-                    );
+                UserCollectIds.Add(Convert.ToInt32(row["MicId"]));
             }
-            return ListMicId;
+            return UserCollectIds;
         }
 
         /// <summary>
@@ -370,6 +368,7 @@ namespace DataSheetDAL
                     MicName = row["MicName"].ToString(),
                     SingerName = row["SingerName"].ToString(),
                     StyleName = row["StyleName"].ToString(),
+                    MicId = (int)row["MicId"]
                 });
             }
             return views;

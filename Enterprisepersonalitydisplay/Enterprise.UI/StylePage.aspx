@@ -6,14 +6,6 @@
     <script src="scripts/jquery.min.js"></script>
      <script src="scripts/jquery-3.3.1.js"></script>
     <script src="js/feature.presenter.1.5.min.js"></script>
-    <script>
-        
-        $(function () {
-            $('#AppBar3').css({ backgroundColor: '#4A4A4A', color: '#fdad02' });
-         
-        })
-           
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -91,19 +83,7 @@
     </style>
 
     <div id="styleTitle">
-        <span style="padding:7px 14px;color:white;background-color:#fdad02;font-size:14px;">推荐</span>
- <%--       <span style="margin-left:50px;">请选择分类风格：
-          
-           <select id="ListMciStyle">
-              <option value ="volvo">古风歌曲</option>
-              <option value ="saab">经典老歌</option>
-              <option value="opel">流行音乐</option>
-              <option value="audi">说唱</option>
-               <option value=""></option>
-           </select>
-       </span>--%>
-       
-       
+        <span  style="padding:7px 14px;color:white;background-color:#fdad02;font-size:14px;">推荐</span>
     </div>
     <div id="test-element" style="position: absolute;left:-21px;top:242px;width:538px;height:837px;"></div>
 
@@ -139,7 +119,8 @@
         ];
         $(function () {
                var fp = new FeaturePresenter($("#test-element"), settings, options);
-               fp.createPresenter();
+            fp.createPresenter();
+             $('#AppBar3').css({ backgroundColor: '#4A4A4A', color: '#fdad02' });
         });
         var options = {
 	        circle_radius: 120,
@@ -154,10 +135,10 @@
 	        type: 'image'
         };
 
-        
         var Stie = ' <div class="bigBox" style=" position: relative; left:651px; margin-bottom: 20px; border:1px black solid; height:110px;width:742px; background-color:antiquewhite;"><a href="#" class="bgpaly"></a> <div runat="server" id="SingerNameSty" style="position:relative;top:26px; color:chocolate;left:133px; font-size:25px;">{{SingerName}}</div><div  id="SusicNameSty" style="position:relative;top:38px;left:131px; font-size:21px;">{{MicName}}</div><input type="button" class="btnCollestSty {{IsColleCss}}" /><input type="button" class="btnDownLoadSty" /><div id="SingerImg" style=" position:relative;left:0px;top:0px;"><img id="SingerImgs" title="{{MicId}}" src="{{MicImg}}" style="position:relative;top:-86px;left:0px; height:110px; width:110px"/></div></div>';
         $(function () {
-            var MidList;//{ idx = index, ct = count, Stydata = Stytb2,UserMid= ListMicid }
+            var MidList;
+            //{ idx = index, ct = count, Stydata = Stytb2,UserMid= ListMicid }
             var s;
             var index = 1;//表示当前 第几页 默认 第一页
             var PageCount = 0;//总共页数
@@ -178,7 +159,6 @@
             function Load() {
                 //第一步 得到  你选择的是什么‘文本’
                 var option = s;
-
                 //写ajax
                 //得到数据 --
                 $.ajax({
@@ -198,34 +178,34 @@
                 });
 
             }
-            function StyMic(data) {
-                let outHtm = '';
-                console.log(Stie);
-                for (var i = 0; i < data.length; i++) {
-                    Mouther = Stie.replace('{{MicSRc}}', data[i].MicSRc).replace('{{SingerName}}', data[i].SingerName).replace('{{MicName}}', data[i].MicName).replace('{{MicImg}}', data[i].MicImg).replace("{{MicId}}", data[i].MicId);
-                    if (IsColle(data[i].MIcId)) {
-                        // AddCssColle
-                        Mouther = Mouther.replace('{{IsColleCss}}','reMoveCss');// Stie.replace('{{MicSRc}}', data[i].MicSRc).replace('{{SingerName}}', data[i].SingerName).replace('{{MicName}}', data[i].MicName).replace('{{MicImg}}', data[i].MicImg).replace("{{MicId}}", data[i].MicId).replace("{{IsColleCss}}", ".AddCssColle");
-                    } else {
-                        Mouther = Mouther.replace('{{IsColleCss}}','AddCssColle');
-                    }
-                    outHtm += Mouther;
-                }
-                 $('#MicControlBox').html(outHtm);
-            }
              //判断歌曲有没有被用户收藏过
             function IsColle(MIcId) {
-               //判断Mid在不在收藏的歌曲id里面；     MIdList.UserMid
-               // 1,2,3,4,5,6,7,8,9,0
-                //5
-                for (let i = 0; i < MidList.UserMid.Length; i++) {
-                    if (MIcId == MIdList.UserMid[i]) {
+                for (let i = 0; i < MidList.UserMids.length; i++) {
+                    console.log(MidList.UserMids[i]+'=='+ MIcId)
+                    if (MIcId == MidList.UserMids[i]) {
                         return true;
                     }
                 }
                 return false;
 
               };
+            function StyMic(data) {
+                let outHtm = '';
+                console.log(Stie);
+                for (var i = 0; i < data.length; i++) {
+                    Mouther = Stie.replace('{{MicSRc}}', data[i].MicSRc).replace('{{SingerName}}', data[i].SingerName).replace('{{MicName}}', data[i].MicName).replace('{{MicImg}}', data[i].MicImg).replace("{{MicId}}", data[i].MicId);
+                    if (IsColle(data[i].MicId)) {
+                        
+                        Mouther = Mouther.replace('{{IsColleCss}}', 'AddCssColle');// Stie.replace('{{MicSRc}}', data[i].MicSRc).replace('{{SingerName}}', data[i].SingerName).replace('{{MicName}}', data[i].MicName).replace('{{MicImg}}', data[i].MicImg).replace("{{MicId}}", data[i].MicId).replace("{{IsColleCss}}", ".AddCssColle");
+                    } else
+                    {
+                        Mouther = Mouther.replace('{{IsColleCss}}','reMoveCss');
+                    }
+                    outHtm += Mouther;
+                }
+                 $('#MicControlBox').html(outHtm);
+            }
+            
                
 
             function CreateCountPage(data) {
@@ -247,6 +227,7 @@
                     index++;
                 }
                 Load();
+                
             });
 
             $("#Go").click(function () {
@@ -256,64 +237,64 @@
                 }
                 Load();
             });
-<<<<<<< HEAD
         });
-=======
-            var colleCount = 0;
+
             $("#MicControlBox").on('click', ".btnCollestSty", function () {
-                colleCount++;
-                if (colleCount % 2) {
-                    $(this).css('backgroundPosition', "220px 70px");
-                    var MicIdTit = $(this).siblings("#SingerImg").children("#SingerImgs").attr("title");
-                    //歌曲ID  
+                var MicIdTit = $(this).attr("class");
+                let MusicId = $(this).siblings("#SingerImg").children("#SingerImgs").attr("title");
+               
+                if (MicIdTit.indexOf("AddCssColle") == -1) {
                     $.ajax({
                         url: "SongCollection.ashx",
                         type: "post",
                         dataType: "json",
                         data: {
-                            MicId: MicIdTit,
+                            MicId: MusicId
                         },
                         success: function (dt) {
-                            if (dt.result == 0) {
-                                alert("已经收藏过此歌曲！");
-                            }
-                            else {
-
+                            if (dt.result == 1) {
+                                Load();
                             }
                         }
                     });
-
+                     $(this).removeClass("reMoveCss");
+                     $(this).addClass("AddCssColle");
                 }
                 else {
-                    //取消收藏
+
                     $.ajax({
                         url: "DeleteCollection_MyMusic.ashx",
                         type: "post",
                         dataType: "json",
                         data: {
-                            MicId: MicIdTit,
+                            MicId: MusicId
                         },
-                        success: function (dt) {
+                        success: function(dt){
                             if (dt.result == 1) {
+
+                                 Load();
+
                                 alert("已经取消收藏此歌曲！");
                             }
                             else {
->>>>>>> e1dc14e51e3321b3970b96a2fc2d378481e40c5e
 
                             }
                         }
-                    });
-                    $(this).css('backgroundPosition', "-2px 70px");
-                }
 
+                    });
+                     $(this).removeClass("AddCssColle");
+                     $(this).addClass("reMoveCss");
+                }
+              
+            //收藏功能介绍
             });
             $("#MicControlBox").on('click', ".bgpaly", function () {
                 var SingerName = $(this).siblings("#ContentPlaceHolder1_SingerNameSty").text();
                 var SongName = $(this).siblings("#SusicNameSty").text();
                 location.href = 'Musicpaly.aspx?SongName=' + SongName + '&SingerName=' + SingerName;
             });
-
-        });
+        
+      
     </script>
 
 </asp:Content>

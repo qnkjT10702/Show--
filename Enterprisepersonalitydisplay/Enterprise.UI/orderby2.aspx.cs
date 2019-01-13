@@ -17,6 +17,9 @@ namespace Enterprise.UI
         {
             if (Request.RequestType == "POST")
             {
+                int UserId = Convert.ToInt32(Session["UserId"]);
+                //通过Session获取UserId
+                List<int> ListMicid = MusicCRUD.UserMidColle(UserId);
                 int  StyName = Convert.ToInt32(Request["MicId"]);
                 List<ViewMicsuger> tbH = MusicCRUD.Selectorder();
                 //收藏榜
@@ -30,7 +33,7 @@ namespace Enterprise.UI
                 //华语榜
                 List<ViewMicsuger> tbReHanMic = MusicCRUD.SelectReHanMic();
                 //日韩版
-                var obj = new { colle= tbH,colleNew=tbNewMic,colleEurope=tbEuropeMic,colleHot=tbHotMic,colleChinese=tbChineseMic,colleReHan=tbReHanMic};
+                var obj = new { colle= tbH,colleNew=tbNewMic,colleEurope=tbEuropeMic,colleHot=tbHotMic,colleChinese=tbChineseMic,colleReHan=tbReHanMic, tbListMicid = ListMicid };
                 
                 string JsonTbNew = JsonConvert.SerializeObject(obj);
                 //序列化
